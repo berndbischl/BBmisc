@@ -1,0 +1,59 @@
+- isDirectory FIXEN!!!
+
+
+- batchjobsmode für parallelmap?
+
+In der progressbar:
+- das löschen sollte besser mit "\b \b" passieren. das löscht wirklich 
+und man kommt so auch mehrere zeilen nach oben zurück
+- machmal ist es notwendig, längere zeilen zwischendurch zu displayen, z.b. bei submitJobs. (warnungen usw.)#
+  das sollte supported werden. 
+- wenn das angpasst ist, FIXME in submitJobs benhandeln
+- da ist irgendwo ein bug, kann man provozieren mit bj in irace wenn ein fehler
+  in den jobs auftritt
+
+
+## do lapply recursively on deep lists
+  ## FIXME: Use rapply instead? Possibly not useful because rapply does
+  ##   not limit descend depth. Investigate if rec.lapply becomes a
+  ##   bottleneck.
+  rec.lapply = function(xs, fun, depth=Inf) {
+    if (!is.list(xs) || is.data.frame(xs) || depth==0) {
+      return(fun(xs))
+    }
+    lapply(xs, function(x) rec.lapply(x, fun, depth-1))
+  }
+
+- leeren dataframe mit festgelegten spalten erzeugen
+
+exponentielles glätten der zeiten fuer schaetzung der zeit
+
+stack 
+
+extractSubList für S4 automatisch?
+
+chunking in parallelMap
+
+checkArg möglicherweise in C machen und mit inherits per default testen wegen speed.
+dabei aber benchmarken.
+
+we need better way to check matrices, dimension and element data type.
+
+checProperlyNamed function oder in checkArg?
+
+function renameFactorLevels, bzw. suchen ob es sowas in gut gibt
+nützlich für ggplot z.b. 
+f=relevel(f, list(a="b", x="y"))
+
+michels is_any_na
+
+add addAttributes?
+
+setNames für cols un rows beides? args bei setNames  und setRowNames setColnames vielleicht raus?
+
+dfrowapply um über zeilen von df zu applyen
+
+rowsToList für df und matrix um zeilen in listen zu wandeln
+
+add function to print block of text, with line with, and possibly prefix (e.g. TAB)
+

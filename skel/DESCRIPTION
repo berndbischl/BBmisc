@@ -1,0 +1,15 @@
+Package: BBmisc
+Title: Miscellaneous helper functions for B. Bischl.
+Description: Miscellaneous helper functions for and from 
+  B. Bischl and some other guys at TU Dortmund, mainly for
+  package development.
+Author: Bernd Bischl <bernd_bischl@gmx.net>,
+  Michel Lang <lang@statistik.tu-dortmund.de>, 
+  Olaf Mersmann <olafm@p-value.net>
+Maintainer: Bernd Bischl <bernd_bischl@gmx.net>
+License: BSD
+Depends: methods
+Suggests: testthat, snowfall, parallel, Rmpi
+LazyData: yes
+ByteCompile: yes
+Version: 1.2
