@@ -12,4 +12,5 @@ Depends: methods
 Suggests: testthat, snowfall, parallel, Rmpi
 LazyData: yes
 ByteCompile: yes
-Version: 1.2
+Version: 1.3
+
