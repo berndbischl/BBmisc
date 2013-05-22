@@ -1,3 +1,5 @@
 pkg
 BBmisc_*.tar.gz
 
+.Rproj.user
+*.Rproj
