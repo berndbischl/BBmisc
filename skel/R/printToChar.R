@@ -20,9 +20,6 @@ printToChar = function(x, collapse="\n") {
     close(con)
   })
   print(x)
-  # on.exit()
-  # sink()
-  # close(con)
   if (!is.null(collapse))
     paste(rval, collapse=collapse)
   else
