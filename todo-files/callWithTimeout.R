@@ -41,10 +41,10 @@ callWithTimeout = function(f, args, timeout, val = NULL, off = FALSE) {
   save.image(file=fn.image)
   save2(file=fn.call, cwto.fun = f, cwto.args = args)
   catf(file=fn.script, "library(BBmisc)")
-  catf(file=fn.script, append=TRUE, sprintf("load('%s')", fn.image))
-  catf(file=fn.script, append=TRUE, sprintf("thecall = load2('%s')", fn.call))
+  catf(file=fn.script, append=TRUE, "load('%s')", fn.image)
+  catf(file=fn.script, append=TRUE, "thecall = load2('%s')", fn.call)
   catf(file=fn.script, append=TRUE, "returnval = do.call(thecall$cwto.fun, thecall$cwto.args)")
-  catf(file=fn.script, append=TRUE, sprintf("save2(file='%s', returnval=returnval)", fn.returnval))
+  catf(file=fn.script, append=TRUE, "save2(file='%s', returnval=returnval)", fn.returnval)
   rcmd = sprintf("R CMD BATCH --no-save --no-restore %s %s", fn.script, fn.rout)
   sys3.args = c(as.character(timeout), rcmd)
   z = system3("timeout", sys3.args, wait=TRUE, stop.on.exit.code=FALSE)  
@@ -61,7 +61,6 @@ callWithTimeout = function(f, args, timeout, val = NULL, off = FALSE) {
   }
   # FIXME What to give the user in case of errors somewhere? on what levelvs can errors happen?
   # FIXME give logging?
-  # FIXME just run interactively with option?
   # FIXME what to do on clean up and exit?
 }
 
