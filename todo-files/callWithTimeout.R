@@ -32,12 +32,17 @@ callWithTimeout = function(f, args, timeout, val = NULL, off = FALSE) {
   #fn.call = "cwto_call.RData"
   #fn.script = "cwto_script.R"
   #fn.returnval = "cwto_returnval.RData"
-  fn.image  = tempfile()
-  fn.call = tempfile()
-  fn.script = tempfile()
-  fn.returnval = tempfile()
-  fn.rout = tempfile()
+  tmp = tempfile("cwto_")
   
+  g = function(postfix)
+    file.path(dirname(tmp), sprintf("%s_%s", basename(tmp), postfix))
+  
+  fn.image = g("image")
+  fn.call = g("call")
+  fn.script = g("script")
+  fn.returnval = g("returnval")
+  fn.rout = g("rout")
+
   save.image(file=fn.image)
   save2(file=fn.call, cwto.fun = f, cwto.args = args)
   catf(file=fn.script, "library(BBmisc)")
@@ -46,6 +51,7 @@ callWithTimeout = function(f, args, timeout, val = NULL, off = FALSE) {
   catf(file=fn.script, append=TRUE, "returnval = do.call(thecall$cwto.fun, thecall$cwto.args)")
   catf(file=fn.script, append=TRUE, "save2(file='%s', returnval=returnval)", fn.returnval)
   rcmd = sprintf("R CMD BATCH --no-save --no-restore %s %s", fn.script, fn.rout)
+
   sys3.args = c(as.character(timeout), rcmd)
   z = system3("timeout", sys3.args, wait=TRUE, stop.on.exit.code=FALSE)  
   if (z$exit.code == 0L) {
@@ -69,5 +75,5 @@ ff = function(x) {
  return(x)
 }
 
-y = callWithTimeout(ff, list(x=1), timeout=2, val=99, off = TRUE)
+y = callWithTimeout(ff, list(x=10), timeout=20, val=99, off = FALSE)
 print(y)
