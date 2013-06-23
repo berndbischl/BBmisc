@@ -28,7 +28,7 @@
 #' @return Nothing.
 #' @export
 parallelStart = function(mode="local", cpus, ..., level=as.character(NA), log=NULL) {
-  checkArg(mode, choices=c("local", "snowfall", "multicore"))
+  checkArg(mode, choices=c("local", "multicore", "snowfall", "BatchJobs"))
    
   if (missing(cpus)) {
     if (mode == "multicore")
@@ -62,6 +62,8 @@ parallelStart = function(mode="local", cpus, ..., level=as.character(NA), log=NU
       c("snowfall", "Rmpi")
     else
       "snowfall"
+  else if (mode == "BatchJobs")
+    "BatchJobs"
   else
     character(0)
   requirePackages(packs, "setupParallel")
@@ -70,6 +72,11 @@ parallelStart = function(mode="local", cpus, ..., level=as.character(NA), log=NU
     sfSetMaxCPUs(cpus)
     sfInit(parallel=TRUE, cpus=cpus, ...)
     sfClusterSetupRNG()
+  } else if (mode == "BatchJobs") {
+    fd = "bbmisc_parallel_bj_files"
+    unlink(fd, recursive = TRUE)
+    reg = makeRegistry("BBmisc_parallel", file.dir=fd)
+    options(BBmisc.parallel.bj.reg.file.path = reg$file.dir)
   }
   options(BBmisc.parallel.mode = mode)
   options(BBmisc.parallel.cpus = cpus)
@@ -86,8 +93,13 @@ parallelStart = function(mode="local", cpus, ..., level=as.character(NA), log=NU
 #' @export
 parallelStop = function() {
   mode = getOption("BBmisc.parallel.mode")
-  if (mode == "snowfall")
+  if (mode == "snowfall") {
     sfStop()
+  } else if (mode == "BatchJobs") {
+    # clean up temp file dir of BJ
+    fd = getOption("BBmisc.parallel.bj.reg.file.path")
+    unlink(fd, recursive = TRUE)
+  }
   options(BBmisc.parallel.mode = "local")  
 }
 
@@ -160,6 +172,11 @@ parallelExport = function(..., list=character(0)) {
   }  else if (mode == "snowfall") {
     sfExport(list=ns)
     #sfClusterEval(options(BBmisc.parallel.export.env = ".GlobalEnv"))
+  } else if (mode == "BatchJobs") {
+    fd = getOption("BBmisc.parallel.bj.reg.file.path")
+    for (n in ns) {
+      save2(file = file.path(fd, n), get(n, envir=sys.parent()))
+    }
   }
   invisible(NULL)
 }
@@ -229,6 +246,16 @@ parallelMap = function(fun, ..., more.args=list(), simplify=FALSE, use.names=FAL
       sfClusterEval(options(BBmisc.parallel.export.env = ".GlobalEnv"))
       sfClusterCall(assign, "parallelGetExported", parallelGetExported, envir=globalenv())
       res = sfClusterApplyLB(toList(...), fun=slaveWrapper, .fun=fun, .log=log)
+    } else if (mode == "BatchJobs") {
+      fd = getOption("BBmisc.parallel.bj.reg.file.path")
+      list.files(fd)
+      reg = loadRegistry(fd)
+      batchMap(reg, fun, ..., more.args = more.args)
+      submitJobs(reg)
+      waitForJobs(reg)
+      if (length(findErrors(reg)) > 0)
+        stop(collapse(getErrors(reg, print=FALSE), sep="\n"))
+      res = loadResults(reg)
     }
   }
 

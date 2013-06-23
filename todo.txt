@@ -1,7 +1,12 @@
+- parallelMap mit BatchJobs fertig machen. Was will der User von außen ändern? Export korrigieren / testen. Was soll cpus setting bedeuten?
+-- TESTEN
+- da hier ist extrem scheiße, aufrufende pakete werden auf dem slave nicht geladen.
+externer test mit mlr?
+Error in parallelMap(doResampleIteration, 1:iters, level = "resample",  : 
+  Error in getOption("mlr.show.learner.output") || inherits(learner, "OptWrapper") :    invalid "x" type in "x || y" 
+...
+
 - isDirectory FIXEN!!!
-
-
-- batchjobsmode für parallelmap?
 
 In der progressbar:
 - das löschen sollte besser mit "\b \b" passieren. das löscht wirklich 
