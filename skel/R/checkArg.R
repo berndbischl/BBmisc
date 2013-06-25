@@ -1,27 +1,27 @@
 #' Check for a function argument.
-#'  
+#'
 #' Throws exception if checks are not passed.
 #' Note that argument is evaluated when checked.
-#' 
+#'
 #' @param x [any]\cr
 #'   Argument.
 #' @param cl [\code{character}]\cr
-#'   Class that argument must \dQuote{inherit} from. 
+#'   Class that argument must \dQuote{inherit} from.
 #'   If multiple classes are given, \code{x} must \dQuote{inherit} from at least one of these.
 #'   See also argument \code{s4}.
 #' @param s4 [\code{logical(1)}]\cr
-#'   If \code{TRUE}, use \code{is} for checking class \code{cl}, otherwise use \code{\link{inherits}}, which 
+#'   If \code{TRUE}, use \code{is} for checking class \code{cl}, otherwise use \code{\link{inherits}}, which
 #'   implies that only S3 classes are correctly checked. This is done for speed reasons
-#'   as calling \code{\link{is}} is pretty slow. 
+#'   as calling \code{\link{is}} is pretty slow.
 #'   Default is \code{FALSE}.
 #' @param len [\code{integer(1)}]\cr
-#'   Length that argument must have. 
+#'   Length that argument must have.
 #'   Not checked if not passed, which is the default.
 #' @param min.len [\code{integer(1)}]\cr
-#'   Minimal length that argument must have. 
+#'   Minimal length that argument must have.
 #'   Not checked if not passed, which is the default.
 #' @param max.len [\code{integer(1)}]\cr
-#'   Maximal length that argument must have. 
+#'   Maximal length that argument must have.
 #'   Not checked if not passed, which is the default.
 #' @param choices [any]\cr
 #'   Discrete number of choices, expressed by a vector of R objects.
@@ -40,7 +40,7 @@
 #'   Default is \code{TRUE}.
 #' @param formals [\code{character}]\cr
 #'   If this is passed, \code{x} must be a function.
-#'   It is then checked that \code{formals} are the names of the 
+#'   It is then checked that \code{formals} are the names of the
 #'   (first) formal arguments in the signature of \code{x}.
 #'   Meaning \code{checkArg(function(a, b), formals="a")} is ok.
 #'   Default is missing.
@@ -89,7 +89,7 @@ checkArg = function(x, cl, s4=FALSE, len, min.len, max.len, choices, subset, low
         is.vector(x)
       else if (!s4)
         inherits(x, cc)
-      else if (s4) 
+      else if (s4)
         is(x, cc)
     if (!any(sapply(cl, mycheck, x=x)))
       stop("Argument ", s, " must be of class ", collapse(cl, " OR "), ", not: ", cl2, "!")
@@ -101,9 +101,9 @@ checkArg = function(x, cl, s4=FALSE, len, min.len, max.len, choices, subset, low
       stop("Argument ", s, " must be at most of length ", max.len, " not: ", len2, "!")
     if (!na.ok && any(is.na(x)))
       stop("Argument ", s, " must not contain any NAs!")
-    if (is.numeric(x) && !is.na(lower) && ((is.na(x) && !na.ok) || (!is.na(x) && x < lower)))
+    if (is.numeric(x) && !is.na(lower) && ((is.na(x) && !na.ok) || (!is.na(x) && all(x < lower))))
       stop("Argument ", s, " must be greater than or equal ", lower, "!")
-    if (is.numeric(x) && !is.na(upper) && ((is.na(x) && !na.ok) || (!is.na(x) && x > upper)))
+    if (is.numeric(x) && !is.na(upper) && ((is.na(x) && !na.ok) || (!is.na(x) && all(x > upper))))
       stop("Argument ", s, " must be less than or equal ", upper, "!")
   }
 }
