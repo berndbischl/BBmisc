@@ -12,12 +12,7 @@
 listToShortString = function(xs) {
   if (length(xs) == 0L)
     return("")
-  ns = names(xs)
-  if (is.null(ns)) {
-    ns = rep("<unnamed>", length(xs))
-  } else {
-    ns = replace(ns, is.na(ns) | ns == "", "<unnamed>")
-  }
+  ns = names2(xs, missing.val = "<unnamed>")
   ss = lapply(xs, function(x) {
     if (is.atomic(x)) {
       if (length(x) <= 1L)
