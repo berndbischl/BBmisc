@@ -10,11 +10,12 @@
 #' print(isDirectory(tempdir()))
 #' print(isDirectory(tempfile()))
 isDirectory = function(...) {
-  # FIXME: file_test("-d", ...) might be faster?
-  x = file.info(...)$isdir
+  paths = c(...)
+  if (.Platform$OS.type == "windows" && getRversion() < "3.0.2")
+    paths = sub("^([[:alpha:]]:)[/\\]*$", "\\1//", paths)
+  x = file.info(paths)$isdir
   !is.na(x) & x
 }
-
 
 #' Is one / are several directories empty?
 #'
