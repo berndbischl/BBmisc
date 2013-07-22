@@ -5,7 +5,7 @@
 #' and should not be used by other packages.
 #'
 #' @param ... [any]\cr
-#'   Package names as single strings or character vectors.
+#'   Package names.
 #' @return [\code{logical}]: Named logical vector determining the success
 #'   of package load.
 #' @export
@@ -21,10 +21,7 @@ lib = function(...) {
     ok
   }
 
-  pkgs = list(...)
-  checkListElementClass(pkgs, "character")
-  pkgs = sort(unique(unlist(pkgs, use.names=FALSE)))
+  pkgs = unique(c(...))
   checkArg(pkgs, "character", na.ok=FALSE)
-
-  vapply(pkgs, getLib, TRUE)
+  vapply(pkgs, getLib, logical(1L))
 }
