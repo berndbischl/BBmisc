@@ -6,8 +6,6 @@ Error in parallelMap(doResampleIteration, 1:iters, level = "resample",  :
   Error in getOption("mlr.show.learner.output") || inherits(learner, "OptWrapper") :    invalid "x" type in "x || y" 
 ...
 
-- isDirectory FIXEN!!!
-
 In der progressbar:
 - das löschen sollte besser mit "\b \b" passieren. das löscht wirklich 
 und man kommt so auch mehrere zeilen nach oben zurück
