@@ -48,17 +48,10 @@ function renameFactorLevels, bzw. suchen ob es sowas in gut gibt
 nützlich für ggplot z.b. 
 f=relevel(f, list(a="b", x="y"))
 
-michels is_any_na
-
-add addAttributes?
-
 setNames für cols un rows beides? args bei setNames  und setRowNames setColnames vielleicht raus?
 
-dfrowapply um über zeilen von df zu applyen
-
 rowsToList für df und matrix um zeilen in listen zu wandeln
+-> as.list(as.data.frame(t(x)))
 
 add function to print block of text, with line with, and possibly prefix (e.g. TAB)
-
-Dirk says:
-Hallo BBmisc!
+-> ?base::strwrap()

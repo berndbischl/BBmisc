@@ -252,6 +252,8 @@ parallelMap = function(fun, ..., more.args=list(), simplify=FALSE, use.names=FAL
       batchMap(reg, fun, ..., more.args = more.args)
       submitJobs(reg)
       waitForJobs(reg)
+      # FIXME: getErrors -> getErrorMessages in BJ :(
+      # Provide getErrors in BJ and mark it obsolete?
       if (length(findErrors(reg)) > 0)
         stop(collapse(getErrors(reg, print=FALSE), sep="\n"))
       res = loadResults(reg)
