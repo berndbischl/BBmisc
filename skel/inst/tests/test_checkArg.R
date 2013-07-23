@@ -7,7 +7,7 @@ test_that("checkArg", {
   expect_error(f(1:2))
   f = function(x) checkArg(x, cl="integer", min.len=2)
   f(1:2)
-  expect_error(f(1L))  
+  expect_error(f(1L))
   f = function(x) checkArg(x, cl="integer", max.len=2)
   f(1:2)
   expect_error(f(1:3))
@@ -24,14 +24,19 @@ test_that("checkArg", {
   f(1); f(1.5); f(2)
   expect_error(f(0), "greater than or equal 1")
   expect_error(f(3), "less than or equal 2")
-  
+
+  f = function(x) checkArg(x, cl="numeric", lower=1, upper=5)
+  f(1:5)
+  expect_error(f(0:5), "greater than or equal 1")
+  expect_error(f(1:6), "less than or equal 5")
+
   f = function(x) checkArg(x, formals=c("foo", "bar"))
   f(function(foo, bar) 1)
   f(function(foo, bar, bla) 1)
   expect_error(f(1), "must be of class function not: numeric")
   expect_error(f(function(blubb) 1), "must have first formal args")
   expect_error(f(function(foo) 1), "must have first formal args")
-  
+
   checkArg(1, "vector")
   checkArg(1L, "vector")
   checkArg(TRUE, "vector")
@@ -49,7 +54,7 @@ test_that("checkArg with choices", {
   expect_error(f(1), "must be")
   expect_error(f(NULL), "must be")
   expect_error(f(NA))
-  
+
   f = function(x) checkArg(x, choices=list(NULL, 1L, data.frame()))
   f(1L)
   f(NULL)
@@ -65,10 +70,10 @@ test_that("checkArg with subset", {
   f("b")
   f(c("a", "b"))
   f(character(0))
-  
+
   expect_error(f(1), "must be")
   expect_error(f(NA), "must be")
-  
+
   f = function(x) checkArg(x, subset=list(NULL, 1L, data.frame()))
   f(1L)
   f(NULL)
