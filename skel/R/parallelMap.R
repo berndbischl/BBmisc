@@ -38,6 +38,12 @@
 #' parallelMap(identity, 1:2)
 #' parallelStop()
 parallelMap = function(fun, ..., more.args=list(), simplify=FALSE, use.names=FALSE, level=as.character(NA)) {
+  checkArg(fun, "function")
+  checkArg(more.args, "list")
+  checkArg(simplify, "logical", len=1L, na.ok=FALSE)
+  checkArg(use.names, "logical", len=1L, na.ok=FALSE)
+  checkArg(level, "character", len=1L, na.ok=TRUE)
+  
   mode = getOption("BBmisc.parallel.mode")
   cpus = getOption("BBmisc.parallel.cpus")
   lev = getOption("BBmisc.parallel.level")
