@@ -4,7 +4,8 @@
 #' \code{\link{parallelMap}} and allows to set a \dQuote{level} of parallelization.
 #' Only calls to \code{\link{parallelMap}} with a matching level are parallelized.
 #'
-#' For snowfall \code{\link[snowfall]{sfStop}}, \code{\link[snowfall]{sfSetMaxCPUs}}, \code{\link[snowfall]{sfInit}}, \code{\link[snowfall]{sfClusterSetupRNG}}
+#' For snowfall \code{\link[snowfall]{sfStop}}, \code{\link[snowfall]{sfSetMaxCPUs}}, 
+#' \code{\link[snowfall]{sfInit}}, \code{\link[snowfall]{sfClusterSetupRNG}}
 #' are called in this order.
 #'
 #' @param mode [\code{character(1)}]\cr
