@@ -1,16 +1,19 @@
 #' Is return value of try an exception?
-#' 
-#' A simple wrapper for \code{is(x, "try-error")}.
-#' 
+#'
+#' Checks if an object is of class \dQuote{try-error} or
+#' \dQuote{error}.
+#'
 #' @param x [any]\cr
-#'   Return value of a \code{\link{try}}-statement.
+#'   Any object, usually the return value of \code{\link[base]{try}},
+#' \code{\link[base]{tryCatch}, or a function which may return a
+#' \code{\link[base]{simpleError}.
 #' @return [\code{logical(1)}].
 #' @export
 #' @examples
-#' x <- try(stop("foo")) 
+#' x <- try(stop("foo"))
 #' print(is.error(x))
-#' x <- 1 
+#' x <- 1
 #' print(is.error(x))
 is.error = function(x) {
-  inherits(x, "try-error")
+  inherits(x, c("try-error", "error"))
 }
