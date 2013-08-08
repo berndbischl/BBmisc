@@ -5,8 +5,8 @@
 #'
 #' @param x [any]\cr
 #'   Any object, usually the return value of \code{\link[base]{try}},
-#' \code{\link[base]{tryCatch}, or a function which may return a
-#' \code{\link[base]{simpleError}.
+#' \code{\link[base]{tryCatch}}, or a function which may return a
+#' \code{\link[base]{simpleError}}.
 #' @return [\code{logical(1)}].
 #' @export
 #' @examples
