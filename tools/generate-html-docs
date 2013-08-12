@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript --vanilla
 
-setwd("html-docs")
+setwd("html")
 try ({
   library(knitr)
   knit_rd("BBmisc")
