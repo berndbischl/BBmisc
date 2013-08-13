@@ -3,7 +3,7 @@ context("makeProgressBar")
 test_that("makeProgressBar", {
   cat("\n")
   bar = makeProgressBar()
-  for(i in 0:100) { 
+  for(i in 0:100) {
     bar$set(i)
     Sys.sleep(0.01)
   }
@@ -17,18 +17,21 @@ test_that("makeProgressBar", {
     bar$set(i)
     Sys.sleep(0.1)
   }
-  bar$set(0.2)
-  bar$set(0.2)
+  # FIXME new PB is killed automatically after reaching max
+  #bar$set(0.2)
+  #bar$set(0.2)
   bar = makeProgressBar(max=10^6, label="          ")
   for(i in 10^seq(1:6)) {
     bar$set(i, msg=sprintf("%i", i))
     Sys.sleep(0.1)
   }
-  
-  bar = makeProgressBar(min=0, max=0)
-  bar$set(0)
-  bar = makeProgressBar(min=0, max=0)
-  bar$inc(0)
+
+  # FIXME this is now an error
+  #bar = makeProgressBar(min=0, max=0)
+  #bar$set(0)
+  #bar = makeProgressBar(min=0, max=0)
+  #bar$inc(0)
+  expect_error(makeProgressBar(min = 0, max = 0))
 })
 
 test_that("makeProgressBar global options", {
@@ -37,13 +40,13 @@ test_that("makeProgressBar global options", {
   options(BBmisc.ProgressBar.style = "off")
   cat("\n")
   bar = makeProgressBar(max=5)
-  for(i in 0:5) { 
+  for(i in 0:5) {
      expect_output(bar$set(i), "^$")
   }
   options(BBmisc.ProgressBar.style = "text", BBmisc.ProgressBar.width = 30)
   cat("\n")
   bar = makeProgressBar(max=5)
-  for(i in 0:5) { 
+  for(i in 0:5) {
      bar$set(i)
   }
   options(BBmisc.ProgressBar.style = old.style, BBmisc.ProgressBar.width = old.width)
