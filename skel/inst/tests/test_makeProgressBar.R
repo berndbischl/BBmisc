@@ -17,21 +17,18 @@ test_that("makeProgressBar", {
     bar$set(i)
     Sys.sleep(0.1)
   }
-  # FIXME new PB is killed automatically after reaching max
-  #bar$set(0.2)
-  #bar$set(0.2)
+  bar$set(0.2)
+  bar$set(0.2)
   bar = makeProgressBar(max=10^6, label="          ")
   for(i in 10^seq(1:6)) {
     bar$set(i, msg=sprintf("%i", i))
     Sys.sleep(0.1)
   }
 
-  # FIXME this is now an error
-  #bar = makeProgressBar(min=0, max=0)
-  #bar$set(0)
-  #bar = makeProgressBar(min=0, max=0)
-  #bar$inc(0)
-  expect_error(makeProgressBar(min = 0, max = 0))
+  bar = makeProgressBar(min=0, max=0)
+  bar$set(0)
+  bar = makeProgressBar(min=0, max=0)
+  bar$inc(0)
 })
 
 test_that("makeProgressBar global options", {
