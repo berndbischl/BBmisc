@@ -1,4 +1,4 @@
-#' Simple logger which outputs to a file
+#' Simple logger which outputs to a file.
 #'
 #' Creates a simple file logger closure to log to a file, including time stamps.
 #' An optional buffer holds the last few log messages.
@@ -12,12 +12,13 @@
 #'   Number of log messages to keep in memory for quick access.
 #'   Default is \code{10}.
 #' @return [\code{\link{SimpleFileLogger}}]. A list with following functions:
-#'   \item{log [\code{function(msg)}]}{Send the log message.}
-#'   \item{get [\code{function(n)}]}{Get the last \code{n} log messages.}
+#'   \item{log [\code{function(msg)}]}{Send log message.}
+#'   \item{getMessages [\code{function(n)}]}{Get last \code{n} log messages.}
 #'   \item{clear [\code{function()}]}{Resets logger and deletes log file.}
-#'   \item{n.logs [\code{function()}]}{Returns the number of logs written.}
+#'   \item{getSize [\code{function()}]}{Returns the number of logs written.}
 #' @export
-simpleFileLogger = function(file, touch = FALSE, keep = 10L) {
+#' @aliases SimpleFileLogger
+makeSimpleFileLogger = function(file, touch = FALSE, keep = 10L) {
   checkArg(file, "character", len=1L, na.ok=FALSE)
   checkArg(touch, "logical", len=1L, na.ok=FALSE)
   keep = convertInteger(keep)
@@ -37,7 +38,7 @@ simpleFileLogger = function(file, touch = FALSE, keep = 10L) {
       catf("<%s> %s", as.character(Sys.time()), msg, file=file, append=TRUE, newline=TRUE)
       n.lines <<- n.lines + 1L
     },
-    get = function(n) {
+    getMessages = function(n) {
       if (!keep || n > keep)
         return(sub("^<.+> (.*)", "\\1", tail(readLines(file), n)))
       buffer$get(n)
@@ -48,7 +49,7 @@ simpleFileLogger = function(file, touch = FALSE, keep = 10L) {
       n.lines <<- 0L
       file.remove(file)
     },
-    n.logs = function() {
+    getSize = function() {
       n.lines
     }
   ), "SimpleFileLogger")
