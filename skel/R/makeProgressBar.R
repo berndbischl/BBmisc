@@ -26,11 +26,16 @@
 #' @param char [\code{character(1)}]\cr
 #'   A single character used to display progress in the bar.
 #'   Default is \sQuote{+}.
+#' @param log [\code{character(1)}]\cr
+#'   URI to a log file. Messages can be send using the returned function \code{log}. Send messages are preceded with a time stamp.
+#'   If the file exists, it will be removed!
+#'   Default is \code{NULL} which disables logging.
 #' @return [\code{\link{ProgressBar}}]. A list with following functions:
 #'   \item{set [\code{function(value, msg=label)}]}{Set the bar to a value and possibly display a message instead of the label.}
 #'   \item{inc [\code{function(value, msg=label)}]}{Increase the bar and possibly display a message instead of the label.}
 #'   \item{kill [\code{function(clear=FALSE)}]}{Kill the bar so it cannot be used anymore. Cursor is moved to new line. You can also erase its display.}
 #'   \item{error [\code{function(e)}]}{Useful in \code{tryCatch} to properly display error messages below the bar. See the example.}
+#'   \item{log [\code{function(msg)}]}{Function to send log messages to the specified file.}
 #' @export
 #' @aliases ProgressBar
 #' @examples
@@ -169,7 +174,7 @@ makeProgressBar = function(min = 0, max = 100, label = "", char = "+", log = NUL
   }
 
   inc = function(inc = 1L, label) {
-    set(value + inc, label)
+    set(self$state + inc, label)
   }
 
   error = function(e) {
