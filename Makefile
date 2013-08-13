@@ -56,7 +56,7 @@ check-rev-dep: install
 
 html: install
 	echo "Generating html docs..."
-	${DELETE} html-docs
-	mkdir html-docs
+	${DELETE} html
+	mkdir html
 	${RSCRIPT} ./tools/generate-html-docs
  

@@ -69,7 +69,7 @@ test_that("parallel local", {
   parallelStop()
 })
 
-if (interactive()) {
+if (isExpensiveExampleOk()) {
   test_that("parallel multicore", {
     parallelStart(mode="multicore", cpus=2)
     partest1()
@@ -114,4 +114,5 @@ if (interactive()) {
     parallelStop()    
     
   })
-}
+}  
+

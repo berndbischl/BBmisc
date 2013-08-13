@@ -66,8 +66,8 @@ parallelMap = function(fun, ..., more.args=list(), simplify=FALSE, use.names=FAL
       if (any(inds.err))
         stop(collapse(c("\n", sapply(res[inds.err], as.character), sep="\n")))
     }  else if (mode == "snowfall") {
-      sfClusterEval(options(BBmisc.parallel.export.env = ".GlobalEnv"))
-      sfClusterCall(assign, "parallelGetExported", parallelGetExported, envir=globalenv())
+      #sfClusterEval(options(BBmisc.parallel.export.env = ".GlobalEnv"))
+      #sfClusterCall(assign, "parallelGetExported", parallelGetExported, envir=globalenv())
       res = sfClusterApplyLB(toList(...), fun=slaveWrapper, .fun=fun, .log=log)
     } else if (mode == "BatchJobs") {
       fd = getOption("BBmisc.parallel.bj.reg.file.path")

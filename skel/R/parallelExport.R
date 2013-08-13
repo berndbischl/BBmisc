@@ -7,7 +7,7 @@
 #'
 #' @param ... [\code{character(1)}]\cr
 #'   Names of object to export.
-#' @param list [list of \code{character(1)}]\cr
+#' @param obj.names [\code{character(1)}]\cr
 #'   Names of objects to export.
 #'   Alternative way to pass arguments.
 #' @return Nothing.
@@ -19,19 +19,19 @@
 #' parallelExport("foo")
 #' y <- parallelMap(f, 1:3)
 #' parallelStop()
-parallelExport = function(..., list=character(0)) {
+parallelExport = function(..., obj.names=character(0)) {
   args = list(...)
   checkListElementClass(args, "character")
-  checkArg(list, "character", na.ok=FALSE)
-  ns = union(unlist(args), list)
+  checkArg(obj.names, "character", na.ok=FALSE)
+  ns = union(unlist(args), obj.names)
   mode = getOption("BBmisc.parallel.mode")
   
   if (mode %in% c("local", "multicore")) {
     # multicore does not require to export because mem is duplicated after fork (still copy-on-write)
-    options(BBmisc.parallel.export.env = ".BBmisc.parallel.export.env")
-    for (n in ns) {
-      assign(n, get(n, envir=sys.parent()), envir=.BBmisc.parallel.export.env)
-    }
+    #options(BBmisc.parallel.export.env = ".BBmisc.parallel.export.env")
+    #for (n in ns) {
+    #  assign(n, get(n, envir=sys.parent()), envir=.BBmisc.parallel.export.env)
+    #}
   }  else if (mode == "snowfall") {
     sfExport(list=ns)
     #sfClusterEval(options(BBmisc.parallel.export.env = ".GlobalEnv"))
@@ -44,20 +44,20 @@ parallelExport = function(..., list=character(0)) {
   invisible(NULL)
 }
 
-#' Retrieve a with \code{\link{parallelExport}} exported in slave code.
-#'
-#' @param name [\code{character(1)}]\cr
-#'   Name of exported object.
-#' @return [any]. Object value.
-#' @export
-parallelGetExported = function(name) {
-  penv = getOption("BBmisc.parallel.export.env")
-  if (penv == ".BBmisc.parallel.export.env")
-    get(name, envir=.BBmisc.parallel.export.env)
-  else
-    get(name, envir=.GlobalEnv)
-}
-
+# #' Retrieve a with \code{\link{parallelExport}} exported in slave code.
+# #'
+# #' @param name [\code{character(1)}]\cr
+# #'   Name of exported object.
+# #' @return [any]. Object value.
+# #' @export
+# parallelGetExported = function(name) {
+#   penv = getOption("BBmisc.parallel.export.env")
+#   if (penv == ".BBmisc.parallel.export.env")
+#     get(name, envir=.BBmisc.parallel.export.env)
+#   else
+#     get(name, envir=.GlobalEnv)
+# }
+# 
 
 # parallelExport = function(...) {
 #  mode = getOption("BBmisc.parallel.mode")

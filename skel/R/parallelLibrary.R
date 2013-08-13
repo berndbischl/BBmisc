@@ -1,4 +1,4 @@
-#' Load packages on slaves.
+#' Load packages for parallelization.
 #'
 #' In case of snowfall mode, uses a combination of
 #' \code{\link[snowfall]{sfClusterEval}} and \code{\link{require}}
@@ -12,18 +12,23 @@
 #'   \code{\link{parallelStart}} or this argument is \code{NA}.
 #'   See \code{\link{parallelMap}}. 
 #'   Default is \code{NA}.
+#' @param master [\code{character(1)}]\cr
+#'   Load packages also on master?       
+#'   Default is \code{FALSE} for mode snowfall and \code{TRUE} for mode
+#'   local and multicore. For the later two,  
 #' @return Nothing.
 #' @export
 parallelLibrary = function(packages, level=as.character(NA)) {
   checkArg(packages, "character", na.ok=FALSE)
   checkArg(level, "character", len=1L, na.ok=TRUE)
-  
+  # load packages on master in any case
+  requirePackages(packages, why="parallelLibrary")
   if (getOption("BBmisc.parallel.mode") == "snowfall" && 
         (is.na(getOption("BBmisc.parallel.level")) || 
            getOption("BBmisc.parallel.level") == level)) {
     # sfLibrary chatters to much...
-    for (p in packages) {
-      sfClusterEval(require(p, character.only=TRUE))
-    }
+    .BBmisc.snowfall.pkgs = packages; sfExport(".BBmisc.snowfall.pkgs")
+    sfClusterEval(for (p in .BBmisc.snowfall.pkgs) {require(p, character.only=TRUE)})    
   }
 }
+
