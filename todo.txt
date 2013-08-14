@@ -1,17 +1,5 @@
-- parallelMap mit BatchJobs fertig machen. Was will der User von außen ändern? Export korrigieren / testen. Was soll cpus setting bedeuten?
--- TESTEN
-- da hier ist extrem scheiße, aufrufende pakete werden auf dem slave nicht geladen.
-externer test mit mlr?
-Error in parallelMap(doResampleIteration, 1:iters, level = "resample",  : 
-  Error in getOption("mlr.show.learner.output") || inherits(learner, "OptWrapper") :    invalid "x" type in "x || y" 
-...
 
-In der progressbar:
-- das löschen sollte besser mit "\b \b" passieren. das löscht wirklich 
-und man kommt so auch mehrere zeilen nach oben zurück
-- machmal ist es notwendig, längere zeilen zwischendurch zu displayen, z.b. bei submitJobs. (warnungen usw.)#
-  das sollte supported werden. 
-- wenn das angpasst ist, FIXME in submitJobs benhandeln
+progressbar:
 - da ist irgendwo ein bug, kann man provozieren mit bj in irace wenn ein fehler
   in den jobs auftritt
 
@@ -34,8 +22,6 @@ exponentielles glätten der zeiten fuer schaetzung der zeit
 stack 
 
 extractSubList für S4 automatisch?
-
-chunking in parallelMap
 
 checkArg möglicherweise in C machen und mit inherits per default testen wegen speed.
 dabei aber benchmarken.
