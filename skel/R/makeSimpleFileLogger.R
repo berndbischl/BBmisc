@@ -3,7 +3,7 @@
 #' Creates a simple file logger closure to log to a file, including time stamps.
 #' An optional buffer holds the last few log messages.
 #'
-#' @param file [\code{character(1)}]\cr
+#' @param logfile [\code{character(1)}]\cr
 #'   File to log to.
 #' @param touch [\code{logical(1)}]\cr
 #'   Should the file be created before the first log message?
@@ -16,17 +16,18 @@
 #'   \item{getMessages [\code{function(n)}]}{Get last \code{n} log messages.}
 #'   \item{clear [\code{function()}]}{Resets logger and deletes log file.}
 #'   \item{getSize [\code{function()}]}{Returns the number of logs written.}
+#'   \item{getLogfile [\code{function()}]}{Returns the full file name logs are written to.}
 #' @export
 #' @aliases SimpleFileLogger
-makeSimpleFileLogger = function(file, touch = FALSE, keep = 10L) {
-  checkArg(file, "character", len=1L, na.ok=FALSE)
+makeSimpleFileLogger = function(logfile, touch = FALSE, keep = 10L) {
+  checkArg(logfile, "character", len=1L, na.ok=FALSE)
   checkArg(touch, "logical", len=1L, na.ok=FALSE)
   keep = convertInteger(keep)
   checkArg(keep, "integer", len=1L, na.ok=FALSE)
-  if (!isDirectory(dirname(file)))
-    stopf("Directory '%s' does not exist", dirname(file))
-  if (touch && !file.create(file))
-    stopf("Could not create file '%s'", file)
+  if (!isDirectory(dirname(logfile)))
+    stopf("Directory '%s' does not exist", dirname(logfile))
+  if (touch && !file.create(logfile))
+    stopf("Could not create file '%s'", logfile)
   if (keep)
     buffer = circularBuffer("character", keep)
   n.lines = 0L
@@ -35,24 +36,27 @@ makeSimpleFileLogger = function(file, touch = FALSE, keep = 10L) {
     log = function(msg) {
       if (keep)
         buffer$push(msg)
-      if (!touch && n.lines == 0L && !file.create(file))
-        stopf("Could not create file '%s'", file)
-      catf("<%s> %s", as.character(Sys.time()), msg, file=file, append=TRUE, newline=TRUE)
+      if (!touch && n.lines == 0L && !file.create(logfile))
+        stopf("Could not create file '%s'", logfile)
+      catf("<%s> %s", as.character(Sys.time()), msg, file=logfile, append=TRUE, newline=TRUE)
       n.lines <<- n.lines + 1L
     },
     getMessages = function(n) {
       if (!keep || n > keep)
-        return(sub("^<.+> (.*)", "\\1", tail(readLines(file), n)))
+        return(sub("^<.+> (.*)", "\\1", tail(readLines(logfile), n)))
       buffer$get(n)
     },
     clear = function() {
       if (keep)
         buffer$clear()
       n.lines <<- 0L
-      file.remove(file)
+      file.remove(logfile)
     },
     getSize = function() {
       n.lines
+    },
+    getLogfile = function() {
+      logfile
     }
   ), "SimpleFileLogger")
 }
