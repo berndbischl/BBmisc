@@ -1,3 +1,19 @@
+BBmisc_1.3-????:
+- removed parallelMap et al., this is now hosted in an extra package at:
+  https://github.com/berndbischl/parallelMap
+- bugfix for checkArg, lower/upper only checked first element
+- exta argument "missing.val" for names2
+- extra argument "logicals.as.factor" for convertDFCols 
+- some speed improvements for convertDFCols and notin
+- is.error also works now for objects of class "error" and not only "try-error"
+- new functions:
+-- isDirectory
+-- rowLapply
+-- setAttribute
+-- seq_row, seq_col
+-- strrepeat
+-- simpleFileLogger
+
 BBmisc_1.2-200:
 - checkArg can now test whether arg is one of multiple classes (OR disjunctive)
 - bug fix: cpus setting was not properly respected in multicore mode
