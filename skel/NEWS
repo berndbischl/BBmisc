@@ -13,6 +13,7 @@ BBmisc_1.3-????:
 -- seq_row, seq_col
 -- strrepeat
 -- simpleFileLogger
+-- isScalarNA
 
 BBmisc_1.2-200:
 - checkArg can now test whether arg is one of multiple classes (OR disjunctive)
