@@ -25,7 +25,7 @@ makeSimpleFileLogger = function(file, touch = FALSE, keep = 10L) {
   checkArg(keep, "integer", len=1L, na.ok=FALSE)
   if (!isDirectory(dirname(file)))
     stopf("Directory '%s' does not exist", dirname(file))
-  if (!file.create(file))
+  if (touch && !file.create(file))
     stopf("Could not create file '%s'", file)
   if (keep)
     buffer = circularBuffer("character", keep)
@@ -35,6 +35,8 @@ makeSimpleFileLogger = function(file, touch = FALSE, keep = 10L) {
     log = function(msg) {
       if (keep)
         buffer$push(msg)
+      if (!touch && n.lines == 0L && !file.create(file))
+        stopf("Could not create file '%s'", file)
       catf("<%s> %s", as.character(Sys.time()), msg, file=file, append=TRUE, newline=TRUE)
       n.lines <<- n.lines + 1L
     },
