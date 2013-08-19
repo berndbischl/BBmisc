@@ -1,4 +1,4 @@
-#' Apply funciton to rows of a data frame
+#' Apply function to rows of a data frame.
 #'
 #' Just like an \code{\link[base]{lapply}} on data frames,
 #' but on the rows.
@@ -13,7 +13,15 @@
 #' @param unlist [\code{logical(1)}]\cr
 #'   Unlist the row? Note that automatic conversion may be triggered for
 #'   lists of mixed data types
-#' @return \code{list} of length \code{nrow(df)}.
+#'   Default is \code{FALSE}.
+#' @param simplify [\code{logical(1)}]\cr
+#'   Should the result be simplified?
+#'   See \code{\link{sapply}}.
+#'   Default is \code{TRUE}.
+#' @param use.names [\code{logical(1)}]\cr
+#'   Should result be named by the row names of \code{df}?
+#'   Default is \code{TRUE}.
+#' @return [\code{list} or simplified object]. Length is \code{nrow(df)}.
 #' @export
 #' @examples
 #'  rowLapply(iris, function(x) x$Sepal.Length + x$Sepal.Width)
@@ -31,3 +39,26 @@ rowLapply = function(df, fun, ..., unlist = FALSE) {
 
   lapply(seq_len(nrow(df)), .wrap, .fun = fun, .df = df, ...)
 }
+
+#' @export
+#' @rdname rowLapply
+rowSapply = function(df, fun, ..., unlist = FALSE, simplify=TRUE, use.names=TRUE) {
+  checkArg(simplify, "logical", len=1L, na.ok=FALSE)
+  checkArg(use.names, "logical", len=1L, na.ok=FALSE)
+  ys = rowLapply(df, fun, ..., unlist = FALSE)
+  if (simplify && length(ys)) 
+    ys = simplify2array(ys)
+  if (use.names) {
+    if (is.matrix(ys)) {
+      colnames(ys) = rownames(df)
+      rownames(ys) = NULL
+    } else {
+      names(ys) = rownames(df)
+    }
+  } else {
+    names(ys) = NULL
+  }
+  return(ys)
+}
+
+

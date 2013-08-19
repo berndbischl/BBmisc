@@ -8,7 +8,7 @@ BBmisc_1.3-????:
 - is.error also works now for objects of class "error" and not only "try-error"
 - new functions:
 -- isDirectory
--- rowLapply
+-- rowLapply, rowSapply
 -- setAttribute
 -- seq_row, seq_col
 -- strrepeat

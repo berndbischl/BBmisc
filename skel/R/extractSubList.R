@@ -7,7 +7,7 @@
 #' @param element.value [any]\cr
 #'   If given, \code{\link{vapply}} is used and this argument is passed to \code{FUN.VALUE}.
 #' @param simplify [\code{logical(1)}]\cr
-#'   If \code{TRUE} \code{\link{sapply}} is used otherwise \code{\link{lapply}}.
+#'   If \code{TRUE} \code{\link{sapply}} is used, otherwise \code{\link{lapply}}.
 #'   Default is \code{TRUE}.
 #' @param use.names [\code{logical(1)}]\cr
 #'   If \code{TRUE} and \code{xs} is named, the result is named as \code{xs}, 

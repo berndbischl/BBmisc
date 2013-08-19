@@ -12,6 +12,6 @@
 #' printStrToChar(iris)
 printStrToChar = function(x, collapse="\n") {
   d = printToChar(str(x), collapse=NULL)
-  # FIXME: remove NULL from str
+  # remove NULL from str
   collapse(d[-length(d)], collapse)
 }
