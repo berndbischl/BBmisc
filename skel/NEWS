@@ -1,4 +1,4 @@
-BBmisc_1.3-????:
+BBmisc_1.3-64:
 - removed parallelMap et al., this is now hosted in an extra package at:
   https://github.com/berndbischl/parallelMap
 - bugfix for checkArg, lower/upper only checked first element

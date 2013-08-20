@@ -1,9 +1,3 @@
-
-progressbar:
-- da ist irgendwo ein bug, kann man provozieren mit bj in irace wenn ein fehler
-  in den jobs auftritt
-
-
 ## do lapply recursively on deep lists
   ## FIXME: Use rapply instead? Possibly not useful because rapply does
   ##   not limit descend depth. Investigate if rec.lapply becomes a
