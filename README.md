@@ -6,6 +6,8 @@ Miscellaneous helper functions for and from B. Bischl and some other guys at TU 
 Offical CRAN release site: 
 http://cran.r-project.org/web/packages/BBmisc/index.html
 
+R Documentation in HTML:
+http://www.statistik.tu-dortmund.de/~bischl/rdocs/BBmisc/
 
 How to install bleeding edge devlelopment version:
 
