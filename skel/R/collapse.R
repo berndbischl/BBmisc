@@ -5,7 +5,8 @@
 #' @param x [\code{vector}]\cr
 #'   Vector to collapse.
 #' @param sep [\code{character(1)}]\cr
-#'   Passed to \code{collapse} in  \code{\link{paste}}.
+#'   Passed to \code{collapse} in \code{\link{paste}}.
+#'   Default is \dQuote{,}.
 #' @return [\code{character(1)}].
 #' @export
 #' @examples 
