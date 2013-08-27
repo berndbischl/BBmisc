@@ -5,8 +5,7 @@ Description: Miscellaneous helper functions for and from
   package development.
 Author: Bernd Bischl <bernd_bischl@gmx.net>,
   Michel Lang <lang@statistik.tu-dortmund.de>, 
-  Olaf Mersmann <olafm@p-value.net>,
-  Dirk Surmann <surmann@statistik.tu-dortmund.de>
+  Olaf Mersmann <olafm@p-value.net>
 Maintainer: Bernd Bischl <bernd_bischl@gmx.net>
 URL: https://github.com/berndbischl/BBmisc
 BugReports: https://github.com/berndbischl/BBmisc/issues
