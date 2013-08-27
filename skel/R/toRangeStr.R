@@ -1,0 +1,44 @@
+#' Convert a numerical vector into a range string.
+#'
+#' @param x [\code{integer()}]\cr
+#'   Vector to convert into a range string.
+#' @param range.sep [\code{character(1)}]\cr
+#'   Separator between the first and last element of a range of consecutive
+#'   elements in \code{x}.
+#' @param block.sep [\code{character(1)}]\cr
+#'   Separator between non consecutive elements of \code{x} or ranges.
+#'
+#' @return [\code{character(1)}]
+#' @examples
+#' x <- sample(1:10, 7)
+#' toRangeStr(x)
+#' @export
+toRangeStr = function(x, range.sep=" - ", block.sep=", ") {
+  x = convertIntegers(x)
+  checkArg(x, "numeric", na.ok=FALSE)
+  checkArg(range.sep, "character", len=1, na.ok=FALSE)
+  checkArg(block.sep, "character", len=1, na.ok=FALSE)
+  
+  findRange = function(x) {
+    end_index = max(which(x == x[1] + 0:(length(x)-1)))
+    1:end_index
+  }
+  sorted_x = sort(unique(x))
+  res = c()
+  while(length(sorted_x) > 0) {
+    ## Find the longest head of sorted_x that has consecutive elements. 
+    rng = findRange(sorted_x)
+    ## Extract the leading range
+    head = sorted_x[rng]
+    ## Trim leading range.
+    sorted_x = sorted_x[-rng]    
+    res = if (length(head) == 1) {
+      c(res, format(head))
+    } else {
+      ## Collapse range into "min(head) - max(head)" string.
+      c(res, paste(c(head[1], head[length(head)]), collapse=range.sep))
+    }
+  }
+  ## Collapse elements/ranges with blockSep
+  paste(res, collapse=block.sep)
+}
