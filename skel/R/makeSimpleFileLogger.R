@@ -32,7 +32,7 @@ makeSimpleFileLogger = function(logfile, touch = FALSE, keep = 10L) {
     buffer = circularBuffer("character", keep)
   n.lines = 0L
 
-  setClasses(list(
+  makeS3Obj("SimpleFileLogger", 
     log = function(msg) {
       if (keep)
         buffer$push(msg)
@@ -58,7 +58,7 @@ makeSimpleFileLogger = function(logfile, touch = FALSE, keep = 10L) {
     getLogfile = function() {
       logfile
     }
-  ), "SimpleFileLogger")
+  )
 }
 
 circularBuffer = function(type, capacity) {
