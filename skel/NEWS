@@ -1,6 +1,7 @@
 BBmisc_1.?????:
 - new functions:
 -- makeS3Obj
+-- maxColumn
 
 BBmisc_1.3-64:
 - removed parallelMap et al., this is now hosted in an extra package at:
