@@ -138,7 +138,7 @@ makeProgressBar = function(min=0, max=100, label="", char="+") {
       cat("\n")
     killed <<- TRUE
   }
-  structure(list(
+  makeS3Obj("ProgressBar", 
     set = function(value, msg=label) draw(value=value, msg=msg),
     inc = function(inc, msg=label) draw(inc=inc, msg=msg),
     kill = kill,
@@ -146,5 +146,5 @@ makeProgressBar = function(min=0, max=100, label="", char="+") {
       kill(clear=FALSE)
       stop(e)
     }
-  ), class = "ProgressBar")
+  )
 }

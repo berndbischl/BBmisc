@@ -1,3 +1,7 @@
+BBmisc_1.?????:
+- new functions:
+-- makeS3Obj
+
 BBmisc_1.3-64:
 - removed parallelMap et al., this is now hosted in an extra package at:
   https://github.com/berndbischl/parallelMap
