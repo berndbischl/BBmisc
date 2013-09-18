@@ -29,3 +29,14 @@ test_that("getMinIndex", {
   expect_equal(getMinIndex(c()), integer(0))  
   expect_equal(getMinIndex(c(NA, NaN), na.rm=TRUE), integer(0))  
 })
+
+
+test_that("ties", {
+  expect_equal(getMaxIndex(c(1, 9, 9), ties.method="first"), 2L)
+  expect_equal(getMaxIndex(c(1, 9, 9), ties.method="last"), 3L)
+  expect_equal(getMaxIndex(3, ties.method="first"), 1L)
+  expect_equal(getMaxIndex(3, ties.method="last"), 1L)
+  expect_equal(getMaxIndex(c(9, 1, 9, 9), ties.method="first"), 1L)
+  expect_equal(getMaxIndex(c(9, 1, 9, 9), ties.method="last"), 4L)
+  
+})

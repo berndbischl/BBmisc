@@ -22,7 +22,6 @@ test_that("getMaxRowIndex", {
   expect_equal(getMaxRowIndex(a), apply(a, 2, which.max))
 })
 
-
 test_that("normal", {
   expect_equal(getMaxColIndex(diag(10)), 1:10)
   n = 100
@@ -55,3 +54,20 @@ test_that("max.col oddity", {
   expect_equal(getMaxColIndex(cbind(1:10, 2:11, -Inf)), rep(2, 10))
   expect_equal(getMaxColIndex(cbind(-1e9 * 1:10, 1:10, 2:11)), rep(3, 10))
 })
+
+test_that("ties", {
+  a = matrix(c(1, 1, 2, 2), nrow=2, byrow=TRUE)
+  expect_equal(getMaxColIndex(a, ties.method="first"), c(1L, 1L))
+  expect_equal(getMaxColIndex(a, ties.method="last"), c(2L, 2L))
+  a = matrix(c(2, 1, 2, 2, 2, 1), nrow=2, byrow=TRUE)
+  expect_equal(getMaxColIndex(a, ties.method="first"), c(1L, 1L))
+  expect_equal(getMaxColIndex(a, ties.method="last"), c(3L, 2L))
+  a = matrix(c(1, 1, 2, 2), nrow=2, byrow=TRUE)
+  expect_equal(getMaxRowIndex(a, ties.method="first"), c(2L, 2L))
+  expect_equal(getMaxRowIndex(a, ties.method="last"), c(2L, 2L))
+  a = matrix(c(2, 1, 2, 2, 2, 1), nrow=2, byrow=TRUE)
+  expect_equal(getMaxRowIndex(a, ties.method="first"), c(1L, 2L, 1L))
+  expect_equal(getMaxRowIndex(a, ties.method="last"), c(2L, 2L, 1L))
+})
+
+

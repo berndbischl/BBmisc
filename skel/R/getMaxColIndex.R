@@ -2,7 +2,11 @@
 #'
 #' @param x [\code{matrix(n,m)}] \cr
 #'   Numerical input matrix.
-#' @param na.rm [\code{numeric}]\cr
+#' @param ties.method [\code{character(1)}]\cr
+#'   How should ties be handled?
+#'   Possible are: \dQuote{random}, \dQuote{first}, \dQuote{last}.
+#'   Default is \dQuote{random}.
+#' @param na.rm [\code{logical(1)}]\cr
 #'   If \code{FALSE}, NA is returned if an NA is encountered in \code{x}.
 #'   If \code{TRUE}, NAs are disregarded.
 #'   Default is \code{FALSE}
@@ -14,26 +18,28 @@
 #' print(x)
 #' print(getMaxColIndex(x))
 #' print(getMinColIndex(x))
-getMaxColIndex = function(x, na.rm=FALSE) {
+getMaxColIndex = function(x, ties.method="random", na.rm=FALSE) {
   mode(x) = "numeric"
-  .Call(c_getMaxColIndex, x, na.rm)
+  ties.method = switch(ties.method, first=2, last=3, 1)
+  .Call(c_getMaxColIndex, x, ties.method, na.rm)
 }
 
 #' @export
 #' @rdname getMaxColIndex
-getMinColIndex = function(x, na.rm=FALSE) {
-  getMaxColIndex(-x, na.rm)
+getMinColIndex = function(x, ties.method="random", na.rm=FALSE) {
+  getMaxColIndex(-x, ties.method, na.rm)
 }
 
 #' @export
 #' @rdname getMaxColIndex
-getMaxRowIndex = function(x, na.rm=FALSE) {
+getMaxRowIndex = function(x, ties.method="random", na.rm=FALSE) {
   mode(x) = "numeric"
-  .Call(c_getMaxRowIndex, x, na.rm)
+  ties.method = switch(ties.method, first=2, last=3, 1)
+  .Call(c_getMaxRowIndex, x, ties.method, na.rm)
 }
 
 #' @export
 #' @rdname getMaxColIndex
-getMinRowIndex = function(x, na.rm=FALSE) {
-  getMaxRowIndex(-x, na.rm)
+getMinRowIndex = function(x, ties.method="random", na.rm=FALSE) {
+  getMaxRowIndex(-x, ties.method, na.rm)
 }

@@ -20,7 +20,7 @@
   return  : Index of maximal element (1-based) or 
             -1 if we did not find a maximal elemnt (empty vector or only removed NAs)
 */
-int get_max_index(double *x, size_t n, size_t step, int na_rm) {
+int get_max_index(double *x, size_t n, size_t step, int ties_method, int na_rm) {
   size_t i;
   int max_index = -2;
   int number_of_ties = 0;
@@ -35,9 +35,13 @@ int get_max_index(double *x, size_t n, size_t step, int na_rm) {
       max_value = current_value;
       max_index = i;
     } else if (current_value == max_value) {
-      ++number_of_ties;
-      if (number_of_ties * unif_rand() < 1.0)
-        max_index = i;
+      if (ties_method == 1) {
+        ++number_of_ties;
+        if (number_of_ties * unif_rand() < 1.0)
+          max_index = i;
+      } else if (ties_method == 3) {
+        max_index = i; 
+      }
     }
   }
   // make index 1-based
@@ -47,10 +51,11 @@ int get_max_index(double *x, size_t n, size_t step, int na_rm) {
 SEXP c_getMaxIndex(SEXP s_x, SEXP s_ties_method, SEXP s_na_rm) {
   if (length(s_x) == 0)
     return NEW_INTEGER(0);
+  int ties_method = asInteger(s_ties_method);
   int na_rm = asInteger(s_na_rm);
   UNPACK_REAL_VECTOR(s_x, x, len_x);
   GetRNGstate();
-  int index = get_max_index(x, len_x, 1, na_rm);
+  int index = get_max_index(x, len_x, 1, ties_method, na_rm);
   PutRNGstate();
   if (index == -1)
     return NEW_INTEGER(0);
