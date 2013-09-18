@@ -9,7 +9,7 @@
 
 int get_max_index(double *x, size_t n, size_t stride, int ties_method, int na_rm);
 
-SEXP c_getMaxColIndex(SEXP s_x, SEXP s_ties_method, SEXP s_na_rm) {
+SEXP c_getMaxIndexOfRows(SEXP s_x, SEXP s_ties_method, SEXP s_na_rm) {
   int ties_method = asInteger(s_ties_method);
   int na_rm = asInteger(s_na_rm);
   UNPACK_REAL_MATRIX(s_x, x, nrow_x, ncol_x);
@@ -25,7 +25,7 @@ SEXP c_getMaxColIndex(SEXP s_x, SEXP s_ties_method, SEXP s_na_rm) {
   return s_ret;
 }
 
-SEXP c_getMaxRowIndex(SEXP s_x, SEXP s_ties_method, SEXP s_na_rm) {
+SEXP c_getMaxIndexOfCols(SEXP s_x, SEXP s_ties_method, SEXP s_na_rm) {
   int ties_method = asInteger(s_ties_method);
   int na_rm = asInteger(s_na_rm);
   UNPACK_REAL_MATRIX(s_x, x, nrow_x, ncol_x);

@@ -1,4 +1,9 @@
 #' Find row- or columnwise the index of the maximal / minimal element in a matrix.
+#' 
+#' \code{getMaxIndexOfRows} returns the index of the maximal element of each row.
+#' \code{getMinIndexOfRows} returns the index of the minimal element of each row.
+#' \code{getMaxIndexOfCols} returns the index of the maximal element of each col.
+#' \code{getMinIndexOfCols} returns the index of the minimal element of each col.
 #'
 #' @param x [\code{matrix(n,m)}] \cr
 #'   Numerical input matrix.
@@ -12,34 +17,34 @@
 #'   Default is \code{FALSE}
 #' @return [\code{integer(n)}].
 #' @export
-#' @useDynLib BBmisc c_getMaxColIndex c_getMaxRowIndex
+#' @useDynLib BBmisc c_getMaxIndexOfRows c_getMaxIndexOfCols
 #' @examples
 #' x <- matrix(runif(5 * 3), ncol=3)
 #' print(x)
-#' print(getMaxColIndex(x))
-#' print(getMinColIndex(x))
-getMaxColIndex = function(x, ties.method="random", na.rm=FALSE) {
+#' print(getMaxIndexOfRows(x))
+#' print(getMinIndexOfRows(x))
+getMaxIndexOfRows = function(x, ties.method="random", na.rm=FALSE) {
   mode(x) = "numeric"
   ties.method = switch(ties.method, first=2, last=3, 1)
-  .Call(c_getMaxColIndex, x, ties.method, na.rm)
+  .Call(c_getMaxIndexOfRows, x, ties.method, na.rm)
 }
 
 #' @export
-#' @rdname getMaxColIndex
-getMinColIndex = function(x, ties.method="random", na.rm=FALSE) {
-  getMaxColIndex(-x, ties.method, na.rm)
+#' @rdname getMaxIndexOfRows
+getMinIndexOfRows = function(x, ties.method="random", na.rm=FALSE) {
+  getMaxIndexOfRows(-x, ties.method, na.rm)
 }
 
 #' @export
-#' @rdname getMaxColIndex
-getMaxRowIndex = function(x, ties.method="random", na.rm=FALSE) {
+#' @rdname getMaxIndexOfRows
+getMaxIndexOfCols = function(x, ties.method="random", na.rm=FALSE) {
   mode(x) = "numeric"
   ties.method = switch(ties.method, first=2, last=3, 1)
-  .Call(c_getMaxRowIndex, x, ties.method, na.rm)
+  .Call(c_getMaxIndexOfCols, x, ties.method, na.rm)
 }
 
 #' @export
-#' @rdname getMaxColIndex
-getMinRowIndex = function(x, ties.method="random", na.rm=FALSE) {
-  getMaxRowIndex(-x, ties.method, na.rm)
+#' @rdname getMaxIndexOfRows
+getMinIndexOfCols = function(x, ties.method="random", na.rm=FALSE) {
+  getMaxIndexOfCols(-x, ties.method, na.rm)
 }
