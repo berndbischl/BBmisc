@@ -4,7 +4,9 @@
 #' \code{getMinIndexOfRows} returns the index of the minimal element of each row.
 #' \code{getMaxIndexOfCols} returns the index of the maximal element of each col.
 #' \code{getMinIndexOfCols} returns the index of the minimal element of each col.
-#'
+#' If a corresponding vector (row or col) is empty, possibly after NA removal, -1 is returned
+#' as index.
+#' 
 #' @param x [\code{matrix(n,m)}] \cr
 #'   Numerical input matrix.
 #' @param ties.method [\code{character(1)}]\cr
