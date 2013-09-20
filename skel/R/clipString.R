@@ -1,0 +1,28 @@
+#' Shortens a string to a given length.
+#' 
+#' @param x [\code{character(1)}]\cr
+#'   String.
+#' @param len [\code{integer(1)}]\cr
+#'   Absolute length the string should be clipped to, including \code{tail}.
+#' @param tail [\code{character(1)}]\cr
+#'   If the string has to be shortened at least 1 character, the final characters will be \code{tail}.
+#'   Default is \dQuote{...}.
+#' @return [\code{character(1)}]. 
+#' @export
+#' @examples
+#' print(clipString("abcdef", 10))
+#' print(clipString("abcdef", 2))
+#' print(clipString("abcdef", 5))
+#FIXME what abou NAs.
+# careful: in BJ this functuion was used, the code there had NA->NA!
+clipString = function(x, len, tail="...") {
+  checkArg(x, "character", len=1L, na.ok=FALSE)
+  len = convertInteger(len)
+  checkArg(len, "integer", len=1L, na.ok=FALSE)
+  checkArg(tail, "character", len=1L, na.ok=FALSE)
+  #if (is.na(x))
+  #  return(NA_character_)
+  if (nchar(x) > len)
+    return(paste(substr(x, 1L, len - nchar(tail)), tail, sep=""))
+  return(x)
+}

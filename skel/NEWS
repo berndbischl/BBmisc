@@ -4,6 +4,9 @@ BBmisc_1.?????:
 -- getMaxIndex, getMinIndex
 -- getMaxIndexOfRows, getMinIndexOfRows, getMaxIndexOfCols, getMinIndexOfCols 
 -- toRangeStr
+-- getOperatingSystem, isWindows, isUnix
+-- clipString
+-- getCurrentTimeSecs
 
 BBmisc_1.3-64:
 - removed parallelMap et al., this is now hosted in an extra package at:
