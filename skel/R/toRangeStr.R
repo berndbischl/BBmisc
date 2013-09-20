@@ -42,3 +42,11 @@ toRangeStr = function(x, range.sep=" - ", block.sep=", ") {
   ## Collapse elements/ranges with blockSep
   paste(res, collapse=block.sep)
 }
+
+
+# FIXME no need for loops:
+# x = sort(unique(x))
+# x = unname(split(x, c(0L, cumsum(diff(x) > 1L))))
+# combine = function(x) if (length(x) == 1L) as.character(x) else sprintf("%i - %i", x[1L], x[length(x)])
+# collapse(vapply(x, combine, character(1L), USE.NAMES=FALSE), ", ")
+
