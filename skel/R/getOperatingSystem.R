@@ -1,8 +1,10 @@
 #' Functions to determine the operating system.
-#' 
-#' \code{getOperatingSystem}: Simple wrapper for \code{.Platform$OS.type}, returns \code{character(1)}.
-#' \code{isWindows}: Predicate for OS string, returns \code{logical(1)}.
-#' \code{isUnix}: Predicate for OS string, returns \code{logical(1)}.
+#'
+#' \itemize{
+#' \item{getOperatingSystem}{Simple wrapper for \code{.Platform$OS.type}, returns \code{character(1)}.}
+#' \item{isUnix}{Predicate for OS string, returns \code{logical(1)}.}
+#' \item{isWindows}{Predicate for OS string, returns \code{logical(1)}.}
+#' }
 #'
 #' @return See above.
 #' @export
