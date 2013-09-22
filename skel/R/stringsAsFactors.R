@@ -8,6 +8,7 @@
 #'   Default is \code{TRUE} 
 #' @return [\code{data.frame}].
 #' @export
+# FIXME this function should be removed, we have convertDfCols!
 stringsAsFactors = function(data, do=TRUE) {
   if (do) {
     inds = which(vapply(data, is.character, logical(1L)))
@@ -16,4 +17,3 @@ stringsAsFactors = function(data, do=TRUE) {
   }
   return(data)
 }
- 
