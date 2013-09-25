@@ -42,17 +42,12 @@ test_that("NA values", {
   expect_equal(getMaxIndexOfRows(a, na.rm=TRUE), c(1L, 2L, -1))  
 })
 
-#FIXME i dont get this test from olaf?
-# why should we disregard Inf values?
-
-# test_that("infinite values", {
-#   n = 300
-#   m = matrix(runif(n), ncol=3)
-#   m[, 2] = -1
-#   mm = m
-#   mm[, 2] = Inf
-#   expect_equal(getMaxIndexOfRows(m), getMaxIndexOfRows(mm))
-# })
+test_that("infinite values", {
+  n = 300
+  m = matrix(runif(n), ncol=3)
+  m[, 2] = Inf
+  expect_equal(getMaxIndexOfRows(m), rep(2L, 100L))
+})
 
 test_that("max.col oddity", {
   expect_equal(getMaxIndexOfRows(cbind(1:10, 2:11, -Inf)), rep(2, 10))
