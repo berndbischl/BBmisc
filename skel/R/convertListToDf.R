@@ -1,3 +1,4 @@
+#FIXME what is this actually useful for? it was from BJ
 list2df = function(li, force.names=FALSE, strings.as.factors = default.stringsAsFactors()) {
   if (length(li) == 0L)
     return(as.data.frame(matrix(nrow = 0L, ncol = 0L)))
