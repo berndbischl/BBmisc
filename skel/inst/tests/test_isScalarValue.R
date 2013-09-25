@@ -12,4 +12,7 @@ test_that("isScalarValue", {
   expect_false(isScalarValue(iris))
   expect_false(isScalarValue(1:2))
   expect_false(isScalarValue(list(1)))
+  
+  expect_true(isScalarValue(NULL, null.ok=TRUE))
+  expect_false(isScalarValue(NULL, na.ok=FALSE))
 })
