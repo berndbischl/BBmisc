@@ -1,4 +1,5 @@
 BBmisc_1.?????:
+- renamed convertDfCols to convertDataFrameCols
 - new functions:
 -- makeS3Obj
 -- getMaxIndex, getMinIndex
