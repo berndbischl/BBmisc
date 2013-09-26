@@ -44,7 +44,7 @@ int get_max_index(double *x, size_t n, size_t step, int ties_method, int na_rm) 
       }
     }
   }
-  // make index 1-based
+  /* make index 1-based */
   return max_index + 1;
 }
 
