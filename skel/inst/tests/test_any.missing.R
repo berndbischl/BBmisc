@@ -1,7 +1,6 @@
 context("any.missing")
 
 test_that("any.missing", {
-          library(testthat)
   setNA = function(x, i = sample(length(x), 1)) {
     if (is.list(x))
       x[i] = list(NULL)

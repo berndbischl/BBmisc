@@ -7,7 +7,8 @@
 #' @param x [\code{ANY}]\cr
 #'  Object to check. 
 #' @return [\code{logical(1)}] Returns \code{TRUE} if at least one element of \code{x} was missing (see details).
+#' @useDynLib BBmisc c_any_missing
 #' @export
 any.missing = function(x) {
-  .Call("any_missing", x)
+  .Call("c_any_missing", x)
 }
