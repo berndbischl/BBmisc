@@ -56,14 +56,14 @@
 #' xs[3] = NA
 #' checkRule(xs, "N+")
 checkRule = function(x, rule) {
-  !is.character(.Call("c_checkRule", x, rule))
+  !is.character(.Call("c_checkRule", x, rule, PACKAGE="BBmisc"))
 }
 
 #' @export
 #' @rdname checkRule
 #' @useDynLib BBmisc c_checkRule 
 assertRule = function(x, rule) {
-  res = .Call("c_checkRule", x, rule)
+  res = .Call("c_checkRule", x, rule, PACKAGE="BBmisc")
   if (is.character(res))
     stopf(res, deparse(substitute(x)))
   invisible(TRUE)

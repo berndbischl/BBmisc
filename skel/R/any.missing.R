@@ -12,5 +12,5 @@
 #' @useDynLib BBmisc c_any_missing
 #' @export
 any.missing = function(x, inf.as.missing=TRUE) {
-  .Call("c_any_missing", x, inf.as.missing)
+  .Call("c_any_missing", x, inf.as.missing, PACKAGE="BBmisc")
 }
