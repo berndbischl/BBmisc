@@ -5,7 +5,7 @@
 #include <Rinternals.h>
 #include <Rdefines.h>
 
-Rboolean any_missing(SEXP);
-SEXP c_any_missing(SEXP);
+Rboolean any_missing(SEXP, Rboolean);
+SEXP c_any_missing(SEXP, SEXP);
 
 #endif

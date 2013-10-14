@@ -55,7 +55,7 @@ SEXP c_checkRule(SEXP x, SEXP rule) {
         default: error("Unknown type identifier '%c'", str[0]);
     }
 
-    if (check_missing && any_missing(x)) {
+    if (check_missing && any_missing(x, TRUE)) {
         snprintf(errmsg, MSGLEN, "'%%s' may not contain missing values");
         return ScalarString(mkChar(errmsg));
     }
