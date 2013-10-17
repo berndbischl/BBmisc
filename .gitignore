@@ -1,7 +1,8 @@
-pkg
-pkg.Rcheck
+BBmisc.Rcheck
 BBmisc_*.tar.gz
 .Rproj.user
 *.Rproj
 .Rhistory
 html
+*.swp
+
