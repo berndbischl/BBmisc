@@ -1,0 +1,36 @@
+\name{makeDataFrame}
+\alias{makeDataFrame}
+\title{Initialize data.frame in a convenient way.}
+\usage{
+  makeDataFrame(nrow, ncol, col.types, init,
+    row.names = NULL,
+    col.names = sprintf("V\%i", seq_len(ncol)))
+}
+\arguments{
+  \item{nrow}{[\code{integer(1)}]\cr Nubmer of rows.}
+
+  \item{ncol}{[\code{integer(1)}]\cr Number of columns.}
+
+  \item{col.types}{[\code{character(ncol)} |
+  \code{character(1)}]\cr Data types of columns.  If you
+  only pass one type, it will be replicated.}
+
+  \item{init}{[any]\cr Scalar object to initialize all
+  elements of the data.frame.  You do not need to specify
+  \code{col.types} if you pass this.}
+
+  \item{row.names}{[\code{character(nrow)} |
+  \code{NULL}]\cr Row names.  Default is \code{NULL}.}
+
+  \item{col.names}{[\code{character(ncol)}]\cr Column
+  names.  Default is \dQuote{V1}, \dQuote{V2}, and so on.}
+}
+\description{
+  Initialize data.frame in a convenient way.
+}
+\examples{
+print(makeDataFrame(3, 2, init=7))
+print(makeDataFrame(3, 2, "logical"))
+print(makeDataFrame(3, 2, c("logical", "numeric")))
+}
+

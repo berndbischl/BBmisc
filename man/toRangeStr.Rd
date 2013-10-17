@@ -1,0 +1,28 @@
+\name{toRangeStr}
+\alias{toRangeStr}
+\title{Convert a numerical vector into a range string.}
+\usage{
+  toRangeStr(x, range.sep = " - ", block.sep = ", ")
+}
+\arguments{
+  \item{x}{[\code{integer()}]\cr Vector to convert into a
+  range string.}
+
+  \item{range.sep}{[\code{character(1)}]\cr Separator
+  between the first and last element of a range of
+  consecutive elements in \code{x}.}
+
+  \item{block.sep}{[\code{character(1)}]\cr Separator
+  between non consecutive elements of \code{x} or ranges.}
+}
+\value{
+  [\code{character(1)}]
+}
+\description{
+  Convert a numerical vector into a range string.
+}
+\examples{
+x <- sample(1:10, 7)
+toRangeStr(x)
+}
+

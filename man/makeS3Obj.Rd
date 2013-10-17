@@ -1,0 +1,23 @@
+\name{makeS3Obj}
+\alias{makeS3Obj}
+\title{Simple constructor for S3 objects based on lists.}
+\usage{
+  makeS3Obj(classes, ...)
+}
+\arguments{
+  \item{classes}{[\code{character}]\cr Class(es) for
+  constructed object.}
+
+  \item{...}{[any]\cr Key-value pairs for class members.}
+}
+\value{
+  Object.
+}
+\description{
+  Simple wrapper for \code{as.list} and
+  \code{\link{setClasses}}.
+}
+\examples{
+makeS3Obj("car", speed=100, color="red")
+}
+

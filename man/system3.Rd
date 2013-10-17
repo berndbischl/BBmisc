@@ -1,0 +1,40 @@
+\name{system3}
+\alias{system3}
+\title{Wrapper for system2 with better return type and errorhandling.}
+\usage{
+  system3(command, args = character(), stdout = "",
+    stderr = "", wait = TRUE, ...,
+    stop.on.exit.code = wait)
+}
+\arguments{
+  \item{command}{See \code{\link{system2}}.}
+
+  \item{args}{See \code{\link{system2}}.}
+
+  \item{stdout}{See \code{\link{system2}}.}
+
+  \item{stderr}{See \code{\link{system2}}.}
+
+  \item{wait}{See \code{\link{system2}}.}
+
+  \item{...}{Further arguments passed to
+  \code{\link{system2}}.}
+
+  \item{stop.on.exit.code}{[\code{logical(1)}]\cr Should an
+  exception be thrown if an exit code greater 0 is
+  generated?  Can only be used if \code{wait} is
+  \code{TRUE}.  Default is \code{wait}.}
+}
+\value{
+  [\code{list}].  \item{exit.code [integer(1)]}{Exit code
+  of command. Given if wait is \code{TRUE}, otherwise
+  \code{NA}. 0L means success. 127L means command was not
+  found} \item{output [character]}{Output of command on
+  streams. Only given is \code{stdout} or \code{stderr} was
+  set to \code{TRUE}, otherwise \code{NA}.}
+}
+\description{
+  Wrapper for \code{\link{system2}} with better return type
+  and errorhandling.
+}
+

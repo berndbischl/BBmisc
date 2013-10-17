@@ -1,0 +1,44 @@
+\name{rowLapply}
+\alias{rowLapply}
+\alias{rowSapply}
+\title{Apply function to rows of a data frame.}
+\usage{
+  rowLapply(df, fun, ..., unlist = FALSE)
+
+  rowSapply(df, fun, ..., unlist = FALSE, simplify = TRUE,
+    use.names = TRUE)
+}
+\arguments{
+  \item{df}{[\code{data.frame}]\cr Data frame.}
+
+  \item{fun}{[\code{function}]\cr Function to apply. Rows
+  are passed as list or vector, depending on argument
+  \code{unlist}, as first argument.}
+
+  \item{...}{[\code{ANY}]\cr Additional arguments for
+  \code{fun}.}
+
+  \item{unlist}{[\code{logical(1)}]\cr Unlist the row? Note
+  that automatic conversion may be triggered for lists of
+  mixed data types Default is \code{FALSE}.}
+
+  \item{simplify}{[\code{logical(1)}]\cr Should the result
+  be simplified?  See \code{\link{sapply}}.  Default is
+  \code{TRUE}.}
+
+  \item{use.names}{[\code{logical(1)}]\cr Should result be
+  named by the row names of \code{df}?  Default is
+  \code{TRUE}.}
+}
+\value{
+  [\code{list} or simplified object]. Length is
+  \code{nrow(df)}.
+}
+\description{
+  Just like an \code{\link[base]{lapply}} on data frames,
+  but on the rows.
+}
+\examples{
+rowLapply(iris, function(x) x$Sepal.Length + x$Sepal.Width)
+}
+

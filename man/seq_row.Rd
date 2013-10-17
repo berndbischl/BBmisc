@@ -1,0 +1,28 @@
+\name{seq_row}
+\alias{seq_col}
+\alias{seq_row}
+\title{Generate sequences along rows or cols.}
+\usage{
+  seq_row(x)
+
+  seq_col(x)
+}
+\arguments{
+  \item{x}{[\code{data.frame} | \code{matrix}]\cr Data
+  frame, matrix or any object which supports
+  \code{\link[base]{nrow}} or \code{\link[base]{ncol}},
+  respectively.}
+}
+\value{
+  Vector of type [\code{integer}].
+}
+\description{
+  A simple convenience wrapper around
+  \code{\link[base]{seq_len}}.
+}
+\examples{
+data(iris)
+seq_row(iris)
+seq_col(iris)
+}
+

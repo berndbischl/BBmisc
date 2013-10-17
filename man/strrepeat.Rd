@@ -1,0 +1,25 @@
+\name{strrepeat}
+\alias{strrepeat}
+\title{Repeat and join a string}
+\usage{
+  strrepeat(x, n, sep = "")
+}
+\arguments{
+  \item{x}{[character]\cr Vector of characters.}
+
+  \item{n}{[\code{integer(1)}]\cr Times the vector \code{x}
+  is repeated.}
+
+  \item{sep}{[\code{character(1)}]\cr Separator to use to
+  collapse the vector of characters.}
+}
+\value{
+  \code{character(1)}.
+}
+\description{
+  Repeat and join a string
+}
+\examples{
+strrepeat("x", 3)
+}
+

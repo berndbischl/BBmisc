@@ -1,0 +1,33 @@
+\name{load2}
+\alias{load2}
+\title{Load RData file and return objects in it.}
+\usage{
+  load2(file, parts, simplify = TRUE, envir)
+}
+\arguments{
+  \item{file}{[\code{character(1)}]\cr File to load.}
+
+  \item{parts}{[\code{character}]\cr Elements in file to
+  load.  Default is all.}
+
+  \item{simplify}{[\code{logical(1)}]\cr If \code{TRUE}, a
+  list is only returned if \code{parts} and the file
+  contain both more than 1 element, otherwise the element
+  is directly returned.  Default is \code{TRUE}.}
+
+  \item{envir}{[\code{environment(1)}]\cr Assign objects to
+  this environment.  Default is not to assign.}
+}
+\value{
+  Either a single object or a list.
+}
+\description{
+  Load RData file and return objects in it.
+}
+\examples{
+fn <- tempfile()
+save2(file=fn, a=1, b=2, c=3)
+load2(fn, parts="a")
+load2(fn, parts=c("a", "c"))
+}
+

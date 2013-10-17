@@ -1,0 +1,39 @@
+\name{requirePackages}
+\alias{requirePackages}
+\title{Require some packages.}
+\usage{
+  requirePackages(packs, why = NULL, stop = TRUE,
+    suppress.warnings = FALSE, ...)
+}
+\arguments{
+  \item{packs}{[\code{character}]\cr Names of packages.}
+
+  \item{why}{[\code{character(1)}]\cr Short string
+  explaining why packages are required.  Default is
+  \code{NULL}.}
+
+  \item{stop}{[\code{logical(1)}]\cr Should an exception be
+  thrown for missing packages?  Default is \code{TRUE}.}
+
+  \item{suppress.warnings}{[\code{logical(1)}]\cr Should
+  warnings be suppressed in the calls to
+  \code{\link{require}}?  Default is \code{FALSE}.}
+
+  \item{...}{[any]\cr Passed on to \code{\link{require}}.}
+}
+\value{
+  [\code{logical}]. Named logical vector describing which
+  packages could be loaded.  Same length as \code{packs}.
+}
+\description{
+  If some packages could not be loaded and \code{stop} is
+  \code{TRUE} the following exception is thrown:
+  \dQuote{For <why> please install the following packages:
+  <missing packages>}. If \code{why} is \code{NULL} the
+  message is: \dQuote{Please install the following
+  packages: <missing packages>}.
+}
+\examples{
+requirePackages(c("BBmisc", "base"), why="BBmisc example")
+}
+

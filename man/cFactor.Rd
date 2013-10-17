@@ -1,0 +1,24 @@
+\name{cFactor}
+\alias{cFactor}
+\title{Combine multiple factors and return a factor.}
+\usage{
+  cFactor(...)
+}
+\arguments{
+  \item{...}{[\code{factor}]\cr The factors.}
+}
+\value{
+  [\code{factor}].
+}
+\description{
+  Note that function does not inherit from \code{\link{c}}
+  to not change R semantics behind your back when this
+  package is loaded.
+}
+\examples{
+f1 <- factor(c("a", "b"))
+f2 <- factor(c("b", "c"))
+print(c(f1, f2))
+print(cFactor(f1, f2))
+}
+

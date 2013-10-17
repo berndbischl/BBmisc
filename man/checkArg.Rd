@@ -1,0 +1,85 @@
+\name{checkArg}
+\alias{checkArg}
+\title{Check for a function argument.}
+\usage{
+  checkArg(x, cl, s4 = FALSE, len, min.len, max.len,
+    choices, subset, lower = NA, upper = NA, na.ok = TRUE,
+    formals)
+}
+\arguments{
+  \item{x}{[any]\cr Argument.}
+
+  \item{cl}{[\code{character}]\cr Class that argument must
+  \dQuote{inherit} from.  If multiple classes are given,
+  \code{x} must \dQuote{inherit} from at least one of
+  these.  See also argument \code{s4}.}
+
+  \item{s4}{[\code{logical(1)}]\cr If \code{TRUE}, use
+  \code{is} for checking class \code{cl}, otherwise use
+  \code{\link{inherits}}, which implies that only S3
+  classes are correctly checked. This is done for speed
+  reasons as calling \code{\link{is}} is pretty slow.
+  Default is \code{FALSE}.}
+
+  \item{len}{[\code{integer(1)}]\cr Length that argument
+  must have.  Not checked if not passed, which is the
+  default.}
+
+  \item{min.len}{[\code{integer(1)}]\cr Minimal length that
+  argument must have.  Not checked if not passed, which is
+  the default.}
+
+  \item{max.len}{[\code{integer(1)}]\cr Maximal length that
+  argument must have.  Not checked if not passed, which is
+  the default.}
+
+  \item{choices}{[any]\cr Discrete number of choices,
+  expressed by a vector of R objects.  If passed, argument
+  must be identical to one of these and nothing else is
+  checked.}
+
+  \item{subset}{[any]\cr Discrete number of choices,
+  expressed by a vector of R objects.  If passed, argument
+  must be identical to a subset of these and nothing else
+  is checked.}
+
+  \item{lower}{[\code{numeric(1)}]\cr Lower bound for
+  numeric vector arguments.  Default is \code{NA}, which
+  means not required.}
+
+  \item{upper}{[\code{numeric(1)}]\cr Upper bound for
+  numeric vector arguments.  Default is \code{NA}, which
+  means not required.}
+
+  \item{na.ok}{[\code{logical(1)}]\cr Is it ok if a vector
+  argument contains NAs?  Default is \code{TRUE}.}
+
+  \item{formals}{[\code{character}]\cr If this is passed,
+  \code{x} must be a function.  It is then checked that
+  \code{formals} are the names of the (first) formal
+  arguments in the signature of \code{x}.  Meaning
+  \code{checkArg(function(a, b), formals="a")} is ok.
+  Default is missing.}
+}
+\value{
+  Nothing.
+}
+\description{
+  Throws exception if checks are not passed. Note that
+  argument is evaluated when checked.
+}
+\examples{
+x <- 1L
+checkArg(x, "integer", len=1, na.ok=FALSE, upper=3L)
+x <- as.integer(NA)
+checkArg(x, "integer", len=1, na.ok=TRUE)
+x <- c("foo", "bar")
+checkArg(x, "character")
+x <- "foo"
+checkArg(x, choices=c("foo", "bar"))
+x <- c("foo", "bar")
+checkArg(x, subset=c("foo", "bar"))
+fun <- function(foo, bar)
+checkArg(fun, formals=c("foo", "bar"))
+}
+

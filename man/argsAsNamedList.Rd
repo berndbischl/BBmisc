@@ -1,0 +1,21 @@
+\name{argsAsNamedList}
+\alias{argsAsNamedList}
+\title{Parses \code{...} arguments to a named list.}
+\usage{
+  argsAsNamedList(...)
+}
+\arguments{
+  \item{...}{Arbitrary number of objects.}
+}
+\value{
+  [\code{list}]: Named list with objects.
+}
+\description{
+  The deparsed name will be used for arguments with missing
+  names. Missing names will be set to \code{NA}.
+}
+\examples{
+z = 3
+argsAsNamedList(x = 1, y = 2, z)
+}
+

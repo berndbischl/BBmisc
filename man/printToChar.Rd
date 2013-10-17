@@ -1,0 +1,24 @@
+\name{printToChar}
+\alias{printToChar}
+\title{Prints object to a string / character vector.}
+\usage{
+  printToChar(x, collapse = "\n")
+}
+\arguments{
+  \item{x}{[any]\cr Object to print}
+
+  \item{collapse}{[\code{character(1)}]\cr Used to collapse
+  multiple lines.  \code{NULL} means no collapsing, vector
+  is returned.  Default is \dQuote{\\n}.}
+}
+\value{
+  [\code{character}].
+}
+\description{
+  Prints object to a string / character vector.
+}
+\examples{
+x <- data.frame(a=1:2, b=3:4)
+str(printToChar(x))
+}
+
