@@ -76,3 +76,4 @@ Collate:
     'warningf.R'
     'zzz.R'
     'anyMissing.R'
+    'matchDataFrameSubset.R'
