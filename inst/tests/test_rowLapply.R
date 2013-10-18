@@ -6,6 +6,8 @@ test_that("rowLapply", {
   expect_true(all(rowLapply(df, sum, unlist=TRUE) == 11))
   expect_true(all(unlist(rowLapply(df, Negate(is.list), unlist=TRUE))))
   expect_true(all(unlist(rowLapply(df, is.list))))
+  fun = function(x, y) sum(c(unlist(x), y))
+  expect_equal(rowLapply(df[, 1L, drop=FALSE], fun, y = 1), as.list(2:11))
 })
 
 

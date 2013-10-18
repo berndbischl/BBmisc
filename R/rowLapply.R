@@ -34,7 +34,7 @@ rowLapply = function(df, fun, ..., unlist = FALSE) {
       .fun(unlist(.df[.i, ], recursive=FALSE, use.names=TRUE), ...)
   } else {
     .wrap = function(.i, .df, .fun, ...)
-      .fun(as.list(.df[.i, ], ...))
+      .fun(as.list(.df[.i, ]), ...)
   }
 
   lapply(seq_len(nrow(df)), .wrap, .fun = fun, .df = df, ...)
