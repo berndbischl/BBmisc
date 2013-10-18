@@ -11,6 +11,6 @@
 #' @return [\code{logical(1)}] Returns \code{TRUE} if at least one element of \code{x} was missing (see details).
 #' @useDynLib BBmisc c_any_missing
 #' @export
-any.missing = function(x, inf.as.missing=TRUE) {
+anyMissing = function(x, inf.as.missing=TRUE) {
   .Call("c_any_missing", x, inf.as.missing, PACKAGE="BBmisc")
 }
