@@ -9,8 +9,8 @@
 #' @param inf.as.missing [\code{logical(1)}]\cr
 #'  Treat \code{Inf} and \code{-Inf} as missing? Default is code{TRUE}.
 #' @return [\code{logical(1)}] Returns \code{TRUE} if at least one element of \code{x} was missing (see details).
-#' @useDynLib BBmisc c_any_missing
+#' @useDynLib BBmisc c_anyMissing
 #' @export
 anyMissing = function(x, inf.as.missing=TRUE) {
-  .Call("c_any_missing", x, inf.as.missing, PACKAGE="BBmisc")
+  .Call("c_anyMissing", x, inf.as.missing, PACKAGE="BBmisc")
 }

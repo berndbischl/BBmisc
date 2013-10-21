@@ -1,12 +1,12 @@
-#include "any.missing.h"
+#include "anyMissing.h"
 
-SEXP c_any_missing(SEXP x, SEXP inf_as_missing) {
+SEXP c_anyMissing(SEXP x, SEXP inf_as_missing) {
     if (!isLogical(inf_as_missing) || length(inf_as_missing) != 1 || LOGICAL(inf_as_missing)[0] == NA_LOGICAL)
         error("Argument 'inf.as.missing' must be a scalar logical");
-    return ScalarLogical(any_missing(x, LOGICAL(inf_as_missing)[0]));
+    return ScalarLogical(anyMissing(x, LOGICAL(inf_as_missing)[0]));
 }
 
-Rboolean any_missing(SEXP x, Rboolean inf_as_missing) {
+Rboolean anyMissing(SEXP x, Rboolean inf_as_missing) {
     const R_len_t n = length(x);
 
     switch(TYPEOF(x)) {

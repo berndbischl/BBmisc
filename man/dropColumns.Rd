@@ -1,6 +1,6 @@
 \name{dropColumns}
 \alias{dropColumns}
-\title{Drop columns of a data.frame or matrix}
+\title{Drop columns of data frames and matricies}
 \usage{
   dropColumns(x, cols)
 }
@@ -9,14 +9,16 @@
   or data frame for which columns should be removed.}
 
   \item{cols}{[\code{character}, \code{numeric} or
-  \code{logical}]\cr Index specifing the columns to drop.}
+  \code{logical}]\cr Index specifing the columns to remove.
+  The negation will be passed together with
+  \code{drop=FALSE} to the index operator.}
 }
 \value{
   [\code{matrix} or \code{data.frame}]: Matrix or data
   frame with dropped columns.
 }
 \description{
-  Drop columns of a data.frame or matrix
+  Drop columns of data frames and matricies
 }
 \examples{
 dropColumns(iris, "Species")

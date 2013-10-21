@@ -1,7 +1,7 @@
 #include <stdio.h>              /* snprintf */
 #include <ctype.h>              /* isdigit  */
 #include <string.h>             /* strlen   */
-#include "any.missing.h"
+#include "anyMissing.h"
 #include "checkRule.h"
 
 static char errmsg[MSGLEN];
@@ -55,7 +55,7 @@ SEXP c_checkRule(SEXP x, SEXP rule) {
         default: error("Unknown type identifier '%c'", str[0]);
     }
 
-    if (check_missing && any_missing(x, TRUE)) {
+    if (check_missing && anyMissing(x, TRUE)) {
         snprintf(errmsg, MSGLEN, "'%%s' may not contain missing values");
         return ScalarString(mkChar(errmsg));
     }
