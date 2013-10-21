@@ -77,3 +77,4 @@ Collate:
     'zzz.R'
     'anyMissing.R'
     'matchDataFrameSubset.R'
+    'dropColumns.R'
