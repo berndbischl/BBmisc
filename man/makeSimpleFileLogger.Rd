@@ -1,6 +1,6 @@
 \name{makeSimpleFileLogger}
-\alias{SimpleFileLogger}
 \alias{makeSimpleFileLogger}
+\alias{SimpleFileLogger}
 \title{Simple logger which outputs to a file.}
 \usage{
   makeSimpleFileLogger(logfile, touch = FALSE, keep = 10L)

@@ -3,15 +3,18 @@
 #' Looks like this \dQuote{a=1,<unamed>=2,b=<data.frame>}.
 #' Vectors are displayed up to a certain length.
 #'
+#' The function is deprecated, use \code{\link{convertToShortString}}.
+#'
 #' @param xs [\code{list}]\cr
 #'   The list.
 #' @param num.format [\code{list}]\cr
 #'   Used to format numerical scalars via \code{\link{sprintf}}.
 #'   Default is \dQuote{\%.4g}.
 #' @return [\code{character(1)}].
-#' @export
+# @export
 #' @examples
 #' listToShortString(list(a=1, b=NULL, "foo", c=1:10))
+#FIXME remove, there is convertToShortString. copy tests then.
 listToShortString = function(xs, num.format="%.4g") {
   if (length(xs) == 0L)
     return("")
@@ -32,3 +35,5 @@ listToShortString = function(xs, num.format="%.4g") {
   })
   paste(paste(ns, "=", ss, sep=""), collapse=", ")
 }
+
+

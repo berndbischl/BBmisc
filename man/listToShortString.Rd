@@ -18,6 +18,10 @@
   Looks like this \dQuote{a=1,<unamed>=2,b=<data.frame>}.
   Vectors are displayed up to a certain length.
 }
+\details{
+  The function is deprecated, use
+  \code{\link{convertToShortString}}.
+}
 \examples{
 listToShortString(list(a=1, b=NULL, "foo", c=1:10))
 }

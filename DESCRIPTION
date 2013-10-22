@@ -16,7 +16,7 @@ Suggests:
     testthat
 LazyData: yes
 ByteCompile: yes
-Version: 1.3-110
+Version: 1.3-119
 Collate:
     'addClasses.R'
     'argsAsNamedList.R'
@@ -78,4 +78,4 @@ Collate:
     'anyMissing.R'
     'matchDataFrameSubset.R'
     'dropColumns.R'
-    'isConstant.R'
+    'convertToShortString.R'
