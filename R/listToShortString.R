@@ -11,7 +11,7 @@
 #'   Used to format numerical scalars via \code{\link{sprintf}}.
 #'   Default is \dQuote{\%.4g}.
 #' @return [\code{character(1)}].
-# @export
+#' @export
 #' @examples
 #' listToShortString(list(a=1, b=NULL, "foo", c=1:10))
 #FIXME remove, there is convertToShortString. copy tests then.
