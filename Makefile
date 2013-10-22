@@ -46,6 +46,10 @@ check: package
 	echo "\nRunning R CMD check ..."
 	${R} CMD check $(TARGZ)
 
+check-rev-dep: package
+	echo "\nRunning reverse dependency checks for CRAN ..."
+	${RSCRIPT} ./tools/check-rev-dep
+
 html: install
 	echo "\nGenerating html docs..."
 	${DELETE} html
