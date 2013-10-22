@@ -4,7 +4,6 @@ BBmisc_*.tar.gz
 *.Rproj
 .Rhistory
 html
-*.swp
 src/*.so
 src/*.o
 
