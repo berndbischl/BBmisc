@@ -5,15 +5,17 @@
   toRangeStr(x, range.sep = " - ", block.sep = ", ")
 }
 \arguments{
-  \item{x}{[\code{integer()}]\cr Vector to convert into a
+  \item{x}{[\code{integer}]\cr Vector to convert into a
   range string.}
 
   \item{range.sep}{[\code{character(1)}]\cr Separator
   between the first and last element of a range of
-  consecutive elements in \code{x}.}
+  consecutive elements in \code{x}.  Default is \dQuote{ -
+  }.}
 
   \item{block.sep}{[\code{character(1)}]\cr Separator
-  between non consecutive elements of \code{x} or ranges.}
+  between non consecutive elements of \code{x} or ranges.
+  Default is \dQuote{, }.}
 }
 \value{
   [\code{character(1)}]

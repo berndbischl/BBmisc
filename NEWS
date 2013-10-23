@@ -1,5 +1,6 @@
-BBmisc_1.?????:
+BBmisc_1.4.?????:
 - renamed convertDfCols to convertDataFrameCols
+- deprecated listToShortString, use convertToShortString
 - new functions:
 -- makeS3Obj
 -- getMaxIndex, getMinIndex
@@ -10,6 +11,7 @@ BBmisc_1.?????:
 -- getCurrentTimeSecs
 -- isScalarValue
 -- makeDataFrame
+-- convertToShortString
 
 BBmisc_1.3-64:
 - removed parallelMap et al., this is now hosted in an extra package at:
