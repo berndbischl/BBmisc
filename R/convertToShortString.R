@@ -1,27 +1,35 @@
-#' Converts an arbitrary R object to a short, descriptive string so it can be used in messages.
+#' Converts any R object to a descriptive string so it can be used in messages.
 #'
-#' Atomics: If of length 0 or 1, they are basically printed as they are. Numerics are 
-#' formated with \code{num.format}. If of length greater than 1, their \code{str} is printed
-#' in a way so it does not become excessively long.
+#' Atomics: If of length 0 or 1, they are basically printed as they are.
+#' Numerics are formated with \code{num.format}. 
+#' If of length greater than 1, they are collpsed witd \dQuote{,} and clipped.
+#' so they do not become excessively long.
 #'
-#' All others: Currently, only their class is simply printed like \dQuote{<data.frame>}.
+#' All others: Currently, only their class is simply printed 
+#' like \dQuote{<data.frame>}.
 #'
-#' Lists: The mechanism above is applied (non-recursively) to their elements. The result 
-#' looks like this: \dQuote{a=1, <unamed>=2, b=<data.frame>, c=<list>}.
+#' Lists: The mechanism above is applied (non-recursively) to their elements.
+#' The result looks like this:
+#' \dQuote{a=1, <unamed>=2, b=<data.frame>, c=<list>}.
 #'
 #' @param x [any]\cr
 #'   The object.
 #' @param num.format [\code{character(1)}]\cr
 #'   Used to format numerical scalars via \code{\link{sprintf}}.
 #'   Default is \dQuote{\%.4g}.
+#' @param clip.len [\code{integer(1)}]\cr
+#'   Used clip atomic vectors via \code{\link{clipString}}.
+#'   Default is 15.
 #' @return [\code{character(1)}].
 #' @export
 #' @examples
 #' listToShortString(list(a=1, b=NULL, "foo", c=1:10))
-convertToShortString = function(x, num.format="%.4g") {
+convertToShortString = function(x, num.format="%.4g", clip.len=15) {
 
   # convert non-list object to string
   convObj = function(x) {
+    if (is.null(x))
+      return("NULL")
     if (is.atomic(x)) {
       if (length(x) == 0L) {
         sprintf("%s(0)", class(x)[1])
@@ -29,9 +37,11 @@ convertToShortString = function(x, num.format="%.4g") {
         if (is.double(x))
           sprintf(num.format, x)
         else
-          paste(x)
+          paste(x, collapse=",")
       } else {
-        capture.output(str(x, nchar.max=10L, give.attr=FALSE, give.head=FALSE, indent.str=""))
+        clipString(collapse(sapply(x, convertToShortString), ","), clip.len)
+        # capture.output(str(x, nchar.max=10L, give.attr=FALSE, 
+          # give.head=FALSE, indent.str=""))
       }
     } else {
       paste("<", class(x)[1L], ">", sep="")
