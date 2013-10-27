@@ -1,6 +1,6 @@
 \name{dropColumns}
 \alias{dropColumns}
-\title{Drop columns of data frames and matricies}
+\title{Drop columns of data frames or matricies}
 \usage{
   dropColumns(x, cols)
 }
@@ -18,7 +18,7 @@
   frame with dropped columns.
 }
 \description{
-  Drop columns of data frames and matricies
+  Drop columns of data frames or matricies
 }
 \examples{
 dropColumns(iris, "Species")

@@ -15,5 +15,6 @@
 }
 \examples{
 isFALSE(0)
+isFALSE(FALSE)
 }
 
