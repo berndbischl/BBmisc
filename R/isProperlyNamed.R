@@ -11,7 +11,6 @@
 #' isProperlyNamed(list(a=1))
 #' isProperlyNamed(list(a=1, 2))
 isProperlyNamed = function(x) {
-  ns = names(x)
-  (length(x) == 0L) ||
-  ! (length(x) != length(ns) || any(is.na(ns) | ns == "") || anyDuplicated(ns) > 0L)
+  ns = names2(x)
+  length(x) == 0L || !(any(is.na(ns)) || anyDuplicated(ns))
 }

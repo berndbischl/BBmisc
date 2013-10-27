@@ -1,4 +1,4 @@
-#' Drop columns of data frames and matricies
+#' Drop columns of data frames or matricies
 #'
 #' @param x [\code{matrix} or \code{data.frame}]\cr
 #'   Matrix or data frame for which columns should be removed.

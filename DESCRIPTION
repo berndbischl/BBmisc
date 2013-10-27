@@ -16,7 +16,7 @@ Suggests:
     testthat
 LazyData: yes
 ByteCompile: yes
-Version: 1.4-124
+Version: 1.4-126
 Collate:
     'addClasses.R'
     'argsAsNamedList.R'

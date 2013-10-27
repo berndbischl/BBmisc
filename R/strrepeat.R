@@ -11,5 +11,5 @@
 #' @examples
 #' strrepeat("x", 3)
 strrepeat = function(x, n, sep = "") {
-  collapse(rep.int(x, max(0L, n)), sep)
+  collapse(rep.int(x, n), sep)
 }

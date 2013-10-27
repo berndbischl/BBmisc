@@ -1,11 +1,11 @@
 \name{clipString}
 \alias{clipString}
-\title{Shortens a string to a given length.}
+\title{Shortens strings to a given length.}
 \usage{
   clipString(x, len, tail = "...")
 }
 \arguments{
-  \item{x}{[\code{character(1)}]\cr String.}
+  \item{x}{[\code{character}]\cr Vector of strings.}
 
   \item{len}{[\code{integer(1)}]\cr Absolute length the
   string should be clipped to, including \code{tail}.  Note
@@ -20,7 +20,7 @@
   [\code{character(1)}].
 }
 \description{
-  Shortens a string to a given length.
+  Shortens strings to a given length.
 }
 \examples{
 print(clipString("abcdef", 10))

@@ -24,7 +24,7 @@
 #' @export
 #' @examples
 #' listToShortString(list(a=1, b=NULL, "foo", c=1:10))
-convertToShortString = function(x, num.format="%.4g", clip.len=15) {
+convertToShortString = function(x, num.format="%.4g", clip.len=15L) {
 
   # convert non-list object to string
   convObj = function(x) {
@@ -32,7 +32,7 @@ convertToShortString = function(x, num.format="%.4g", clip.len=15) {
       return("NULL")
     if (is.atomic(x)) {
       if (length(x) == 0L) {
-        sprintf("%s(0)", class(x)[1])
+        sprintf("%s(0)", class(x)[1L])
       } else if (length(x) == 1L) {
         if (is.double(x))
           sprintf(num.format, x)
@@ -49,7 +49,7 @@ convertToShortString = function(x, num.format="%.4g", clip.len=15) {
   }
 
   # handle only lists and not any derived data types
-  if (class(x)[1] == "list") {
+  if (class(x)[1L] == "list") {
     if (length(x) == 0L)
       return("")
     ns = names2(x, missing.val = "<unnamed>")
@@ -59,5 +59,4 @@ convertToShortString = function(x, num.format="%.4g", clip.len=15) {
     convObj(x)
   }
 }
-
 

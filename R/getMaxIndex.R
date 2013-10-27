@@ -17,7 +17,9 @@
 #' @export
 #' @useDynLib BBmisc c_getMaxIndex
 getMaxIndex = function(x, ties.method="random", na.rm=FALSE) {
-  ties.method = switch(ties.method, first=2, last=3, 1)
+  ties.method = switch(ties.method, random=1L, first=2L, last=3L, 
+                       stop("Unknown ties method"))
+  checkArg(na.rm, "logical", len=1L, na.ok=FALSE)
   .Call(c_getMaxIndex, as.numeric(x), ties.method, na.rm)
 }
 

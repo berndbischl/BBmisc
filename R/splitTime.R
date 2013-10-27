@@ -19,7 +19,7 @@ splitTime = function(seconds, unit="years") {
 	checkArg(seconds, "numeric", len=1L, na.ok=FALSE)
 	checkArg(unit, choices=c("years", "days", "hours", "minutes", "seconds"))
   divider = c(31536000L, 86400L, 3600L, 60L, 1L)
-  res = setNames(rep(NA_integer_, 5L),
+  res = setNames(rep.int(NA_integer_, 5L),
                  c("years", "days", "hours", "minutes", "seconds"))
   start = which(names(res) == unit)
   for (i in start:length(divider)) {

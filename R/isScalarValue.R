@@ -13,5 +13,5 @@
 isScalarValue = function(x, na.ok=TRUE, null.ok=FALSE) {
   if (is.null(x))
     return(null.ok)
-  is.atomic(x) && length(x) == 1L && (!is.na(x) || na.ok)
+  is.atomic(x) && length(x) == 1L && (na.ok || !is.na(x))
 }

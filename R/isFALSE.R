@@ -6,6 +6,7 @@
 #' @export
 #' @examples
 #' isFALSE(0)
+#' isFALSE(FALSE)
 isFALSE = function(x) {
   identical(x, FALSE)
 }

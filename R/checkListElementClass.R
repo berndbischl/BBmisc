@@ -16,7 +16,7 @@
 checkListElementClass = function(xs, cl) {
   checkArg(xs, "list")
   s = deparse(substitute(xs))
-  sapply(seq_along(xs), function(i) {
+  lapply(seq_along(xs), function(i) {
     x = xs[[i]]
     if(!(is(x, cl)))
       stop("List ", s, " has element of wrong type ", class(x)[1L], " at position ", i, ". Should be: ", cl)

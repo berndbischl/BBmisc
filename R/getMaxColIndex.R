@@ -27,7 +27,9 @@
 #' print(getMinIndexOfRows(x))
 getMaxIndexOfRows = function(x, ties.method="random", na.rm=FALSE) {
   mode(x) = "numeric"
-  ties.method = switch(ties.method, first=2, last=3, 1)
+  ties.method = switch(ties.method, random=1L, first=2L, last=3L, 
+                       stop("Unknown ties method"))
+  checkArg(na.rm, "logical", len=1L, na.ok=FALSE)
   .Call(c_getMaxIndexOfRows, x, ties.method, na.rm)
 }
 
@@ -41,7 +43,8 @@ getMinIndexOfRows = function(x, ties.method="random", na.rm=FALSE) {
 #' @rdname getMaxIndexOfRows
 getMaxIndexOfCols = function(x, ties.method="random", na.rm=FALSE) {
   mode(x) = "numeric"
-  ties.method = switch(ties.method, first=2, last=3, 1)
+  ties.method = switch(ties.method, random=1L, first=2L, last=3L, 
+                       stop("Unknown ties method"))
   .Call(c_getMaxIndexOfCols, x, ties.method, na.rm)
 }
 

@@ -37,7 +37,7 @@ rowLapply = function(df, fun, ..., unlist = FALSE) {
       .fun(as.list(.df[.i, ]), ...)
   }
 
-  lapply(seq_len(nrow(df)), .wrap, .fun = fun, .df = df, ...)
+  lapply(seq_row(df), .wrap, .fun = fun, .df = df, ...)
 }
 
 #' @export

@@ -35,12 +35,12 @@ makeDataFrame = function(nrow, ncol, col.types, init, row.names=NULL, col.names=
     if (!missing(col.types)) {
       if (length(col.types) > 1L)
         stop("If 'init' is given, length of col.types must be 1!")
-      if (identical(class(init)[1], "col.types"))
+      if (identical(class(init)[1L], "col.types"))
         stop("Class of 'init' must match given column type!")
     }
   }
   if (!missing(col.types) && length(col.types) == 1L)
-    col.types = rep(col.types, ncol)
+    col.types = rep.int(col.types, ncol)
   if (!is.null(row.names))
     checkArg(row.names, "character", len=nrow, na.ok=TRUE)
   checkArg(col.names, "character", len=ncol, na.ok=TRUE)
@@ -52,7 +52,7 @@ makeDataFrame = function(nrow, ncol, col.types, init, row.names=NULL, col.names=
   else if (missing(init))
     df = lapply(col.types, vector, length=nrow)
   else
-    df = replicate(ncol, rep(init, nrow), simplify=FALSE)
+    df = replicate(ncol, rep.int(init, nrow), simplify=FALSE)
   df = as.data.frame(df, stringsAsFactors=FALSE)
   rownames(df) = row.names
   colnames(df) = col.names
