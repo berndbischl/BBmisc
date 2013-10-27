@@ -16,14 +16,12 @@ Suggests:
     testthat
 LazyData: yes
 ByteCompile: yes
-Version: 1.4-122
+Version: 1.4-124
 Collate:
     'addClasses.R'
     'argsAsNamedList.R'
     'catf.R'
-    'checkArg.R'
     'checkListElementClass.R'
-    'checkRule.R'
     'chunk.R'
     'clipString.R'
     'coalesce.R'
@@ -75,7 +73,7 @@ Collate:
     'toRangeStr.R'
     'warningf.R'
     'zzz.R'
-    'anyMissing.R'
     'matchDataFrameSubset.R'
     'dropColumns.R'
     'convertToShortString.R'
+    'checkArg.R'
