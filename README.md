@@ -24,9 +24,9 @@ will install the current github version.
 3) Developers and hackers:
 
 You can install a new package version after local code changes if you are in the checkout directory via
-
+```r
 devtools::install(".")
-
+```
 Assuming you have a reasonably configured OS and R, you could also build and run tasks via the MAKEFILE.
 But only a VERY SMALL percentage of users should be interested in this.
 
