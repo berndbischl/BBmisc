@@ -1,8 +1,9 @@
 \name{convertToShortString}
 \alias{convertToShortString}
-\title{Converts an arbitrary R object to a short, descriptive string so it can be used in messages.}
+\title{Converts any R object to a descriptive string so it can be used in messages.}
 \usage{
-  convertToShortString(x, num.format = "\%.4g")
+  convertToShortString(x, num.format = "\%.4g",
+    clip.len = 15L)
 }
 \arguments{
   \item{x}{[any]\cr The object.}
@@ -10,6 +11,9 @@
   \item{num.format}{[\code{character(1)}]\cr Used to format
   numerical scalars via \code{\link{sprintf}}.  Default is
   \dQuote{\%.4g}.}
+
+  \item{clip.len}{[\code{integer(1)}]\cr Used clip atomic
+  vectors via \code{\link{clipString}}.  Default is 15.}
 }
 \value{
   [\code{character(1)}].
@@ -17,9 +21,9 @@
 \description{
   Atomics: If of length 0 or 1, they are basically printed
   as they are. Numerics are formated with
-  \code{num.format}. If of length greater than 1, their
-  \code{str} is printed in a way so it does not become
-  excessively long.
+  \code{num.format}. If of length greater than 1, they are
+  collpsed witd \dQuote{,} and clipped. so they do not
+  become excessively long.
 }
 \details{
   All others: Currently, only their class is simply printed
