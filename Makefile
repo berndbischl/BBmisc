@@ -11,7 +11,7 @@ usage:
 	echo "Available targets:"
 	echo ""
 	echo " clean         - Clean everything up"
-	echo " roxygenize    - roxygenize skel/ into pkg/"
+	echo " roxygenize    - roxygenize in-place"
 	echo " package       - build source package"
 	echo " install       - install the package"
 	echo " test          - run unit tests"
