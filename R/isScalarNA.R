@@ -4,8 +4,7 @@
 #' @param x [any]\cr
 #'   Object to check.
 #' @return [\code{logical(1)}].
-#' @useDynLib BBmisc c_isScalarNA
 #' @export
 isScalarNA = function(x) {
-  .Call("c_isScalarNA", x, PACKAGE="BBmisc")
+  is.atomic(x) && length(x) == 1L && is.na(x)
 }
