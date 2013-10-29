@@ -23,6 +23,7 @@ clean:
 	printf "\nCleaning up ...\n"
 	${DELETE} src/*.o src/*.so *.tar.gz
 	${DELETE} html
+	${DELETE} *.Rcheck
 	${DELETE} .RData .Rhistory
 
 roxygenize: clean
