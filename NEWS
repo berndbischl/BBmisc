@@ -8,7 +8,7 @@ BBmisc_1.4.?????:
 -- toRangeStr
 -- getOperatingSystem, isWindows, isUnix
 -- clipString
--- getCurrentTimeSecs
+-- getUnixTime
 -- isScalarValue
 -- makeDataFrame
 -- convertToShortString

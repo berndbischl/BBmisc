@@ -32,7 +32,6 @@ Collate:
     'directory.R'
     'extractSubList.R'
     'factor.R'
-    'getCurrentTimeSecs.R'
     'getMaxColIndex.R'
     'getMaxIndex.R'
     'getOperatingSystem.R'
@@ -77,3 +76,4 @@ Collate:
     'dropColumns.R'
     'convertToShortString.R'
     'checkArg.R'
+    'getUnixTime.R'
