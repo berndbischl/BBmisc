@@ -12,5 +12,5 @@
 #' @useDynLib BBmisc c_isScalarValue
 #' @export
 isScalarValue = function(x, na.ok=TRUE, null.ok=FALSE) {
-  .Call("c_isScalarValue", x, na.ok, null.ok)
+  .Call("c_isScalarValue", x, na.ok, null.ok, PACKAGE="BBmisc")
 }
