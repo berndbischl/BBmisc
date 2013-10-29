@@ -34,8 +34,7 @@ isLinux = function() {
 
 #' @rdname getOperatingSystem
 #' @export
-isMac = function() {
+isDarwin = function() {
   isUnix() && grepl("darwin", Sys.info()["sysname"], ignore.case=TRUE)
 }
 
-#FIXME what else?
