@@ -9,7 +9,7 @@
 #' @param chunk.size [\code{integer(1)}]\cr
 #'   Requested number of elements in each chunk.
 #'   Cannot be used in combination with \code{n.chunks}.
-#'   If \code{x} cannot be evenly chunked, some chunks will have 1 element less. 
+#'   If \code{x} cannot be evenly chunked, some chunks will have 1 element less.
 #' @param n.chunks [\code{integer(1)}]\cr
 #'   Requested number of chunks.
 #'   Can not be used in combination with \code{chunks.size}
