@@ -9,18 +9,11 @@
     lapply(xs, function(x) rec.lapply(x, fun, depth-1))
   }
 
-- leeren dataframe mit festgelegten spalten erzeugen
-
 exponentielles glätten der zeiten fuer schaetzung der zeit
 
 stack 
 
 extractSubList für S4 automatisch?
-
-checkArg möglicherweise in C machen und mit inherits per default testen wegen speed.
-dabei aber benchmarken.
-
-we need better way to check matrices, dimension and element data type.
 
 checProperlyNamed function oder in checkArg?
 
@@ -28,10 +21,5 @@ function renameFactorLevels, bzw. suchen ob es sowas in gut gibt
 nützlich für ggplot z.b. 
 f=relevel(f, list(a="b", x="y"))
 
-setNames für cols un rows beides? args bei setNames  und setRowNames setColnames vielleicht raus?
-
-rowsToList für df und matrix um zeilen in listen zu wandeln
--> as.list(as.data.frame(t(x)))
-
-add function to print block of text, with line with, and possibly prefix (e.g. TAB)
+add function to print block of text, with line width, and possibly prefix (e.g. TAB)
 -> ?base::strwrap()

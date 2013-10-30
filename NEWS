@@ -1,4 +1,4 @@
-BBmisc_1.4.?????:
+BBmisc_1.4:
 - renamed convertDfCols to convertDataFrameCols
 - deprecated listToShortString, use convertToShortString
 - chunk distributes size of chunks in a better way
@@ -13,6 +13,7 @@ BBmisc_1.4.?????:
 -- isScalarValue
 -- makeDataFrame
 -- convertToShortString
+-- convertRowsToList
 
 BBmisc_1.3-64:
 - removed parallelMap et al., this is now hosted in an extra package at:

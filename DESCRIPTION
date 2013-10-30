@@ -77,3 +77,4 @@ Collate:
     'dropColumns.R'
     'convertToShortString.R'
     'checkArg.R'
+    'convertRowsToList.R'
