@@ -6,25 +6,28 @@
 }
 \arguments{
   \item{x}{[\code{vector} | \code{list}]\cr Vector or list
-  to chunk into blocks of nearly equal size.}
+  to chunk.}
 
-  \item{chunk.size}{[\code{integer(1)}]\cr Preferred number
-  of jobs in each chunk.  Can not be used in combination
-  with \code{n.chunks}}
+  \item{chunk.size}{[\code{integer(1)}]\cr Requested number
+  of elements in each chunk.  Cannot be used in combination
+  with \code{n.chunks}.  If \code{x} cannot be evenly
+  chunked, some chunks will have 1 element less.}
 
-  \item{n.chunks}{[\code{integer(1)}]\cr Preferred number
+  \item{n.chunks}{[\code{integer(1)}]\cr Requested number
   of chunks.  Can not be used in combination with
   \code{chunks.size}}
 
-  \item{shuffle}{[\code{logical(1)}]\cr Shuffle the vector
-  or list?  Default is \code{FALSE}.}
+  \item{shuffle}{[\code{logical(1)}]\cr Shuffle \code{x}?
+  Default is \code{FALSE}.}
 }
 \value{
   [unnamed \code{list}] of chunks.
 }
 \description{
-  Chunk elements of vectors into blocks of nearly equal
-  size.
+  In case of shuffling and vectors that cannot be chunked
+  evenly, it is chosen randomly which levels / chunks will
+  receive 1 element less. If you do not shuffle, always the
+  last chunks will receive 1 element less.
 }
 \examples{
 xs <- 1:10
