@@ -1,7 +1,7 @@
 \name{getOperatingSystem}
 \alias{getOperatingSystem}
+\alias{isDarwin}
 \alias{isLinux}
-\alias{isMac}
 \alias{isUnix}
 \alias{isWindows}
 \title{Functions to determine the operating system.}
@@ -14,7 +14,7 @@
 
   isLinux()
 
-  isMac()
+  isDarwin()
 }
 \value{
   See above.
