@@ -4,8 +4,7 @@
 #'
 #' @return [\code{integer(1)}].
 #' @export
-# FIXME this is called unix time ...
-getCurrentTimeSecs = function() {
+getUnixTime = function() {
   as.integer(Sys.time())
 }
 

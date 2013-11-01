@@ -1,8 +1,8 @@
-\name{getCurrentTimeSecs}
-\alias{getCurrentTimeSecs}
+\name{getUnixTime}
+\alias{getUnixTime}
 \title{Current time in seconds.}
 \usage{
-  getCurrentTimeSecs()
+  getUnixTime()
 }
 \value{
   [\code{integer(1)}].

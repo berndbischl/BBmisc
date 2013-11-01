@@ -7,9 +7,9 @@ BBmisc_1.4:
 -- getMaxIndex, getMinIndex
 -- getMaxIndexOfRows, getMinIndexOfRows, getMaxIndexOfCols, getMinIndexOfCols 
 -- toRangeStr
--- getOperatingSystem, isWindows, isUnix
+-- getOperatingSystem, isWindows, isUnix, isLinux, isDarwin
 -- clipString
--- getCurrentTimeSecs
+-- getUnixTime
 -- isScalarValue
 -- makeDataFrame
 -- convertToShortString
