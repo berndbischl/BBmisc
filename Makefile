@@ -29,6 +29,9 @@ clean:
 roxygenize: clean
 	printf "\nRoxygenizing package ...\n"
 	${RSCRIPT} ./tools/roxygenize
+	mv man/nin.Rd man/nin2.Rd
+	sed s/%nin%.*\)/x\ %nin%\ table/ < man/nin2.Rd > man/nin.Rd
+	rm man/nin2.Rd
 
 package: roxygenize
 	printf "\nBuilding package file $(TARGZ)\n"
