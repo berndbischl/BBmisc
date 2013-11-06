@@ -78,3 +78,4 @@ Collate:
     'checkArg.R'
     'convertRowsToList.R'
     'getUnixTime.R'
+    'stringsAsFactors.R'
