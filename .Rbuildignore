@@ -9,3 +9,5 @@ test_src.R
 tools
 src/*.o
 src/*.so
+todo-files
+README.md
