@@ -47,7 +47,7 @@ convertDataFrameCols = function(df, chars.as.factor = FALSE, factors.as.char = F
   if (logicals.as.factor) {
     i = vapply(df, is.logical, TRUE)
     if (any(i))
-      x[i] = lapply(x[i], as.factor)
+      x[i] = lapply(x[i], factor, levels=c("TRUE", "FALSE"))
   }
 
   as.data.frame(x, stringsAsFactors=FALSE)
