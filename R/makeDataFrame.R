@@ -1,3 +1,6 @@
+#FIXME First, creating factor cols does not work. in principle fixable.
+# but should we / how do we prespecify levels....?
+
 #' Initialize data.frame in a convenient way.
 #'
 #' @param nrow [\code{integer(1)}]\cr
