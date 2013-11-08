@@ -1,3 +1,8 @@
+BBmisc_1.5:
+- new functions:
+-- attachToFunction  
+-- clearFunctionEnv
+
 BBmisc_1.4:
 - renamed convertDfCols to convertDataFrameCols
 - deprecated listToShortString, use convertToShortString
