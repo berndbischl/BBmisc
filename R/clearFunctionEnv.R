@@ -18,6 +18,7 @@
 #' print(ls(environment(f)))
 clearFunctionEnv = function(f, inplace=FALSE) {
   f = match.fun(f)
+  checkArg(inplace, "logical", len=1L, na.ok=FALSE)
   if (inplace) {
     ee = environment(f)
     if (!environmentName(ee) == "R_GlobalEnv") {
