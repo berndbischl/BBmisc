@@ -11,6 +11,3 @@ attachToFunction = function(f, ...) {
          USE.NAMES=FALSE, SIMPLIFY=FALSE)
   f
 }
-
-f = function() x
-attachToFunction(f, x = 12)

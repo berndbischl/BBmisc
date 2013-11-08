@@ -79,3 +79,6 @@ Collate:
     'convertRowsToList.R'
     'getUnixTime.R'
     'stringsAsFactors.R'
+    'attachToFunction.R'
+    'clearFunctionEnv.R'
+    'isValidName.R'
