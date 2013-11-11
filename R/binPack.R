@@ -1,3 +1,5 @@
+# simple bin packing algorithm, useful for chunking jobs
+# w.r.t. walltime
 binPack = function(x, capacity) {
   checkArg(x, "numeric", min.len=1L, na.ok=FALSE)
   checkArg(capacity, "numeric", len=1L, na.ok=FALSE)
@@ -21,6 +23,3 @@ binPack = function(x, capacity) {
   }
   return(list(packs = packs, sums = sums))
 }
-
-binPack(runif(10), 1)
-binPack(runif(10000), 1)
