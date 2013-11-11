@@ -82,3 +82,5 @@ Collate:
     'attachToFunction.R'
     'clearFunctionEnv.R'
     'isValidName.R'
+    'binPack.R'
+    'first_last.R'
