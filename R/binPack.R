@@ -12,7 +12,7 @@ binPack = function(x, capacity) {
 
   for(j in ord) {
     x.cur = x[j]
-    pos = head(which(x.cur + sums < capacity), 1L)
+    pos = head(which(x.cur + sums <= capacity), 1L)
     if (length(pos)) {
       packs[[pos]] = c(packs[[pos]], j)
       sums[pos] = sums[pos] + x.cur
