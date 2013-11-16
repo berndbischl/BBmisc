@@ -11,3 +11,4 @@ src/*.o
 src/*.so
 todo-files
 README.md
+.travis.yml
