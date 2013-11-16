@@ -1,3 +1,4 @@
+
 ## do lapply recursively on deep lists
   ## FIXME: Use rapply instead? Possibly not useful because rapply does
   ##   not limit descend depth. Investigate if rec.lapply becomes a
@@ -11,14 +12,14 @@
 
 exponentielles glätten der zeiten fuer schaetzung der zeit
 
-stack 
+stack
 
 extractSubList für S4 automatisch?
 
 checProperlyNamed function oder in checkArg?
 
 function renameFactorLevels, bzw. suchen ob es sowas in gut gibt
-nützlich für ggplot z.b. 
+nützlich für ggplot z.b.
 f=relevel(f, list(a="b", x="y"))
 
 add function to print block of text, with line width, and possibly prefix (e.g. TAB)
