@@ -1,4 +1,4 @@
-https://travis-ci.org/berndbischl/BBmisc.png
+[![Build Status](https://travis-ci.org/tudo-r/BatchJobs.png)](https://travis-ci.org/berndbischl/BBmisc)
 
 BBmisc
 ======
