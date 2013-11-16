@@ -73,7 +73,6 @@ Collate:
     'warningf.R'
     'zzz.R'
     'matchDataFrameSubset.R'
-    'dropColumns.R'
     'convertToShortString.R'
     'checkArg.R'
     'convertRowsToList.R'
@@ -84,3 +83,4 @@ Collate:
     'isValidName.R'
     'binPack.R'
     'first_last.R'
+    'dropNamed.R'

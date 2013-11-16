@@ -1,10 +1,12 @@
-#' Drop named elements of an object
+#FIXME: unit test missing
+
+#' Drop named elements of an object.
 #'
-#' @param x\cr
+#' @param x [any]\cr
 #'   Object to drop named elements from.
 #'   For matrix and data frames this function delegates to drop
 #'   using the second dimension (columns).
-#'   The normal index operator \dQuote{[} is applied otherwise otherwise.
+#'   The normal index operator \dQuote{[} is applied otherwise..
 #' @param drop [\code{character}]\cr
 #'   Names to drop.
 #' @return Subset of object of same type as \code{x}.

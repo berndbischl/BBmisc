@@ -1,17 +1,18 @@
 BBmisc_1.5:
 - new functions:
--- attachToFunction  
--- clearFunctionEnv
+-- attachToFunction
+-- clearFunctionEnvi
+-- first, last
 
 BBmisc_1.4:
 - renamed convertDfCols to convertDataFrameCols
 - deprecated listToShortString, use convertToShortString
-- deprecated stringsAsFactors, use convertDataFrameCols  
+- deprecated stringsAsFactors, use convertDataFrameCols
 - chunk distributes size of chunks in a better way
 - new functions:
 -- makeS3Obj
 -- getMaxIndex, getMinIndex
--- getMaxIndexOfRows, getMinIndexOfRows, getMaxIndexOfCols, getMinIndexOfCols 
+-- getMaxIndexOfRows, getMinIndexOfRows, getMaxIndexOfCols, getMinIndexOfCols
 -- toRangeStr
 -- getOperatingSystem, isWindows, isUnix, isLinux, isDarwin
 -- clipString
@@ -26,7 +27,7 @@ BBmisc_1.3-64:
   https://github.com/berndbischl/parallelMap
 - bugfix for checkArg, lower/upper only checked first element
 - exta argument "missing.val" for names2
-- extra argument "logicals.as.factor" for convertDFCols 
+- extra argument "logicals.as.factor" for convertDFCols
 - some speed improvements for convertDFCols and notin
 - is.error also works now for objects of class "error" and not only "try-error"
 - new functions:
@@ -66,13 +67,13 @@ BBmisc_1.1-132:
 
 BBmisc_1.1-125:
 - removed stringr dependency
-- new interface for ProgressBar and more therefore more functionality 
+- new interface for ProgressBar and more therefore more functionality
 - some global options for progressbar behaviour
 - options immediate and warning.length for warningf
 - checkListElementClass now first checks that argument is a list
 - nin (notin) operator
 - parallelMap function, can delegate to multicore or snowfall
-- stringsAsFactors 
+- stringsAsFactors
 - system3
 - load2
 
@@ -87,6 +88,6 @@ BBmisc_1.0-74:
 - more options for requirePackages
 - new functions: chunk, isExpensiveExampleOk
 
-BBmisc_1.0-58: 
+BBmisc_1.0-58:
 - First submit to CRAN.
 
