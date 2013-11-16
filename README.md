@@ -1,3 +1,5 @@
+https://travis-ci.org/berndbischl/BBmisc.png
+
 BBmisc
 ======
 
