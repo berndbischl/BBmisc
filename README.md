@@ -9,7 +9,7 @@ http://cran.r-project.org/web/packages/BBmisc/index.html
 R Documentation in HTML:
 http://www.statistik.tu-dortmund.de/~bischl/rdocs/BBmisc/
 
-Travis CI: [![Build Status](https://travis-ci.org/tudo-r/BatchJobs.png)](https://travis-ci.org/berndbischl/BBmisc)
+Travis CI: [![Build Status](https://travis-ci.org/berndbischl/BBmisc.png)](https://travis-ci.org/berndbischl/BBmisc)
 
 Installation
 ============
