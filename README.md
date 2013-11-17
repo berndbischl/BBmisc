@@ -9,7 +9,7 @@ Miscellaneous helper functions for and from B. Bischl and some other guys at TU 
 * R Documentation in HTML:
   http://www.statistik.tu-dortmund.de/~bischl/rdocs/BBmisc/
 
-* Run this in R to install the current github version:
+* Run this in R to install the current GitHub version:
   ```r
   devtools::install_github("BBmisc", username="berndbischl")
   ```
