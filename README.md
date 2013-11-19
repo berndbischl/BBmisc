@@ -7,7 +7,7 @@ Miscellaneous helper functions for and from B. Bischl and some other guys at TU 
   http://cran.r-project.org/web/packages/BBmisc/index.html
 
 * R Documentation in HTML:
-  http://www.statistik.tu-dortmund.de/~bischl/rdocs/BBmisc/
+  http://berndbischl.github.io/BBmisc/
 
 * Run this in R to install the current GitHub version:
   ```r
