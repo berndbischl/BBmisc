@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Require some packages.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head><body>
+
+<table width="100%" summary="page for requirePackages {BBmisc}"><tr><td>requirePackages {BBmisc}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Require some packages.</h2>
+
+<h3>Description</h3>
+
+<p>If some packages could not be loaded and <code>stop</code> is
+<code>TRUE</code> the following exception is thrown:
+&ldquo;For &lt;why&gt; please install the following packages:
+&lt;missing packages&gt;&rdquo;. If <code>why</code> is <code>NULL</code> the
+message is: &ldquo;Please install the following
+packages: &lt;missing packages&gt;&rdquo;.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+  requirePackages(packs, why = NULL, stop = TRUE,
+    suppress.warnings = FALSE, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>packs</code></td>
+<td>
+<p>[<code>character</code>]<br> Names of packages.</p>
+</td></tr>
+<tr valign="top"><td><code>why</code></td>
+<td>
+<p>[<code>character(1)</code>]<br> Short string
+explaining why packages are required.  Default is
+<code>NULL</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>stop</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br> Should an exception be
+thrown for missing packages?  Default is <code>TRUE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>suppress.warnings</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br> Should
+warnings be suppressed in the calls to
+<code><a href="../../base/html/library.html">require</a></code>?  Default is <code>FALSE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>[any]<br> Passed on to <code><a href="../../base/html/library.html">require</a></code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>[<code>logical</code>]. Named logical vector describing which
+packages could be loaded.  Same length as <code>packs</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">
+requirePackages(c(&quot;BBmisc&quot;, &quot;base&quot;), why=&quot;BBmisc example&quot;)
+</code></pre>
+
+<pre><code>## BBmisc   base 
+##   TRUE   TRUE
+</code></pre>
+
+<pre><code class="r">
+</code></pre>
+
+
+<hr><div align="center">[Package <em>BBmisc</em> version 1.5 <a href="00Index.html">Index</a>]</div>
+</body></html>

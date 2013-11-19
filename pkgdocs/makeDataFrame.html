@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Initialize data.frame in a convenient way.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head><body>
+
+<table width="100%" summary="page for makeDataFrame {BBmisc}"><tr><td>makeDataFrame {BBmisc}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Initialize data.frame in a convenient way.</h2>
+
+<h3>Description</h3>
+
+<p>Initialize data.frame in a convenient way.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+  makeDataFrame(nrow, ncol, col.types, init,
+    row.names = NULL,
+    col.names = sprintf("V%i", seq_len(ncol)))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>nrow</code></td>
+<td>
+<p>[<code>integer(1)</code>]<br> Nubmer of rows.</p>
+</td></tr>
+<tr valign="top"><td><code>ncol</code></td>
+<td>
+<p>[<code>integer(1)</code>]<br> Number of columns.</p>
+</td></tr>
+<tr valign="top"><td><code>col.types</code></td>
+<td>
+<p>[<code>character(ncol)</code> |
+<code>character(1)</code>]<br> Data types of columns.  If you
+only pass one type, it will be replicated.</p>
+</td></tr>
+<tr valign="top"><td><code>init</code></td>
+<td>
+<p>[any]<br> Scalar object to initialize all
+elements of the data.frame.  You do not need to specify
+<code>col.types</code> if you pass this.</p>
+</td></tr>
+<tr valign="top"><td><code>row.names</code></td>
+<td>
+<p>[<code>character(nrow)</code> |
+<code>NULL</code>]<br> Row names.  Default is <code>NULL</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>col.names</code></td>
+<td>
+<p>[<code>character(ncol)</code>]<br> Column
+names.  Default is &ldquo;V1&rdquo;, &ldquo;V2&rdquo;, and so on.</p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">
+print(makeDataFrame(3, 2, init=7))
+</code></pre>
+
+<pre><code>##   V1 V2
+## 1  7  7
+## 2  7  7
+## 3  7  7
+</code></pre>
+
+<pre><code class="r">print(makeDataFrame(3, 2, &quot;logical&quot;))
+</code></pre>
+
+<pre><code>##      V1    V2
+## 1 FALSE FALSE
+## 2 FALSE FALSE
+## 3 FALSE FALSE
+</code></pre>
+
+<pre><code class="r">print(makeDataFrame(3, 2, c(&quot;logical&quot;, &quot;numeric&quot;)))
+</code></pre>
+
+<pre><code>##      V1 V2
+## 1 FALSE  0
+## 2 FALSE  0
+## 3 FALSE  0
+</code></pre>
+
+<pre><code class="r">
+</code></pre>
+
+
+<hr><div align="center">[Package <em>BBmisc</em> version 1.5 <a href="00Index.html">Index</a>]</div>
+</body></html>

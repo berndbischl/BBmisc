@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Generate sequences along rows or cols.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head><body>
+
+<table width="100%" summary="page for seq_row {BBmisc}"><tr><td>seq_row {BBmisc}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Generate sequences along rows or cols.</h2>
+
+<h3>Description</h3>
+
+<p>A simple convenience wrapper around
+<code><a href="../../base/html/seq_len.html">seq_len</a></code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+  seq_row(x)
+
+  seq_col(x)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>[<code>data.frame</code> | <code>matrix</code>]<br> Data
+frame, matrix or any object which supports
+<code><a href="../../base/html/nrow.html">nrow</a></code> or <code><a href="../../base/html/ncol.html">ncol</a></code>,
+respectively.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Vector of type [<code>integer</code>].
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">
+data(iris)
+seq_row(iris)
+</code></pre>
+
+<pre><code>##   [1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17
+##  [18]  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
+##  [35]  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49  50  51
+##  [52]  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68
+##  [69]  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85
+##  [86]  86  87  88  89  90  91  92  93  94  95  96  97  98  99 100 101 102
+## [103] 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119
+## [120] 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136
+## [137] 137 138 139 140 141 142 143 144 145 146 147 148 149 150
+</code></pre>
+
+<pre><code class="r">seq_col(iris)
+</code></pre>
+
+<pre><code>## [1] 1 2 3 4 5
+</code></pre>
+
+<pre><code class="r">
+</code></pre>
+
+
+<hr><div align="center">[Package <em>BBmisc</em> version 1.5 <a href="00Index.html">Index</a>]</div>
+</body></html>
