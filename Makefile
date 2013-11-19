@@ -53,9 +53,21 @@ check-rev-dep: package
 	printf "\nRunning reverse dependency checks for CRAN ...\n"
 	${RSCRIPT} ./tools/check-rev-dep
 
-html: install
+htmlhelp: install
 	printf "\nGenerating html docs...\n"
-	${DELETE} html
-	mkdir html
+	mkdir staticdocs
+	${DELETE} /tmp/pkgdocs
+	mkdir /tmp/pkgdocs
+	mv README.md README.xxx
 	${RSCRIPT} ./tools/generate-html-docs
+	mv README.xxx README.md
+	${DELETE} Rplots*.pdf
+	git checkout gh-pages
+	rm -rf *
+	mv /tmp/pkgdocs .
+	git add .
+	git commit -am "new html help"
+	git push origin gh-pages
+	git checkout master
+
 

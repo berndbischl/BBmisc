@@ -1,9 +1,17 @@
 #!/usr/bin/env Rscript --vanilla
 
-setwd("html")
+library(methods)
+
+# library(staticdocs)
+# build_package(".", "/tmp/pkgdocs")
+
+wd = getwd()
+pkg.name = basename(wd)
+setwd("/tmp/pkgdocs")
 try ({
   library(knitr)
-  knit_rd("BBmisc")
+  library(mlr)
+  knit_rd(pkg.name)
 })
-setwd("..")
+setwd(wd)
 
