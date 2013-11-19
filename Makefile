@@ -64,7 +64,7 @@ htmlhelp: install
 	${DELETE} Rplots*.pdf
 	git checkout gh-pages
 	rm -rf *
-	mv /tmp/pkgdocs .
+	mv /tmp/pkgdocs/* .
 	git add .
 	git commit -am "new html help"
 	git push origin gh-pages
