@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Save multiple objects to a file.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head><body>
+
+<table width="100%" summary="page for save2 {BBmisc}"><tr><td>save2 {BBmisc}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Save multiple objects to a file.</h2>
+
+<h3>Description</h3>
+
+<p>A simple wrapper for <code><a href="../../base/html/save.html">save</a></code>.
+Understands key = value syntax to save objects using
+arbitrary variable names. All options of
+<code><a href="../../base/html/save.html">save</a></code>, except <code>list</code> and
+<code>envir</code>, are available and passed to
+<code><a href="../../base/html/save.html">save</a></code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+  save2(file, ..., ascii = FALSE, version = NULL,
+    compress = !ascii, compression_level,
+    eval.promises = TRUE, precheck = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>File to save.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>[<code>any</code>]<br> Will be converted to an
+environment and then passed to <code><a href="../../base/html/save.html">save</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>ascii</code></td>
+<td>
+<p>See help of <code><a href="../../base/html/save.html">save</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>version</code></td>
+<td>
+<p>See help of <code><a href="../../base/html/save.html">save</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>compress</code></td>
+<td>
+<p>See help of <code><a href="../../base/html/save.html">save</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>compression_level</code></td>
+<td>
+<p>See help of
+<code><a href="../../base/html/save.html">save</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>eval.promises</code></td>
+<td>
+<p>See help of
+<code><a href="../../base/html/save.html">save</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>precheck</code></td>
+<td>
+<p>See help of <code><a href="../../base/html/save.html">save</a></code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>See help of <code><a href="../../base/html/save.html">save</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">
+x &lt;- 1
+save2(y=x, file=tempfile())
+
+</code></pre>
+
+
+<hr><div align="center">[Package <em>BBmisc</em> version 1.5 <a href="00Index.html">Index</a>]</div>
+</body></html>
