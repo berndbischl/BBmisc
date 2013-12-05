@@ -85,3 +85,4 @@ Collate:
     'binPack.R'
     'first_last.R'
     'dropNamed.R'
+    'curriedCall.R'
