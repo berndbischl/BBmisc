@@ -11,7 +11,8 @@ BugReports: https://github.com/berndbischl/BBmisc/issues
 License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 Depends:
-    methods
+    methods,
+    functional
 Suggests:
     testthat
 LazyData: yes
