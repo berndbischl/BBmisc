@@ -11,8 +11,7 @@ BugReports: https://github.com/berndbischl/BBmisc/issues
 License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 Depends:
-    methods,
-    functional
+    methods
 Suggests:
     testthat
 LazyData: yes
@@ -85,4 +84,3 @@ Collate:
     'binPack.R'
     'first_last.R'
     'dropNamed.R'
-    'curriedCall.R'
