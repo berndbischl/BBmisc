@@ -1,8 +1,10 @@
 BBmisc_1.5:
 - new functions:
--- attachToFunction
--- clearFunctionEnvi
--- first, last
+-- attachToFunction ???
+-- clearFunctionEnvi ???
+-- dropNamed
+-- first, last ???
+-- binPack???
 
 BBmisc_1.4:
 - renamed convertDfCols to convertDataFrameCols
