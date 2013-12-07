@@ -1,4 +1,7 @@
 BBmisc_1.5:
+- removed stringsAsFactors, use convertDataFrameCols
+- removed convertDfCols, use convertDataFrameCols
+- removed listToShortString, use convertToShortString
 - new functions:
 -- attachToFunction ???
 -- clearFunctionEnvi ???

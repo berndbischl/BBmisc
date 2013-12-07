@@ -75,7 +75,6 @@ Collate:
     'checkArg.R'
     'convertRowsToList.R'
     'getUnixTime.R'
-    'stringsAsFactors.R'
     'attachToFunction.R'
     'clearFunctionEnv.R'
     'isValidName.R'
@@ -83,4 +82,3 @@ Collate:
     'first_last.R'
     'dropNamed.R'
     'nin.R'
-    'listToShortString.R'
