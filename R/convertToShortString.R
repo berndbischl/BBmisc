@@ -23,7 +23,7 @@
 #' @return [\code{character(1)}].
 #' @export
 #' @examples
-#' listToShortString(list(a=1, b=NULL, "foo", c=1:10))
+#' convertToShortString(list(a=1, b=NULL, "foo", c=1:10))
 convertToShortString = function(x, num.format="%.4g", clip.len=15L) {
 
   # convert non-list object to string

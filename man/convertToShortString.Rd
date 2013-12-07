@@ -34,6 +34,6 @@
   \dQuote{a=1, <unamed>=2, b=<data.frame>, c=<list>}.
 }
 \examples{
-listToShortString(list(a=1, b=NULL, "foo", c=1:10))
+convertToShortString(list(a=1, b=NULL, "foo", c=1:10))
 }
 

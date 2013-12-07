@@ -6,14 +6,18 @@
 }
 \arguments{
   \item{x}{[any]\cr Object to drop named elements from.
-  For matrix and data frames this function delegates to
-  drop using the second dimension (columns).  The normal
-  index operator \dQuote{[} is applied otherwise..}
+  For a matrix or a data frames this function drops named
+  columns via the second argument of the binary index
+  operator \code{[,]}.  Otherwise, the unary index operator
+  \code{[]} is used for dropping.}
 
-  \item{drop}{[\code{character}]\cr Names to drop.}
+  \item{drop}{[\code{character}]\cr Names of elements to
+  drop.}
 }
 \value{
-  Subset of object of same type as \code{x}.
+  Subset of object of same type as \code{x}. The object is
+  not simplified, i.e, no dimensions are dropped as
+  \code{[,,drop = FALSE]} is used.
 }
 \description{
   Drop named elements of an object.
