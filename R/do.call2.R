@@ -7,13 +7,12 @@
 #' @param fun [\code{function}]\cr
 #'  Function to call.
 #' @param ... [any]\cr
-#'  Additional arguments, before \code{.args}.
-#'  Best practice is to specify them in a \code{key=value} syntax.
+#'  Arguments to \code{fun}. Best practice is to specify them in a \code{key=value} syntax.
 #' @param .args [\code{list}]\cr
-#'  Arguments for \code{fun} as a (named) list.
+#'  Arguments to \code{fun} as a (named) list. Will be passed after arguments in \code{...}.
 #'  Default is \code{list()}.
 do.call2 = function(fun, ..., .args=list()) {
-  #' Call a function
+  checkArg(.args, "list")
   if (is.function(fun))
     fun = as.name(substitute(fun))
   else if (is.character(fun) && length(fun) == 1L && !is.na(fun))
@@ -22,4 +21,3 @@ do.call2 = function(fun, ..., .args=list()) {
   expr = as.call(c(list(fun), ddd, .args))
   eval.parent(expr, n=1L)
 }
-
