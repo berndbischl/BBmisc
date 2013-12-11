@@ -2,16 +2,16 @@
 \alias{isProperlyNamed}
 \title{Are all elements of a list / vector uniquely named?}
 \usage{
-  isProperlyNamed(x)
+isProperlyNamed(x)
 }
 \arguments{
   \item{x}{[\code{vector}]\cr The vector or list.}
 }
 \value{
-  [\code{logical(1)}].
+[\code{logical(1)}].
 }
 \description{
-  \code{NA} or \dQuote{} are not allowed as names.
+\code{NA} or \dQuote{} are not allowed as names.
 }
 \examples{
 isProperlyNamed(list(1))

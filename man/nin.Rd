@@ -2,7 +2,7 @@
 \alias{\%nin\%}
 \title{Simply a negated \code{in} operator.}
 \usage{
-  x \%nin\% y
+x \%nin\% y
 }
 \arguments{
   \item{x}{[\code{vector}]\cr Values that should not be in
@@ -11,6 +11,6 @@
   \item{y}{[\code{vector}]\cr Values to match against.}
 }
 \description{
-  Simply a negated \code{in} operator.
+Simply a negated \code{in} operator.
 }
 

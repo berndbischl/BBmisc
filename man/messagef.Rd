@@ -2,16 +2,16 @@
 \alias{messagef}
 \title{Wrapper for message and sprintf.}
 \usage{
-  messagef(...)
+messagef(...)
 }
 \arguments{
   \item{...}{[any]\cr See \code{\link{sprintf}}.}
 }
 \value{
-  Nothing.
+Nothing.
 }
 \description{
-  A simple wrapper for \code{message(sprintf(...))}.
+A simple wrapper for \code{message(sprintf(...))}.
 }
 \examples{
 msg <- "a message"

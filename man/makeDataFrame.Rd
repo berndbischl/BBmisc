@@ -2,9 +2,8 @@
 \alias{makeDataFrame}
 \title{Initialize data.frame in a convenient way.}
 \usage{
-  makeDataFrame(nrow, ncol, col.types, init,
-    row.names = NULL,
-    col.names = sprintf("V\%i", seq_len(ncol)))
+makeDataFrame(nrow, ncol, col.types, init, row.names = NULL,
+  col.names = sprintf("V\%i", seq_len(ncol)))
 }
 \arguments{
   \item{nrow}{[\code{integer(1)}]\cr Nubmer of rows.}
@@ -26,7 +25,7 @@
   names.  Default is \dQuote{V1}, \dQuote{V2}, and so on.}
 }
 \description{
-  Initialize data.frame in a convenient way.
+Initialize data.frame in a convenient way.
 }
 \examples{
 print(makeDataFrame(3, 2, init=7))

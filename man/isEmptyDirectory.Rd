@@ -2,18 +2,18 @@
 \alias{isEmptyDirectory}
 \title{Is one / are several directories empty?}
 \usage{
-  isEmptyDirectory(...)
+isEmptyDirectory(...)
 }
 \arguments{
   \item{...}{[\code{character(1)}]\cr Directory names, all
   strings.}
 }
 \value{
-  [\code{logical}].
+[\code{logical}].
 }
 \description{
-  If file does not exist or is not a directory,
-  \code{FALSE} is returned.
+If file does not exist or is not a directory, \code{FALSE}
+is returned.
 }
 \examples{
 print(isEmptyDirectory(tempdir()))

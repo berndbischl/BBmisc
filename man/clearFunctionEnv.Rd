@@ -2,7 +2,7 @@
 \alias{clearFunctionEnv}
 \title{Clear the environment of a function}
 \usage{
-  clearFunctionEnv(f, inplace = FALSE)
+clearFunctionEnv(f, inplace = FALSE)
 }
 \arguments{
   \item{f}{[\code{function}]\cr Function whose environment
@@ -16,11 +16,11 @@
   Default is \code{FALSE}.}
 }
 \value{
-  Function with empty environment, parent is
-  \code{.GlobalEnv}.
+Function with empty environment, parent is
+\code{.GlobalEnv}.
 }
 \description{
-  Clear the environment of a function
+Clear the environment of a function
 }
 \examples{
 get_f = function() { x = 1; function() x }

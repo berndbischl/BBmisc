@@ -2,12 +2,12 @@
 \alias{getUnixTime}
 \title{Current time in seconds.}
 \usage{
-  getUnixTime()
+getUnixTime()
 }
 \value{
-  [\code{integer(1)}].
+[\code{integer(1)}].
 }
 \description{
-  Simple wrapper for \code{as.integer(Sys.time())}.
+Simple wrapper for \code{as.integer(Sys.time())}.
 }
 

@@ -2,20 +2,20 @@
 \alias{lib}
 \title{A wrapper for \code{library}.}
 \usage{
-  lib(...)
+lib(...)
 }
 \arguments{
   \item{...}{[any]\cr Package names.}
 }
 \value{
-  [\code{logical}]: Named logical vector determining the
-  success of package load.
+[\code{logical}]: Named logical vector determining the
+success of package load.
 }
 \description{
-  Tries to load packages. If the packages are not found,
-  they will be installed from the default repository. This
-  function is intended for use in interactive sessions and
-  should not be used by other packages.
+Tries to load packages. If the packages are not found, they
+will be installed from the default repository. This
+function is intended for use in interactive sessions and
+should not be used by other packages.
 }
 \examples{
 \dontrun{

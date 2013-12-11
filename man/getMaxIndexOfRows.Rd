@@ -5,17 +5,13 @@
 \alias{getMinIndexOfRows}
 \title{Find row- or columnwise the index of the maximal / minimal element in a matrix.}
 \usage{
-  getMaxIndexOfRows(x, ties.method = "random",
-    na.rm = FALSE)
+getMaxIndexOfRows(x, ties.method = "random", na.rm = FALSE)
 
-  getMinIndexOfRows(x, ties.method = "random",
-    na.rm = FALSE)
+getMinIndexOfRows(x, ties.method = "random", na.rm = FALSE)
 
-  getMaxIndexOfCols(x, ties.method = "random",
-    na.rm = FALSE)
+getMaxIndexOfCols(x, ties.method = "random", na.rm = FALSE)
 
-  getMinIndexOfCols(x, ties.method = "random",
-    na.rm = FALSE)
+getMinIndexOfCols(x, ties.method = "random", na.rm = FALSE)
 }
 \arguments{
   \item{x}{[\code{matrix(n,m)}] \cr Numerical input
@@ -32,17 +28,17 @@
   \code{FALSE}}
 }
 \value{
-  [\code{integer(n)}].
+[\code{integer(n)}].
 }
 \description{
-  \code{getMaxIndexOfRows} returns the index of the maximal
-  element of each row. \code{getMinIndexOfRows} returns the
-  index of the minimal element of each row.
-  \code{getMaxIndexOfCols} returns the index of the maximal
-  element of each col. \code{getMinIndexOfCols} returns the
-  index of the minimal element of each col. If a
-  corresponding vector (row or col) is empty, possibly
-  after NA removal, -1 is returned as index.
+\code{getMaxIndexOfRows} returns the index of the maximal
+element of each row. \code{getMinIndexOfRows} returns the
+index of the minimal element of each row.
+\code{getMaxIndexOfCols} returns the index of the maximal
+element of each col. \code{getMinIndexOfCols} returns the
+index of the minimal element of each col. If a
+corresponding vector (row or col) is empty, possibly after
+NA removal, -1 is returned as index.
 }
 \examples{
 x <- matrix(runif(5 * 3), ncol=3)

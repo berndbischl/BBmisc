@@ -2,8 +2,7 @@
 \alias{convertRowsToList}
 \title{Convert rows of data.frame or matrix to lists.}
 \usage{
-  convertRowsToList(x, use.names = FALSE,
-    factors.as.char = TRUE)
+convertRowsToList(x, use.names = FALSE, factors.as.char = TRUE)
 }
 \arguments{
   \item{x}{[\code{matrix} | \code{data.frame}]\cr Object to
@@ -19,10 +18,10 @@
   \code{TRUE}.}
 }
 \value{
-  [\code{list} of lists].
+[\code{list} of lists].
 }
 \description{
-  For each row, one list is constructed, each entry of the
-  row becomes a separate list element.
+For each row, one list is constructed, each entry of the
+row becomes a separate list element.
 }
 

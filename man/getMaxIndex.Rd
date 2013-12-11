@@ -3,9 +3,9 @@
 \alias{getMinIndex}
 \title{Return index of maximal/minimal element in numerical vector.}
 \usage{
-  getMaxIndex(x, ties.method = "random", na.rm = FALSE)
+getMaxIndex(x, ties.method = "random", na.rm = FALSE)
 
-  getMinIndex(x, ties.method = "random", na.rm = FALSE)
+getMinIndex(x, ties.method = "random", na.rm = FALSE)
 }
 \arguments{
   \item{x}{[\code{numeric}]\cr Input vector.}
@@ -21,10 +21,10 @@
   \code{FALSE}}
 }
 \value{
-  [\code{integer(1)}].
+[\code{integer(1)}].
 }
 \description{
-  If \code{x} is empty or only contains NAs which are to be
-  removed, -1 is returned.
+If \code{x} is empty or only contains NAs which are to be
+removed, -1 is returned.
 }
 

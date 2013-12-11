@@ -2,17 +2,17 @@
 \alias{coalesce}
 \title{Returns first non-missing, non-null argument.}
 \usage{
-  coalesce(...)
+coalesce(...)
 }
 \arguments{
   \item{...}{[any]\cr Arguments.}
 }
 \value{
-  [any].
+[any].
 }
 \description{
-  Returns first non-missing, non-null argument, otherwise
-  \code{NULL}.
+Returns first non-missing, non-null argument, otherwise
+\code{NULL}.
 }
 \examples{
 f = function(x,y) {

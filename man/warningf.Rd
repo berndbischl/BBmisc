@@ -2,7 +2,7 @@
 \alias{warningf}
 \title{Wrapper for warning and sprintf.}
 \usage{
-  warningf(..., immediate = TRUE, warning.length = 8170L)
+warningf(..., immediate = TRUE, warning.length = 8170L)
 }
 \arguments{
   \item{...}{[any]\cr See \code{\link{sprintf}}.}
@@ -15,11 +15,11 @@
   ?options.  Default is 8170.}
 }
 \value{
-  Nothing.
+Nothing.
 }
 \description{
-  A wrapper for \code{\link{warning}} with
-  \code{\link{sprintf}} applied to the arguments.
+A wrapper for \code{\link{warning}} with
+\code{\link{sprintf}} applied to the arguments.
 }
 \examples{
 msg <- "a warning"

@@ -2,8 +2,8 @@
 \alias{requirePackages}
 \title{Require some packages.}
 \usage{
-  requirePackages(packs, why = NULL, stop = TRUE,
-    suppress.warnings = FALSE, ...)
+requirePackages(packs, why = NULL, stop = TRUE, suppress.warnings = FALSE,
+  ...)
 }
 \arguments{
   \item{packs}{[\code{character}]\cr Names of packages.}
@@ -22,16 +22,16 @@
   \item{...}{[any]\cr Passed on to \code{\link{require}}.}
 }
 \value{
-  [\code{logical}]. Named logical vector describing which
-  packages could be loaded.  Same length as \code{packs}.
+[\code{logical}]. Named logical vector describing which
+packages could be loaded.  Same length as \code{packs}.
 }
 \description{
-  If some packages could not be loaded and \code{stop} is
-  \code{TRUE} the following exception is thrown:
-  \dQuote{For <why> please install the following packages:
-  <missing packages>}. If \code{why} is \code{NULL} the
-  message is: \dQuote{Please install the following
-  packages: <missing packages>}.
+If some packages could not be loaded and \code{stop} is
+\code{TRUE} the following exception is thrown: \dQuote{For
+<why> please install the following packages: <missing
+packages>}. If \code{why} is \code{NULL} the message is:
+\dQuote{Please install the following packages: <missing
+packages>}.
 }
 \examples{
 requirePackages(c("BBmisc", "base"), why="BBmisc example")

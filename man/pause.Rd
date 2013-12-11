@@ -2,9 +2,9 @@
 \alias{pause}
 \title{Pause in interactive mode and continue on <Enter>.}
 \usage{
-  pause()
+pause()
 }
 \description{
-  Pause in interactive mode and continue on <Enter>.
+Pause in interactive mode and continue on <Enter>.
 }
 

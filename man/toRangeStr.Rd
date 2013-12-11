@@ -2,7 +2,7 @@
 \alias{toRangeStr}
 \title{Convert a numerical vector into a range string.}
 \usage{
-  toRangeStr(x, range.sep = " - ", block.sep = ", ")
+toRangeStr(x, range.sep = " - ", block.sep = ", ")
 }
 \arguments{
   \item{x}{[\code{integer}]\cr Vector to convert into a
@@ -18,10 +18,10 @@
   Default is \dQuote{, }.}
 }
 \value{
-  [\code{character(1)}]
+[\code{character(1)}]
 }
 \description{
-  Convert a numerical vector into a range string.
+Convert a numerical vector into a range string.
 }
 \examples{
 x <- sample(1:10, 7)

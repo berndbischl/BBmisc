@@ -2,16 +2,16 @@
 \alias{isScalarNA}
 \title{Checks whether an object is a scalar NA value.}
 \usage{
-  isScalarNA(x)
+isScalarNA(x)
 }
 \arguments{
   \item{x}{[any]\cr Object to check.}
 }
 \value{
-  [\code{logical(1)}].
+[\code{logical(1)}].
 }
 \description{
-  Checks whether object is from \code{(NA, NA_integer,
-  NA_real_, NA_character_, NA_complex_)}.
+Checks whether object is from \code{(NA, NA_integer,
+NA_real_, NA_character_, NA_complex_)}.
 }
 

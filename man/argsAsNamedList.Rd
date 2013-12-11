@@ -2,17 +2,17 @@
 \alias{argsAsNamedList}
 \title{Parses \code{...} arguments to a named list.}
 \usage{
-  argsAsNamedList(...)
+argsAsNamedList(...)
 }
 \arguments{
   \item{...}{Arbitrary number of objects.}
 }
 \value{
-  [\code{list}]: Named list with objects.
+[\code{list}]: Named list with objects.
 }
 \description{
-  The deparsed name will be used for arguments with missing
-  names. Missing names will be set to \code{NA}.
+The deparsed name will be used for arguments with missing
+names. Missing names will be set to \code{NA}.
 }
 \examples{
 z = 3

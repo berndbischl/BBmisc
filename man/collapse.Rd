@@ -2,7 +2,7 @@
 \alias{collapse}
 \title{Collapse vector to string.}
 \usage{
-  collapse(x, sep = ",")
+collapse(x, sep = ",")
 }
 \arguments{
   \item{x}{[\code{vector}]\cr Vector to collapse.}
@@ -12,10 +12,10 @@
   \dQuote{,}.}
 }
 \value{
-  [\code{character(1)}].
+[\code{character(1)}].
 }
 \description{
-  A simple wrapper for \code{paste(x, collapse)}.
+A simple wrapper for \code{paste(x, collapse)}.
 }
 \examples{
 collapse(c("foo", "bar"))

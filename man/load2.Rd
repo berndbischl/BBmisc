@@ -2,7 +2,7 @@
 \alias{load2}
 \title{Load RData file and return objects in it.}
 \usage{
-  load2(file, parts, simplify = TRUE, envir)
+load2(file, parts, simplify = TRUE, envir)
 }
 \arguments{
   \item{file}{[\code{character(1)}]\cr File to load.}
@@ -19,10 +19,10 @@
   this environment.  Default is not to assign.}
 }
 \value{
-  Either a single object or a list.
+Either a single object or a list.
 }
 \description{
-  Load RData file and return objects in it.
+Load RData file and return objects in it.
 }
 \examples{
 fn <- tempfile()

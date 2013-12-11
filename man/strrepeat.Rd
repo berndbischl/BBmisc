@@ -2,7 +2,7 @@
 \alias{strrepeat}
 \title{Repeat and join a string}
 \usage{
-  strrepeat(x, n, sep = "")
+strrepeat(x, n, sep = "")
 }
 \arguments{
   \item{x}{[character]\cr Vector of characters.}
@@ -14,10 +14,10 @@
   collapse the vector of characters.}
 }
 \value{
-  \code{character(1)}.
+\code{character(1)}.
 }
 \description{
-  Repeat and join a string
+Repeat and join a string
 }
 \examples{
 strrepeat("x", 3)

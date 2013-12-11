@@ -2,8 +2,8 @@
 \alias{extractSubList}
 \title{Extracts a named element from a list of lists.}
 \usage{
-  extractSubList(xs, element, element.value,
-    simplify = TRUE, use.names = TRUE)
+extractSubList(xs, element, element.value, simplify = TRUE,
+  use.names = TRUE)
 }
 \arguments{
   \item{xs}{[\code{list}]\cr A list of named lists.}
@@ -25,10 +25,10 @@
   \code{TRUE}.}
 }
 \value{
-  [\code{list} or simplified vector].
+[\code{list} or simplified vector].
 }
 \description{
-  Extracts a named element from a list of lists.
+Extracts a named element from a list of lists.
 }
 \examples{
 xs = list(list(a=1, b=2), list(a=5, b=7))

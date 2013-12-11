@@ -2,7 +2,7 @@
 \alias{printStrToChar}
 \title{Print \code{str(x)} of an object to a string / character vector.}
 \usage{
-  printStrToChar(x, collapse = "\n")
+printStrToChar(x, collapse = "\\n")
 }
 \arguments{
   \item{x}{[any]\cr Object to print}
@@ -12,11 +12,11 @@
   is returned.  Default is \dQuote{\\n}.}
 }
 \value{
-  [\code{character}].
+[\code{character}].
 }
 \description{
-  Print \code{str(x)} of an object to a string / character
-  vector.
+Print \code{str(x)} of an object to a string / character
+vector.
 }
 \examples{
 printStrToChar(iris)

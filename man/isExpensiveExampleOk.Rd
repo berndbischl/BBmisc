@@ -2,19 +2,19 @@
 \alias{isExpensiveExampleOk}
 \title{Conditional checking for expensive examples.}
 \usage{
-  isExpensiveExampleOk()
+isExpensiveExampleOk()
 }
 \value{
-  [\code{logical(1)}].
+[\code{logical(1)}].
 }
 \description{
-  Queries environment variable
-  \dQuote{R_EXPENSIVE_EXAMPLE_OK}. Returns \code{TRUE} iff
-  set exactly to \dQuote{TRUE}. This allows conditional
-  checking of expensive examples in packages via R CMD
-  CHECK, so they are not run on CRAN, but at least on your
-  local computer. A better option than \dQuote{dont_run} in
-  many cases, where such examples are not checked at all.
+Queries environment variable
+\dQuote{R_EXPENSIVE_EXAMPLE_OK}. Returns \code{TRUE} iff
+set exactly to \dQuote{TRUE}. This allows conditional
+checking of expensive examples in packages via R CMD CHECK,
+so they are not run on CRAN, but at least on your local
+computer. A better option than \dQuote{dont_run} in many
+cases, where such examples are not checked at all.
 }
 \examples{
 # extremely costly random number generation, that we dont want checked on CRAN

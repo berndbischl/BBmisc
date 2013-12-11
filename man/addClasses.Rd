@@ -2,7 +2,7 @@
 \alias{addClasses}
 \title{A wrapper to add to the class attribute.}
 \usage{
-  addClasses(x, classes)
+addClasses(x, classes)
 }
 \arguments{
   \item{x}{[any]\cr Your object.}
@@ -11,10 +11,10 @@
   be added in front (specialization).}
 }
 \value{
-  Changed object \code{x}.
+Changed object \code{x}.
 }
 \description{
-  A wrapper to add to the class attribute.
+A wrapper to add to the class attribute.
 }
 \examples{
 addClasses(list(), c("foo1", "foo2"))

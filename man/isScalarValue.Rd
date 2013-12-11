@@ -2,7 +2,7 @@
 \alias{isScalarValue}
 \title{Is given argument an atomic vector or factor of length 1?}
 \usage{
-  isScalarValue(x, na.ok = TRUE, null.ok = FALSE)
+isScalarValue(x, na.ok = TRUE, null.ok = FALSE)
 }
 \arguments{
   \item{x}{[any]\cr Argument.}
@@ -14,9 +14,9 @@
   considered a scalar?  Default is \code{FALSE}.}
 }
 \value{
-  [\code{logical(1)}].
+[\code{logical(1)}].
 }
 \description{
-  Is given argument an atomic vector or factor of length 1?
+Is given argument an atomic vector or factor of length 1?
 }
 

@@ -2,7 +2,7 @@
 \alias{chunk}
 \title{Chunk elements of vectors into blocks of nearly equal size.}
 \usage{
-  chunk(x, chunk.size, n.chunks, shuffle = FALSE)
+chunk(x, chunk.size, n.chunks, shuffle = FALSE)
 }
 \arguments{
   \item{x}{[\code{vector} | \code{list}]\cr Vector or list
@@ -21,13 +21,13 @@
   Default is \code{FALSE}.}
 }
 \value{
-  [unnamed \code{list}] of chunks.
+[unnamed \code{list}] of chunks.
 }
 \description{
-  In case of shuffling and vectors that cannot be chunked
-  evenly, it is chosen randomly which levels / chunks will
-  receive 1 element less. If you do not shuffle, always the
-  last chunks will receive 1 element less.
+In case of shuffling and vectors that cannot be chunked
+evenly, it is chosen randomly which levels / chunks will
+receive 1 element less. If you do not shuffle, always the
+last chunks will receive 1 element less.
 }
 \examples{
 xs <- 1:10

@@ -2,7 +2,7 @@
 \alias{namedList}
 \title{Create named list, possibly initialized with a certain element.}
 \usage{
-  namedList(names, init)
+namedList(names, init)
 }
 \arguments{
   \item{names}{[\code{character}]\cr Names of elements.}
@@ -12,11 +12,11 @@
   is used.}
 }
 \value{
-  [\code{list}].
+[\code{list}].
 }
 \description{
-  Create named list, possibly initialized with a certain
-  element.
+Create named list, possibly initialized with a certain
+element.
 }
 \examples{
 namedList(c("a", "b"))

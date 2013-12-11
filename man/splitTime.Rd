@@ -2,7 +2,7 @@
 \alias{splitTime}
 \title{Split seconds into handy chunks of time.}
 \usage{
-  splitTime(seconds, unit = "years")
+splitTime(seconds, unit = "years")
 }
 \arguments{
   \item{seconds}{[\code{numeric(1)}]\cr Number of seconds.
@@ -14,13 +14,13 @@
   \dQuote{years}.}
 }
 \value{
-  [\code{numeric(5)}]. A named vector containing the
-  \dQuote{years}, \dQuote{days}, \dQuote{hours},
-  \dQuote{minutes} and \dQuote{seconds}. Units larger than
-  the given \code{unit} are \code{NA}.
+[\code{numeric(5)}]. A named vector containing the
+\dQuote{years}, \dQuote{days}, \dQuote{hours},
+\dQuote{minutes} and \dQuote{seconds}. Units larger than
+the given \code{unit} are \code{NA}.
 }
 \description{
-  Note that a year is simply defined as exactly 365 days.
+Note that a year is simply defined as exactly 365 days.
 }
 \examples{
 splitTime(1000)

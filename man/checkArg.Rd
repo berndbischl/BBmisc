@@ -2,9 +2,8 @@
 \alias{checkArg}
 \title{Check for a function argument.}
 \usage{
-  checkArg(x, cl, s4 = FALSE, len, min.len, max.len,
-    choices, subset, lower = NA, upper = NA, na.ok = TRUE,
-    formals)
+checkArg(x, cl, s4 = FALSE, len, min.len, max.len, choices, subset,
+  lower = NA, upper = NA, na.ok = TRUE, formals)
 }
 \arguments{
   \item{x}{[any]\cr Argument.}
@@ -62,11 +61,11 @@
   Default is missing.}
 }
 \value{
-  Nothing.
+Nothing.
 }
 \description{
-  Throws exception if checks are not passed. Note that
-  argument is evaluated when checked.
+Throws exception if checks are not passed. Note that
+argument is evaluated when checked.
 }
 \examples{
 x <- 1L

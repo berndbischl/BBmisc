@@ -3,10 +3,9 @@
 \alias{rowSapply}
 \title{Apply function to rows of a data frame.}
 \usage{
-  rowLapply(df, fun, ..., unlist = FALSE)
+rowLapply(df, fun, ..., unlist = FALSE)
 
-  rowSapply(df, fun, ..., unlist = FALSE, simplify = TRUE,
-    use.names = TRUE)
+rowSapply(df, fun, ..., unlist = FALSE, simplify = TRUE, use.names = TRUE)
 }
 \arguments{
   \item{df}{[\code{data.frame}]\cr Data frame.}
@@ -31,12 +30,12 @@
   \code{TRUE}.}
 }
 \value{
-  [\code{list} or simplified object]. Length is
-  \code{nrow(df)}.
+[\code{list} or simplified object]. Length is
+\code{nrow(df)}.
 }
 \description{
-  Just like an \code{\link[base]{lapply}} on data frames,
-  but on the rows.
+Just like an \code{\link[base]{lapply}} on data frames, but
+on the rows.
 }
 \examples{
 rowLapply(iris, function(x) x$Sepal.Length + x$Sepal.Width)

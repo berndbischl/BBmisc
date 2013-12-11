@@ -2,9 +2,8 @@
 \alias{system3}
 \title{Wrapper for system2 with better return type and errorhandling.}
 \usage{
-  system3(command, args = character(), stdout = "",
-    stderr = "", wait = TRUE, ...,
-    stop.on.exit.code = wait)
+system3(command, args = character(), stdout = "", stderr = "",
+  wait = TRUE, ..., stop.on.exit.code = wait)
 }
 \arguments{
   \item{command}{See \code{\link{system2}}.}
@@ -26,15 +25,15 @@
   \code{TRUE}.  Default is \code{wait}.}
 }
 \value{
-  [\code{list}].  \item{exit.code [integer(1)]}{Exit code
-  of command. Given if wait is \code{TRUE}, otherwise
-  \code{NA}. 0L means success. 127L means command was not
-  found} \item{output [character]}{Output of command on
-  streams. Only given is \code{stdout} or \code{stderr} was
-  set to \code{TRUE}, otherwise \code{NA}.}
+[\code{list}].  \item{exit.code [integer(1)]}{Exit code of
+command. Given if wait is \code{TRUE}, otherwise \code{NA}.
+0L means success. 127L means command was not found}
+\item{output [character]}{Output of command on streams.
+Only given is \code{stdout} or \code{stderr} was set to
+\code{TRUE}, otherwise \code{NA}.}
 }
 \description{
-  Wrapper for \code{\link{system2}} with better return type
-  and errorhandling.
+Wrapper for \code{\link{system2}} with better return type
+and errorhandling.
 }
 

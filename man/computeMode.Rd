@@ -2,7 +2,7 @@
 \alias{computeMode}
 \title{Compute statistical mode of a vector (value that occurs most frequently).}
 \usage{
-  computeMode(x, ties.method = "random", na.rm = TRUE)
+computeMode(x, ties.method = "random", na.rm = TRUE)
 }
 \arguments{
   \item{x}{[\code{vector}]\cr Factor, character, integer,
@@ -20,12 +20,12 @@
   \dQuote{random}.}
 }
 \value{
-  Modal value of length 1, data type depends on data type
-  of x.
+Modal value of length 1, data type depends on data type of
+x.
 }
 \description{
-  Works for integer, numeric, factor and character vectors.
-  The implementation is currently not extremely efficient.
+Works for integer, numeric, factor and character vectors.
+The implementation is currently not extremely efficient.
 }
 \examples{
 computeMode(c(1,2,3,3))

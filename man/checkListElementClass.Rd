@@ -2,7 +2,7 @@
 \alias{checkListElementClass}
 \title{Check that a list contains only elements of a required type.}
 \usage{
-  checkListElementClass(xs, cl)
+checkListElementClass(xs, cl)
 }
 \arguments{
   \item{xs}{[\code{list}]\cr Argument.}
@@ -11,12 +11,12 @@
   must have. Checked with \code{is}.}
 }
 \value{
-  Nothing.
+Nothing.
 }
 \description{
-  Check that argument is a list and contains only elements
-  of a required type. Throws exception if check is not
-  passed. Note that argument is evaluated when checked.
+Check that argument is a list and contains only elements of
+a required type. Throws exception if check is not passed.
+Note that argument is evaluated when checked.
 }
 \examples{
 xs <- as.list(1:3)

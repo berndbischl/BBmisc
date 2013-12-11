@@ -2,8 +2,7 @@
 \alias{convertToShortString}
 \title{Converts any R object to a descriptive string so it can be used in messages.}
 \usage{
-  convertToShortString(x, num.format = "\%.4g",
-    clip.len = 15L)
+convertToShortString(x, num.format = "\%.4g", clip.len = 15L)
 }
 \arguments{
   \item{x}{[any]\cr The object.}
@@ -16,22 +15,21 @@
   vectors via \code{\link{clipString}}.  Default is 15.}
 }
 \value{
-  [\code{character(1)}].
+[\code{character(1)}].
 }
 \description{
-  Atomics: If of length 0 or 1, they are basically printed
-  as they are. Numerics are formated with
-  \code{num.format}. If of length greater than 1, they are
-  collpsed witd \dQuote{,} and clipped. so they do not
-  become excessively long.
+Atomics: If of length 0 or 1, they are basically printed as
+they are. Numerics are formated with \code{num.format}. If
+of length greater than 1, they are collpsed witd \dQuote{,}
+and clipped. so they do not become excessively long.
 }
 \details{
-  All others: Currently, only their class is simply printed
-  like \dQuote{<data.frame>}.
+All others: Currently, only their class is simply printed
+like \dQuote{<data.frame>}.
 
-  Lists: The mechanism above is applied (non-recursively)
-  to their elements. The result looks like this:
-  \dQuote{a=1, <unamed>=2, b=<data.frame>, c=<list>}.
+Lists: The mechanism above is applied (non-recursively) to
+their elements. The result looks like this: \dQuote{a=1,
+<unamed>=2, b=<data.frame>, c=<list>}.
 }
 \examples{
 convertToShortString(list(a=1, b=NULL, "foo", c=1:10))

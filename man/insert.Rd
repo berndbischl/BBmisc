@@ -2,7 +2,7 @@
 \alias{insert}
 \title{Insert elements from one list/vector into another list/vector.}
 \usage{
-  insert(xs1, xs2, elements)
+insert(xs1, xs2, elements)
 }
 \arguments{
   \item{xs1}{[\code{list}]\cr First list/vector.}
@@ -14,11 +14,11 @@
   \code{xs2} to insert into \code{xs1}.  Default is all.}
 }
 \value{
-  \code{x1} with replaced elements from \code{x2}.
+\code{x1} with replaced elements from \code{x2}.
 }
 \description{
-  Inserts elements from \code{xs2} into \code{xs1} by name,
-  overwriting elements of equal names.
+Inserts elements from \code{xs2} into \code{xs1} by name,
+overwriting elements of equal names.
 }
 \examples{
 xs1 <- list(a=1, b=2)

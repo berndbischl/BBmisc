@@ -2,17 +2,17 @@
 \alias{isDirectory}
 \title{Is one / are several files a directory?}
 \usage{
-  isDirectory(...)
+isDirectory(...)
 }
 \arguments{
   \item{...}{[\code{character(1)}]\cr File names, all
   strings.}
 }
 \value{
-  [\code{logical}].
+[\code{logical}].
 }
 \description{
-  If a file does not exist, \code{FALSE} is returned.
+If a file does not exist, \code{FALSE} is returned.
 }
 \examples{
 print(isDirectory(tempdir()))

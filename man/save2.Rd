@@ -2,9 +2,8 @@
 \alias{save2}
 \title{Save multiple objects to a file.}
 \usage{
-  save2(file, ..., ascii = FALSE, version = NULL,
-    compress = !ascii, compression_level,
-    eval.promises = TRUE, precheck = TRUE)
+save2(file, ..., ascii = FALSE, version = NULL, compress = !ascii,
+  compression_level, eval.promises = TRUE, precheck = TRUE)
 }
 \arguments{
   \item{file}{File to save.}
@@ -27,15 +26,14 @@
   \item{precheck}{See help of \code{\link[base]{save}}.}
 }
 \value{
-  See help of \code{\link[base]{save}}.
+See help of \code{\link[base]{save}}.
 }
 \description{
-  A simple wrapper for \code{\link[base]{save}}.
-  Understands key = value syntax to save objects using
-  arbitrary variable names. All options of
-  \code{\link[base]{save}}, except \code{list} and
-  \code{envir}, are available and passed to
-  \code{\link[base]{save}}.
+A simple wrapper for \code{\link[base]{save}}. Understands
+key = value syntax to save objects using arbitrary variable
+names. All options of \code{\link[base]{save}}, except
+\code{list} and \code{envir}, are available and passed to
+\code{\link[base]{save}}.
 }
 \examples{
 x <- 1

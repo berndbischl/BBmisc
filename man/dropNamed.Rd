@@ -2,7 +2,7 @@
 \alias{dropNamed}
 \title{Drop named elements of an object.}
 \usage{
-  dropNamed(x, drop)
+dropNamed(x, drop)
 }
 \arguments{
   \item{x}{[any]\cr Object to drop named elements from.
@@ -15,11 +15,11 @@
   drop.}
 }
 \value{
-  Subset of object of same type as \code{x}. The object is
-  not simplified, i.e, no dimensions are dropped as
-  \code{[,,drop = FALSE]} is used.
+Subset of object of same type as \code{x}. The object is
+not simplified, i.e, no dimensions are dropped as
+\code{[,,drop = FALSE]} is used.
 }
 \description{
-  Drop named elements of an object.
+Drop named elements of an object.
 }
 

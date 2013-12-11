@@ -2,7 +2,7 @@
 \alias{clipString}
 \title{Shortens strings to a given length.}
 \usage{
-  clipString(x, len, tail = "...")
+clipString(x, len, tail = "...")
 }
 \arguments{
   \item{x}{[\code{character}]\cr Vector of strings.}
@@ -17,10 +17,10 @@
   will be \code{tail}.  Default is \dQuote{...}.}
 }
 \value{
-  [\code{character(1)}].
+[\code{character(1)}].
 }
 \description{
-  Shortens strings to a given length.
+Shortens strings to a given length.
 }
 \examples{
 print(clipString("abcdef", 10))

@@ -3,9 +3,9 @@
 \alias{seq_row}
 \title{Generate sequences along rows or cols.}
 \usage{
-  seq_row(x)
+seq_row(x)
 
-  seq_col(x)
+seq_col(x)
 }
 \arguments{
   \item{x}{[\code{data.frame} | \code{matrix}]\cr Data
@@ -14,11 +14,11 @@
   respectively.}
 }
 \value{
-  Vector of type [\code{integer}].
+Vector of type [\code{integer}].
 }
 \description{
-  A simple convenience wrapper around
-  \code{\link[base]{seq_len}}.
+A simple convenience wrapper around
+\code{\link[base]{seq_len}}.
 }
 \examples{
 data(iris)
