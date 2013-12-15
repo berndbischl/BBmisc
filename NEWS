@@ -8,6 +8,7 @@ BBmisc_1.5:
 -- dropNamed
 -- first, last ???
 -- binPack???
+-- isValidName
 
 BBmisc_1.4:
 - renamed convertDfCols to convertDataFrameCols
