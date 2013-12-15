@@ -14,7 +14,7 @@
 #'   Default is \code{list()}.
 #' @return Return value of \code{fun}.
 #' @export
-#' @examples \dontrun {
+#' @examples \dontrun{
 #'   library(microbenchmark)
 #'   x = 1:1e7
 #'   microbenchmark(do.call(head, list(x, n=1)), do.call2("head", x, n=1))
