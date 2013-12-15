@@ -1,3 +1,4 @@
+
 #' A wrapper to add to the class attribute.
 #'
 #' @param x [any]\cr

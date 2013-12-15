@@ -3,8 +3,6 @@ BBmisc_1.5:
 - removed convertDfCols, use convertDataFrameCols
 - removed listToShortString, use convertToShortString
 - new functions:
--- attachToFunction ???
--- clearFunctionEnvi ???
 -- dropNamed
 -- first, last ???
 -- binPack???

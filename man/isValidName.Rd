@@ -1,6 +1,6 @@
 \name{isValidName}
 \alias{isValidName}
-\title{Can some strings be used for columns or list elements without problems?}
+\title{Can some strings be used for column or list element names without problems?}
 \usage{
 isValidName(x, unique = TRUE)
 }
@@ -13,11 +13,11 @@ isValidName(x, unique = TRUE)
 }
 \value{
 [\code{logical}]. One Boolean entry for each string in
-\code{x}.  If the entries are not unique and this is
-checked, the first duplicate will be \code{FALSE}.
+\code{x}.  If the entries are not unique and \code{unique}
+is enabled, the first duplicate will be \code{FALSE}.
 }
 \description{
-Can some strings be used for columns or list elements
+Can some strings be used for column or list element names
 without problems?
 }
 
