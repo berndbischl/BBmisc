@@ -1,32 +1,29 @@
-#FIXME:
-
-# a) REALLY test this... 
-# b) Proof that this increases performance with at least one example
-
-
-#FIXME: bug with anonymous function?
-
 #' Execute a function call
 #'
 #' This function is supposed to be a replacement for \code{\link[base]{do.call}} in situations
-#' where you need to pass big R objects which can simply be passed via \code{...} without
-#' inflicting a copy.
+#' where you need to pass big R objects.
+#' Unlike \code{\link[base]{do.call}}, this function allows to pass objects via \code{...}
+#' to avoid a copy.
 #'
-#' @param fun [\code{function}]\cr
-#'   Function to call.
+#' @param fun [\code{character(1)}]\cr
+#'   Name of the function to call.
 #' @param ... [any]\cr
 #'   Arguments to \code{fun}. Best practice is to specify them in a \code{key=value} syntax.
 #' @param .args [\code{list}]\cr
 #'   Arguments to \code{fun} as a (named) list. Will be passed after arguments in \code{...}.
 #'   Default is \code{list()}.
-#FIXME: return?
+#' @return Return value of \code{fun}.
+#' @export
+#' @examples \dontrun {
+#'   library(microbenchmark)
+#'   x = 1:1e7
+#'   microbenchmark(do.call(head, list(x, n=1)), do.call2("head", x, n=1))
+#' }
 do.call2 = function(fun, ..., .args=list()) {
+  #FIXME allow (anonymous) functions
   checkArg(.args, "list")
-  if (is.function(fun))
-    fun = as.name(substitute(fun))
-  else if (is.character(fun) && length(fun) == 1L && !is.na(fun))
-    fun = as.name(fun)
+  checkArg(fun, "character", len=1L, na.ok=FALSE)
   ddd = match.call(expand.dots=FALSE)$...
-  expr = as.call(c(list(fun), ddd, .args))
+  expr = as.call(c(list(as.name(fun)), ddd, .args))
   eval.parent(expr, n=1L)
 }
