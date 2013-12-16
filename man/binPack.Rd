@@ -13,8 +13,8 @@ binPack(x, capacity)
   this limit.}
 }
 \value{
-[\code{factor}]. Factor with levels \dQuote{1} to
-\dQuote{n} indicating bin membership.
+[\code{integer}]. Integer with values \dQuote{1} to
+\dQuote{n.bins} indicating bin membership.
 }
 \description{
 Splits numeric items in \code{x} into groups with sum less

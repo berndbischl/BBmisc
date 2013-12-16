@@ -10,7 +10,7 @@
 #' @param capacity [\code{numeric(1)}]\cr
 #'   Maximum capacity of each bin, i.e. elements will be grouped
 #'   to not excess this limit.
-#' @return [\code{factor}]. Factor with levels \dQuote{1} to \dQuote{n}
+#' @return [\code{integer}]. Integer with values \dQuote{1} to \dQuote{n.bins}
 #'   indicating bin membership.
 #' @export
 #' @examples
@@ -46,5 +46,5 @@ binPack = function(x, capacity) {
       sums[bin.count] = x[j]
     }
   }
-  factor(grp)
+  grp
 }
