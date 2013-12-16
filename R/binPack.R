@@ -1,25 +1,50 @@
-# simple bin packing algorithm, useful for chunking jobs
-# w.r.t. walltime
+#' Simple bin packing
+#'
+#' Splits numeric items in \code{x} into groups with sum
+#' less or equal than \code{capacity}.
+#' If one element of \code{x} exceeds \code{capacity}, an error
+#' is thrown.
+#'
+#' @param x [\code{numeric}]\cr
+#'   Numeric vector of elements to group.
+#' @param capacity [\code{numeric(1)}]\cr
+#'   Maximum capacity of each bin, i.e. elements will be grouped
+#'   to not excess this limit.
+#' @return [\code{factor}]. Factor with levels \dQuote{1} to \dQuote{n}
+#'   indicating bin membership.
+#' @export
+#' @examples
+#' x = 1:10
+#' bp = binPack(x, 11)
+#' xs = split(x, bp)
+#' print(xs)
+#' print(sapply(xs, sum))
 binPack = function(x, capacity) {
-  checkArg(x, "numeric", min.len=1L, na.ok=FALSE)
+  checkArg(x, "numeric", min.len=1L, lower=0, na.ok=FALSE)
   checkArg(capacity, "numeric", len=1L, na.ok=FALSE)
-  too.big = head(which(x > capacity), 1L)
+
+  too.big = first(x > capacity)
   if (length(too.big))
     stopf("Capacity not sufficient. Item %i (x=%f) does not fit", too.big, x[too.big])
+  if (any(is.infinite(x)))
+    stop("Infinite elements found in 'x'")
+
   ord = order(x, decreasing=TRUE)
-  packs = list(numeric(0L))
-  sums = 0
+  grp = integer(length(x))
+  sums = vector(typeof(x), 1L)
+  bin.count = 1L
 
   for(j in ord) {
-    x.cur = x[j]
-    pos = head(which(x.cur + sums <= capacity), 1L)
+    new.sums = sums + x[j]
+    pos = first(new.sums <= capacity)
     if (length(pos)) {
-      packs[[pos]] = c(packs[[pos]], j)
-      sums[pos] = sums[pos] + x.cur
+      grp[j] = pos
+      sums[pos] = new.sums[pos]
     } else {
-      packs = c(packs, list(j))
-      sums = c(sums, x.cur)
+      bin.count = bin.count + 1L
+      grp[j] = bin.count
+      sums[bin.count] = x[j]
     }
   }
-  return(list(packs = packs, sums = sums))
+  factor(grp)
 }
