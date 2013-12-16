@@ -3,11 +3,10 @@ BBmisc_1.5:
 - removed convertDfCols, use convertDataFrameCols
 - removed listToShortString, use convertToShortString
 - new functions:
--- attachToFunction ???
--- clearFunctionEnvi ???
 -- dropNamed
 -- first, last ???
 -- binPack???
+-- isValidName
 
 BBmisc_1.4:
 - renamed convertDfCols to convertDataFrameCols
