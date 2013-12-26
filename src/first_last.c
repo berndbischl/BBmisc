@@ -3,13 +3,15 @@
 SEXP c_first(SEXP x, SEXP na_omit) {
     if (!isLogical(x))
         error("Argument 'x' must be logical");
-
+    Rboolean ignore_na = LOGICAL(na_omit)[0];
     const R_len_t n = length(x);
+    int *xp = LOGICAL(x);
+
     for (R_len_t i = 0; i < n; i++) {
-        if (LOGICAL(x)[i] == NA_LOGICAL) {
-            if (!asLogical(na_omit))
+        if (xp[i] == NA_LOGICAL) {
+            if (!ignore_na)
                 return ScalarInteger(NA_INTEGER);
-        } else if (LOGICAL(x)[i]) {
+        } else if (xp[i]) {
             return ScalarInteger(i + 1);
         }
     }
@@ -19,13 +21,14 @@ SEXP c_first(SEXP x, SEXP na_omit) {
 SEXP c_last(SEXP x, SEXP na_omit) {
     if (!isLogical(x))
         error("Argument 'x' must be logical");
+    Rboolean ignore_na = LOGICAL(na_omit)[0];
+    int *xp = LOGICAL(x);
 
-    const R_len_t n = length(x);
-    for (R_len_t i = n - 1; i >= 0; i--) {
-        if (LOGICAL(x)[i] == NA_LOGICAL) {
-            if (!asLogical(na_omit))
+    for (R_len_t i = length(x) - 1; i >= 0; i--) {
+        if (xp[i] == NA_LOGICAL) {
+            if (!ignore_na)
                 return ScalarInteger(NA_INTEGER);
-        } else if (LOGICAL(x)[i]) {
+        } else if (xp[i]) {
             return ScalarInteger(i + 1);
         }
     }
