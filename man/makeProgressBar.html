@@ -15,20 +15,19 @@
 
 <h3>Description</h3>
 
-<p>Create a progress bar function that displays the
-estimated time till completion and optional messages.
-Call the returned functions <code>set</code> or <code>inc</code>
-during a loop to change the display. Note that you are
-not allowed to decrease the value of the bar. If you call
-these function without setting any of the arguments the
-bar is simply redrawn with the current value. For
-errorhandling use <code>error</code> and have a look at the
-example below. You can globally change the behavior of
-all bars by setting the option
-<code>options(BBmisc.ProgressBar.style)</code> either to
-&ldquo;text&rdquo; (the default) or &ldquo;off&rdquo;, which
-display no bars at all. You can globally change the width
-of all bars by setting the option
+<p>Create a progress bar function that displays the estimated
+time till completion and optional messages. Call the
+returned functions <code>set</code> or <code>inc</code> during a loop
+to change the display. Note that you are not allowed to
+decrease the value of the bar. If you call these function
+without setting any of the arguments the bar is simply
+redrawn with the current value. For errorhandling use
+<code>error</code> and have a look at the example below. You can
+globally change the behavior of all bars by setting the
+option <code>options(BBmisc.ProgressBar.style)</code> either to
+&ldquo;text&rdquo; (the default) or &ldquo;off&rdquo;, which display
+no bars at all. You can globally change the width of all
+bars by setting the option
 <code>options(BBmisc.ProgressBar.width)</code>. By default this
 is <code>getOption("width")</code>.
 </p>
@@ -37,8 +36,7 @@ is <code>getOption("width")</code>.
 <h3>Usage</h3>
 
 <pre>
-  makeProgressBar(min = 0, max = 100, label = "",
-    char = "+")
+makeProgressBar(min = 0, max = 100, label = "", char = "+")
 </pre>
 
 
@@ -79,10 +77,10 @@ used to display progress in the bar.  Default is
 functions: </p>
 <table summary="R valueblock">
 <tr valign="top"><td><code>set [<code>function(value,
-  msg=label)</code>]</code></td>
+msg=label)</code>]</code></td>
 <td>
-<p>Set the bar to a value and possibly display
-a message instead of the label.</p>
+<p>Set the bar to a value and possibly display a
+message instead of the label.</p>
 </td></tr> <tr valign="top"><td><code>inc
 [<code>function(value, msg=label)</code>]</code></td>
 <td>
@@ -91,15 +89,14 @@ possibly display a message instead of the label.</p>
 </td></tr>
 <tr valign="top"><td><code>kill [<code>function(clear=FALSE)</code>]</code></td>
 <td>
-<p>Kill the bar
-so it cannot be used anymore. Cursor is moved to new
-line. You can also erase its display.</p>
+<p>Kill the bar so
+it cannot be used anymore. Cursor is moved to new line. You
+can also erase its display.</p>
 </td></tr> <tr valign="top"><td><code>error
 [<code>function(e)</code>]</code></td>
 <td>
-<p>Useful in <code>tryCatch</code> to
-properly display error messages below the bar. See the
-example.</p>
+<p>Useful in <code>tryCatch</code> to properly
+display error messages below the bar. See the example.</p>
 </td></tr>
 </table>
 

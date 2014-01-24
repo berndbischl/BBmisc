@@ -18,17 +18,17 @@
 <p>Queries environment variable
 &ldquo;R_EXPENSIVE_EXAMPLE_OK&rdquo;. Returns <code>TRUE</code> iff
 set exactly to &ldquo;TRUE&rdquo;. This allows conditional
-checking of expensive examples in packages via R CMD
-CHECK, so they are not run on CRAN, but at least on your
-local computer. A better option than &ldquo;dont_run&rdquo; in
-many cases, where such examples are not checked at all.
+checking of expensive examples in packages via R CMD CHECK,
+so they are not run on CRAN, but at least on your local
+computer. A better option than &ldquo;dont_run&rdquo; in many
+cases, where such examples are not checked at all.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-  isExpensiveExampleOk()
+isExpensiveExampleOk()
 </pre>
 
 
@@ -47,7 +47,7 @@ if (isExpensiveExampleOk()) {
 }
 </code></pre>
 
-<pre><code>## [1] 0.9228
+<pre><code>## [1] 0.8035
 </code></pre>
 
 <pre><code class="r">

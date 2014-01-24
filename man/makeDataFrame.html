@@ -22,9 +22,8 @@
 <h3>Usage</h3>
 
 <pre>
-  makeDataFrame(nrow, ncol, col.types, init,
-    row.names = NULL,
-    col.names = sprintf("V%i", seq_len(ncol)))
+makeDataFrame(nrow, ncol, col.types, init, row.names = NULL,
+  col.names = sprintf("V%i", seq_len(ncol)))
 </pre>
 
 
@@ -43,7 +42,10 @@
 <td>
 <p>[<code>character(ncol)</code> |
 <code>character(1)</code>]<br> Data types of columns.  If you
-only pass one type, it will be replicated.</p>
+only pass one type, it will be replicated.  Supported are
+all atomic modes also supported by
+<code><a href="../../base/html/vector.html">vector</a></code>, i.e. all common data frame
+types except factors.</p>
 </td></tr>
 <tr valign="top"><td><code>init</code></td>
 <td>

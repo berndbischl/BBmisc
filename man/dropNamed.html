@@ -17,7 +17,7 @@
 <h3>Usage</h3>
 
 <pre>
-  dropNamed(x, drop)
+dropNamed(x, drop)
 </pre>
 
 
@@ -27,20 +27,24 @@
 <tr valign="top"><td><code>x</code></td>
 <td>
 <p>[any]<br> Object to drop named elements from.
-For matrix and data frames this function delegates to
-drop using the second dimension (columns).  The normal
-index operator &ldquo;[&rdquo; is applied otherwise..</p>
+For a matrix or a data frames this function drops named
+columns via the second argument of the binary index
+operator <code>[,]</code>.  Otherwise, the unary index operator
+<code>[]</code> is used for dropping.</p>
 </td></tr>
 <tr valign="top"><td><code>drop</code></td>
 <td>
-<p>[<code>character</code>]<br> Names to drop.</p>
+<p>[<code>character</code>]<br> Names of elements to
+drop.</p>
 </td></tr>
 </table>
 
 
 <h3>Value</h3>
 
-<p>Subset of object of same type as <code>x</code>.
+<p>Subset of object of same type as <code>x</code>. The object is
+not simplified, i.e, no dimensions are dropped as
+<code>[,,drop = FALSE]</code> is used.
 </p>
 
 <hr><div align="center">[Package <em>BBmisc</em> version 1.5 <a href="00Index.html">Index</a>]</div>

@@ -18,9 +18,8 @@ and errorhandling.
 <h3>Usage</h3>
 
 <pre>
-  system3(command, args = character(), stdout = "",
-    stderr = "", wait = TRUE, ...,
-    stop.on.exit.code = wait)
+system3(command, args = character(), stdout = "", stderr = "",
+  wait = TRUE, ..., stop.on.exit.code = wait)
 </pre>
 
 
@@ -68,15 +67,15 @@ generated?  Can only be used if <code>wait</code> is
 <table summary="R valueblock">
 <tr valign="top"><td><code>exit.code [integer(1)]</code></td>
 <td>
-<p>Exit code
-of command. Given if wait is <code>TRUE</code>, otherwise
-<code>NA</code>. 0L means success. 127L means command was not
-found</p>
-</td></tr> <tr valign="top"><td><code>output [character]</code></td>
+<p>Exit code of
+command. Given if wait is <code>TRUE</code>, otherwise <code>NA</code>.
+0L means success. 127L means command was not found</p>
+</td></tr>
+<tr valign="top"><td><code>output [character]</code></td>
 <td>
-<p>Output of command on
-streams. Only given is <code>stdout</code> or <code>stderr</code> was
-set to <code>TRUE</code>, otherwise <code>NA</code>.</p>
+<p>Output of command on streams.
+Only given is <code>stdout</code> or <code>stderr</code> was set to
+<code>TRUE</code>, otherwise <code>NA</code>.</p>
 </td></tr>
 </table>
 

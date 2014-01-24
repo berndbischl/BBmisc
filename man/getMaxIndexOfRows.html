@@ -21,25 +21,21 @@ index of the minimal element of each row.
 <code>getMaxIndexOfCols</code> returns the index of the maximal
 element of each col. <code>getMinIndexOfCols</code> returns the
 index of the minimal element of each col. If a
-corresponding vector (row or col) is empty, possibly
-after NA removal, -1 is returned as index.
+corresponding vector (row or col) is empty, possibly after
+NA removal, -1 is returned as index.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-  getMaxIndexOfRows(x, ties.method = "random",
-    na.rm = FALSE)
+getMaxIndexOfRows(x, ties.method = "random", na.rm = FALSE)
 
-  getMinIndexOfRows(x, ties.method = "random",
-    na.rm = FALSE)
+getMinIndexOfRows(x, ties.method = "random", na.rm = FALSE)
 
-  getMaxIndexOfCols(x, ties.method = "random",
-    na.rm = FALSE)
+getMaxIndexOfCols(x, ties.method = "random", na.rm = FALSE)
 
-  getMinIndexOfCols(x, ties.method = "random",
-    na.rm = FALSE)
+getMinIndexOfCols(x, ties.method = "random", na.rm = FALSE)
 </pre>
 
 
@@ -81,24 +77,24 @@ x &lt;- matrix(runif(5 * 3), ncol=3)
 print(x)
 </code></pre>
 
-<pre><code>##        [,1]    [,2]   [,3]
-## [1,] 0.0951 0.07627 0.8877
-## [2,] 0.1828 0.53765 0.6159
-## [3,] 0.3573 0.87731 0.3503
-## [4,] 0.2869 0.45172 0.3026
-## [5,] 0.7362 0.94449 0.8600
+<pre><code>##          [,1]   [,2]   [,3]
+## [1,] 0.983068 0.4177 0.5427
+## [2,] 0.004326 0.7297 0.8069
+## [3,] 0.739219 0.3217 0.7540
+## [4,] 0.731731 0.8141 0.7779
+## [5,] 0.011859 0.8741 0.3404
 </code></pre>
 
 <pre><code class="r">print(getMaxIndexOfRows(x))
 </code></pre>
 
-<pre><code>## [1] 3 3 2 2 2
+<pre><code>## [1] 1 3 3 2 2
 </code></pre>
 
 <pre><code class="r">print(getMinIndexOfRows(x))
 </code></pre>
 
-<pre><code>## [1] 2 1 3 1 1
+<pre><code>## [1] 2 1 2 1 1
 </code></pre>
 
 <pre><code class="r">

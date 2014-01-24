@@ -10,17 +10,17 @@
 
 <h3>Description</h3>
 
-<p>Find the index of first/last <code>TRUE</code> value in a
-logical vector.
+<p>Find the index of first/last <code>TRUE</code> value in a logical
+vector.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-  first(x, na.omit = TRUE)
+first(x, na.omit = TRUE)
 
-  last(x, na.omit = TRUE)
+last(x, na.omit = TRUE)
 </pre>
 
 
@@ -41,10 +41,11 @@ omitted from <code>x</code>?.  Default is <code>TRUE</code>.</p>
 
 <h3>Value</h3>
 
-<p>Returns a scalar integer of the index of the first/last
-<code>TRUE</code> value in <code>x</code> or an empty integer vector
-if none is found.  If NAs are encountered before a
-<code>TRUE</code> and not omitted, the result is <code>NA</code>.
+<p>[<code>integer(1)</code> | <code>integer(0)</code>]. Returns the index
+of the first/last <code>TRUE</code> value in <code>x</code> or an empty
+integer vector if none is found.  If NAs are encountered
+before a <code>TRUE</code> and not omitted, the result is
+<code>NA_integer_</code>.
 </p>
 
 <hr><div align="center">[Package <em>BBmisc</em> version 1.5 <a href="00Index.html">Index</a>]</div>
