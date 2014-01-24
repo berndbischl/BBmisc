@@ -1,6 +1,6 @@
 \name{do.call2}
 \alias{do.call2}
-\title{Execute a function call}
+\title{Execute a function call similar to \code{do.call}.}
 \usage{
 do.call2(fun, ..., .args = list())
 }
