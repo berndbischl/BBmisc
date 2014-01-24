@@ -21,17 +21,14 @@ toRangeStr = function(x, range.sep=" - ", block.sep=", ") {
   checkArg(block.sep, "character", len=1L, na.ok=FALSE)
 
   findRange = function(x) {
-    end_index = max(which(x == x[1L] + 0:(length(x)-1L)))
-    1:end_index
+    seq_len(max(which(x == x[1L] + 0:(length(x)-1L))))
   }
-  sorted.x = sort(unique(x))
-  res = c()
   x = sort(unique(x))
   x = unname(split(x, c(0L, cumsum(diff(x) > 1L))))
-  combine = function(x) 
-    if (length(x) == 1L) 
-      as.character(x) 
-    else 
+  combine = function(x)
+    if (length(x) == 1L)
+      as.character(x)
+    else
       sprintf("%i%s%i", x[1L], range.sep, x[length(x)])
   collapse(vapply(x, combine, character(1L), USE.NAMES=FALSE), block.sep)
 }
