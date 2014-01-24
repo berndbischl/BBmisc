@@ -1,15 +1,18 @@
-#' Simple bin packing
+#' Simple bin packing.
 #'
-#' Splits numeric items in \code{x} into groups with sum
+#' Maps numeric items in \code{x} into groups with sum
 #' less or equal than \code{capacity}.
-#' If one element of \code{x} exceeds \code{capacity}, an error
-#' is thrown.
+#' A very simple greedy algorithm is used, which is not really optimized
+#' for speed. This is a convenience function for smaller vectors, not 
+#' a competetive solver for the real binbacking problem.
+#' If an element of \code{x} exceeds \code{capacity}, an error
+#' is thrown. 
 #'
 #' @param x [\code{numeric}]\cr
 #'   Numeric vector of elements to group.
 #' @param capacity [\code{numeric(1)}]\cr
-#'   Maximum capacity of each bin, i.e. elements will be grouped
-#'   to not excess this limit.
+#'   Maximum capacity of each bin, i.e., elements will be grouped
+#'   so their sum does not exceed this limit.
 #' @return [\code{integer}]. Integer with values \dQuote{1} to \dQuote{n.bins}
 #'   indicating bin membership.
 #' @export

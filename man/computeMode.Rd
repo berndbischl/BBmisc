@@ -21,7 +21,7 @@ computeMode(x, ties.method = "random", na.rm = TRUE)
 }
 \value{
 Modal value of length 1, data type depends on data type of
-x.
+\code{x}.
 }
 \description{
 Works for integer, numeric, factor and character vectors.
