@@ -5,9 +5,9 @@
 #' @param na.omit [\code{logical(1)}]\cr
 #'   Should NAs be omitted from \code{x}?.
 #'   Default is \code{TRUE}.
-#' @return Returns a scalar integer of the index of the first/last \code{TRUE}
+#' @return [\code{integer(1)} | \code{integer(0)}]. Returns the index of the first/last \code{TRUE}
 #'   value in \code{x} or an empty integer vector if none is found.
-#'   If NAs are encountered before a \code{TRUE} and not omitted, the result is \code{NA}.
+#'   If NAs are encountered before a \code{TRUE} and not omitted, the result is \code{NA_integer_}.
 #' @export
 #' @useDynLib BBmisc c_first
 first = function(x, na.omit=TRUE) {
