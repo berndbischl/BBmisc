@@ -10,8 +10,6 @@ URL: https://github.com/berndbischl/BBmisc
 BugReports: https://github.com/berndbischl/BBmisc/issues
 License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
-Depends:
-    methods
 Suggests:
     testthat,
     microbenchmark
