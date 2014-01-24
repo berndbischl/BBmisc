@@ -15,3 +15,12 @@ convertDfCols = function(...) {
 listToShortString = function(...) {
   convertToShortString(...)
 }
+
+#' DEPRECATED
+#'
+#' Use \code{\link{convertDataFrameCols}} instead.
+#' @keywords internal
+#' @export
+stringsAsFactors = function(x, ...) {
+  convertDataFrameCols(x, chars.as.factor=TRUE, ...)
+}
