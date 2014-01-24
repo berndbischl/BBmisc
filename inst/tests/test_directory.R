@@ -10,8 +10,10 @@ test_that("isDirectory", {
 
 test_that("isEmptyDirectory", {
   expect_false(isEmptyDirectory("."))
-  expect_true(isEmptyDirectory(tempdir()))
-  expect_identical(isEmptyDirectory(tempdir(), ".."), c(TRUE, FALSE))
+  td = tempfile()
+  dir.create(td)
+  expect_true(isEmptyDirectory(td))
+  expect_identical(isEmptyDirectory(td, ".."), c(TRUE, FALSE))
   expect_false(isEmptyDirectory("foofoo"))
   expect_false(isEmptyDirectory(tempfile()))
 })
