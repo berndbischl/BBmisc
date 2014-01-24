@@ -19,8 +19,7 @@
 system3 = function(command, args = character(), stdout = "", stderr = "", wait=TRUE, ..., stop.on.exit.code=wait) {
   if (stop.on.exit.code && !wait)
     stopf("stop.on.exit.code is TRUE but wait is FALSE!")
-  output = as.character(NA)
-  exit.code = as.integer(NA)
+  output = NA_character_
   if (isTRUE(stdout) || isTRUE(stderr)) {
     wait = TRUE
     # here we wait anyway and output of cmd is returned
@@ -29,10 +28,10 @@ system3 = function(command, args = character(), stdout = "", stderr = "", wait=T
         withCallingHandlers({
             op = system2(command=command, args=args, stdout=stdout, stderr=stderr, wait=wait, ...)
           }, warning = function(w) {
-            g = gregexpr("\\d+", w$message)[[1]]
+            g = gregexpr("\\d+", w$message)[[1L]]
             start = tail(g, 1L)
-            len = tail(attr(g, "match.length"), 1)
-            ec <<- as.integer(substr(w$message, start, start + len - 1))
+            len = tail(attr(g, "match.length"), 1L)
+            ec <<- as.integer(substr(w$message, start, start + len - 1L))
           })
       })
   } else {
