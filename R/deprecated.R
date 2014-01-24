@@ -21,6 +21,6 @@ listToShortString = function(...) {
 #' Use \code{\link{convertDataFrameCols}} instead.
 #' @keywords internal
 #' @export
-stringsAsFactors = function(x, ...) {
-  convertDataFrameCols(x, chars.as.factor=TRUE, ...)
+stringsAsFactors = function(x, chars.as.factor=TRUE) {
+  convertDataFrameCols(x, chars.as.factor=chars.as.factor)
 }

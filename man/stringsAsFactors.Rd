@@ -2,7 +2,7 @@
 \alias{stringsAsFactors}
 \title{DEPRECATED}
 \usage{
-stringsAsFactors(x, ...)
+stringsAsFactors(x, chars.as.factor = TRUE)
 }
 \description{
 Use \code{\link{convertDataFrameCols}} instead.
