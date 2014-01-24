@@ -7,6 +7,8 @@
 #' @param col.types [\code{character(ncol)} | \code{character(1)}]\cr
 #'   Data types of columns.
 #'   If you only pass one type, it will be replicated.
+#'   Supported are all atomic modes also supported by
+#'   \code{\link[base]{vector}}, i.e. all common data frame types except factors.
 #' @param init [any]\cr
 #'   Scalar object to initialize all elements of the data.frame.
 #'   You do not need to specify \code{col.types} if you pass this.
