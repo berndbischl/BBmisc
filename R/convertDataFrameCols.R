@@ -1,6 +1,4 @@
 #' Converts columns in a data frame to characters, factors or numerics.
-#' 
-#' \code{convertDfCols} is deprecated.
 #'
 #' @param df [\code{data.frame}]\cr
 #'   Data frame.
