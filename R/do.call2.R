@@ -1,4 +1,4 @@
-#' Execute a function call
+#' Execute a function call similar to \code{do.call}.
 #'
 #' This function is supposed to be a replacement for \code{\link[base]{do.call}} in situations
 #' where you need to pass big R objects.
@@ -20,7 +20,7 @@
 #'   microbenchmark(do.call(head, list(x, n=1)), do.call2("head", x, n=1))
 #' }
 do.call2 = function(fun, ..., .args=list()) {
-  #FIXME allow (anonymous) functions
+  #FIXME: allow (anonymous) functions
   checkArg(.args, "list")
   checkArg(fun, "character", len=1L, na.ok=FALSE)
   ddd = match.call(expand.dots=FALSE)$...
