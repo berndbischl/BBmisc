@@ -13,7 +13,8 @@ Encoding: UTF-8
 Depends:
     methods
 Suggests:
-    testthat
+    testthat,
+    microbenchmark
 LazyData: yes
 ByteCompile: yes
 Version: 1.5
