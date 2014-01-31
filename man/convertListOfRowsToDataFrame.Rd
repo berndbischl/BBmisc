@@ -1,8 +1,8 @@
-\name{convertListofRowsToDataFrame}
-\alias{convertListofRowsToDataFrame}
+\name{convertListOfRowsToDataFrame}
+\alias{convertListOfRowsToDataFrame}
 \title{Convert a list of row-lists of equal structure to a data.frame.}
 \usage{
-convertListofRowsToDataFrame(rows, force.names = FALSE,
+convertListOfRowsToDataFrame(rows, force.names = FALSE,
   strings.as.factors = default.stringsAsFactors(), row.names = NULL,
   col.names)
 }
@@ -32,6 +32,6 @@ Convert a list of row-lists of equal structure to a
 data.frame.
 }
 \examples{
-convertListofRowsToDataFrame(list(list(x=1, y="a"), list(x=2, y="b")))
+convertListOfRowsToDataFrame(list(list(x=1, y="a"), list(x=2, y="b")))
 }
 

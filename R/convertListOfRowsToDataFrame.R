@@ -17,8 +17,8 @@
 #' @return [\code{data.frame}].
 #' @export
 #' @examples
-#' convertListofRowsToDataFrame(list(list(x=1, y="a"), list(x=2, y="b")))
-convertListofRowsToDataFrame = function(rows, force.names=FALSE,
+#' convertListOfRowsToDataFrame(list(list(x=1, y="a"), list(x=2, y="b")))
+convertListOfRowsToDataFrame = function(rows, force.names=FALSE,
   strings.as.factors = default.stringsAsFactors(), row.names=NULL, col.names) {
 
   n = length(rows)
