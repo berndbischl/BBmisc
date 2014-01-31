@@ -1,3 +1,7 @@
+BBmisc_1.6:
+- new functions:
+-- operator %btwn%.
+
 BBmisc_1.5:
 - removed stringsAsFactors, use convertDataFrameCols
 - removed convertDfCols, use convertDataFrameCols

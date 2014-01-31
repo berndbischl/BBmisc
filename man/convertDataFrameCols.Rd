@@ -27,6 +27,7 @@ convertDataFrameCols(df, chars.as.factor = FALSE, factors.as.char = FALSE,
 [\code{data.frame}].
 }
 \description{
-\code{convertDfCols} is deprecated.
+Converts columns in a data frame to characters, factors or
+numerics.
 }
 
