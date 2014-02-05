@@ -12,6 +12,6 @@
 convertMatrixType = function(x, type) {
   checkArg(x, "matrix")
   checkArg(type, choices=c("integer", "numeric", "complex", "character", "logical"))
-  mode(x) = type
+  storage.mode(x) = type
   return(x)
 }
