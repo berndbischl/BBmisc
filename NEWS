@@ -2,6 +2,7 @@ BBmisc_1.6:
 - new functions:
 -- operator %btwn%.
 -- convertListOfRowsToDataFrame
+-- convertMatrixType
 
 BBmisc_1.5:
 - removed stringsAsFactors, use convertDataFrameCols
