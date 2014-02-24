@@ -1,0 +1,36 @@
+\name{vlapply}
+\alias{vcapply}
+\alias{viapply}
+\alias{vlapply}
+\alias{vnapply}
+\title{Apply a function with a predefined return value}
+\usage{
+vlapply(x, fun, ..., use.names = TRUE)
+
+viapply(x, fun, ..., use.names = TRUE)
+
+vnapply(x, fun, ..., use.names = TRUE)
+
+vcapply(x, fun, ..., use.names = TRUE)
+}
+\arguments{
+  \item{x}{[\code{vector} or \code{list}]\cr Object to
+  apply function on.}
+
+  \item{fun}{[\code{function}]\cr Function to apply on each
+  element of \code{x}.}
+
+  \item{...}{[\code{ANY}]\cr Additional arguments for
+  \code{fun}.}
+
+  \item{use.names}{[\code{logical(1)}]\cr Should result be
+  named?  Default is \code{TRUE}.}
+}
+\description{
+These are just wrappers around \code{\link[base]{vapply}}
+with argument \code{FUN.VALUE} set. The function is
+expected to return a single \code{logical}, \code{integer},
+\code{numeric} or \code{character} value, depending on the
+second letter of the function name.
+}
+
