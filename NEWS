@@ -3,6 +3,8 @@ BBmisc_1.6:
 -- operator %btwn%.
 -- convertListOfRowsToDataFrame
 -- convertMatrixType
+-- v*apply type of functions
+-- dapply
 
 BBmisc_1.5:
 - removed stringsAsFactors, use convertDataFrameCols
