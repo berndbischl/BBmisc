@@ -1,5 +1,23 @@
+#' Call \code{lapply} on an object and return a data.frame.
+#
+#' @param x [\code{data.frame}]\cr
+#'   Data frame.
+#' @param fun [\code{function}]\cr
+#'   The function to apply.
+#' @param ... [any]\cr
+#'   Further arguments passed down to \code{fun}.
+#' @param col.names [\code{character(1)}]\cr
+#'   Column names for result.
+#'   Default are the names of \code{x}.
+#' @param quick [\code{logical(1)}]\cr
+#'   ??????
+#'   Default is \code{TRUE}.
+#' @export
+#' @return [\code{data.frame}].
 dapply = function(x, fun, ..., col.names, quick=TRUE) {
-  # FIXME finish this
+  # FIXME: finish this
+  # maybe better not check x type to be really general?
+  checkArg(fun, "function")
   checkArg(quick, "logical", len=1L, na.ok=FALSE)
 
   x = lapply(x, fun, ...)
@@ -10,7 +28,7 @@ dapply = function(x, fun, ..., col.names, quick=TRUE) {
     if (length(missing))
       names(x) = replace(ns, missing, paste0("Var.", missing))
   } else {
-    checkArg(col.names, "character", len=ncol(x), na.ok=FALSE)
+    checkArg(col.names, "character", len=length(x), na.ok=FALSE)
     names(x) = col.names
   }
 
@@ -28,5 +46,5 @@ dapply = function(x, fun, ..., col.names, quick=TRUE) {
   } else {
     x = data.frame(x, stringsAsFactors=FALSE)
   }
-  x
+  return(x)
 }
