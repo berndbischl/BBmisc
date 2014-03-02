@@ -6,6 +6,7 @@ BBmisc_1.6:
 -- v*apply type of functions
 -- dapply
 -- rangeVal
+-- geFirst, getLast
 
 BBmisc_1.5:
 - removed stringsAsFactors, use convertDataFrameCols
