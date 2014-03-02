@@ -1,6 +1,6 @@
 #' Calculate range statistic.
 #'
-#' A simple wrapper for \code{diff(range(x))}, so \cod€{max(x) - min(x)}.
+#' A simple wrapper for \code{diff(range(x))}, so \code{max(x) - min(x)}.
 #'
 #' @param x [\code{numeric}]\cr
 #'   The vector.
