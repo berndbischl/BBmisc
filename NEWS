@@ -14,8 +14,8 @@ BBmisc_1.5:
 - removed listToShortString, use convertToShortString
 - new functions:
 -- dropNamed
--- first, last ???
--- binPack???
+-- first, last
+-- binPack
 -- isValidName
 
 BBmisc_1.4:
