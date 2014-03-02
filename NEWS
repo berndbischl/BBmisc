@@ -5,6 +5,7 @@ BBmisc_1.6:
 -- convertMatrixType
 -- v*apply type of functions
 -- dapply
+-- rangeVal
 
 BBmisc_1.5:
 - removed stringsAsFactors, use convertDataFrameCols
