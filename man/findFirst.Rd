@@ -1,11 +1,11 @@
-\name{first}
-\alias{first}
-\alias{last}
+\name{findFirst}
+\alias{findFirst}
+\alias{findLast}
 \title{Find the index of first/last \code{TRUE} value in a logical vector.}
 \usage{
-first(x, na.omit = TRUE)
+findFirst(x, na.omit = TRUE)
 
-last(x, na.omit = TRUE)
+findLast(x, na.omit = TRUE)
 }
 \arguments{
   \item{x}{[\code{logical}]\cr Logical vector.}

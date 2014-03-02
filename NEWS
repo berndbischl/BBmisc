@@ -1,4 +1,5 @@
 BBmisc_1.6:
+- rename first, last to findFirst, findLast
 - new functions:
 -- operator %btwn%.
 -- convertListOfRowsToDataFrame

@@ -10,13 +10,15 @@
 #'   If NAs are encountered before a \code{TRUE} and not omitted, the result is \code{NA_integer_}.
 #' @export
 #' @useDynLib BBmisc c_first
-first = function(x, na.omit=TRUE) {
+findFirst = function(x, na.omit=TRUE) {
   .Call(c_first, x, na.omit, package="BBmisc")
 }
 
-#' @rdname first
+#' @rdname findFirst
 #' @export
 #' @useDynLib BBmisc c_last
-last = function(x, na.omit=TRUE) {
+findLast = function(x, na.omit=TRUE) {
   .Call(c_last, x, na.omit, package="BBmisc")
 }
+
+

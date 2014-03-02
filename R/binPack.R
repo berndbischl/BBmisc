@@ -3,10 +3,10 @@
 #' Maps numeric items in \code{x} into groups with sum
 #' less or equal than \code{capacity}.
 #' A very simple greedy algorithm is used, which is not really optimized
-#' for speed. This is a convenience function for smaller vectors, not 
+#' for speed. This is a convenience function for smaller vectors, not
 #' a competetive solver for the real binbacking problem.
 #' If an element of \code{x} exceeds \code{capacity}, an error
-#' is thrown. 
+#' is thrown.
 #'
 #' @param x [\code{numeric}]\cr
 #'   Numeric vector of elements to group.
@@ -26,7 +26,7 @@ binPack = function(x, capacity) {
   checkArg(x, "numeric", min.len=1L, lower=0, na.ok=FALSE)
   checkArg(capacity, "numeric", len=1L, na.ok=FALSE)
 
-  too.big = first(x > capacity)
+  too.big = findFirst(x > capacity)
   if (length(too.big))
     stopf("Capacity not sufficient. Item %i (x=%f) does not fit", too.big, x[too.big])
   if (any(is.infinite(x)))
@@ -39,7 +39,7 @@ binPack = function(x, capacity) {
 
   for(j in ord) {
     new.sums = sums + x[j]
-    pos = first(new.sums <= capacity)
+    pos = findFirst(new.sums <= capacity)
     if (length(pos)) {
       grp[j] = pos
       sums[pos] = new.sums[pos]

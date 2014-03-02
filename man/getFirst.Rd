@@ -1,0 +1,20 @@
+\name{getFirst}
+\alias{getFirst}
+\alias{getLast}
+\title{Get the first/last element of a list/vector.}
+\usage{
+getFirst(x)
+
+getLast(x)
+}
+\arguments{
+  \item{x}{[\code{list} | \code{vector}]\cr The list or
+  vector.}
+}
+\value{
+Selected element. The element name is dropped.
+}
+\description{
+Get the first/last element of a list/vector.
+}
+
