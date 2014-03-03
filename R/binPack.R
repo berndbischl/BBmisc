@@ -26,7 +26,7 @@ binPack = function(x, capacity) {
   checkArg(x, "numeric", min.len=1L, lower=0, na.ok=FALSE)
   checkArg(capacity, "numeric", len=1L, na.ok=FALSE)
 
-  too.big = findFirst(x > capacity)
+  too.big = which.first(x > capacity, use.names=FALSE)
   if (length(too.big))
     stopf("Capacity not sufficient. Item %i (x=%f) does not fit", too.big, x[too.big])
   if (any(is.infinite(x)))
@@ -39,7 +39,7 @@ binPack = function(x, capacity) {
 
   for(j in ord) {
     new.sums = sums + x[j]
-    pos = findFirst(new.sums <= capacity)
+    pos = which.first(new.sums <= capacity, use.names=FALSE)
     if (length(pos)) {
       grp[j] = pos
       sums[pos] = new.sums[pos]
