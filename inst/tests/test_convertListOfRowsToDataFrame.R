@@ -9,6 +9,11 @@ test_that("convertListOfRowstoDataFrame", {
   df2 = data.frame(x=c("1", "2"), y=c("a", "b"), stringsAsFactors=FALSE)
   expect_equal(df1, df2)
 
+  df1 = convertListOfRowsToDataFrame(list(c("1", "a"), c("2", "b")), strings.as.factors=FALSE, 
+    col.names=c("x", "y"))
+  df2 = data.frame(x=c("1", "2"), y=c("a", "b"), stringsAsFactors=FALSE)
+  expect_equal(df1, df2)
+  
   df1 = convertListOfRowsToDataFrame(list(list(a = 1, b = 1), list(b = 12)))
   df2 = convertListOfRowsToDataFrame(list(c(a = 1, b = 1), c(b = 12)))
   expect_equal(df1, df2)

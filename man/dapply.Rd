@@ -2,7 +2,7 @@
 \alias{dapply}
 \title{Call \code{lapply} on an object and return a data.frame.}
 \usage{
-dapply(x, fun, ..., col.names, quick = TRUE)
+dapply(x, fun, ..., col.names)
 }
 \arguments{
   \item{x}{[\code{data.frame}]\cr Data frame.}
@@ -14,9 +14,6 @@ dapply(x, fun, ..., col.names, quick = TRUE)
 
   \item{col.names}{[\code{character(1)}]\cr Column names
   for result.  Default are the names of \code{x}.}
-
-  \item{quick}{[\code{logical(1)}]\cr ??????  Default is
-  \code{TRUE}.}
 }
 \value{
 [\code{data.frame}].

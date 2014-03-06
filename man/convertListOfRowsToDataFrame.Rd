@@ -3,7 +3,7 @@
 \title{Convert a list of row-vectors of equal structure to a data.frame.}
 \usage{
 convertListOfRowsToDataFrame(rows,
-  strings.as.factors = default.stringsAsFactors(), row.names)
+  strings.as.factors = default.stringsAsFactors(), row.names, col.names)
 }
 \arguments{
   \item{rows}{[\code{list}]\cr List of rows. Each row is a
@@ -15,10 +15,13 @@ convertListOfRowsToDataFrame(rows,
   character columns to factors?  Default is
   \code{default.stringsAsFactors()}.}
 
-  \item{row.names}{[\code{character(nrow)} |
-  \code{NULL}]\cr Row names for result.  \code{NULL}
-  implies no row names are set.  By default the names of
-  the list \code{rows} are taken.}
+  \item{row.names}{[\code{character}]\cr Row names for
+  result.  By default the names of the list \code{rows} are
+  taken.}
+
+  \item{col.names}{[\code{character(nrow)}]\cr Column names
+  for result.  By default the names of an element of
+  \code{rows} are taken.}
 }
 \value{
 [\code{data.frame}].

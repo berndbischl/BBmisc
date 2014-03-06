@@ -10,16 +10,18 @@
 #' @param strings.as.factors [\code{logical(1)}]\cr
 #'   Convert character columns to factors?
 #'   Default is \code{default.stringsAsFactors()}.
-#' @param row.names [\code{character(nrow)} | \code{NULL}]\cr
+#' @param row.names [\code{character}]\cr
 #'   Row names for result.
-#'   \code{NULL} implies no row names are set.
 #'   By default the names of the list \code{rows} are taken.
+#' @param col.names [\code{character(nrow)}]\cr
+#'   Column names for result.
+#'   By default the names of an element of \code{rows} are taken.
 #' @return [\code{data.frame}].
 #' @export
 #' @examples
 #' convertListOfRowsToDataFrame(list(list(x=1, y="a"), list(x=2, y="b")))
 convertListOfRowsToDataFrame = function(rows, strings.as.factors = default.stringsAsFactors(),
-  row.names) {
+  row.names, col.names) {
 
   checkArg(rows, "list")
   checkListElementClass(rows, "vector")
@@ -49,5 +51,8 @@ convertListOfRowsToDataFrame = function(rows, strings.as.factors = default.strin
     simplify2array(replace(tmp, vlapply(tmp, is.null), NA))
   }
 
-  data.frame(setNames(lapply(cols, extract), cols), row.names=row.names, stringsAsFactors=strings.as.factors)
+  d = data.frame(setNames(lapply(cols, extract), cols), row.names=row.names, stringsAsFactors=strings.as.factors)
+  if (!missing(col.names))
+    colnames(d) = col.names
+  return(d)
 }
