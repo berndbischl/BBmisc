@@ -1,0 +1,18 @@
+\name{symdiff}
+\alias{symdiff}
+\title{Calculates symmetric set difference between two sets.}
+\usage{
+symdiff(x, y)
+}
+\arguments{
+  \item{x}{[\code{vector}]\cr Set 1.}
+
+  \item{y}{[\code{vector}]\cr Set 2.}
+}
+\value{
+[\code{vector}].
+}
+\description{
+Calculates symmetric set difference between two sets.
+}
+
