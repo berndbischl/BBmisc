@@ -1,4 +1,4 @@
-debugPrint = function(..., header=FALSE) {
+printDebug = function(..., header=FALSE) {
   small = function(name, obj) {
     message("*** '", name, "':")
     print(obj)
