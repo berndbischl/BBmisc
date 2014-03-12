@@ -1,5 +1,6 @@
 BBmisc_1.6:
 - rename first, last to findFirst, findLast
+- improved extractSubList a bit (new args)
 - new functions:
 -- operator %btwn%.
 -- convertListOfRowsToDataFrame
@@ -9,6 +10,7 @@ BBmisc_1.6:
 -- rangeVal
 -- getFirst, getLast
 -- symdiff
+-- asMatrixCols, asMatrixRows
 
 BBmisc_1.5:
 - removed stringsAsFactors, use convertDataFrameCols
