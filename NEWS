@@ -1,6 +1,6 @@
 BBmisc_1.6:
 - rename first, last to findFirst, findLast
-- improved extractSubList a bit (new args)
+- improved extractSubList a bit (new arg "matrix")
 - new functions:
 -- operator %btwn%.
 -- convertListOfRowsToDataFrame

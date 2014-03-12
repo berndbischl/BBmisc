@@ -3,7 +3,7 @@
 \title{Extracts a named element from a list of lists.}
 \usage{
 extractSubList(xs, element, element.value, simplify = TRUE,
-  use.names = TRUE)
+  use.names = TRUE, matrix)
 }
 \arguments{
   \item{xs}{[\code{list}]\cr A list of named lists.}
@@ -23,9 +23,16 @@ extractSubList(xs, element, element.value, simplify = TRUE,
   and \code{xs} is named, the result is named as \code{xs},
   otherwise the result is unnamed.  Default is
   \code{TRUE}.}
+
+  \item{matrix}{[\code{character(1)}]\cr If \dQuote{cols},
+  \code{\link{asMatrixCols}} is called on the result, if
+  \dQuote{rows}, \code{\link{asMatrixRows}} is called on
+  the result.  \code{simplify = TRUE} is not used in this
+  case.  Default is not to do that.}
 }
 \value{
-[\code{list} or simplified vector].
+[\code{list} | simplified \code{vector} | \code{matrix}].
+See above.
 }
 \description{
 Extracts a named element from a list of lists.
