@@ -1,8 +1,12 @@
 \name{convertRowsToList}
+\alias{convertColsToList}
 \alias{convertRowsToList}
 \title{Convert rows of data.frame or matrix to lists.}
 \usage{
 convertRowsToList(x, use.names = FALSE, factors.as.char = TRUE,
+  as.vector = TRUE)
+
+convertColsToList(x, use.names = FALSE, factors.as.char = TRUE,
   as.vector = TRUE)
 }
 \arguments{

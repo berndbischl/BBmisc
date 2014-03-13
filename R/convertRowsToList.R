@@ -34,3 +34,12 @@ convertRowsToList = function(x, use.names = FALSE, factors.as.char = TRUE, as.ve
     rowLapply(x, function(row) setNames(as.list(row), ns))
   }
 }
+
+#' @rdname convertRowsToList
+#' @export
+convertColsToList = function(x, use.names = FALSE, factors.as.char = TRUE, as.vector = TRUE) {
+  convertRowsToList(t(x), use.names = use.names, factors.as.char = factors.as.char, as.vector = as.vector)
+}
+
+
+

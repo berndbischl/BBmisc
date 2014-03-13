@@ -27,3 +27,19 @@ test_that("convertRowsToList", {
     list(list(a=1, b=factor("a", levels=levs)), list(a=2, b=factor("b", levels=levs)))
   )
 })
+
+test_that("convertColsToList", {
+  expect_equal(
+    convertColsToList(matrix(1:4, 2, byrow = FALSE), as.vector = TRUE),
+    list(c(1, 2), c(3, 4))
+  )
+  expect_equal(
+    convertColsToList(matrix(1:4, 2, byrow = FALSE), as.vector = FALSE),
+    list(list(1, 2), list(3, 4))
+  )
+  expect_equal(
+    convertColsToList(setRowNames(matrix(1:4, 2, byrow = FALSE), c("a", "b")), use.names=TRUE, as.vector = FALSE),
+    list(list(a=1, b=2), list(a=3, b=4))
+  )
+})
+

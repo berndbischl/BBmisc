@@ -13,6 +13,7 @@ BBmisc_1.6:
 -- getFirst, getLast
 -- symdiff
 -- asMatrixCols, asMatrixRows
+-- convertColsToList
 
 BBmisc_1.5:
 - removed stringsAsFactors, use convertDataFrameCols
