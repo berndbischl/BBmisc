@@ -32,12 +32,14 @@ extractSubList = function(xs, element, element.value, simplify=TRUE, use.names=T
   checkArg(use.names, "logical", len = 1L, na.ok = FALSE)
   if (!missing(element.value)) {
     ys = vapply(xs, function(x) x[[element]], FUN.VALUE=element.value)
-  } else if (isFALSE(simplify)) {
-    ys = lapply(xs, function(x) x[[element]])
-   } else {
+  } else if (isTRUE(simplify)) {
     ys = sapply(xs, function(x) x[[element]], USE.NAMES=use.names)
+   } else {
+    ys = lapply(xs, function(x) x[[element]])
     if (simplify == "rows")
-      ys = t(ys)
+      ys = asMatrixRows(ys)
+    else if (simplify == "cols")
+      ys = asMatrixCols(ys)
   }
   ns = names(xs)
   if (use.names && !is.null(ns))

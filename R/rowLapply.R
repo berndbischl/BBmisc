@@ -34,10 +34,10 @@ rowLapply = function(df, fun, ..., unlist = FALSE) {
   checkArg(unlist, "logical", len = 1L, na.ok = FALSE)
   if(unlist) {
     .wrap = function(.i, .df, .fun, ...)
-      .fun(unlist(.df[.i, ], recursive = FALSE, use.names = TRUE), ...)
+      .fun(unlist(.df[.i, , drop = FALSE], recursive = FALSE, use.names = TRUE), ...)
   } else {
     .wrap = function(.i, .df, .fun, ...)
-      .fun(as.list(.df[.i, ]), ...)
+      .fun(as.list(.df[.i, , drop = FALSE]), ...)
   }
 
   lapply(seq_row(df), .wrap, .fun = fun, .df = df, ...)
@@ -53,10 +53,14 @@ rowSapply = function(df, fun, ..., unlist = FALSE, simplify = TRUE, use.names = 
     checkArg(simplify, "logical", len = 1L, na.ok = FALSE)
   checkArg(use.names, "logical", len=1L, na.ok = FALSE)
   ys = rowLapply(df, fun, ..., unlist = unlist)
-  if (!isFALSE(simplify) && length(ys) > 0L) {
-    ys = simplify2array(ys)
-    if (simplify == "rows")
-      ys = t(ys)
+  if (length(ys) > 0L) {
+    if (isTRUE(simplify)) {
+      ys = simplify2array(ys)
+    } else if (simplify == "rows") {
+      ys = asMatrixRows(ys)
+    } else if (simplify == "cols") {
+      ys = asMatrixCols(ys)
+    }
   }
   if (use.names) {
     if (is.matrix(ys)) {

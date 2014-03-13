@@ -33,6 +33,10 @@ test_that("extractSubList", {
     matrix(1:4, nrow = 2L, ncol = 2L, byrow = TRUE)
   )
 
+  expect_equal(
+    extractSubList(list(list(a = 1), list(a = 2)), "a", simplify = "rows"),
+    matrix(1:2, nrow = 2L, ncol = 1)
+  )
 })
 
 
