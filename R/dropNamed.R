@@ -12,8 +12,8 @@
 #' @export
 dropNamed = function(x, drop) {
   checkArg(drop, "character", na.ok=FALSE)
-  if (!length(drop))
-    return(drop)
+  if (length(drop) == 0L)
+    return(x)
 
   if (is.matrix(x) || is.data.frame(x))
     x[, setdiff(colnames(x), drop), drop=FALSE]
