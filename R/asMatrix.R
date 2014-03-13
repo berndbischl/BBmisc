@@ -16,15 +16,17 @@ asMatrixCols = function(xs, row.names, col.names) {
   if (n == 0L)
     return(matrix(0, nrow = 0L, ncol = 0L))
   checkListElementClass(xs, "vector")
-  lens = sapply(xs, length)
-  if (length(unique(lens)) != 1L)
+
+  m = unique(viapply(xs, length))
+  if (length(m) != 1L)
     stopf("Vectors must all be of the same length!")
-  m = lens[[1]]
+
   if (missing(row.names)) {
-    row.names = names(xs[[1]])
+    row.names = names(xs[[1L]])
   } else {
     checkArg(row.names, "character", len = n)
   }
+
   if (missing(col.names)) {
     col.names = names(xs)
   } else {
