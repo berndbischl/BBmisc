@@ -1,4 +1,5 @@
 BBmisc_1.6:
+- convertRowsToList now converts matrices into list of vector by default (see new arg "as.vector")
 - rename first, last to findFirst, findLast
 - improved extractSubList a bit (new arg "matrix")
 - new functions:
