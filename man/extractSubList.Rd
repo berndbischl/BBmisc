@@ -3,7 +3,7 @@
 \title{Extracts a named element from a list of lists.}
 \usage{
 extractSubList(xs, element, element.value, simplify = TRUE,
-  use.names = TRUE, matrix)
+  use.names = TRUE)
 }
 \arguments{
   \item{xs}{[\code{list}]\cr A list of named lists.}
@@ -15,20 +15,18 @@ extractSubList(xs, element, element.value, simplify = TRUE,
   \code{\link{vapply}} is used and this argument is passed
   to \code{FUN.VALUE}.}
 
-  \item{simplify}{[\code{logical(1)}]\cr If \code{TRUE}
-  \code{\link{sapply}} is used, otherwise
-  \code{\link{lapply}}.  Default is \code{TRUE}.}
+  \item{simplify}{[\code{logical(1)} | character(1)]\cr If
+  \code{FALSE} \code{\link{lapply}} is used, otherwise
+  \code{\link{sapply}}.  If \dQuote{cols}, we expect the
+  elements to be vectors of the same length and they are
+  arranged as the columns of the resulting matrix.  If
+  \dQuote{rows}, likewise, but rows of the resulting
+  matrix.  Default is \code{TRUE}.}
 
   \item{use.names}{[\code{logical(1)}]\cr If \code{TRUE}
   and \code{xs} is named, the result is named as \code{xs},
   otherwise the result is unnamed.  Default is
   \code{TRUE}.}
-
-  \item{matrix}{[\code{character(1)}]\cr If \dQuote{cols},
-  \code{\link{asMatrixCols}} is called on the result, if
-  \dQuote{rows}, \code{\link{asMatrixRows}} is called on
-  the result.  \code{simplify = TRUE} is not used in this
-  case.  Default is not to do that.}
 }
 \value{
 [\code{list} | simplified \code{vector} | \code{matrix}].

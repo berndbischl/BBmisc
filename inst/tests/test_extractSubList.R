@@ -29,7 +29,7 @@ test_that("extractSubList", {
   expect_equal(extractSubList(xs, "y", use.names=FALSE), c("foo", "bar"))
 
   expect_equal(
-    extractSubList(list(list(a = 1:2), list(a = 3:4)), "a", matrix = "rows"),
+    extractSubList(list(list(a = 1:2), list(a = 3:4)), "a", simplify = "rows"),
     matrix(1:4, nrow = 2L, ncol = 2L, byrow = TRUE)
   )
 

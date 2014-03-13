@@ -24,4 +24,7 @@ test_that("rowSapply", {
   x2 = sapply(1:nrow(df), function(i) unlist(df[i,]), simplify=TRUE, USE.NAMES=FALSE)
   rownames(x2) = NULL; colnames(x2) = rownames(df) 
   expect_equal(x1, x2)
+  x1 = rowSapply(df, unlist, simplify = "rows", use.names = FALSE)
+  x2 = as.matrix(data.frame(a = 1:10, b = 10:1))
+  expect_equal(x1, x2)
 })

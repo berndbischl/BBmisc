@@ -21,9 +21,13 @@ rowSapply(df, fun, ..., unlist = FALSE, simplify = TRUE, use.names = TRUE)
   that automatic conversion may be triggered for lists of
   mixed data types Default is \code{FALSE}.}
 
-  \item{simplify}{[\code{logical(1)}]\cr Should the result
-  be simplified?  See \code{\link{sapply}}.  Default is
-  \code{TRUE}.}
+  \item{simplify}{[\code{logical(1)} | character(1)]\cr
+  Should the result be simplified?  See
+  \code{\link{sapply}}.  If \dQuote{cols}, we expect the
+  call results to be vectors of the same length and they
+  are arranged as the columns of the resulting matrix.  If
+  \dQuote{rows}, likewise, but rows of the resulting
+  matrix.  Default is \code{TRUE}.}
 
   \item{use.names}{[\code{logical(1)}]\cr Should result be
   named by the row names of \code{df}?  Default is
