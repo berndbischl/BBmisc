@@ -1,12 +1,12 @@
 context("chunk")
 
 test_that("chunk", {
-  # normal chunk.size        
+  # normal chunk.size
   x = 1:9
   ch = chunk(x, chunk.size=3)
   expect_equal(ch, list(1:3, 4:6, 7:9))
 
-  # normal n.chunks        
+  # normal n.chunks
   x = 1:9
   ch = chunk(x, n.chunks=3)
   expect_equal(ch, list(1:3, 4:6, 7:9))
@@ -19,11 +19,11 @@ test_that("chunk", {
   # n.chunks uneven
   ch = chunk(1:9, n.chunks=4)
   expect_equal(length(ch), 4)
-  
+
   x = letters[1:10]
   ch = chunk(x, n.chunks = 2)
   expect_equal(ch, list(letters[1:5], letters[6:10]))
-  
+
   # errors
   x = letters[1:10]
   expect_error(chunk(x, chunk.size=1, n.chunks=3))
@@ -47,6 +47,14 @@ test_that("chunk", {
   })
   counts = rowSums(counts)
   expect_true(all(counts > 30))
+
+  # test proportions
+  x = 1:10
+  ch = chunk(x, props = c(3, 7))
+  expect_equal(sapply(ch, length), c(3, 7))
+  expect_equal(unlist(ch), x)
+
+  expect_true(length(chunk(x, props=1)) == 1L)
 
 })
 
