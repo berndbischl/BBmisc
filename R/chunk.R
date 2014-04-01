@@ -19,7 +19,7 @@
 #'   Vector of proportions for chunk sizes.
 #'   Empty chunks may occur, depending on the length of \code{x} and the given
 #'   proportions.
-#'   Can not be used in combination with \code{chunks.size} or \code{n.chunks}.
+#'   Cannot be used in combination with \code{chunks.size} or \code{n.chunks}.
 #' @param shuffle [\code{logical(1)}]\cr
 #'   Shuffle \code{x}?
 #'   Default is \code{FALSE}.
