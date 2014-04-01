@@ -1,8 +1,26 @@
 \name{isScalarValue}
+\alias{isScalarCharacter}
+\alias{isScalarComplex}
+\alias{isScalarFactor}
+\alias{isScalarInteger}
+\alias{isScalarLogical}
+\alias{isScalarNumeric}
 \alias{isScalarValue}
 \title{Is given argument an atomic vector or factor of length 1?}
 \usage{
-isScalarValue(x, na.ok = TRUE, null.ok = FALSE)
+isScalarValue(x, na.ok = TRUE, null.ok = FALSE, type = "atomic")
+
+isScalarLogical(x, na.ok = TRUE, null.ok = FALSE)
+
+isScalarNumeric(x, na.ok = TRUE, null.ok = FALSE)
+
+isScalarInteger(x, na.ok = TRUE, null.ok = FALSE)
+
+isScalarComplex(x, na.ok = TRUE, null.ok = FALSE)
+
+isScalarCharacter(x, na.ok = TRUE, null.ok = FALSE)
+
+isScalarFactor(x, na.ok = TRUE, null.ok = FALSE)
 }
 \arguments{
   \item{x}{[any]\cr Argument.}
@@ -12,11 +30,18 @@ isScalarValue(x, na.ok = TRUE, null.ok = FALSE)
 
   \item{null.ok}{[\code{logical(1)}]\cr Is \code{NULL}
   considered a scalar?  Default is \code{FALSE}.}
+
+  \item{type}{[\code{chararacter(1)}]\cr Allows to restrict
+  to specific type, e.g., \dQuote{numeric}?  But instead of
+  this argument you might want to consider using
+  \code{isScalar<Type>}.  Default is \dQuote{"atomic"}, so
+  no special restriction.}
 }
 \value{
 [\code{logical(1)}].
 }
 \description{
-Is given argument an atomic vector or factor of length 1?
+More specific funtions for scalars of a given type exist,
+too.
 }
 
