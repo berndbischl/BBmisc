@@ -1,0 +1,25 @@
+\name{sortByCol}
+\alias{sortByCol}
+\title{Sort the rows of a data.frame according to one or more columns.}
+\usage{
+sortByCol(x, col, asc = TRUE)
+}
+\arguments{
+  \item{x}{[\code{data.frame}]\cr Data.frame to sort.}
+
+  \item{col}{[\code{character}]\cr One or more column names
+  to sort \code{x} by.  In order of preference.}
+
+  \item{asc}{[\code{logical}]\cr Sort ascending (or
+  descending)?  One value per entry of \code{col}.  If a
+  scalar logical is passed, it is replicated.  Default is
+  \code{TRUE}.}
+}
+\value{
+[\code{data.frame}].
+}
+\description{
+Sort the rows of a data.frame according to one or more
+columns.
+}
+

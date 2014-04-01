@@ -31,17 +31,17 @@ isScalarFactor(x, na.ok = TRUE, null.ok = FALSE)
   \item{null.ok}{[\code{logical(1)}]\cr Is \code{NULL}
   considered a scalar?  Default is \code{FALSE}.}
 
-  \item{type}{[\code{chararacter(1)}]\cr Allows to restrict
+  \item{type}{[\code{character(1)}]\cr Allows to restrict
   to specific type, e.g., \dQuote{numeric}?  But instead of
   this argument you might want to consider using
-  \code{isScalar<Type>}.  Default is \dQuote{"atomic"}, so
-  no special restriction.}
+  \code{isScalar<Type>}.  Default is \dQuote{atomic}, so no
+  special restriction.}
 }
 \value{
 [\code{logical(1)}].
 }
 \description{
-More specific funtions for scalars of a given type exist,
+More specific functions for scalars of a given type exist,
 too.
 }
 

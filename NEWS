@@ -7,13 +7,16 @@ BBmisc_1.6:
 -- operator %btwn%.
 -- convertListOfRowsToDataFrame
 -- convertMatrixType
+-- convertColsToList
 -- v*apply type of functions
 -- dapply
 -- rangeVal
 -- getFirst, getLast
 -- symdiff
 -- asMatrixCols, asMatrixRows
--- convertColsToList
+-- printDebug (include ???)
+-- isScalar<Type> family of helper functions
+-- sortByCol
 
 BBmisc_1.5:
 - removed stringsAsFactors, use convertDataFrameCols

@@ -20,8 +20,8 @@ chunk(x, chunk.size, n.chunks, props, shuffle = FALSE)
 
   \item{props}{[\code{numeric}]\cr Vector of proportions
   for chunk sizes.  Empty chunks may occur, depending on
-  the length of \code{x} and the given proportions.  Can
-  not be used in combination with \code{chunks.size} or
+  the length of \code{x} and the given proportions.  Cannot
+  be used in combination with \code{chunks.size} or
   \code{n.chunks}.}
 
   \item{shuffle}{[\code{logical(1)}]\cr Shuffle \code{x}?
