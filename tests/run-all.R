@@ -1,4 +1,2 @@
 library(testthat)
-library(BBmisc)
-
-test_package("BBmisc")
+test_check("BBmisc")

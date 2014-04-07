@@ -5,7 +5,6 @@ library(testthat)
 if (interactive()) {
   load_all(".")
 } else {
-  library(BBmisc)  
+  library(BBmisc)
 }
-test_dir("inst/tests")
-
+test_dir("tests/testthat")
