@@ -8,17 +8,19 @@
 #' @return [\code{integer(1)} | \code{integer(0)}].
 #'   Returns the index of the first/last \code{TRUE} value in \code{x} or
 #'   an empty integer vector if none is found.
-#'   If NAs are encountered before a \code{TRUE} and not omitted,
-#'   the result is \code{NA_integer_}.
 #' @export
-#' @useDynLib BBmisc c_first
-which.first = function(x, use.names=TRUE) {
-  .Call(c_first, x, use.names, package="BBmisc")
+which.first = function(x, use.names = TRUE) {
+  if (isTRUE(use.names))
+    head(which(x), 1L)
+  else
+    head(unname(which(x)), 1L)
 }
 
 #' @rdname which.first
 #' @export
-#' @useDynLib BBmisc c_last
-which.last = function(x, use.names=TRUE) {
-  .Call(c_last, x, use.names, package="BBmisc")
+which.last = function(x, use.names = TRUE) {
+  if (isTRUE(use.names))
+    tail(which(x), 1L)
+  else
+    tail(unname(which(x)), 1L)
 }

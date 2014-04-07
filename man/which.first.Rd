@@ -16,9 +16,7 @@ which.last(x, use.names = TRUE)
 \value{
 [\code{integer(1)} | \code{integer(0)}].  Returns the index
 of the first/last \code{TRUE} value in \code{x} or an empty
-integer vector if none is found.  If NAs are encountered
-before a \code{TRUE} and not omitted, the result is
-\code{NA_integer_}.
+integer vector if none is found.
 }
 \description{
 Find the index of first/last \code{TRUE} value in a logical
