@@ -28,8 +28,8 @@ convertRowsToList = function(x, name.list = TRUE, name.vector = FALSE,
   checkArg(name.vector, "logical", len = 1L, na.ok = FALSE)
   checkArg(factors.as.char, "logical", len = 1L, na.ok = FALSE)
   checkArg(as.vector, "logical", len = 1L, na.ok = FALSE)
-  ns.list = if (name.list) colnames(x) else NULL
-  ns.vector = if (name.vector) rownames(x) else NULL
+  ns.list = if (name.list) rownames(x) else NULL
+  ns.vector = if (name.vector) colnames(x) else NULL
   if (is.matrix(x)) {
     if (as.vector)
       res = lapply(seq_row(x), function(i) setNames(x[i, ], ns.vector))
