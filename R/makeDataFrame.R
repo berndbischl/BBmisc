@@ -12,10 +12,10 @@
 #' @param init [any]\cr
 #'   Scalar object to initialize all elements of the data.frame.
 #'   You do not need to specify \code{col.types} if you pass this.
-#' @param row.names [\code{character(nrow)} | \code{NULL}]\cr
+#' @param row.names [\code{character} | \code{integer} | \code{NULL}]\cr
 #'   Row names.
 #'   Default is \code{NULL}.
-#' @param col.names [\code{character(ncol)}]\cr
+#' @param col.names [\code{character} | \code{integer}]\cr
 #'   Column names.
 #'   Default is \dQuote{V1}, \dQuote{V2}, and so on.
 #' @export
@@ -43,9 +43,12 @@ makeDataFrame = function(nrow, ncol, col.types, init, row.names=NULL, col.names=
   }
   if (!missing(col.types) && length(col.types) == 1L)
     col.types = rep.int(col.types, ncol)
-  if (!is.null(row.names))
-    checkArg(row.names, "character", len=nrow, na.ok=TRUE)
-  checkArg(col.names, "character", len=ncol, na.ok=TRUE)
+  if (!is.null(row.names)) {
+    row.names = convertIntegers(row.names)
+    checkArg(row.names, c("character", "integer"), len = nrow)
+  }
+  col.names = convertIntegers(col.names)
+  checkArg(col.names, c("character", "integer"), len = ncol)
 
   if (nrow == 0L && ncol == 0L)
     df = data.frame()
