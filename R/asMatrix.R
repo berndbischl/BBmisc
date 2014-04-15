@@ -5,7 +5,7 @@
 #' @param row.names [\code{character} | \code{integer}]\cr
 #'   Row names of result.
 #'   Default is to take the names of the elements of \code{xs}.
-#' @param row.names [\code{character} | \code{integer}]\cr
+#' @param col.names [\code{character} | \code{integer}]\cr
 #'   Column names of result.
 #'   Default is to take the names of the elements of \code{xs}.
 #' @return [\code{matrix}].

@@ -10,10 +10,10 @@
 #' @param strings.as.factors [\code{logical(1)}]\cr
 #'   Convert character columns to factors?
 #'   Default is \code{default.stringsAsFactors()}.
-#' @param row.names [\code{character}]\cr
+#' @param row.names [\code{character} | \code{integer}]\cr
 #'   Row names for result.
 #'   By default the names of the list \code{rows} are taken.
-#' @param col.names [\code{character(nrow)}]\cr
+#' @param col.names [\code{character} | \code{integer}]\cr
 #'   Column names for result.
 #'   By default the names of an element of \code{rows} are taken.
 #' @return [\code{data.frame}].
@@ -32,7 +32,13 @@ convertListOfRowsToDataFrame = function(rows, strings.as.factors = default.strin
   if (missing(row.names)) {
     row.names = names(rows)
   } else {
-    checkArg(row.names, "character", len=length(rows), na.ok=FALSE)
+    row.names = convertIntegers(row.names)
+    checkArg(row.names, c("character", "integer"), len = length(rows))
+  }
+  if (!missing(col.names)) {
+    col.names = convertIntegers(col.names)
+    # we probably cannot check length here due to the convenient filling-in of NAs
+    checkArg(col.names, c("character", "integer"))
   }
 
   # make names
