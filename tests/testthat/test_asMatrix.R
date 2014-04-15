@@ -36,5 +36,33 @@ test_that("asMatrix", {
     setColNames(setRowNames(matrix(c(1, 2, 3, 3, 4, 4), nrow = 3, ncol = 2, byrow = TRUE),
         c("a", "b", "c")), c("x", "y"))
   )
+  # manually define rownames
+  expect_equal(
+    asMatrixCols(list(a = c(1, 2), b = c(3, 3), c = c(4, 4)), row.names = c("xx", "yy")),
+    setColNames(
+      setRowNames(matrix(c(1, 2, 3, 3, 4, 4), nrow = 2, ncol = 3, byrow = FALSE), c("xx", "yy")),
+    c("a", "b", "c"))
+  )
+  # manually define rownames, but use ints
+  expect_equal(
+    asMatrixCols(list(a = c(1, 2), b = c(3, 3), c = c(4, 4)), row.names = 1:2),
+    setColNames(
+      setRowNames(matrix(c(1, 2, 3, 3, 4, 4), nrow = 2, ncol = 3, byrow = FALSE), 1:2),
+    c("a", "b", "c"))
+  )
+  # manually define colnames
+  expect_equal(
+    asMatrixCols(list(a = c(1, 2), b = c(3, 3), c = c(4, 4)), col.names = c("xx", "yy", "zz")),
+    setColNames(
+      matrix(c(1, 2, 3, 3, 4, 4), nrow = 2, ncol = 3, byrow = FALSE),
+    c("xx", "yy", "zz"))
+  )
+  # manually define colnames, but use ints
+  expect_equal(
+    asMatrixCols(list(a = c(1, 2), b = c(3, 3), c = c(4, 4)), col.names = 1:3),
+    setColNames(
+      matrix(c(1, 2, 3, 3, 4, 4), nrow = 2, ncol = 3, byrow = FALSE),
+    1:3)
+  )
 })
 
