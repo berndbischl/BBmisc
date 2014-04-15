@@ -32,15 +32,15 @@ convertRowsToList = function(x, name.list = TRUE, name.vector = FALSE,
   ns.vector = if (name.vector) rownames(x) else NULL
   if (is.matrix(x)) {
     if (as.vector)
-      lapply(seq_row(x), function(i) setNames(x[i, ], ns.vector))
+      res = lapply(seq_row(x), function(i) setNames(x[i, ], ns.vector))
     else
-      lapply(seq_row(x), function(i) setNames(as.list(x[i, ]), ns.vector))
+      res = lapply(seq_row(x), function(i) setNames(as.list(x[i, ]), ns.vector))
   } else if (is.data.frame(x)) {
     if (factors.as.char)
       x = convertDataFrameCols(x, factors.as.char = TRUE)
-    rowLapply(x, function(row) setNames(as.list(row), ns.vector))
+    res = rowLapply(x, function(row) setNames(as.list(row), ns.vector))
   }
-  setNames(x, ns.list)
+  setNames(res, ns.list)
 }
 
 #' @rdname convertRowsToList
