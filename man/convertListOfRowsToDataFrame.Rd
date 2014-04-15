@@ -15,9 +15,9 @@ convertListOfRowsToDataFrame(rows,
   character columns to factors?  Default is
   \code{default.stringsAsFactors()}.}
 
-  \item{row.names}{[\code{character} | \code{integer}]\cr
-  Row names for result.  By default the names of the list
-  \code{rows} are taken.}
+  \item{row.names}{[\code{character} | \code{integer} |
+  \code{NULL}]\cr Row names for result.  By default the
+  names of the list \code{rows} are taken.}
 
   \item{col.names}{[\code{character} | \code{integer}]\cr
   Column names for result.  By default the names of an

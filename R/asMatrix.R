@@ -2,10 +2,10 @@
 #'
 #' @param xs [\code{list}]\cr
 #'   A list of vectors of the same length.
-#' @param row.names [\code{character} | \code{integer}]\cr
+#' @param row.names [\code{character} | \code{integer} | \code{NULL}]\cr
 #'   Row names of result.
 #'   Default is to take the names of the elements of \code{xs}.
-#' @param col.names [\code{character} | \code{integer}]\cr
+#' @param col.names [\code{character} | \code{integer} | \code{NULL}]\cr
 #'   Column names of result.
 #'   Default is to take the names of the elements of \code{xs}.
 #' @return [\code{matrix}].
@@ -24,15 +24,19 @@ asMatrixCols = function(xs, row.names, col.names) {
   if (missing(row.names)) {
     row.names = names(xs[[1L]])
   } else {
-    row.names = convertIntegers(row.names)
-    checkArg(row.names, c("character", "integer"), len = m)
+    if (!is.null(row.names)) {
+      row.names = convertIntegers(row.names)
+      checkArg(row.names, c("character", "integer"), len = m)
+    }
   }
 
   if (missing(col.names)) {
     col.names = names(xs)
   } else {
-    col.names= convertIntegers(col.names)
-    checkArg(col.names, c("character", "integer"), len = n)
+    if (!is.null(col.names)) {
+      col.names= convertIntegers(col.names)
+      checkArg(col.names, c("character", "integer"), len = n)
+    }
   }
 
   xs = unlist(xs)

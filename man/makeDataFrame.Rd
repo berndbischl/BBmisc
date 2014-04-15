@@ -21,11 +21,12 @@ makeDataFrame(nrow, ncol, col.types, init, row.names = NULL,
   elements of the data.frame.  You do not need to specify
   \code{col.types} if you pass this.}
 
-  \item{row.names}{[\code{character(nrow)} |
+  \item{row.names}{[\code{character} | \code{integer} |
   \code{NULL}]\cr Row names.  Default is \code{NULL}.}
 
-  \item{col.names}{[\code{character(ncol)}]\cr Column
-  names.  Default is \dQuote{V1}, \dQuote{V2}, and so on.}
+  \item{col.names}{[\code{character} | \code{integer}]\cr
+  Column names.  Default is \dQuote{V1}, \dQuote{V2}, and
+  so on.}
 }
 \description{
 Initialize data.frame in a convenient way.

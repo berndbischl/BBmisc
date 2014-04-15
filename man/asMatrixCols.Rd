@@ -11,13 +11,13 @@ asMatrixRows(xs, row.names, col.names)
   \item{xs}{[\code{list}]\cr A list of vectors of the same
   length.}
 
-  \item{row.names}{[\code{character} | \code{integer}]\cr
-  Row names of result.  Default is to take the names of the
-  elements of \code{xs}.}
+  \item{row.names}{[\code{character} | \code{integer} |
+  \code{NULL}]\cr Row names of result.  Default is to take
+  the names of the elements of \code{xs}.}
 
-  \item{col.names}{[\code{character} | \code{integer}]\cr
-  Column names of result.  Default is to take the names of
-  the elements of \code{xs}.}
+  \item{col.names}{[\code{character} | \code{integer} |
+  \code{NULL}]\cr Column names of result.  Default is to
+  take the names of the elements of \code{xs}.}
 }
 \value{
 [\code{matrix}].
