@@ -1,6 +1,6 @@
 \name{\%equals\%}
 \alias{\%equals\%}
-\title{Check if two values (or vecotrs of values) are equal. Whereas \code{NA == NA = TRUE} and \code{NA == 1 = FALSE}.}
+\title{Check if two values (or vecotrs of values) are equal.}
 \usage{
 x \%equals\% y
 }
@@ -16,11 +16,10 @@ x \%equals\% y
 same as in \code{y}?
 }
 \description{
-Check if two values (or vecotrs of values) are equal.
 Whereas \code{NA == NA = TRUE} and \code{NA == 1 = FALSE}.
 }
 \examples{
-x = c(1,2,NA)
+x = c(1, 2, NA)
 y = c(1L, 2L, NA)
 x \%equals\% y
 }
