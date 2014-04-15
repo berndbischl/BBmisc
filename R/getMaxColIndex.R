@@ -21,7 +21,7 @@
 #' @export
 #' @useDynLib BBmisc c_getMaxIndexOfRows c_getMaxIndexOfCols
 #' @examples
-#' x <- matrix(runif(5 * 3), ncol=3)
+#' x = matrix(runif(5 * 3), ncol=3)
 #' print(x)
 #' print(getMaxIndexOfRows(x))
 #' print(getMinIndexOfRows(x))

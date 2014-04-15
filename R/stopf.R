@@ -13,7 +13,7 @@
 #' @return Nothing.
 #' @export
 #' @examples
-#' err <- "an error."
+#' err = "an error."
 #' try(stopf("This is %s", err))
 stopf = function(..., warning.length=8170L) {
   msg = sprintf(...)

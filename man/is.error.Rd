@@ -18,9 +18,9 @@ Checks if an object is of class \dQuote{try-error} or
 \dQuote{error}.
 }
 \examples{
-x <- try(stop("foo"))
+x = try(stop("foo"))
 print(is.error(x))
-x <- 1
+x = 1
 print(is.error(x))
 }
 

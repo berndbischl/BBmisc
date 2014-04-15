@@ -19,7 +19,7 @@ a required type. Throws exception if check is not passed.
 Note that argument is evaluated when checked.
 }
 \examples{
-xs <- as.list(1:3)
+xs = as.list(1:3)
 checkListElementClass(xs, "numeric")
 }
 

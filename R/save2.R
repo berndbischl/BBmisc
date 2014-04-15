@@ -24,7 +24,7 @@
 #' @return See help of \code{\link[base]{save}}.
 #' @export
 #' @examples
-#' x <- 1
+#' x = 1
 #' save2(y=x, file=tempfile())
 save2 = function(file, ..., ascii = FALSE, version = NULL, compress = !ascii,
   compression_level, eval.promises = TRUE, precheck = TRUE) {

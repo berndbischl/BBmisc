@@ -47,17 +47,17 @@
 #' @return Nothing.
 #' @export
 #' @examples
-#' x <- 1L
+#' x = 1L
 #' checkArg(x, "integer", len=1, na.ok=FALSE, upper=3L)
-#' x <- as.integer(NA)
+#' x = as.integer(NA)
 #' checkArg(x, "integer", len=1, na.ok=TRUE)
-#' x <- c("foo", "bar")
+#' x = c("foo", "bar")
 #' checkArg(x, "character")
-#' x <- "foo"
+#' x = "foo"
 #' checkArg(x, choices=c("foo", "bar"))
-#' x <- c("foo", "bar")
+#' x = c("foo", "bar")
 #' checkArg(x, subset=c("foo", "bar"))
-#' fun <- function(foo, bar)
+#' fun = function(foo, bar)
 #' checkArg(fun, formals=c("foo", "bar"))
 checkArg = function(x, cl, s4=FALSE, len, min.len, max.len, choices, subset, lower=NA, upper=NA, na.ok=TRUE, formals) {
   s = deparse(substitute(x))

@@ -20,7 +20,7 @@ and \code{""} are treated as missing and replaced with the
 value provided in \code{missing.val}.
 }
 \examples{
-x <- 1:3
+x = 1:3
 names(x)
 names2(x)
 names(x[1:2]) = letters[1:2]

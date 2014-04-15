@@ -11,7 +11,7 @@
 #'   Default is \dQuote{, }.
 #' @return [\code{character(1)}]
 #' @examples
-#' x <- sample(1:10, 7)
+#' x = sample(1:10, 7)
 #' toRangeStr(x)
 #' @export
 toRangeStr = function(x, range.sep=" - ", block.sep=", ") {

@@ -22,7 +22,7 @@ A wrapper for \code{\link{warning}} with
 \code{\link{sprintf}} applied to the arguments.
 }
 \examples{
-msg <- "a warning"
+msg = "a warning"
 warningf("this is \%s", msg)
 }
 

@@ -16,7 +16,7 @@
 #' @return Nothing.
 #' @export
 #' @examples
-#' msg <- "a message."
+#' msg = "a message."
 #' catf("This is %s", msg)
 catf = function(..., file="", append=FALSE, newline=TRUE) {
   cat(sprintf(...), ifelse(newline, "\n", ""), sep="", file=file, append=append)

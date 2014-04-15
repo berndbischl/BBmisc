@@ -20,7 +20,7 @@ applied to the arguments. Notable difference is that error
 messages are not truncated to 1000 characters by default.
 }
 \examples{
-err <- "an error."
+err = "an error."
 try(stopf("This is \%s", err))
 }
 

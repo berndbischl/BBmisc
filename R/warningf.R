@@ -14,7 +14,7 @@
 #' @return Nothing.
 #' @export
 #' @examples
-#' msg <- "a warning"
+#' msg = "a warning"
 #' warningf("this is %s", msg)
 warningf = function(..., immediate=TRUE, warning.length=8170L) {
   msg = sprintf(...)

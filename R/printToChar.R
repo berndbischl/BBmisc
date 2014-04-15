@@ -9,7 +9,7 @@
 #' @return [\code{character}].
 #' @export
 #' @examples
-#' x <- data.frame(a=1:2, b=3:4)
+#' x = data.frame(a=1:2, b=3:4)
 #' str(printToChar(x))
 printToChar = function(x, collapse="\n") {
   rval = NULL

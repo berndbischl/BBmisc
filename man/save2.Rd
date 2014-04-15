@@ -36,7 +36,7 @@ names. All options of \code{\link[base]{save}}, except
 \code{\link[base]{save}}.
 }
 \examples{
-x <- 1
+x = 1
 save2(y=x, file=tempfile())
 }
 

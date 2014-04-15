@@ -24,7 +24,7 @@ toRangeStr(x, range.sep = " - ", block.sep = ", ")
 Convert a numerical vector into a range string.
 }
 \examples{
-x <- sample(1:10, 7)
+x = sample(1:10, 7)
 toRangeStr(x)
 }
 

@@ -14,7 +14,7 @@ Nothing.
 A simple wrapper for \code{message(sprintf(...))}.
 }
 \examples{
-msg <- "a message"
+msg = "a message"
 warningf("this is \%s", msg)
 }
 

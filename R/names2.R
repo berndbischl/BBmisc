@@ -12,7 +12,7 @@
 #' @return [\code{character}]: vector of the same length as \code{x}.
 #' @export
 #' @examples
-#' x <- 1:3
+#' x = 1:3
 #' names(x)
 #' names2(x)
 #' names(x[1:2]) = letters[1:2]

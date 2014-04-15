@@ -11,7 +11,7 @@
 #' @return Nothing.
 #' @export
 #' @examples
-#' xs <- as.list(1:3)
+#' xs = as.list(1:3)
 #' checkListElementClass(xs, "numeric")
 checkListElementClass = function(xs, cl) {
   checkArg(xs, "list")

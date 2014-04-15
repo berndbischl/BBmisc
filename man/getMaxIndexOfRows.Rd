@@ -41,7 +41,7 @@ corresponding vector (row or col) is empty, possibly after
 NA removal, -1 is returned as index.
 }
 \examples{
-x <- matrix(runif(5 * 3), ncol=3)
+x = matrix(runif(5 * 3), ncol=3)
 print(x)
 print(getMaxIndexOfRows(x))
 print(getMinIndexOfRows(x))

@@ -54,12 +54,12 @@ bars by setting the option
 is \code{getOption("width")}.
 }
 \examples{
-bar <- makeProgressBar(max=5, label="test-bar")
+bar = makeProgressBar(max=5, label="test-bar")
 for (i in 0:5) {
   bar$set(i)
   Sys.sleep(0.2)
 }
-bar <- makeProgressBar(max=5, label="test-bar")
+bar = makeProgressBar(max=5, label="test-bar")
 for (i in 1:5) {
   bar$inc(1)
   Sys.sleep(0.2)
@@ -67,7 +67,7 @@ for (i in 1:5) {
 # display errors properly (in next line)
 \dontrun{
 f = function(i) if (i>2) stop("foo")
-bar <- makeProgressBar(max=5, label="test-bar")
+bar = makeProgressBar(max=5, label="test-bar")
 for (i in 1:5) {
   tryCatch ({
     f(i)

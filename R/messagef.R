@@ -7,7 +7,7 @@
 #' @return Nothing.
 #' @export
 #' @examples
-#' msg <- "a message"
+#' msg = "a message"
 #' warningf("this is %s", msg)
 messagef = function(...) {
   message(sprintf(...))

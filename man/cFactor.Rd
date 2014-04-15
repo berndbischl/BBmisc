@@ -16,8 +16,8 @@ not change R semantics behind your back when this package
 is loaded.
 }
 \examples{
-f1 <- factor(c("a", "b"))
-f2 <- factor(c("b", "c"))
+f1 = factor(c("a", "b"))
+f2 = factor(c("b", "c"))
 print(c(f1, f2))
 print(cFactor(f1, f2))
 }
