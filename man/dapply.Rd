@@ -19,6 +19,9 @@ dapply(x, fun, ..., col.names)
 [\code{data.frame}].
 }
 \description{
-Call \code{lapply} on an object and return a data.frame.
+Applies a function \code{fun} on each element of input
+\code{x} and combines the results as \code{data.frame}
+columns. The results will get replicated to have equal
+length if necessary and possible.
 }
 
