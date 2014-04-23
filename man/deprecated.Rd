@@ -1,0 +1,32 @@
+\name{deprecated}
+\alias{convertDfCols}
+\alias{deprecated}
+\alias{listToShortString}
+\title{Deprecated function. Do not use!}
+\usage{
+convertDfCols(df, chars.as.factor = FALSE, factors.as.char = FALSE,
+  ints.as.num = FALSE, logicals.as.factor = FALSE)
+
+listToShortString(x, num.format = "\%.4g", clip.len = 15L)
+}
+\arguments{
+  \item{df}{No text}
+
+  \item{chars.as.factor}{No text}
+
+  \item{factors.as.char}{No text}
+
+  \item{ints.as.num}{No text}
+
+  \item{logicals.as.factor}{No text}
+
+  \item{x}{No text}
+
+  \item{num.format}{No text}
+
+  \item{clip.len}{No text}
+}
+\description{
+Deprecated function. Do not use!
+}
+
