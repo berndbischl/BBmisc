@@ -12,7 +12,7 @@
 #'   Default is \code{TRUE}.
 #' @return [\code{vector}]
 #' @export
-getRandomElements = function(x, size = 1L, replace = FALSE) {
+sample2 = function(x, size = 1L, replace = FALSE) {
   checkArg(size, cl = "integer", lower = 1L, len = 1L, na.ok = FALSE)
   checkArg(replace, cl ="logical", len = 1L, na.ok = FALSE)
   n = length(x)
