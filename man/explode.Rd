@@ -1,6 +1,6 @@
 \name{explode}
 \alias{explode}
-\title{Split a string into substrings.}
+\title{Split up a string into substrings.}
 \usage{
 explode(x, sep = " ")
 }
@@ -16,5 +16,9 @@ explode(x, sep = " ")
 }
 \description{
 Split up a string into substrings according to a seperator.
+}
+\examples{
+explode("foo bar")
+explode("comma,seperated,values", sep = ",")
 }
 

@@ -1,4 +1,4 @@
-#' Split a string into substrings.
+#' Split up a string into substrings.
 #'
 #' Split up a string into substrings according to a seperator.
 #'
@@ -10,6 +10,9 @@
 #' @return [\code{vector}]
 #'   Vector of substrings.
 #' @export
+#' @examples
+#' explode("foo bar")
+#' explode("comma,seperated,values", sep = ",")
 explode = function(x, sep = " ") {
   checkArg(x, "character", na.ok = FALSE)
   checkArg(sep, "character", na.ok = FALSE)
