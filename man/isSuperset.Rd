@@ -1,8 +1,8 @@
-\name{is.superset}
-\alias{is.superset}
+\name{isSuperset}
+\alias{isSuperset}
 \title{Check superset relation on two vectors.}
 \usage{
-is.superset(x, y, strict = FALSE)
+isSuperset(x, y, strict = FALSE)
 }
 \arguments{
   \item{x}{[\code{vector}]\cr Source vector.}

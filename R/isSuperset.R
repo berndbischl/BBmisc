@@ -10,6 +10,6 @@
 #'   \code{TRUE} if each element of \code{y} is also contained in \code{x}, i. e.,
 #'   if \code{y} is a subset of \code{x} and \code{FALSE} otherwise.
 #' @export
-is.superset = function(x, y, strict = FALSE) {
-  return(is.subset(y, x, strict))
+isSuperset = function(x, y, strict = FALSE) {
+  return(isSubset(y, x, strict))
 }
