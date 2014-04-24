@@ -6,7 +6,7 @@ of a given object.}
 getAttributeNames(obj)
 }
 \arguments{
-  \item{obj}{[\code{mixed}]\cr Source object.}
+  \item{obj}{[any]\cr Source object.}
 }
 \value{
 [\code{character}] Vector of attribute names for the source

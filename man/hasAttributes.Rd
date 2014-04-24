@@ -2,12 +2,12 @@
 \alias{hasAttributes}
 \title{Check if given object has certain attributes.}
 \usage{
-hasAttributes(obj, attributeNames)
+hasAttributes(obj, attribute.names)
 }
 \arguments{
-  \item{obj}{[\code{mixed}]\cr Arbitrary R object.}
+  \item{obj}{[mixed]\cr Arbitrary R object.}
 
-  \item{attributeNames}{[\code{character}]\cr Vector of
+  \item{attribute.names}{[\code{character}]\cr Vector of
   strings, i.e., attribute names.}
 }
 \value{

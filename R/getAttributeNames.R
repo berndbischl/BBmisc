@@ -1,7 +1,7 @@
 #' Helper function for determining the vector of attribute names
 #' of a given object.
 #'
-#' @param obj [\code{mixed}]\cr
+#' @param obj [any]\cr
 #'   Source object.
 #' @return [\code{character}]
 #'   Vector of attribute names for the source object.
