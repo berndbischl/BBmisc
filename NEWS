@@ -1,9 +1,18 @@
+BBmisc_1.7:
+- new functions:
+-- isSubset, isSuperset
+-- explode
+-- hasAttributes
+-- getAttributeNames
+-- operator %is%
+-- usedFactorLevels
+
 BBmisc_1.6:
 - the ProgressBar now outputs to stderr by default. But the stream can be configured.
 - improve handling of result names (row.names and col.names) in some functions a bit
 - convertRowsToList now converts matrices into list of vector by default (see new arg "as.vector")
 - rename first, last to which.first, which.last
-- improved extractSubList and rowSapply a bit, 
+- improved extractSubList and rowSapply a bit,
   simplification to matrix can be stated in a more readable way.
 - new functions:
 -- operator %btwn%.
