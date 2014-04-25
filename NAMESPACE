@@ -1,5 +1,4 @@
 export("%btwn%")
-export("%is%")
 export("%nin%")
 export(addClasses)
 export(argsAsNamedList)
