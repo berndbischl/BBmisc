@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="R.css">
 </head><body>
 
-<table width="100%" summary="page for first {BBmisc}"><tr><td>first {BBmisc}</td><td align="right">R Documentation</td></tr></table>
+<table width="100%" summary="page for which.first {BBmisc}"><tr><td>which.first {BBmisc}</td><td align="right">R Documentation</td></tr></table>
 
 <h2>Find the index of first/last <code>TRUE</code> value in a logical vector.</h2>
 
@@ -18,9 +18,9 @@ vector.
 <h3>Usage</h3>
 
 <pre>
-first(x, na.omit = TRUE)
+which.first(x, use.names = TRUE)
 
-last(x, na.omit = TRUE)
+which.last(x, use.names = TRUE)
 </pre>
 
 
@@ -31,21 +31,19 @@ last(x, na.omit = TRUE)
 <td>
 <p>[<code>logical</code>]<br> Logical vector.</p>
 </td></tr>
-<tr valign="top"><td><code>na.omit</code></td>
+<tr valign="top"><td><code>use.names</code></td>
 <td>
-<p>[<code>logical(1)</code>]<br> Should NAs be
-omitted from <code>x</code>?.  Default is <code>TRUE</code>.</p>
+<p>[<code>logical(1)</code>]<br> If <code>TRUE</code>
+and <code>x</code> is named, the result is also named.</p>
 </td></tr>
 </table>
 
 
 <h3>Value</h3>
 
-<p>[<code>integer(1)</code> | <code>integer(0)</code>]. Returns the index
+<p>[<code>integer(1)</code> | <code>integer(0)</code>].  Returns the index
 of the first/last <code>TRUE</code> value in <code>x</code> or an empty
-integer vector if none is found.  If NAs are encountered
-before a <code>TRUE</code> and not omitted, the result is
-<code>NA_integer_</code>.
+integer vector if none is found.
 </p>
 
 <hr><div align="center">[Package <em>BBmisc</em> version 1.6 <a href="00Index.html">Index</a>]</div>

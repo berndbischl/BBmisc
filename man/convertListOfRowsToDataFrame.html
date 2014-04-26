@@ -15,8 +15,9 @@
 
 <h3>Description</h3>
 
-<p>Convert a list of row-vectors of equal structure to a
-data.frame.
+<p>Elements are arranged in columns according to their name in
+each element of <code>rows</code>. Missing values are filled
+using NAs.
 </p>
 
 
@@ -46,17 +47,15 @@ character columns to factors?  Default is
 </td></tr>
 <tr valign="top"><td><code>row.names</code></td>
 <td>
-<p>[<code>character(nrow)</code> |
-<code>NULL</code>]<br> Row names for result.  <code>NULL</code>
-implies no row names are set.  By default the names of
-the list <code>rows</code> are taken.</p>
+<p>[<code>character</code> | <code>integer</code> |
+<code>NULL</code>]<br> Row names for result.  By default the
+names of the list <code>rows</code> are taken.</p>
 </td></tr>
 <tr valign="top"><td><code>col.names</code></td>
 <td>
-<p>[<code>character(ncol)</code>]<br> Column
-names.  Default the are the names of the elements of the
-first row, or, if this row has no element names,
-&ldquo;V1&rdquo;, &ldquo;V2&rdquo;, and so on, is used.</p>
+<p>[<code>character</code> | <code>integer</code>]<br>
+Column names for result.  By default the names of an
+element of <code>rows</code> are taken.</p>
 </td></tr>
 </table>
 

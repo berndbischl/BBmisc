@@ -121,17 +121,17 @@ Default is missing.</p>
 <h3>Examples</h3>
 
 <pre><code class="r">
-x &lt;- 1L
+x = 1L
 checkArg(x, &quot;integer&quot;, len=1, na.ok=FALSE, upper=3L)
-x &lt;- as.integer(NA)
+x = as.integer(NA)
 checkArg(x, &quot;integer&quot;, len=1, na.ok=TRUE)
-x &lt;- c(&quot;foo&quot;, &quot;bar&quot;)
+x = c(&quot;foo&quot;, &quot;bar&quot;)
 checkArg(x, &quot;character&quot;)
-x &lt;- &quot;foo&quot;
+x = &quot;foo&quot;
 checkArg(x, choices=c(&quot;foo&quot;, &quot;bar&quot;))
-x &lt;- c(&quot;foo&quot;, &quot;bar&quot;)
+x = c(&quot;foo&quot;, &quot;bar&quot;)
 checkArg(x, subset=c(&quot;foo&quot;, &quot;bar&quot;))
-fun &lt;- function(foo, bar)
+fun = function(foo, bar)
 checkArg(fun, formals=c(&quot;foo&quot;, &quot;bar&quot;))
 
 </code></pre>

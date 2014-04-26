@@ -55,9 +55,13 @@ mixed data types Default is <code>FALSE</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>simplify</code></td>
 <td>
-<p>[<code>logical(1)</code>]<br> Should the result
-be simplified?  See <code><a href="../../base/html/lapply.html">sapply</a></code>.  Default is
-<code>TRUE</code>.</p>
+<p>[<code>logical(1)</code> | character(1)]<br>
+Should the result be simplified?  See
+<code><a href="../../base/html/lapply.html">sapply</a></code>.  If &ldquo;cols&rdquo;, we expect the
+call results to be vectors of the same length and they
+are arranged as the columns of the resulting matrix.  If
+&ldquo;rows&rdquo;, likewise, but rows of the resulting
+matrix.  Default is <code>TRUE</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>use.names</code></td>
 <td>
