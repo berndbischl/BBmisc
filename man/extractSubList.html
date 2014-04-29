@@ -47,9 +47,13 @@ to <code>FUN.VALUE</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>simplify</code></td>
 <td>
-<p>[<code>logical(1)</code>]<br> If <code>TRUE</code>
-<code><a href="../../base/html/lapply.html">sapply</a></code> is used, otherwise
-<code><a href="../../base/html/lapply.html">lapply</a></code>.  Default is <code>TRUE</code>.</p>
+<p>[<code>logical(1)</code> | character(1)]<br> If
+<code>FALSE</code> <code><a href="../../base/html/lapply.html">lapply</a></code> is used, otherwise
+<code><a href="../../base/html/lapply.html">sapply</a></code>.  If &ldquo;cols&rdquo;, we expect the
+elements to be vectors of the same length and they are
+arranged as the columns of the resulting matrix.  If
+&ldquo;rows&rdquo;, likewise, but rows of the resulting
+matrix.  Default is <code>TRUE</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>use.names</code></td>
 <td>
@@ -63,7 +67,8 @@ otherwise the result is unnamed.  Default is
 
 <h3>Value</h3>
 
-<p>[<code>list</code> or simplified vector].
+<p>[<code>list</code> | simplified <code>vector</code> | <code>matrix</code>].
+See above.
 </p>
 
 

@@ -10,14 +10,27 @@
 
 <h3>Description</h3>
 
-<p>Is given argument an atomic vector or factor of length 1?
+<p>More specific functions for scalars of a given type exist,
+too.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-isScalarValue(x, na.ok = TRUE, null.ok = FALSE)
+isScalarValue(x, na.ok = TRUE, null.ok = FALSE, type = "atomic")
+
+isScalarLogical(x, na.ok = TRUE, null.ok = FALSE)
+
+isScalarNumeric(x, na.ok = TRUE, null.ok = FALSE)
+
+isScalarInteger(x, na.ok = TRUE, null.ok = FALSE)
+
+isScalarComplex(x, na.ok = TRUE, null.ok = FALSE)
+
+isScalarCharacter(x, na.ok = TRUE, null.ok = FALSE)
+
+isScalarFactor(x, na.ok = TRUE, null.ok = FALSE)
 </pre>
 
 
@@ -37,6 +50,14 @@ considered a scalar?  Default is <code>TRUE</code>.</p>
 <td>
 <p>[<code>logical(1)</code>]<br> Is <code>NULL</code>
 considered a scalar?  Default is <code>FALSE</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>[<code>character(1)</code>]<br> Allows to restrict
+to specific type, e.g., &ldquo;numeric&rdquo;?  But instead of
+this argument you might want to consider using
+<code>isScalar&lt;Type&gt;</code>.  Default is &ldquo;atomic&rdquo;, so no
+special restriction.</p>
 </td></tr>
 </table>
 

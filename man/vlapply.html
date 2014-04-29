@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Apply a function with a predefined return value</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for vlapply {BBmisc}"><tr><td>vlapply {BBmisc}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Apply a function with a predefined return value</h2>
+
+<h3>Description</h3>
+
+<p>These are just wrappers around <code><a href="../../base/html/vapply.html">vapply</a></code>
+with argument <code>FUN.VALUE</code> set. The function is
+expected to return a single <code>logical</code>, <code>integer</code>,
+<code>numeric</code> or <code>character</code> value, depending on the
+second letter of the function name.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+vlapply(x, fun, ..., use.names = TRUE)
+
+viapply(x, fun, ..., use.names = TRUE)
+
+vnapply(x, fun, ..., use.names = TRUE)
+
+vcapply(x, fun, ..., use.names = TRUE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>[<code>vector</code> or <code>list</code>]<br> Object to
+apply function on.</p>
+</td></tr>
+<tr valign="top"><td><code>fun</code></td>
+<td>
+<p>[<code>function</code>]<br> Function to apply on each
+element of <code>x</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>[<code>ANY</code>]<br> Additional arguments for
+<code>fun</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>use.names</code></td>
+<td>
+<p>[<code>logical(1)</code>]<br> Should result be
+named?  Default is <code>TRUE</code>.</p>
+</td></tr>
+</table>
+
+<hr><div align="center">[Package <em>BBmisc</em> version 1.6 <a href="00Index.html">Index</a>]</div>
+</body></html>
