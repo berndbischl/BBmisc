@@ -8,7 +8,7 @@
 #' @return [\code{character}]
 #'   Character vector of used levels.
 #' @export
-usedFactorLevels = function(x) {
+getUsedFactorLevels = function(x) {
   stopifnot(is.factor(x))
   return(intersect(levels(x), unique(x)))
 }

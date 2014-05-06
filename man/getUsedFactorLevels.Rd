@@ -1,8 +1,8 @@
-\name{usedFactorLevels}
-\alias{usedFactorLevels}
+\name{getUsedFactorLevels}
+\alias{getUsedFactorLevels}
 \title{Determines used factor levels.}
 \usage{
-usedFactorLevels(x)
+getUsedFactorLevels(x)
 }
 \arguments{
   \item{x}{[\code{factor}]\cr Source vector.}
