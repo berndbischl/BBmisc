@@ -2,7 +2,7 @@
 \alias{load2}
 \title{Load RData file and return objects in it.}
 \usage{
-load2(file, parts, simplify = TRUE, envir)
+load2(file, parts, simplify = TRUE, envir, impute)
 }
 \arguments{
   \item{file}{[\code{character(1)}]\cr File to load.}
@@ -17,6 +17,11 @@ load2(file, parts, simplify = TRUE, envir)
 
   \item{envir}{[\code{environment(1)}]\cr Assign objects to
   this environment.  Default is not to assign.}
+
+  \item{impute}{[\code{ANY}]\cr If \code{file} does not
+  exists, return \code{impute} instead.  Default is missing
+  which will result in an exception if \code{file} is not
+  found.}
 }
 \value{
 Either a single object or a list.

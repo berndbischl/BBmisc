@@ -12,6 +12,9 @@
 #' @param envir [\code{environment(1)}]\cr
 #'   Assign objects to this environment.
 #'   Default is not to assign.
+#' @param impute [\code{ANY}]\cr
+#'   If \code{file} does not exists, return \code{impute} instead.
+#'   Default is missing which will result in an exception if \code{file} is not found.
 #' @return Either a single object or a list.
 #' @export
 #' @examples
@@ -19,8 +22,10 @@
 #' save2(file=fn, a=1, b=2, c=3)
 #' load2(fn, parts="a")
 #' load2(fn, parts=c("a", "c"))
-load2 = function(file, parts, simplify=TRUE, envir) {
+load2 = function(file, parts, simplify=TRUE, envir, impute) {
   ee = new.env()
+  if (!missing(impute) && !file.exists(file))
+    return(impute)
   load(file, envir=ee)
   ns = ls(ee)
   if (!missing(parts)) {
