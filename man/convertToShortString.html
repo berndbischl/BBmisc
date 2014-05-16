@@ -15,10 +15,10 @@
 
 <h3>Description</h3>
 
-<p>Atomics: If of length 0 or 1, they are basically printed as
-they are. Numerics are formated with <code>num.format</code>. If
-of length greater than 1, they are collpsed witd &ldquo;,&rdquo;
-and clipped. so they do not become excessively long.
+<p>Atomics: If of length 0 or 1, they are basically printed as they are.
+Numerics are formated with <code>num.format</code>.
+If of length greater than 1, they are collpsed witd &ldquo;,&rdquo; and clipped.
+so they do not become excessively long.
 </p>
 
 
@@ -34,18 +34,20 @@ convertToShortString(x, num.format = "%.4g", clip.len = 15L)
 <table summary="R argblock">
 <tr valign="top"><td><code>x</code></td>
 <td>
-<p>[any]<br> The object.</p>
+<p>[any]<br>
+The object.</p>
 </td></tr>
 <tr valign="top"><td><code>num.format</code></td>
 <td>
-<p>[<code>character(1)</code>]<br> Used to format
-numerical scalars via <code><a href="../../base/html/sprintf.html">sprintf</a></code>.  Default is
-&ldquo;%.4g&rdquo;.</p>
+<p>[<code>character(1)</code>]<br>
+Used to format numerical scalars via <code><a href="../../base/html/sprintf.html">sprintf</a></code>.
+Default is &ldquo;%.4g&rdquo;.</p>
 </td></tr>
 <tr valign="top"><td><code>clip.len</code></td>
 <td>
-<p>[<code>integer(1)</code>]<br> Used clip atomic
-vectors via <code><a href="clipString.html">clipString</a></code>.  Default is 15.</p>
+<p>[<code>integer(1)</code>]<br>
+Used clip atomic vectors via <code><a href="clipString.html">clipString</a></code>.
+Default is 15.</p>
 </td></tr>
 </table>
 
@@ -55,9 +57,9 @@ vectors via <code><a href="clipString.html">clipString</a></code>.  Default is 1
 <p>All others: Currently, only their class is simply printed
 like &ldquo;&lt;data.frame&gt;&rdquo;.
 </p>
-<p>Lists: The mechanism above is applied (non-recursively) to
-their elements. The result looks like this: &ldquo;a=1,
-&lt;unamed&gt;=2, b=&lt;data.frame&gt;, c=&lt;list&gt;&rdquo;.
+<p>Lists: The mechanism above is applied (non-recursively) to their elements.
+The result looks like this:
+&ldquo;a=1, &lt;unamed&gt;=2, b=&lt;data.frame&gt;, c=&lt;list&gt;&rdquo;.
 </p>
 
 
@@ -80,5 +82,5 @@ convertToShortString(list(a=1, b=NULL, &quot;foo&quot;, c=1:10))
 </code></pre>
 
 
-<hr><div align="center">[Package <em>BBmisc</em> version 1.6 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>BBmisc</em> version 1.7 <a href="00Index.html">Index</a>]</div>
 </body></html>

@@ -22,7 +22,7 @@
 <h3>Usage</h3>
 
 <pre>
-load2(file, parts, simplify = TRUE, envir)
+load2(file, parts, simplify = TRUE, envir, impute)
 </pre>
 
 
@@ -31,24 +31,33 @@ load2(file, parts, simplify = TRUE, envir)
 <table summary="R argblock">
 <tr valign="top"><td><code>file</code></td>
 <td>
-<p>[<code>character(1)</code>]<br> File to load.</p>
+<p>[<code>character(1)</code>]<br>
+File to load.</p>
 </td></tr>
 <tr valign="top"><td><code>parts</code></td>
 <td>
-<p>[<code>character</code>]<br> Elements in file to
-load.  Default is all.</p>
+<p>[<code>character</code>]<br>
+Elements in file to load.
+Default is all.</p>
 </td></tr>
 <tr valign="top"><td><code>simplify</code></td>
 <td>
-<p>[<code>logical(1)</code>]<br> If <code>TRUE</code>, a
-list is only returned if <code>parts</code> and the file
-contain both more than 1 element, otherwise the element
-is directly returned.  Default is <code>TRUE</code>.</p>
+<p>[<code>logical(1)</code>]<br>
+If <code>TRUE</code>, a list is only returned if <code>parts</code> and the file contain both more
+than 1 element, otherwise the element is directly returned.
+Default is <code>TRUE</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>envir</code></td>
 <td>
-<p>[<code>environment(1)</code>]<br> Assign objects to
-this environment.  Default is not to assign.</p>
+<p>[<code>environment(1)</code>]<br>
+Assign objects to this environment.
+Default is not to assign.</p>
+</td></tr>
+<tr valign="top"><td><code>impute</code></td>
+<td>
+<p>[<code>ANY</code>]<br>
+If <code>file</code> does not exists, return <code>impute</code> instead.
+Default is missing which will result in an exception if <code>file</code> is not found.</p>
 </td></tr>
 </table>
 
@@ -84,5 +93,5 @@ load2(fn, parts=&quot;a&quot;)
 </code></pre>
 
 
-<hr><div align="center">[Package <em>BBmisc</em> version 1.6 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>BBmisc</em> version 1.7 <a href="00Index.html">Index</a>]</div>
 </body></html>

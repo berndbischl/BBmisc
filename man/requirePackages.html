@@ -15,12 +15,11 @@
 
 <h3>Description</h3>
 
-<p>If some packages could not be loaded and <code>stop</code> is
-<code>TRUE</code> the following exception is thrown: &ldquo;For
-&lt;why&gt; please install the following packages: &lt;missing
-packages&gt;&rdquo;. If <code>why</code> is <code>NULL</code> the message is:
-&ldquo;Please install the following packages: &lt;missing
-packages&gt;&rdquo;.
+<p>If some packages could not be loaded and <code>stop</code> is <code>TRUE</code>
+the following exception is thrown:
+&ldquo;For &lt;why&gt; please install the following packages: &lt;missing packages&gt;&rdquo;.
+If <code>why</code> is <code>NULL</code> the message is:
+&ldquo;Please install the following packages: &lt;missing packages&gt;&rdquo;.
 </p>
 
 
@@ -37,36 +36,39 @@ requirePackages(packs, why = NULL, stop = TRUE, suppress.warnings = FALSE,
 <table summary="R argblock">
 <tr valign="top"><td><code>packs</code></td>
 <td>
-<p>[<code>character</code>]<br> Names of packages.</p>
+<p>[<code>character</code>]<br>
+Names of packages.</p>
 </td></tr>
 <tr valign="top"><td><code>why</code></td>
 <td>
-<p>[<code>character(1)</code>]<br> Short string
-explaining why packages are required.  Default is
-<code>NULL</code>.</p>
+<p>[<code>character(1)</code>]<br>
+Short string explaining why packages are required.
+Default is <code>NULL</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>stop</code></td>
 <td>
-<p>[<code>logical(1)</code>]<br> Should an exception be
-thrown for missing packages?  Default is <code>TRUE</code>.</p>
+<p>[<code>logical(1)</code>]<br>
+Should an exception be thrown for missing packages?
+Default is <code>TRUE</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>suppress.warnings</code></td>
 <td>
-<p>[<code>logical(1)</code>]<br> Should
-warnings be suppressed in the calls to
-<code><a href="../../base/html/library.html">require</a></code>?  Default is <code>FALSE</code>.</p>
+<p>[<code>logical(1)</code>]<br>
+Should warnings be suppressed in the calls to <code><a href="../../base/html/library.html">require</a></code>?
+Default is <code>FALSE</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>...</code></td>
 <td>
-<p>[any]<br> Passed on to <code><a href="../../base/html/library.html">require</a></code>.</p>
+<p>[any]<br>
+Passed on to <code><a href="../../base/html/library.html">require</a></code>.</p>
 </td></tr>
 </table>
 
 
 <h3>Value</h3>
 
-<p>[<code>logical</code>]. Named logical vector describing which
-packages could be loaded.  Same length as <code>packs</code>.
+<p>[<code>logical</code>]. Named logical vector describing which packages could be loaded.
+Same length as <code>packs</code>.
 </p>
 
 
@@ -84,5 +86,5 @@ requirePackages(c(&quot;BBmisc&quot;, &quot;base&quot;), why=&quot;BBmisc exampl
 </code></pre>
 
 
-<hr><div align="center">[Package <em>BBmisc</em> version 1.6 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>BBmisc</em> version 1.7 <a href="00Index.html">Index</a>]</div>
 </body></html>

@@ -10,9 +10,8 @@
 
 <h3>Description</h3>
 
-<p>Creates a simple file logger closure to log to a file,
-including time stamps. An optional buffer holds the last
-few log messages.
+<p>Creates a simple file logger closure to log to a file, including time stamps.
+An optional buffer holds the last few log messages.
 </p>
 
 
@@ -28,52 +27,50 @@ makeSimpleFileLogger(logfile, touch = FALSE, keep = 10L)
 <table summary="R argblock">
 <tr valign="top"><td><code>logfile</code></td>
 <td>
-<p>[<code>character(1)</code>]<br> File to log to.</p>
+<p>[<code>character(1)</code>]<br>
+File to log to.</p>
 </td></tr>
 <tr valign="top"><td><code>touch</code></td>
 <td>
-<p>[<code>logical(1)</code>]<br> Should the file be
-created before the first log message?  Default is
-<code>FALSE</code>.</p>
+<p>[<code>logical(1)</code>]<br>
+Should the file be created before the first log message?
+Default is <code>FALSE</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>keep</code></td>
 <td>
-<p>[<code>integer(1)</code>]<br> Number of log messages
-to keep in memory for quick access.  Default is
-<code>10</code>.</p>
+<p>[<code>integer(1)</code>]<br>
+Number of log messages to keep in memory for quick access.
+Default is <code>10</code>.</p>
 </td></tr>
 </table>
 
 
 <h3>Value</h3>
 
-<p>[<code><a href="makeSimpleFileLogger.html">SimpleFileLogger</a></code>]. A list with following
-functions: </p>
+<p>[<code><a href="makeSimpleFileLogger.html">SimpleFileLogger</a></code>]. A list with following functions:
+</p>
 <table summary="R valueblock">
 <tr valign="top"><td><code>log [<code>function(msg)</code>]</code></td>
 <td>
-<p>Send log
-message.</p>
-</td></tr> <tr valign="top"><td><code>getMessages [<code>function(n)</code>]</code></td>
+<p>Send log message.</p>
+</td></tr>
+<tr valign="top"><td><code>getMessages [<code>function(n)</code>]</code></td>
 <td>
-<p>Get last
-<code>n</code> log messages.</p>
-</td></tr> <tr valign="top"><td><code>clear
-[<code>function()</code>]</code></td>
+<p>Get last <code>n</code> log messages.</p>
+</td></tr>
+<tr valign="top"><td><code>clear [<code>function()</code>]</code></td>
 <td>
 <p>Resets logger and deletes log file.</p>
 </td></tr>
 <tr valign="top"><td><code>getSize [<code>function()</code>]</code></td>
 <td>
-<p>Returns the number of
-logs written.</p>
-</td></tr> <tr valign="top"><td><code>getLogfile
-[<code>function()</code>]</code></td>
+<p>Returns the number of logs written.</p>
+</td></tr>
+<tr valign="top"><td><code>getLogfile [<code>function()</code>]</code></td>
 <td>
-<p>Returns the full file name logs are
-written to.</p>
+<p>Returns the full file name logs are written to.</p>
 </td></tr>
 </table>
 
-<hr><div align="center">[Package <em>BBmisc</em> version 1.6 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>BBmisc</em> version 1.7 <a href="00Index.html">Index</a>]</div>
 </body></html>

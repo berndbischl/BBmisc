@@ -15,10 +15,9 @@
 
 <h3>Description</h3>
 
-<p>In case of shuffling and vectors that cannot be chunked
-evenly, it is chosen randomly which levels / chunks will
-receive 1 element less. If you do not shuffle, always the
-last chunks will receive 1 element less.
+<p>In case of shuffling and vectors that cannot be chunked evenly,
+it is chosen randomly which levels / chunks will receive 1 element less.
+If you do not shuffle, always the last chunks will receive 1 element less.
 </p>
 
 
@@ -34,34 +33,36 @@ chunk(x, chunk.size, n.chunks, props, shuffle = FALSE)
 <table summary="R argblock">
 <tr valign="top"><td><code>x</code></td>
 <td>
-<p>[ANY]<br> Vector, list or other type supported by
-<code><a href="../../base/html/split.html">split</a></code>.</p>
+<p>[ANY]<br>
+Vector, list or other type supported by <code><a href="../../base/html/split.html">split</a></code>.</p>
 </td></tr>
 <tr valign="top"><td><code>chunk.size</code></td>
 <td>
-<p>[<code>integer(1)</code>]<br> Requested number
-of elements in each chunk.  Cannot be used in combination
-with <code>n.chunks</code> or <code>props</code>.  If <code>x</code> cannot
-be evenly chunked, some chunks will have less elements.</p>
+<p>[<code>integer(1)</code>]<br>
+Requested number of elements in each chunk.
+Cannot be used in combination with <code>n.chunks</code> or <code>props</code>.
+If <code>x</code> cannot be evenly chunked, some chunks will have less elements.</p>
 </td></tr>
 <tr valign="top"><td><code>n.chunks</code></td>
 <td>
-<p>[<code>integer(1)</code>]<br> Requested number
-of chunks.  If more chunks than elements in <code>x</code> are
-requested, empty chunks are dropped.  Can not be used in
-combination with <code>chunks.size</code> or <code>props</code>.</p>
+<p>[<code>integer(1)</code>]<br>
+Requested number of chunks.
+If more chunks than elements in <code>x</code> are requested, empty chunks are
+dropped.
+Can not be used in combination with <code>chunks.size</code> or <code>props</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>props</code></td>
 <td>
-<p>[<code>numeric</code>]<br> Vector of proportions
-for chunk sizes.  Empty chunks may occur, depending on
-the length of <code>x</code> and the given proportions.  Cannot
-be used in combination with <code>chunks.size</code> or
-<code>n.chunks</code>.</p>
+<p>[<code>numeric</code>]<br>
+Vector of proportions for chunk sizes.
+Empty chunks may occur, depending on the length of <code>x</code> and the given
+proportions.
+Cannot be used in combination with <code>chunks.size</code> or <code>n.chunks</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>shuffle</code></td>
 <td>
-<p>[<code>logical(1)</code>]<br> Shuffle <code>x</code>?
+<p>[<code>logical(1)</code>]<br>
+Shuffle <code>x</code>?
 Default is <code>FALSE</code>.</p>
 </td></tr>
 </table>
@@ -107,10 +108,10 @@ chunk(xs, chunk.size = 3)
 </code></pre>
 
 <pre><code>## [[1]]
-## [1] 2 3 4 5 6
+## [1]  2  4  6  9 10
 ## 
 ## [[2]]
-## [1]  1  7  8  9 10
+## [1] 1 3 5 7 8
 </code></pre>
 
 <pre><code class="r">chunk(xs, props = c(7, 3))
@@ -127,5 +128,5 @@ chunk(xs, chunk.size = 3)
 </code></pre>
 
 
-<hr><div align="center">[Package <em>BBmisc</em> version 1.6 <a href="00Index.html">Index</a>]</div>
+<hr><div align="center">[Package <em>BBmisc</em> version 1.7 <a href="00Index.html">Index</a>]</div>
 </body></html>
