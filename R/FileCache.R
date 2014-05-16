@@ -1,4 +1,4 @@
-#' A caching wrapper around load2
+#' A caching wrapper around load2.
 #'
 #' This closure returns a wrapper around \code{\link{load2}} which per
 #' default caches loaded objects and returns the cached version
