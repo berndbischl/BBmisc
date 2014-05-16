@@ -5,12 +5,13 @@
 #' in subsequent calls.
 #'
 #' @param use.cache [\code{logical(1)}]\cr
-#'  Enable the cache? Default is \code{TRUE}.
+#'  Enable the cache?
+#'  Default is \code{TRUE}.
 #' @return [\code{function()}] with argument \code{slot}
 #'  (name of the slot to cache the object in, default is \dQuote{default}).
 #'  All other arguments are passed down to \code{\link{load2}}.
 #' @export
-FileCache = function(use.cache = TRUE) {
+makeFileCache = function(use.cache = TRUE) {
   force(use.cache)
   .cache = list()
 
