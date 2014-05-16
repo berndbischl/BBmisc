@@ -1,5 +1,6 @@
 export("%btwn%")
 export("%nin%")
+export(FileCache)
 export(addClasses)
 export(argsAsNamedList)
 export(asMatrixCols)

@@ -1,0 +1,21 @@
+\name{FileCache}
+\alias{FileCache}
+\title{A caching wrapper around load2}
+\usage{
+FileCache(use.cache = TRUE)
+}
+\arguments{
+  \item{use.cache}{[\code{logical(1)}]\cr Enable the cache?
+  Default is \code{TRUE}.}
+}
+\value{
+[\code{function()}] with argument \code{slot} (name of the
+slot to cache the object in, default is \dQuote{default}).
+All other arguments are passed down to \code{\link{load2}}.
+}
+\description{
+This closure returns a wrapper around \code{\link{load2}}
+which per default caches loaded objects and returns the
+cached version in subsequent calls.
+}
+
