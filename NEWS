@@ -1,13 +1,13 @@
 BBmisc_1.7:
 - new functions:
--- isSubset, isSuperset
+-- asQuoted
 -- explode
--- hasAttributes
 -- getAttributeNames
--- operator %is%
--- usedFactorLevels
--- setValue
+-- hasAttributes
+-- isSubset, isSuperset
 -- makeFileCache
+-- setValue
+-- usedFactorLevels
 
 BBmisc_1.6:
 - the ProgressBar now outputs to stderr by default. But the stream can be configured.
