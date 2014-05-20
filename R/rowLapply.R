@@ -32,7 +32,7 @@ rowLapply = function(df, fun, ..., unlist = FALSE) {
   checkArg(df, "data.frame")
   fun = match.fun(fun)
   checkArg(unlist, "logical", len = 1L, na.ok = FALSE)
-  if(unlist) {
+  if (unlist) {
     .wrap = function(.i, .df, .fun, ...)
       .fun(unlist(.df[.i, , drop = FALSE], recursive = FALSE, use.names = TRUE), ...)
   } else {
@@ -51,8 +51,10 @@ rowSapply = function(df, fun, ..., unlist = FALSE, simplify = TRUE, use.names = 
     checkArg(simplify, choices = c("cols", "rows"))
   else
     checkArg(simplify, "logical", len = 1L, na.ok = FALSE)
-  checkArg(use.names, "logical", len=1L, na.ok = FALSE)
+  checkArg(use.names, "logical", len = 1L, na.ok = FALSE)
   ys = rowLapply(df, fun, ..., unlist = unlist)
+
+  # simplify result
   if (length(ys) > 0L) {
     if (isTRUE(simplify)) {
       ys = simplify2array(ys)
@@ -62,6 +64,8 @@ rowSapply = function(df, fun, ..., unlist = FALSE, simplify = TRUE, use.names = 
       ys = asMatrixCols(ys)
     }
   }
+
+  # set names
   if (use.names) {
     if (is.matrix(ys)) {
       colnames(ys) = rownames(df)
@@ -72,6 +76,7 @@ rowSapply = function(df, fun, ..., unlist = FALSE, simplify = TRUE, use.names = 
   } else {
     names(ys) = NULL
   }
+
   return(ys)
 }
 
