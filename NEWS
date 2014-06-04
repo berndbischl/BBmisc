@@ -8,6 +8,7 @@ BBmisc_1.7:
 -- makeFileCache
 -- setValue
 -- usedFactorLevels
+-- optimizeSubInts
 
 BBmisc_1.6:
 - the ProgressBar now outputs to stderr by default. But the stream can be configured.
