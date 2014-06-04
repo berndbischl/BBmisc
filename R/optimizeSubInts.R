@@ -1,10 +1,10 @@
-#' @title Naivy multi-start version of \code{\link{optimize}} for global optimization.
+#' @title Naive multi-start version of \code{\link{optimize}} for global optimization.
 #'
 #' @description
 #' The univariate \code{\link{optimize}} can stop at arbitrarily bad points when
 #' \code{f} is not unimodal. This functions mitigates this effect in a very naive way:
 #' \code{interval} is subdivided into \code{nsub} equally sized subintervals,
-#' \code{\link{optimize}} in ran on all of them (and on the original big interval) and
+#' \code{\link{optimize}} is run on all of them (and on the original big interval) and
 #' the best obtained point is returned.
 #'
 #' @param f See \code{\link{optimize}}.
