@@ -57,6 +57,16 @@ test_that("asMatrix", {
       matrix(c(1, 2, 3, 3, 4, 4), nrow = 2, ncol = 3, byrow = FALSE),
     c("xx", "yy", "zz"))
   )
+  expect_equal(
+    asMatrixRows(list(a = c(1, 2), b = c(3, 3), c = c(4, 4)), col.names = c("xx", "yy")),
+    setRowNames(
+      setColNames(
+        matrix(c(1, 2, 3, 3, 4, 4), nrow = 3, ncol = 2, byrow = TRUE),
+        c("xx", "yy")
+      ), 
+      c("a", "b", "c")
+    )
+  )
   # manually define colnames, but use ints
   expect_equal(
     asMatrixCols(list(a = c(1, 2), b = c(3, 3), c = c(4, 4)), col.names = 1:3),

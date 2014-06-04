@@ -49,5 +49,5 @@ asMatrixCols = function(xs, row.names, col.names) {
 #' @rdname asMatrixCols
 #' @export
 asMatrixRows = function(xs, row.names, col.names) {
-  t(asMatrixCols(xs, row.names, col.names))
+  t(asMatrixCols(xs, row.names = col.names, col.names = row.names))
 }
