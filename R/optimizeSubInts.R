@@ -17,6 +17,7 @@
 #' @param nsub [\code{integer(1)}]\cr
 #'   Number of subintervals.
 #' @return See \code{\link{optimize}}.
+#' @export
 optimizeSubInts = function(f, interval, ..., lower = min(interval), upper = max(interval),
   maximum = FALSE, tol = .Machine$double.eps^0.25, nsub = 50L) {
 
