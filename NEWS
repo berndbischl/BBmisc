@@ -2,7 +2,7 @@ BBmisc_1.7:
 - new functions:
 -- asQuoted
 -- collapsef
--- ensureLength
+-- ensureVector
 -- explode
 -- getAttributeNames
 -- getUsedFactorLevels
