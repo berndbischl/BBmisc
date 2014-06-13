@@ -1,13 +1,14 @@
 BBmisc_1.7:
 - new functions:
 -- asQuoted
+-- collapsef
 -- explode
 -- getAttributeNames
 -- hasAttributes
 -- isSubset, isSuperset
 -- makeFileCache
 -- setValue
--- usedFactorLevels
+-- getUsedFactorLevels
 -- optimizeSubInts
 
 BBmisc_1.6:

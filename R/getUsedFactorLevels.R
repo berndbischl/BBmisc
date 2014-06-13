@@ -4,11 +4,9 @@
 #' that are actually occuring in it.
 #'
 #' @param x [\code{factor}]\cr
-#'   Source vector.
+#'   The factor.
 #' @return [\code{character}]
-#'   Character vector of used levels.
 #' @export
 getUsedFactorLevels = function(x) {
-  stopifnot(is.factor(x))
   return(intersect(levels(x), unique(x)))
 }

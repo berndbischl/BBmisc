@@ -1,7 +1,7 @@
 #' Collapse vector to string.
-#' 
+#'
 #' A simple wrapper for \code{paste(x, collapse)}.
-#' 
+#'
 #' @param x [\code{vector}]\cr
 #'   Vector to collapse.
 #' @param sep [\code{character(1)}]\cr
@@ -9,9 +9,9 @@
 #'   Default is \dQuote{,}.
 #' @return [\code{character(1)}].
 #' @export
-#' @examples 
+#' @examples
 #' collapse(c("foo", "bar"))
-#' collapse(c("foo", "bar"), sep=";")
-collapse = function(x, sep=",") {
-  paste(x, collapse=sep)
+#' collapse(c("foo", "bar"), sep = ";")
+collapse = function(x, sep = ",") {
+  paste(x, collapse = sep)
 }

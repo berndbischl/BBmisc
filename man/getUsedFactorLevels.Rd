@@ -7,11 +7,10 @@ getUsedFactorLevels(x)
 }
 \arguments{
 \item{x}{[\code{factor}]\cr
-Source vector.}
+The factor.}
 }
 \value{
 [\code{character}]
-  Character vector of used levels.
 }
 \description{
 Determines the factor levels of a factor type vector
