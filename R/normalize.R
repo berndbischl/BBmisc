@@ -28,10 +28,12 @@ normalize = function(x, method = "standardize", range = c(0, 1), margin = 1L) {
   UseMethod("normalize")
 }
 
+#' @export
 normalize.numeric = function(x, method = "standardize", range = c(0,1), margin = 1L) {
   normalize2(x, method, range)
 }
 
+#' @export
 normalize.matrix = function(x, method = "standardize", range = c(0,1), margin = 1L) {
   x = apply(x, margin, normalize2, method = method, range = range)
   if (margin == 1L)
@@ -39,6 +41,7 @@ normalize.matrix = function(x, method = "standardize", range = c(0,1), margin = 
   return(x)
 }
 
+#' @export
 normalize.data.frame = function(x, method = "standardize", range = c(0,1), margin = 1L) {
   isnum = sapply(x, is.numeric)
   if (any(isnum))
