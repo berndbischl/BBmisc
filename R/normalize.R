@@ -1,0 +1,55 @@
+#' Normalizes numeric data to a given scale.
+#'
+#' Currently implemented for numeric vectors, numeric matrices and data.frame.
+#' For matrixes one can operate on rows or columns
+#' For data.frames, only the numeric columns are touched, all others are left unchanged.
+#'
+#' @param x [\code{numeric} | \code{matrix} | \code{data.frame}]\cr
+#'   Input vector.
+#' @param method [\code{character}]\cr
+#'   Normalizing method. Available are:\cr
+#'   \dQuote{center}: Subtract mean.\cr
+#'   \dQuote{scale}: Divide by standard deviation.\cr
+#'   \dQuote{standardize}: Center and scale.\cr
+#'   \dQuote{range}: Scale to a given range.\cr
+#' @param range [\code{numeric(2)}]\cr
+#'   Range for method \dQuote{range}.
+#'   Default is \code{c(0,1)}.
+#' @param margin [\code{integer(1)}]\cr
+#'   1 = rows, 2 = cols.
+#'   Same is in \code{\link{apply}}
+#'   Default is 1.
+#' @return [\code{numeric} | \code{matrix} | \code{data.frame}].
+#' @seealso \code{\link{scale}}
+#' @export
+normalize = function(x, method = "standardize", range = c(0, 1), margin = 1L) {
+  checkArg(method, choices = c("range", "standardize", "center", "scale"))
+  checkArg(range, "numeric", len = 2L, na.ok = FALSE)
+  UseMethod("normalize")
+}
+
+normalize.numeric = function(x, method = "standardize", range = c(0,1), margin = 1L) {
+  normalize2(x, method, range)
+}
+
+normalize.matrix = function(x, method = "standardize", range = c(0,1), margin = 1L) {
+  apply(x, margin, normalize2, method = method, range = range)
+}
+
+normalize.data.frame = function(x, method = "standardize", range = c(0,1), margin = 1L) {
+  isnum = sapply(x, is.numeric)
+  if (any(isnum))
+    x = as.data.frame(lapply(x[, isnum, drop = FALSE], normalize2, method = method, range = range))
+  return(x)
+}
+
+normalize2 = function(x, method, range) {
+  y = switch(method,
+    range = (x - min(x)) / diff(range(x)) * diff(range) + range[1],
+    standardize = scale(x, center = TRUE, scale = TRUE),
+    center = scale(x, center = TRUE, scale = FALSE),
+    scale = scale(x, center = FALSE, scale = TRUE)
+  )
+  return(y)
+}
+

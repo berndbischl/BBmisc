@@ -9,6 +9,7 @@ BBmisc_1.7:
 -- hasAttributes
 -- isSubset, isSuperset
 -- makeFileCache
+-- normalize
 -- setValue
 -- optimizeSubInts
 
