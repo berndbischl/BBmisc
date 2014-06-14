@@ -15,7 +15,12 @@ test_that("normalize", {
 
   # matrix
   x = matrix(runif(100), nrow = 5)
-  y = normalize(x)
+  y = normalize(x, margin = 1L)
+  apply(y, 1, function(v) expect_equal(mean(v), 0))
+  apply(y, 1, function(v) expect_equal(sd(v), 1))
+  y = normalize(x, margin = 2L)
+  apply(y, 2, function(v) expect_equal(mean(v), 0))
+  apply(y, 2, function(v) expect_equal(sd(v), 1))
 
   # data.frame
   y = normalize(iris, method = "range", range = c(3, 4))

@@ -33,7 +33,10 @@ normalize.numeric = function(x, method = "standardize", range = c(0,1), margin =
 }
 
 normalize.matrix = function(x, method = "standardize", range = c(0,1), margin = 1L) {
-  apply(x, margin, normalize2, method = method, range = range)
+  x = apply(x, margin, normalize2, method = method, range = range)
+  if (margin == 1L)
+    x = t(x)
+  return(x)
 }
 
 normalize.data.frame = function(x, method = "standardize", range = c(0,1), margin = 1L) {
