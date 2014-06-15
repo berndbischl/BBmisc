@@ -33,7 +33,7 @@ convertToShortString = function(x, num.format = "%.4g", clip.len = 15L) {
       return("NULL")
     if (is.atomic(x)) {
       if (length(x) == 0L) {
-        sprintf("%s(0)", getClass(x))
+        sprintf("%s(0)", getClass1(x))
       } else if (length(x) == 1L) {
         if (is.double(x))
           sprintf(num.format, x)
@@ -43,12 +43,12 @@ convertToShortString = function(x, num.format = "%.4g", clip.len = 15L) {
         clipString(collapse(sapply(x, convertToShortString), ","), clip.len)
       }
     } else {
-      paste("<", getClass(x), ">", sep = "")
+      paste("<", getClass1(x), ">", sep = "")
     }
   }
 
   # handle only lists and not any derived data types
-  if (getClass(x) == "list") {
+  if (getClass1(x) == "list") {
     if (length(x) == 0L)
       return("")
     ns = names2(x, missing.val = "<unnamed>")

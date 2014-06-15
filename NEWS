@@ -5,7 +5,7 @@ BBmisc_1.7:
 -- ensureVector
 -- explode
 -- getAttributeNames
--- getClass
+-- getClass1
 -- getUsedFactorLevels
 -- hasAttributes
 -- isSubset, isSuperset
