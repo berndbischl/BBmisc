@@ -23,18 +23,17 @@ Default is 15.}
 \description{
 Atomics: If of length 0 or 1, they are basically printed as they are.
 Numerics are formated with \code{num.format}.
-If of length greater than 1, they are collpsed witd \dQuote{,} and clipped.
+If of length greater than 1, they are collapsed witd \dQuote{,} and clipped.
 so they do not become excessively long.
-}
-\details{
+
 All others: Currently, only their class is simply printed
 like \dQuote{<data.frame>}.
 
 Lists: The mechanism above is applied (non-recursively) to their elements.
 The result looks like this:
-\dQuote{a=1, <unamed>=2, b=<data.frame>, c=<list>}.
+\dQuote{a = 1, <unamed> = 2, b = <data.frame>, c = <list>}.
 }
 \examples{
-convertToShortString(list(a=1, b=NULL, "foo", c=1:10))
+convertToShortString(list(a = 1, b = NULL, "foo", c = 1:10))
 }
 
