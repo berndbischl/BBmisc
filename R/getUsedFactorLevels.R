@@ -8,5 +8,5 @@
 #' @return [\code{character}]
 #' @export
 getUsedFactorLevels = function(x) {
-  return(intersect(levels(x), unique(x)))
+  intersect(levels(x), unique(x))
 }

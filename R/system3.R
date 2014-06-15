@@ -16,7 +16,7 @@
 #'   \item{exit.code [integer(1)]}{Exit code of command. Given if wait is \code{TRUE}, otherwise \code{NA}. 0L means success. 127L means command was not found}
 #'   \item{output [character]}{Output of command on streams. Only given is \code{stdout} or \code{stderr} was set to \code{TRUE}, otherwise \code{NA}.}
 #' @export
-system3 = function(command, args = character(), stdout = "", stderr = "", wait=TRUE, ..., stop.on.exit.code=wait) {
+system3 = function(command, args = character(0L), stdout = "", stderr = "", wait=TRUE, ..., stop.on.exit.code=wait) {
   if (stop.on.exit.code && !wait)
     stopf("stop.on.exit.code is TRUE but wait is FALSE!")
   output = NA_character_

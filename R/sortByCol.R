@@ -13,18 +13,18 @@
 #' @return [\code{data.frame}].
 #' @export
 sortByCol = function(x, col, asc = TRUE) {
-  checkArg(x, "data.frame")
-  checkArg(col, subset = colnames(x))
+  assertDataFrame(x)
+  assertSubset(col, colnames(x))
   m = length(col)
-  if (isScalarLogical(asc))
+  assertLogical(asc, min.len = 1L, any.missing = FALSE)
+  if (length(asc) == 1L)
     asc = rep(asc, m)
-  checkArg(asc, "logical", len = length(col), na.ok = FALSE)
 
   asc = ifelse(asc, 1, -1)
   args = as.list(x[, col, drop = FALSE])
   # convert col to orderable numeric and multiply with factor
   args = Map(function(a, b) xtfrm(a) * b, args, asc)
-  # now order the numerics and permute df 
+  # now order the numerics and permute df
   o = do.call(order, args)
   return(x[o, , drop = FALSE])
 }

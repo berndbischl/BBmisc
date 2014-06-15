@@ -23,8 +23,8 @@
 #' @seealso \code{\link{scale}}
 #' @export
 normalize = function(x, method = "standardize", range = c(0, 1), margin = 1L) {
-  checkArg(method, choices = c("range", "standardize", "center", "scale"))
-  checkArg(range, "numeric", len = 2L, na.ok = FALSE)
+  assertChoice(method, c("range", "standardize", "center", "scale"))
+  assertNumeric(range, len = 2L, any.missing = FALSE)
   UseMethod("normalize")
 }
 
@@ -34,7 +34,7 @@ normalize.numeric = function(x, method = "standardize", range = c(0,1), margin =
 }
 
 #' @export
-normalize.matrix = function(x, method = "standardize", range = c(0,1), margin = 1L) {
+normalize.matrix = function(x, method = "standardize", range = c(0, 1), margin = 1L) {
   x = apply(x, margin, normalize2, method = method, range = range)
   if (margin == 1L)
     x = t(x)
@@ -42,7 +42,7 @@ normalize.matrix = function(x, method = "standardize", range = c(0,1), margin = 
 }
 
 #' @export
-normalize.data.frame = function(x, method = "standardize", range = c(0,1), margin = 1L) {
+normalize.data.frame = function(x, method = "standardize", range = c(0, 1), margin = 1L) {
   isnum = sapply(x, is.numeric)
   if (any(isnum))
     x = as.data.frame(lapply(x[, isnum, drop = FALSE], normalize2, method = method, range = range))
@@ -50,12 +50,11 @@ normalize.data.frame = function(x, method = "standardize", range = c(0,1), margi
 }
 
 normalize2 = function(x, method, range) {
-  y = switch(method,
-    range = (x - min(x)) / diff(range(x)) * diff(range) + range[1],
+  switch(method,
+    range = (x - min(x)) / diff(range(x)) * diff(range) + range[1L],
     standardize = scale(x, center = TRUE, scale = TRUE),
     center = scale(x, center = TRUE, scale = FALSE),
     scale = scale(x, center = FALSE, scale = TRUE)
   )
-  return(y)
 }
 

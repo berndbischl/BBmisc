@@ -21,8 +21,8 @@
 # }
 do.call2 = function(fun, ..., .args=list()) {
   #FIXME: allow (anonymous) functions
-  checkArg(.args, "list")
-  checkArg(fun, "character", len=1L, na.ok=FALSE)
+  assertString(fun)
+  assertList(.args)
   ddd = match.call(expand.dots=FALSE)$...
   expr = as.call(c(list(as.name(fun)), ddd, .args))
   eval.parent(expr, n=1L)

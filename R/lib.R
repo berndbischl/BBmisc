@@ -22,6 +22,6 @@ lib = function(...) {
   }
 
   pkgs = unique(c(...))
-  checkArg(pkgs, "character", na.ok=FALSE)
-  vapply(pkgs, getLib, logical(1L))
+  assertCharacter(pkgs, any.missing=FALSE)
+  vlapply(pkgs, getLib)
 }

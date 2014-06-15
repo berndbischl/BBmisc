@@ -11,7 +11,7 @@
 #' @return [\code{matrix}].
 #' @export
 asMatrixCols = function(xs, row.names, col.names) {
-  checkArg(xs, "list")
+  assertList(xs)
   n = length(xs)
   if (n == 0L)
     return(matrix(0, nrow = 0L, ncol = 0L))
@@ -23,20 +23,10 @@ asMatrixCols = function(xs, row.names, col.names) {
 
   if (missing(row.names)) {
     row.names = names(xs[[1L]])
-  } else {
-    if (!is.null(row.names)) {
-      row.names = convertIntegers(row.names)
-      checkArg(row.names, c("character", "integer"), len = m)
-    }
   }
 
   if (missing(col.names)) {
     col.names = names(xs)
-  } else {
-    if (!is.null(col.names)) {
-      col.names= convertIntegers(col.names)
-      checkArg(col.names, c("character", "integer"), len = n)
-    }
   }
 
   xs = unlist(xs)

@@ -27,7 +27,7 @@ test_that("sortByCol", {
   d2 = sortByCol(d1, c("x", "y"), asc = c(TRUE, FALSE))
   d3 = data.frame(x = c(1, 2, 2), y = c("c", "b", "a"))
   expect_equal(d2, d3, check.attributes = FALSE)
-  
+
   # one col
   d1 = setRowNames(data.frame(x = c(1, 2)), c(1, 2))
   d2 = sortByCol(d1, "x", asc = FALSE)

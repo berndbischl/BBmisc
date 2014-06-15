@@ -29,7 +29,7 @@ isUnix = function() {
 #' @rdname getOperatingSystem
 #' @export
 isLinux = function() {
-  grepl("linux", Sys.info()["sysname"], ignore.case=TRUE)
+  isUnix() && grepl("linux", Sys.info()["sysname"], ignore.case=TRUE)
 }
 
 #' @rdname getOperatingSystem
@@ -37,4 +37,3 @@ isLinux = function() {
 isDarwin = function() {
   isUnix() && grepl("darwin", Sys.info()["sysname"], ignore.case=TRUE)
 }
-

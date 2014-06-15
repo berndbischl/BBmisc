@@ -17,11 +17,11 @@
 #' @export
 #' @return [\code{data.frame}].
 convertDataFrameCols = function(df, chars.as.factor = FALSE, factors.as.char = FALSE, ints.as.num = FALSE, logicals.as.factor=FALSE) {
-  checkArg(df, "data.frame")
-  checkArg(chars.as.factor, "logical", len=1L, na.ok=FALSE)
-  checkArg(factors.as.char, "logical", len=1L, na.ok=FALSE)
-  checkArg(ints.as.num, "logical", len=1L, na.ok=FALSE)
-  checkArg(logicals.as.factor, "logical", len=1L, na.ok=FALSE)
+  assertDataFrame(df)
+  assertFlag(chars.as.factor)
+  assertFlag(factors.as.char)
+  assertFlag(ints.as.num)
+  assertFlag(logicals.as.factor)
   df = x = as.list(df)
 
   if (chars.as.factor) {

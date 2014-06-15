@@ -20,21 +20,17 @@
 #' @export
 optimizeSubInts = function(f, interval, ..., lower = min(interval), upper = max(interval),
   maximum = FALSE, tol = .Machine$double.eps^0.25, nsub = 50L) {
-
-  nsub = convertInteger(nsub)
-  checkArg(nsub, "integer", len = 1L, na.ok = FALSE)
+  # FIXME: does not work for nsub == 1!
+  nsub = asCount(nsub, positive = TRUE)
 
   mult = ifelse(maximum, -1, 1)
   grid = seq(lower, upper, length.out = nsub - 1L)
   interval = c(lower, upper)
   best = optimize(f = f, interval = interval, maximum = maximum, tol = tol)
-  for (j in 1:(length(grid)-1)) {
-    res = optimize(f = f, interval = c(grid[j], grid[j+1]), maximum = maximum, tol = tol)
+  for (j in seq_len(length(grid)-1L)) {
+    res = optimize(f = f, interval = c(grid[j], grid[j+1L]), maximum = maximum, tol = tol)
     if (mult * res$objective < mult * best$objective)
       best = res
   }
   return(best)
 }
-
-
-

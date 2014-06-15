@@ -23,8 +23,8 @@
 #' print(xs)
 #' print(sapply(xs, sum))
 binPack = function(x, capacity) {
-  checkArg(x, "numeric", min.len=1L, lower=0, na.ok=FALSE)
-  checkArg(capacity, "numeric", len=1L, na.ok=FALSE)
+  assertNumeric(x, min.len = 1L, lower = 0, any.missing = FALSE)
+  assertNumber(capacity)
 
   too.big = which.first(x > capacity, use.names=FALSE)
   if (length(too.big))

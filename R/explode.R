@@ -14,8 +14,9 @@
 #' explode("foo bar")
 #' explode("comma,seperated,values", sep = ",")
 explode = function(x, sep = " ") {
-  checkArg(x, "character", na.ok = FALSE)
-  checkArg(sep, "character", na.ok = FALSE)
+  assertCharacter(x, any.missing = FALSE)
+  assertString(sep)
+  #FIXME: why perl?
   x.exploded = strsplit(x, sep, perl = TRUE)
-  return(x.exploded[[1]])
+  return(x.exploded[[1L]])
 }

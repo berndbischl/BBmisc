@@ -3,7 +3,7 @@
 \alias{dropNamed}
 \title{Drop named elements of an object.}
 \usage{
-dropNamed(x, drop)
+dropNamed(x, drop = character(0L))
 }
 \arguments{
 \item{x}{[any]\cr

@@ -9,18 +9,15 @@
 #'   Returns the index of the first/last \code{TRUE} value in \code{x} or
 #'   an empty integer vector if none is found.
 #' @export
+#' @examples
+#'  which.first(c(FALSE, TRUE))
+#'  which.last(c(FALSE, FALSE))
 which.first = function(x, use.names = TRUE) {
-  if (isTRUE(use.names))
-    head(which(x), 1L)
-  else
-    head(unname(which(x)), 1L)
+  .Call("c_which_first", x, use.names, PACKAGE = "BBmisc")
 }
 
 #' @rdname which.first
 #' @export
 which.last = function(x, use.names = TRUE) {
-  if (isTRUE(use.names))
-    tail(which(x), 1L)
-  else
-    tail(unname(which(x)), 1L)
+  .Call("c_which_last", x, use.names, PACKAGE = "BBmisc")
 }

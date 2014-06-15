@@ -9,7 +9,7 @@
 #'   Desired length.
 #' @param cl [\code{character(1)}*]\cr
 #'   Only do the operation if \code{x} inherits from this class, otherwise simply let x pass.
-#'   Default is \code{NA} which means to always do the operation.
+#'   Default is \code{NULL} which means to always do the operation.
 #' @param names [\code{character}*] \cr
 #'   Names for result.
 #'   Default is \code{NULL}, which means no names.
@@ -17,11 +17,11 @@
 #' @export
 ensureVector = function(x, n, cl = NULL, names = NULL) {
   n = convertInteger(n)
-  checkArg(n, "integer", len = 1L, na.ok = TRUE)
+  assertCount(n)
 
   doit = isScalarValue(x) || !is.atomic(x)
   if (!is.null(cl)) {
-    checkArg(cl, "character", len = 1L, na.ok = TRUE)
+    assertString(cl)
     doit = doit && inherits(x, cl)
   }
 
@@ -32,7 +32,7 @@ ensureVector = function(x, n, cl = NULL, names = NULL) {
       xs = replicate(n, x, simplify = FALSE)
 
     if (!is.null(names)) {
-      checkArg(names, "character", len = n, na.ok = FALSE)
+      assertCharacter(names, len = n, any.missing = FALSE)
       names(xs) = names
     }
     return(xs)

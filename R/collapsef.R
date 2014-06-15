@@ -11,5 +11,5 @@
 #' @return [\code{character(1)}].
 #' @export
 collapsef = function(..., sep = ",") {
-  collapse(sprintf(...), sep = sep)
+  paste0(sprintf(...), collapse = sep)
 }

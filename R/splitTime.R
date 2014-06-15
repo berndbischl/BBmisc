@@ -5,7 +5,7 @@
 #' @param seconds [\code{numeric(1)}]\cr
 #'   Number of seconds. If not an integer, it is rounded down.
 #' @param unit [\code{character(1)}]\cr
-#'   Largest unit to split seconds into. 
+#'   Largest unit to split seconds into.
 #'   Must be one of: \code{c("years", "days", "hours", "minutes", "seconds")}.
 #'   Default is \dQuote{years}.
 #' @return [\code{numeric(5)}]. A named vector containing the
@@ -16,8 +16,8 @@
 #' @examples
 #' splitTime(1000)
 splitTime = function(seconds, unit="years") {
-	checkArg(seconds, "numeric", len=1L, na.ok=FALSE)
-	checkArg(unit, choices=c("years", "days", "hours", "minutes", "seconds"))
+  assertNumber(seconds)
+	assertChoice(unit, c("years", "days", "hours", "minutes", "seconds"))
   divider = c(31536000L, 86400L, 3600L, 60L, 1L)
   res = setNames(rep.int(NA_integer_, 5L),
                  c("years", "days", "hours", "minutes", "seconds"))
@@ -26,6 +26,6 @@ splitTime = function(seconds, unit="years") {
     res[i] = seconds %/% divider[i]
     seconds = seconds - res[i] * divider[i]
   }
-  ## Make sure all values are integral and do _not_ strip names:  
-  sapply(res, as.integer)
+  ## Make sure all values are integral and do _not_ strip names:
+  viapply(res, as.integer)
 }

@@ -7,6 +7,5 @@
 #' @return [\code{vector}].
 #' @export
 symdiff = function(x, y) {
-  setdiff( union(x, y), intersect(x, y))
+  setdiff(union(x, y), intersect(x, y))
 }
-

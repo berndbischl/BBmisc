@@ -12,7 +12,7 @@
 #'  All other arguments are passed down to \code{\link{load2}}.
 #' @export
 makeFileCache = function(use.cache = TRUE) {
-  force(use.cache)
+  assertFlag(use.cache)
   .cache = list()
 
   function(file, slot = "default", ...) {

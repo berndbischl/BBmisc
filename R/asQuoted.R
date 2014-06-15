@@ -13,7 +13,6 @@
 #' @examples
 #' asQuoted("x == 3")
 asQuoted = function(s, env = parent.frame()) {
-  checkArg(s, "character", len = 1L, lower = 0, na.ok = FALSE)
+  assertString(s)
   structure(parse(text = s)[1L], env = env, class = "quoted")[[1L]]
 }
-

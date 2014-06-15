@@ -11,6 +11,6 @@
 #' @examples
 #' makeS3Obj("car", speed=100, color="red")
 makeS3Obj = function(classes, ...) {
-  checkArg(classes, "character", min.len=1L, na.ok=FALSE)
+  assertCharacter(classes, min.len=1L, any.missing=FALSE)
   setClasses(list(...), classes=classes)
 }

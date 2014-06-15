@@ -22,26 +22,14 @@
 #' convertListOfRowsToDataFrame(list(list(x=1, y="a"), list(x=2, y="b")))
 convertListOfRowsToDataFrame = function(rows, strings.as.factors = default.stringsAsFactors(),
   row.names, col.names) {
-
-  checkArg(rows, "list")
+  assertList(rows)
   checkListElementClass(rows, "vector")
   if (!length(rows))
     return(makeDataFrame(0L, 0L))
-  checkArg(strings.as.factors, "logical", len = 1L, na.ok = FALSE)
+  assertFlag(strings.as.factors)
 
-  if (missing(row.names)) {
+  if (missing(row.names))
     row.names = names(rows)
-  } else {
-    if (!is.null(row.names)) {
-      row.names = convertIntegers(row.names)
-      checkArg(row.names, c("character", "integer"), len = length(rows))
-    }
-  }
-  if (!missing(col.names)) {
-    col.names = convertIntegers(col.names)
-    # we probably cannot check length here due to the convenient filling-in of NAs
-    checkArg(col.names, c("character", "integer"))
-  }
 
   # make names
   rows = lapply(rows, function(x) setNames(x, make.names(names2(x, ""), unique=TRUE)))

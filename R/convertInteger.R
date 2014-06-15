@@ -23,7 +23,7 @@ convertInteger = function(x) {
     if (isTRUE(all.equal(x, xi)))
       return(xi)
   }
-  return(x)    
+  return(x)
 }
 
 #' Conversion for integer vector.
@@ -48,9 +48,9 @@ convertIntegers = function(x) {
   if (length(x) == 0L || (is.atomic(x) && all(is.na(x))))
     return(as.integer(x))
   if (is.numeric(x)) {
-  xi = as.integer(x)
+    xi = as.integer(x)
     if (isTRUE(all.equal(x, xi, check.names = FALSE)))
       return(setNames(xi, names(x)))
   }
-  return(x)    
+  return(x)
 }

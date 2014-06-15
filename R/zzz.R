@@ -1,4 +1,5 @@
 #' @import stats
+#' @import checkmate
 
 .onLoad = function(libname, pkgname) {
   options(BBmisc.ProgressBar.stream = getOption("BBmisc.ProgressBar.stream", "stderr"))

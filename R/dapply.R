@@ -17,7 +17,7 @@
 #' @export
 #' @return [\code{data.frame}].
 dapply = function(x, fun, ..., col.names) {
-  checkArg(fun, "function")
+  assertFunction(fun)
 
   x = lapply(x, fun, ...)
 
@@ -27,7 +27,7 @@ dapply = function(x, fun, ..., col.names) {
     if (length(missing))
       names(x) = replace(ns, missing, paste0("Var.", missing))
   } else {
-    checkArg(col.names, "character", len=length(x), na.ok=FALSE)
+    assertCharacter(col.names, len=length(x), any.missing=FALSE)
     names(x) = col.names
   }
 

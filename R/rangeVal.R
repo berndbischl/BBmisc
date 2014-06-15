@@ -11,11 +11,9 @@
 #' @return [\code{numeric(1)}].
 #' @export
 rangeVal = function(x, na.rm = FALSE) {
-  checkArg(x, "numeric", min.len = 1L, na.ok = TRUE)
-  checkArg(na.rm, "logical", len = 1L, na.ok = FALSE)
-  if (all(is.na(x)))
+  assertNumeric(x, min.len = 1L, any.missing = TRUE)
+  assertFlag(na.rm)
+  if (allMissing(x))
     return(NA_real_)
   diff(range(x, na.rm = na.rm))
 }
-
-
