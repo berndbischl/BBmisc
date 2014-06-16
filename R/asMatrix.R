@@ -15,7 +15,7 @@ asMatrixCols = function(xs, row.names, col.names) {
   n = length(xs)
   if (n == 0L)
     return(matrix(0, nrow = 0L, ncol = 0L))
-  checkListElementClass(xs, "vector")
+  assertList(xs, types = "vector")
 
   m = unique(viapply(xs, length))
   if (length(m) != 1L)

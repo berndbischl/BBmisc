@@ -18,7 +18,7 @@
 #' @examples
 #' computeMode(c(1,2,3,3))
 computeMode = function(x, ties.method="random", na.rm=TRUE) {
-  assertVector(x)
+  assertAtomicVector(x)
   assertChoice(ties.method, c("first", "random", "last"))
   assertFlag(na.rm)
   #FIXME: no arg checks for speed currently

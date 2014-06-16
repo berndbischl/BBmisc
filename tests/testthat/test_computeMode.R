@@ -14,7 +14,7 @@ test_that("computeMode", {
   # logical
   expect_equal(computeMode(c(TRUE, FALSE, FALSE)), FALSE)
   expect_equal(computeMode(c(TRUE, TRUE, FALSE)), TRUE)
-                            
+
   # na.rm
   expect_equal(computeMode(c(1,1,2,3, NA, NA, NA), na.rm=FALSE), as.numeric(NA))
   expect_equal(computeMode(c(1,1,2,3, NA, NA, NA), na.rm=TRUE), 1)

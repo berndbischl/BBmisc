@@ -23,7 +23,7 @@
 convertListOfRowsToDataFrame = function(rows, strings.as.factors = default.stringsAsFactors(),
   row.names, col.names) {
   assertList(rows)
-  checkListElementClass(rows, "vector")
+  assertList(rows, types = "vector")
   if (!length(rows))
     return(makeDataFrame(0L, 0L))
   assertFlag(strings.as.factors)
