@@ -5,13 +5,13 @@
 #' @return Selected element. The element name is dropped.
 #' @export
 getFirst = function(x) {
-  assertAtomicVector(x, min.len=1L)
+  assertVector(x, min.len = 1L)
   x[[1L]]
 }
 
 #' @rdname getFirst
 #' @export
 getLast = function(x) {
-  assertAtomicVector(x, min.len=1L)
+  assertVector(x, min.len = 1L)
   x[[length(x)]]
 }
