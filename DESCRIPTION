@@ -13,7 +13,8 @@ License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 Roxygen: list(wrap = FALSE)
 Imports:
-    stats
+    stats,
+    checkmate
 Suggests:
     testthat,
     microbenchmark

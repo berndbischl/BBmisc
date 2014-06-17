@@ -14,7 +14,7 @@
 #' xs = as.list(1:3)
 #' checkListElementClass(xs, "numeric")
 checkListElementClass = function(xs, cl) {
-  checkArg(xs, "list")
+  assertList(xs)
   s = deparse(substitute(xs))
   lapply(seq_along(xs), function(i) {
     x = xs[[i]]

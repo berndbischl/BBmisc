@@ -1,4 +1,4 @@
-#' Wrapper for \code{class(x)[1L]}.
+#' Wrapper for \code{class(x)[1]}.
 #'
 #' @param x [any]\cr
 #'   Input object.
@@ -8,4 +8,3 @@
 getClass1 = function(x) {
   class(x)[1L]
 }
-

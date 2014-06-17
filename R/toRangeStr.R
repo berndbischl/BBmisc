@@ -15,14 +15,14 @@
 #' toRangeStr(x)
 #' @export
 toRangeStr = function(x, range.sep=" - ", block.sep=", ") {
-  x = convertIntegers(x)
-  checkArg(x, "numeric", na.ok=FALSE)
-  checkArg(range.sep, "character", len=1L, na.ok=FALSE)
-  checkArg(block.sep, "character", len=1L, na.ok=FALSE)
+  if (testIntegerish(x))
+    x = as.integer(x)
+  else
+    assertNumeric(x, any.missing = FALSE)
+  assertString(range.sep)
+  assertString(block.sep)
 
-  findRange = function(x) {
-    seq_len(max(which(x == x[1L] + 0:(length(x)-1L))))
-  }
+  findRange = function(x) seq_len(max(which(x == x[1L] + 0:(length(x)-1L))))
   x = sort(unique(x))
   x = unname(split(x, c(0L, cumsum(diff(x) > 1L))))
   combine = function(x)

@@ -1,3 +1,4 @@
+# FIXME: not used anywhere?
 matchDataFrameSubset = function(df, ss, factors.as.chars=TRUE) {
   checkArg(df, c("list", "data.frame"))
   checkArg(ss, c("list", "data.frame"))

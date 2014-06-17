@@ -13,5 +13,5 @@
 #' collapse(c("foo", "bar"))
 #' collapse(c("foo", "bar"), sep = ";")
 collapse = function(x, sep = ",") {
-  paste(x, collapse = sep)
+  paste0(x, collapse = sep)
 }

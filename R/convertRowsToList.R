@@ -22,12 +22,11 @@
 #' @export
 convertRowsToList = function(x, name.list = TRUE, name.vector = FALSE,
   factors.as.char = TRUE, as.vector = TRUE) {
-
-  checkArg(x, c("matrix", "data.frame"))
-  checkArg(name.list, "logical", len = 1L, na.ok = FALSE)
-  checkArg(name.vector, "logical", len = 1L, na.ok = FALSE)
-  checkArg(factors.as.char, "logical", len = 1L, na.ok = FALSE)
-  checkArg(as.vector, "logical", len = 1L, na.ok = FALSE)
+  assert(checkMatrix(x), checkDataFrame(x))
+  assertFlag(name.list)
+  assertFlag(name.vector)
+  assertFlag(factors.as.char)
+  assertFlag(as.vector)
   ns.list = if (name.list) rownames(x) else NULL
   ns.vector = if (name.vector) colnames(x) else NULL
   if (is.matrix(x)) {

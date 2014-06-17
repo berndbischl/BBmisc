@@ -14,12 +14,9 @@
 #' print(clipString("abcdef", 10))
 #' print(clipString("abcdef", 5))
 clipString = function(x, len, tail="...") {
-  checkArg(x, "character", na.ok=TRUE)
-  len = convertInteger(len)
-  checkArg(tail, "character", len=1L, na.ok=FALSE)
-  checkArg(len, "integer", len=1L, na.ok=FALSE, lower=nchar(tail))
-  #if (is.na(x))
-  #  return(NA_character_)
-  ind = !is.na(x) & nchar(x) > len
+  assertCharacter(x, any.missing=TRUE)
+  len = asInteger(len, len=1L, lower = nchar(tail))
+  assertString(tail)
+  ind = (!is.na(x) & nchar(x) > len)
   replace(x, ind, paste(substr(x[ind], 1L, len - nchar(tail)), tail, sep=""))
 }

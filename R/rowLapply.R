@@ -29,9 +29,9 @@
 #' @examples
 #'  rowLapply(iris, function(x) x$Sepal.Length + x$Sepal.Width)
 rowLapply = function(df, fun, ..., unlist = FALSE) {
-  checkArg(df, "data.frame")
+  assertDataFrame(df)
   fun = match.fun(fun)
-  checkArg(unlist, "logical", len = 1L, na.ok = FALSE)
+  assertFlag(unlist)
   if (unlist) {
     .wrap = function(.i, .df, .fun, ...)
       .fun(unlist(.df[.i, , drop = FALSE], recursive = FALSE, use.names = TRUE), ...)
@@ -46,12 +46,8 @@ rowLapply = function(df, fun, ..., unlist = FALSE) {
 #' @export
 #' @rdname rowLapply
 rowSapply = function(df, fun, ..., unlist = FALSE, simplify = TRUE, use.names = TRUE) {
-  checkArg(simplify, c("logical", "character"), len = 1L, na.ok = FALSE)
-  if (is.character(simplify))
-    checkArg(simplify, choices = c("cols", "rows"))
-  else
-    checkArg(simplify, "logical", len = 1L, na.ok = FALSE)
-  checkArg(use.names, "logical", len = 1L, na.ok = FALSE)
+  assert(checkFlag(simplify), checkChoice(simplify, c("cols", "rows")))
+  assertFlag(use.names)
   ys = rowLapply(df, fun, ..., unlist = unlist)
 
   # simplify result
@@ -79,5 +75,3 @@ rowSapply = function(df, fun, ..., unlist = FALSE, simplify = TRUE, use.names = 
 
   return(ys)
 }
-
-

@@ -1,5 +1,5 @@
 #' Converts storage type of a matrix.
-#' 
+#'
 #' Works by setting \code{\link{mode}}.
 #'
 #' @param x [\code{matrix}]\cr.
@@ -10,8 +10,8 @@
 #' @note \code{as.mytype} drops dimension when used on a matrix.
 #' @export
 convertMatrixType = function(x, type) {
-  checkArg(x, "matrix")
-  checkArg(type, choices=c("integer", "numeric", "complex", "character", "logical"))
+  assertMatrix(x)
+  assertChoice(type, c("integer", "numeric", "complex", "character", "logical"))
   storage.mode(x) = type
   return(x)
 }

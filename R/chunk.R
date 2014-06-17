@@ -32,7 +32,7 @@
 #' chunk(xs, n.chunks = 2, shuffle = TRUE)
 #' chunk(xs, props = c(7, 3))
 chunk = function(x, chunk.size, n.chunks, props, shuffle=FALSE) {
-  checkArg(shuffle, "logical", len=1L, na.ok=FALSE)
+  assertFlag(shuffle)
   method = c("chunk.size", "n.chunks", "props")
   method = method[!c(missing(chunk.size), missing(n.chunks), missing(props))]
   if (length(method) != 1L)
@@ -42,16 +42,16 @@ chunk = function(x, chunk.size, n.chunks, props, shuffle=FALSE) {
   ch = switch(method,
     chunk.size = {
       chunk.size = convertInteger(chunk.size)
-      checkArg(chunk.size, "integer", len=1L, lower=1L, na.ok=FALSE)
+      assertCount(chunk.size, positive = TRUE)
       getNChunks(nx, nx %/% chunk.size + (nx %% chunk.size > 0L), shuffle)
     },
     n.chunks = {
       n.chunks = convertInteger(n.chunks)
-      checkArg(n.chunks, "integer", len=1L, lower=1L, na.ok=FALSE)
+      assertCount(n.chunks, positive = TRUE)
       getNChunks(nx, n.chunks, shuffle)
     },
     props = {
-      checkArg(props, "numeric", min.len=1L, na.ok=FALSE, lower=0)
+      assertNumeric(props, min.len=1L, any.missing=FALSE, lower=0)
       props = props / sum(props)
       ch = factor(rep.int(seq_along(props), round(props * nx, digits = 0L)),
         levels = seq_along(props))

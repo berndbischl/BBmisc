@@ -3,7 +3,7 @@
 \alias{system3}
 \title{Wrapper for system2 with better return type and errorhandling.}
 \usage{
-system3(command, args = character(), stdout = "", stderr = "",
+system3(command, args = character(0L), stdout = "", stderr = "",
   wait = TRUE, ..., stop.on.exit.code = wait)
 }
 \arguments{

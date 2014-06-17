@@ -14,7 +14,7 @@ Desired length.}
 
 \item{cl}{[\code{character(1)}*]\cr
 Only do the operation if \code{x} inherits from this class, otherwise simply let x pass.
-Default is \code{NA} which means to always do the operation.}
+Default is \code{NULL} which means to always do the operation.}
 
 \item{names}{[\code{character}*] \cr
 Names for result.

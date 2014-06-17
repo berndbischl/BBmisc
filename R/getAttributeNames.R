@@ -7,5 +7,5 @@
 #'   Vector of attribute names for the source object.
 #' @export
 getAttributeNames = function(obj) {
-  return(names(attributes(obj)))
+  names(attributes(obj))
 }

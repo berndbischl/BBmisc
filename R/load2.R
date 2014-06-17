@@ -23,12 +23,14 @@
 #' load2(fn, parts="a")
 #' load2(fn, parts=c("a", "c"))
 load2 = function(file, parts, simplify=TRUE, envir, impute) {
+  assertFlag(simplify)
   ee = new.env()
   if (!missing(impute) && !file.exists(file))
     return(impute)
   load(file, envir=ee)
   ns = ls(ee)
   if (!missing(parts)) {
+    assertCharacter(parts, any.missing = FALSE)
     d = setdiff(parts, ns)
     if (length(d) > 0L)
       stopf("File %s does not contain: %s", file, collapse(d))

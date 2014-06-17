@@ -11,7 +11,8 @@
 #'   if \code{x} is a subset of \code{y} and \code{FALSE} otherwise.
 #' @export
 isSubset = function(x, y, strict = FALSE) {
-  if (length(x) == 0)
+  assertFlag(strict)
+  if (length(x) == 0L)
     return(TRUE)
   res = all(x %in% y)
   if (strict)

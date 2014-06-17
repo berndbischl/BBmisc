@@ -24,13 +24,10 @@
 #' print(makeDataFrame(3, 2, "logical"))
 #' print(makeDataFrame(3, 2, c("logical", "numeric")))
 makeDataFrame = function(nrow, ncol, col.types, init, row.names=NULL, col.names=sprintf("V%i", seq_len(ncol))) {
-  nrow = convertInteger(nrow)
-  checkArg(nrow, "integer", len=1L, na.ok=FALSE, lower=0L)
-  ncol = convertInteger(ncol)
-  checkArg(ncol, "integer", len=1L, na.ok=FALSE, lower=0L)
-  if (!missing(col.types)) {
-    checkArg(col.types, "character", min.len=1L, na.ok=FALSE)
-  }
+  nrow = asCount(nrow)
+  ncol = asCount(ncol)
+  if (!missing(col.types))
+    assertCharacter(col.types, min.len=1L, any.missing=FALSE)
   if (!missing(init)) {
     if(!isScalarValue(init))
       stop("'init' must be a scalar value!")
@@ -43,12 +40,10 @@ makeDataFrame = function(nrow, ncol, col.types, init, row.names=NULL, col.names=
   }
   if (!missing(col.types) && length(col.types) == 1L)
     col.types = rep.int(col.types, ncol)
-  if (!is.null(row.names)) {
-    row.names = convertIntegers(row.names)
-    checkArg(row.names, c("character", "integer"), len = nrow)
-  }
-  col.names = convertIntegers(col.names)
-  checkArg(col.names, c("character", "integer"), len = ncol)
+  if (!is.null(row.names))
+    assert(checkIntegerish(row.names, len = nrow), checkCharacter(row.names, len = nrow))
+
+  assert(checkIntegerish(col.names, len = ncol), checkCharacter(col.names, len = ncol))
 
   if (nrow == 0L && ncol == 0L)
     df = data.frame()

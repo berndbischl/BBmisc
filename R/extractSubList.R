@@ -23,13 +23,9 @@
 #' extractSubList(xs, "a")
 #' extractSubList(xs, "a", simplify=FALSE)
 extractSubList = function(xs, element, element.value, simplify=TRUE, use.names=TRUE) {
-  checkArg(xs, "list")
-  checkArg(simplify, c("logical", "character"), len = 1L, na.ok = FALSE)
-  if (is.character(simplify))
-    checkArg(simplify, choices = c("cols", "rows"))
-  else
-    checkArg(simplify, "logical", len = 1L, na.ok = FALSE)
-  checkArg(use.names, "logical", len = 1L, na.ok = FALSE)
+  assertList(xs)
+  assert(checkFlag(simplify), checkChoice(simplify, c("cols", "rows")))
+  assertFlag(use.names)
   if (!missing(element.value)) {
     ys = vapply(xs, function(x) x[[element]], FUN.VALUE=element.value)
   } else if (isTRUE(simplify)) {

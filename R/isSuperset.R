@@ -11,5 +11,5 @@
 #'   if \code{y} is a subset of \code{x} and \code{FALSE} otherwise.
 #' @export
 isSuperset = function(x, y, strict = FALSE) {
-  return(isSubset(y, x, strict))
+  isSubset(y, x, strict)
 }

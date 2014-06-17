@@ -20,19 +20,17 @@
 #' @export
 #' @aliases SimpleFileLogger
 makeSimpleFileLogger = function(logfile, touch = FALSE, keep = 10L) {
-  checkArg(logfile, "character", len=1L, na.ok=FALSE)
-  checkArg(touch, "logical", len=1L, na.ok=FALSE)
-  keep = convertInteger(keep)
-  checkArg(keep, "integer", len=1L, na.ok=FALSE)
-  if (!isDirectory(dirname(logfile)))
-    stopf("Directory '%s' does not exist", dirname(logfile))
+  assertString(logfile)
+  assertFlag(touch)
+  keep = asCount(keep)
+  assertDirectory(dirname(logfile), "w")
   if (touch && !file.create(logfile))
     stopf("Could not create file '%s'", logfile)
   if (keep)
     buffer = circularBuffer("character", keep)
   n.lines = 0L
 
-  makeS3Obj("SimpleFileLogger", 
+  makeS3Obj("SimpleFileLogger",
     log = function(msg) {
       if (keep)
         buffer$push(msg)

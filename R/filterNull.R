@@ -5,6 +5,6 @@
 #' @return [\code{list}].
 #' @export
 filterNull = function(li) {
-  checkArg(li, "list")
+  assertList(li)
   li[!vlapply(li, is.null)]
 }
