@@ -3,8 +3,9 @@
 #' @param x [any]\cr
 #'   Input object.
 #' @return [\code{character(1)}].
+#' @note \code{getClass} is a function in \code{methods}. Do not confuse.
 #' @export
-getClass = function(x) {
+getClass1 = function(x) {
   class(x)[1L]
 }
 
