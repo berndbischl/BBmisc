@@ -10,11 +10,14 @@ extractSubList(xs, element, element.value, simplify = TRUE,
 \item{xs}{[\code{list}]\cr
 A list of named lists.}
 
-\item{element}{[\code{character(1)}]\cr
-Name of element to extract from the list elements of \code{xs}.}
+\item{element}{[\code{character}]\cr
+Name of element(s) to extract from the list elements of \code{xs}.
+What happens is this: \code{x$el1$el2....}.}
 
 \item{element.value}{[any]\cr
-If given, \code{\link{vapply}} is used and this argument is passed to \code{FUN.VALUE}.}
+If given, \code{\link{vapply}} is used and this argument is passed to \code{FUN.VALUE}.
+Note that even for repeated indexing (if length(element) > 1) you only
+pass one value here which refers to the data type of the final result.}
 
 \item{simplify}{[\code{logical(1)} | character(1)]\cr
 If \code{FALSE} \code{\link{lapply}} is used, otherwise \code{\link{sapply}}.
@@ -35,8 +38,8 @@ Default is \code{TRUE}.}
 Extracts a named element from a list of lists.
 }
 \examples{
-xs = list(list(a=1, b=2), list(a=5, b=7))
+xs = list(list(a = 1, b = 2), list(a = 5, b = 7))
 extractSubList(xs, "a")
-extractSubList(xs, "a", simplify=FALSE)
+extractSubList(xs, "a", simplify = FALSE)
 }
 

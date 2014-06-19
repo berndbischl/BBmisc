@@ -1,4 +1,6 @@
 BBmisc_1.7:
+- extractSubList allows for repeated indexing
+
 - new functions:
 -- asQuoted
 -- collapsef
