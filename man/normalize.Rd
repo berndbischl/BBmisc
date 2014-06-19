@@ -9,7 +9,7 @@ normalize(x, method = "standardize", range = c(0, 1), margin = 1L)
 \item{x}{[\code{numeric} | \code{matrix} | \code{data.frame}]\cr
 Input vector.}
 
-\item{method}{[\code{character}]\cr
+\item{method}{[\code{character(1)}]\cr
 Normalizing method. Available are:\cr
 \dQuote{center}: Subtract mean.\cr
 \dQuote{scale}: Divide by standard deviation.\cr

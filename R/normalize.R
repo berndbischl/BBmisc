@@ -6,7 +6,7 @@
 #'
 #' @param x [\code{numeric} | \code{matrix} | \code{data.frame}]\cr
 #'   Input vector.
-#' @param method [\code{character}]\cr
+#' @param method [\code{character(1)}]\cr
 #'   Normalizing method. Available are:\cr
 #'   \dQuote{center}: Subtract mean.\cr
 #'   \dQuote{scale}: Divide by standard deviation.\cr
@@ -54,7 +54,7 @@ normalize2 = function(x, method, range) {
     range = (x - min(x)) / diff(range(x)) * diff(range) + range[1L],
     standardize = scale(x, center = TRUE, scale = TRUE),
     center = scale(x, center = TRUE, scale = FALSE),
-    scale = scale(x, center = FALSE, scale = TRUE)
+    scale = scale(x, center = FALSE, scale = apply(x, range, sd, na.rm = TRUE))
   )
 }
 
