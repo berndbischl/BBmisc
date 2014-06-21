@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Naive multi-start version of 'optimize' for global...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for optimizeSubInts {BBmisc}"><tr><td>optimizeSubInts {BBmisc}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Naive multi-start version of <code><a href="../../stats/html/optimize.html">optimize</a></code> for global optimization.</h2>
+
+<h3>Description</h3>
+
+<p>The univariate <code><a href="../../stats/html/optimize.html">optimize</a></code> can stop at arbitrarily bad points when
+<code>f</code> is not unimodal. This functions mitigates this effect in a very naive way:
+<code>interval</code> is subdivided into <code>nsub</code> equally sized subintervals,
+<code><a href="../../stats/html/optimize.html">optimize</a></code> is run on all of them (and on the original big interval) and
+the best obtained point is returned.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+optimizeSubInts(f, interval, ..., lower = min(interval),
+  upper = max(interval), maximum = FALSE, tol = .Machine$double.eps^0.25,
+  nsub = 50L)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>f</code></td>
+<td>
+<p>See <code><a href="../../stats/html/optimize.html">optimize</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>interval</code></td>
+<td>
+<p>See <code><a href="../../stats/html/optimize.html">optimize</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>See <code><a href="../../stats/html/optimize.html">optimize</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>lower</code></td>
+<td>
+<p>See <code><a href="../../stats/html/optimize.html">optimize</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>upper</code></td>
+<td>
+<p>See <code><a href="../../stats/html/optimize.html">optimize</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>maximum</code></td>
+<td>
+<p>See <code><a href="../../stats/html/optimize.html">optimize</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>tol</code></td>
+<td>
+<p>See <code><a href="../../stats/html/optimize.html">optimize</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>nsub</code></td>
+<td>
+<p>[<code>integer(1)</code>]<br>
+Number of subintervals.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>See <code><a href="../../stats/html/optimize.html">optimize</a></code>.
+</p>
+
+<hr><div align="center">[Package <em>BBmisc</em> version 1.7 <a href="00Index.html">Index</a>]</div>
+</body></html>

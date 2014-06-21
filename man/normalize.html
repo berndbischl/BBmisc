@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>R: Normalizes numeric data to a given scale.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="R.css">
+</head><body>
+
+<table width="100%" summary="page for normalize {BBmisc}"><tr><td>normalize {BBmisc}</td><td align="right">R Documentation</td></tr></table>
+
+<h2>Normalizes numeric data to a given scale.</h2>
+
+<h3>Description</h3>
+
+<p>Currently implemented for numeric vectors, numeric matrices and data.frame.
+For matrixes one can operate on rows or columns
+For data.frames, only the numeric columns are touched, all others are left unchanged.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+normalize(x, method = "standardize", range = c(0, 1), margin = 1L)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>[<code>numeric</code> | <code>matrix</code> | <code>data.frame</code>]<br>
+Input vector.</p>
+</td></tr>
+<tr valign="top"><td><code>method</code></td>
+<td>
+<p>[<code>character(1)</code>]<br>
+Normalizing method. Available are:<br>
+&ldquo;center&rdquo;: Subtract mean.<br>
+&ldquo;scale&rdquo;: Divide by standard deviation.<br>
+&ldquo;standardize&rdquo;: Center and scale.<br>
+&ldquo;range&rdquo;: Scale to a given range.<br></p>
+</td></tr>
+<tr valign="top"><td><code>range</code></td>
+<td>
+<p>[<code>numeric(2)</code>]<br>
+Range for method &ldquo;range&rdquo;.
+Default is <code>c(0,1)</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>margin</code></td>
+<td>
+<p>[<code>integer(1)</code>]<br>
+1 = rows, 2 = cols.
+Same is in <code><a href="../../base/html/apply.html">apply</a></code>
+Default is 1.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>[<code>numeric</code> | <code>matrix</code> | <code>data.frame</code>].
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../base/html/scale.html">scale</a></code>
+</p>
+
+<hr><div align="center">[Package <em>BBmisc</em> version 1.7 <a href="00Index.html">Index</a>]</div>
+</body></html>

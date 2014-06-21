@@ -37,13 +37,16 @@ A list of named lists.</p>
 </td></tr>
 <tr valign="top"><td><code>element</code></td>
 <td>
-<p>[<code>character(1)</code>]<br>
-Name of element to extract from the list elements of <code>xs</code>.</p>
+<p>[<code>character</code>]<br>
+Name of element(s) to extract from the list elements of <code>xs</code>.
+What happens is this: <code>x$el1$el2....</code>.</p>
 </td></tr>
 <tr valign="top"><td><code>element.value</code></td>
 <td>
 <p>[any]<br>
-If given, <code><a href="../../base/html/lapply.html">vapply</a></code> is used and this argument is passed to <code>FUN.VALUE</code>.</p>
+If given, <code><a href="../../base/html/lapply.html">vapply</a></code> is used and this argument is passed to <code>FUN.VALUE</code>.
+Note that even for repeated indexing (if length(element) &gt; 1) you only
+pass one value here which refers to the data type of the final result.</p>
 </td></tr>
 <tr valign="top"><td><code>simplify</code></td>
 <td>
@@ -72,15 +75,14 @@ Default is <code>TRUE</code>.</p>
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-xs = list(list(a=1, b=2), list(a=5, b=7))
+<pre><code class="r">xs = list(list(a = 1, b = 2), list(a = 5, b = 7))
 extractSubList(xs, &quot;a&quot;)
 </code></pre>
 
 <pre><code>## [1] 1 5
 </code></pre>
 
-<pre><code class="r">extractSubList(xs, &quot;a&quot;, simplify=FALSE)
+<pre><code class="r">extractSubList(xs, &quot;a&quot;, simplify = FALSE)
 </code></pre>
 
 <pre><code>## [[1]]
@@ -88,9 +90,6 @@ extractSubList(xs, &quot;a&quot;)
 ## 
 ## [[2]]
 ## [1] 5
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 

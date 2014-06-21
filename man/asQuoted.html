@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head><title>R: Parses '...' arguments to a named list.</title>
+<html><head><title>R: Converts a string into a quoted expression.</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
 
@@ -9,54 +9,53 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head><body>
 
-<table width="100%" summary="page for argsAsNamedList {BBmisc}"><tr><td>argsAsNamedList {BBmisc}</td><td align="right">R Documentation</td></tr></table>
+<table width="100%" summary="page for asQuoted {BBmisc}"><tr><td>asQuoted {BBmisc}</td><td align="right">R Documentation</td></tr></table>
 
-<h2>Parses <code>...</code> arguments to a named list.</h2>
+<h2>Converts a string into a quoted expression.</h2>
 
 <h3>Description</h3>
 
-<p>The deparsed name will be used for arguments with missing names.
-Missing names will be set to <code>NA</code>.
+<p>Works the same as if you would have entered the expression and called
+<code><a href="../../base/html/substitute.html">quote</a></code> on it.
 </p>
 
 
 <h3>Usage</h3>
 
 <pre>
-argsAsNamedList(...)
+asQuoted(s, env = parent.frame())
 </pre>
 
 
 <h3>Arguments</h3>
 
 <table summary="R argblock">
-<tr valign="top"><td><code>...</code></td>
+<tr valign="top"><td><code>s</code></td>
 <td>
-<p>Arbitrary number of objects.</p>
+<p>[<code>character(1)</code>]<br>
+Expression as string.</p>
+</td></tr>
+<tr valign="top"><td><code>env</code></td>
+<td>
+<p>[<code>numeric(1)</code>]<br>
+Environment for expression.
+Default is <code>parent.frame()</code></p>
 </td></tr>
 </table>
 
 
 <h3>Value</h3>
 
-<p>[<code>list</code>]: Named list with objects.
+<p>Quoted expression.
 </p>
 
 
 <h3>Examples</h3>
 
-<pre><code class="r">z = 3
-argsAsNamedList(x = 1, y = 2, z)
+<pre><code class="r">asQuoted(&quot;x == 3&quot;)
 </code></pre>
 
-<pre><code>## $x
-## [1] 1
-## 
-## $y
-## [1] 2
-## 
-## $z
-## [1] 3
+<pre><code>## x == 3
 </code></pre>
 
 

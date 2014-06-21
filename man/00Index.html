@@ -25,12 +25,14 @@
 <a href="#C">C</a>
 <a href="#D">D</a>
 <a href="#E">E</a>
+<a href="#F">F</a>
 <a href="#G">G</a>
 <a href="#H">H</a>
 <a href="#I">I</a>
 <a href="#L">L</a>
 <a href="#M">M</a>
 <a href="#N">N</a>
+<a href="#O">O</a>
 <a href="#P">P</a>
 <a href="#R">R</a>
 <a href="#S">S</a>
@@ -52,6 +54,8 @@
 <td>Extracts a named element from a list of lists.</td></tr>
 <tr><td width="25%"><a href="asMatrixCols.html">asMatrixRows</a></td>
 <td>Extracts a named element from a list of lists.</td></tr>
+<tr><td width="25%"><a href="asQuoted.html">asQuoted</a></td>
+<td>Converts a string into a quoted expression.</td></tr>
 </table>
 
 <h2><a name="B">-- B --</a></h2>
@@ -79,6 +83,8 @@
 <tr><td width="25%"><a href="coalesce.html">coalesce</a></td>
 <td>Returns first non-missing, non-null argument.</td></tr>
 <tr><td width="25%"><a href="collapse.html">collapse</a></td>
+<td>Collapse vector to string.</td></tr>
+<tr><td width="25%"><a href="collapsef.html">collapsef</a></td>
 <td>Collapse vector to string.</td></tr>
 <tr><td width="25%"><a href="computeMode.html">computeMode</a></td>
 <td>Compute statistical mode of a vector (value that occurs most frequently).</td></tr>
@@ -116,10 +122,19 @@
 <h2><a name="E">-- E --</a></h2>
 
 <table width="100%">
+<tr><td width="25%"><a href="ensureVector.html">ensureVector</a></td>
+<td>Blow up single scalars / objects to vectors / list by replication.</td></tr>
 <tr><td width="25%"><a href="explode.html">explode</a></td>
 <td>Split up a string into substrings.</td></tr>
 <tr><td width="25%"><a href="extractSubList.html">extractSubList</a></td>
 <td>Extracts a named element from a list of lists.</td></tr>
+</table>
+
+<h2><a name="F">-- F --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="filterNull.html">filterNull</a></td>
+<td>Filter a list for NULL values</td></tr>
 </table>
 
 <h2><a name="G">-- G --</a></h2>
@@ -127,6 +142,8 @@
 <table width="100%">
 <tr><td width="25%"><a href="getAttributeNames.html">getAttributeNames</a></td>
 <td>Helper function for determining the vector of attribute names of a given object.</td></tr>
+<tr><td width="25%"><a href="getClass1.html">getClass1</a></td>
+<td>Wrapper for 'class(x)[1]'.</td></tr>
 <tr><td width="25%"><a href="getFirst.html">getFirst</a></td>
 <td>Get the first/last element of a list/vector.</td></tr>
 <tr><td width="25%"><a href="getFirst.html">getLast</a></td>
@@ -244,6 +261,15 @@
 <td>Create named list, possibly initialized with a certain element.</td></tr>
 <tr><td width="25%"><a href="names2.html">names2</a></td>
 <td>Replacement for names which always returns a vector.</td></tr>
+<tr><td width="25%"><a href="normalize.html">normalize</a></td>
+<td>Normalizes numeric data to a given scale.</td></tr>
+</table>
+
+<h2><a name="O">-- O --</a></h2>
+
+<table width="100%">
+<tr><td width="25%"><a href="optimizeSubInts.html">optimizeSubInts</a></td>
+<td>Naive multi-start version of 'optimize' for global optimization.</td></tr>
 </table>
 
 <h2><a name="P">-- P --</a></h2>

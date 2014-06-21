@@ -76,8 +76,7 @@ Default is <code>FALSE</code>.</p>
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-xs = 1:10
+<pre><code class="r">xs = 1:10
 chunk(xs, chunk.size = 3)
 </code></pre>
 
@@ -108,10 +107,10 @@ chunk(xs, chunk.size = 3)
 </code></pre>
 
 <pre><code>## [[1]]
-## [1]  2  4  6  9 10
+## [1]  1  4  7  8 10
 ## 
 ## [[2]]
-## [1] 1 3 5 7 8
+## [1] 2 3 5 6 9
 </code></pre>
 
 <pre><code class="r">chunk(xs, props = c(7, 3))
@@ -122,9 +121,6 @@ chunk(xs, chunk.size = 3)
 ## 
 ## [[2]]
 ## [1]  8  9 10
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 

@@ -119,8 +119,7 @@ Default is missing.</p>
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-x = 1L
+<pre><code class="r">x = 1L
 checkArg(x, &quot;integer&quot;, len=1, na.ok=FALSE, upper=3L)
 x = as.integer(NA)
 checkArg(x, &quot;integer&quot;, len=1, na.ok=TRUE)
@@ -132,7 +131,6 @@ x = c(&quot;foo&quot;, &quot;bar&quot;)
 checkArg(x, subset=c(&quot;foo&quot;, &quot;bar&quot;))
 fun = function(foo, bar)
 checkArg(fun, formals=c(&quot;foo&quot;, &quot;bar&quot;))
-
 </code></pre>
 
 

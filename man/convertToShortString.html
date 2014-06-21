@@ -17,8 +17,15 @@
 
 <p>Atomics: If of length 0 or 1, they are basically printed as they are.
 Numerics are formated with <code>num.format</code>.
-If of length greater than 1, they are collpsed witd &ldquo;,&rdquo; and clipped.
+If of length greater than 1, they are collapsed witd &ldquo;,&rdquo; and clipped.
 so they do not become excessively long.
+</p>
+<p>All others: Currently, only their class is simply printed
+like &ldquo;&lt;data.frame&gt;&rdquo;.
+</p>
+<p>Lists: The mechanism above is applied (non-recursively) to their elements.
+The result looks like this:
+&ldquo;a = 1, &lt;unamed&gt; = 2, b = &lt;data.frame&gt;, c = &lt;list&gt;&rdquo;.
 </p>
 
 
@@ -52,17 +59,6 @@ Default is 15.</p>
 </table>
 
 
-<h3>Details</h3>
-
-<p>All others: Currently, only their class is simply printed
-like &ldquo;&lt;data.frame&gt;&rdquo;.
-</p>
-<p>Lists: The mechanism above is applied (non-recursively) to their elements.
-The result looks like this:
-&ldquo;a=1, &lt;unamed&gt;=2, b=&lt;data.frame&gt;, c=&lt;list&gt;&rdquo;.
-</p>
-
-
 <h3>Value</h3>
 
 <p>[<code>character(1)</code>].
@@ -71,14 +67,10 @@ The result looks like this:
 
 <h3>Examples</h3>
 
-<pre><code class="r">
-convertToShortString(list(a=1, b=NULL, &quot;foo&quot;, c=1:10))
+<pre><code class="r">convertToShortString(list(a = 1, b = NULL, &quot;foo&quot;, c = 1:10))
 </code></pre>
 
 <pre><code>## [1] &quot;a=1, b=NULL, &lt;unnamed&gt;=foo, c=1,2,3,4,5,6,...&quot;
-</code></pre>
-
-<pre><code class="r">
 </code></pre>
 
 

@@ -2,6 +2,11 @@
 <html><head><title>R: Find the index of first/last 'TRUE' value in a logical...</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="R.css">
+
+<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css">
+<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+<script src="http://yandex.st/highlightjs/7.3/languages/r.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </head><body>
 
 <table width="100%" summary="page for which.first {BBmisc}"><tr><td>which.first {BBmisc}</td><td align="right">R Documentation</td></tr></table>
@@ -46,6 +51,22 @@ named.</p>
 Returns the index of the first/last <code>TRUE</code> value in <code>x</code> or
 an empty integer vector if none is found.
 </p>
+
+
+<h3>Examples</h3>
+
+<pre><code class="r">which.first(c(FALSE, TRUE))
+</code></pre>
+
+<pre><code>## [1] 2
+</code></pre>
+
+<pre><code class="r"> which.last(c(FALSE, FALSE))
+</code></pre>
+
+<pre><code>## integer(0)
+</code></pre>
+
 
 <hr><div align="center">[Package <em>BBmisc</em> version 1.7 <a href="00Index.html">Index</a>]</div>
 </body></html>
