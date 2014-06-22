@@ -54,7 +54,7 @@ normalize2 = function(x, method, range) {
     range = (x - min(x)) / diff(range(x)) * diff(range) + range[1L],
     standardize = scale(x, center = TRUE, scale = TRUE),
     center = scale(x, center = TRUE, scale = FALSE),
-    scale = scale(x, center = FALSE, scale = apply(x, range, sd, na.rm = TRUE))
+    scale = scale(x, center = FALSE, scale = sd(x, na.rm = TRUE))
   )
 }
 
