@@ -22,4 +22,3 @@ convertDfCols = convertDataFrameCols
 #' @export
 #' @rdname deprecated
 listToShortString = convertToShortString
-

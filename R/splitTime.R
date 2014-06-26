@@ -15,7 +15,7 @@
 #' @export
 #' @examples
 #' splitTime(1000)
-splitTime = function(seconds, unit="years") {
+splitTime = function(seconds, unit = "years") {
   assertNumber(seconds)
 	assertChoice(unit, c("years", "days", "hours", "minutes", "seconds"))
   divider = c(31536000L, 86400L, 3600L, 60L, 1L)

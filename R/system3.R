@@ -16,7 +16,7 @@
 #'   \item{exit.code [integer(1)]}{Exit code of command. Given if wait is \code{TRUE}, otherwise \code{NA}. 0L means success. 127L means command was not found}
 #'   \item{output [character]}{Output of command on streams. Only given is \code{stdout} or \code{stderr} was set to \code{TRUE}, otherwise \code{NA}.}
 #' @export
-system3 = function(command, args = character(0L), stdout = "", stderr = "", wait=TRUE, ..., stop.on.exit.code=wait) {
+system3 = function(command, args = character(0L), stdout = "", stderr = "", wait = TRUE, ..., stop.on.exit.code = wait) {
   if (stop.on.exit.code && !wait)
     stopf("stop.on.exit.code is TRUE but wait is FALSE!")
   output = NA_character_
@@ -26,7 +26,7 @@ system3 = function(command, args = character(0L), stdout = "", stderr = "", wait
     ec = 0L
     suppressWarnings({
         withCallingHandlers({
-            op = system2(command=command, args=args, stdout=stdout, stderr=stderr, wait=wait, ...)
+            op = system2(command = command, args = args, stdout = stdout, stderr = stderr, wait = wait, ...)
           }, warning = function(w) {
             g = gregexpr("\\d+", w$message)[[1L]]
             start = tail(g, 1L)
@@ -35,7 +35,7 @@ system3 = function(command, args = character(0L), stdout = "", stderr = "", wait
           })
       })
   } else {
-    ec = system2(command=command, args=args, stdout=stdout, stderr=stderr, wait=wait, ...)
+    ec = system2(command = command, args = args, stdout = stdout, stderr = stderr, wait = wait, ...)
   }
   if (wait) {
     if (isTRUE(stdout) || isTRUE(stderr))
@@ -49,5 +49,5 @@ system3 = function(command, args = character(0L), stdout = "", stderr = "", wait
       output = collapse(output, "\n")
     stopf("Command: %s %s; exit code: %i; output: %s", command, args, ec, output)
   }
-  list(exit.code=ec, output=output)
+  list(exit.code = ec, output = output)
 }

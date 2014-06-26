@@ -9,8 +9,8 @@
 #' @return Object.
 #' @export
 #' @examples
-#' makeS3Obj("car", speed=100, color="red")
+#' makeS3Obj("car", speed = 100, color = "red")
 makeS3Obj = function(classes, ...) {
-  assertCharacter(classes, min.len=1L, any.missing=FALSE)
-  setClasses(list(...), classes=classes)
+  assertCharacter(classes, min.len = 1L, any.missing = FALSE)
+  setClasses(list(...), classes = classes)
 }

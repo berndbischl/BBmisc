@@ -16,7 +16,7 @@
 #'   Default is \code{FALSE}.
 #' @export
 #' @return [\code{data.frame}].
-convertDataFrameCols = function(df, chars.as.factor = FALSE, factors.as.char = FALSE, ints.as.num = FALSE, logicals.as.factor=FALSE) {
+convertDataFrameCols = function(df, chars.as.factor = FALSE, factors.as.char = FALSE, ints.as.num = FALSE, logicals.as.factor = FALSE) {
   assertDataFrame(df)
   assertFlag(chars.as.factor)
   assertFlag(factors.as.char)
@@ -45,9 +45,9 @@ convertDataFrameCols = function(df, chars.as.factor = FALSE, factors.as.char = F
   if (logicals.as.factor) {
     i = vapply(df, is.logical, TRUE)
     if (any(i))
-      x[i] = lapply(x[i], factor, levels=c("TRUE", "FALSE"))
+      x[i] = lapply(x[i], factor, levels = c("TRUE", "FALSE"))
   }
 
-  as.data.frame(x, stringsAsFactors=FALSE)
+  as.data.frame(x, stringsAsFactors = FALSE)
 }
 

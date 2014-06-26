@@ -9,7 +9,7 @@
 #' @export
 #' @examples
 #' namedList(c("a", "b"))
-#' namedList(c("a", "b"), init=1)
+#' namedList(c("a", "b"), init = 1)
 namedList = function(names, init) {
   if (missing(names))
     return(list())
@@ -17,6 +17,6 @@ namedList = function(names, init) {
   if (missing(init))
     xs = vector("list", n)
   else
-    xs = replicate(n, init, simplify=FALSE)
+    xs = replicate(n, init, simplify = FALSE)
   setNames(xs, names)
 }

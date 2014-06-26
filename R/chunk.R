@@ -31,7 +31,7 @@
 #' chunk(xs, n.chunks = 2)
 #' chunk(xs, n.chunks = 2, shuffle = TRUE)
 #' chunk(xs, props = c(7, 3))
-chunk = function(x, chunk.size, n.chunks, props, shuffle=FALSE) {
+chunk = function(x, chunk.size, n.chunks, props, shuffle = FALSE) {
   assertFlag(shuffle)
   method = c("chunk.size", "n.chunks", "props")
   method = method[!c(missing(chunk.size), missing(n.chunks), missing(props))]
@@ -51,7 +51,7 @@ chunk = function(x, chunk.size, n.chunks, props, shuffle=FALSE) {
       getNChunks(nx, n.chunks, shuffle)
     },
     props = {
-      assertNumeric(props, min.len=1L, any.missing=FALSE, lower=0)
+      assertNumeric(props, min.len = 1L, any.missing = FALSE, lower = 0)
       props = props / sum(props)
       ch = factor(rep.int(seq_along(props), round(props * nx, digits = 0L)),
         levels = seq_along(props))

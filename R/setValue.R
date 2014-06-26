@@ -12,7 +12,7 @@
 #' @export
 setValue = function(obj, index, newval) {
   assertList(obj)
-  assert(checkCharacter(index, any.missing=FALSE), checkIntegerish(index, any.missing = FALSE))
+  assert(checkCharacter(index, any.missing = FALSE), checkIntegerish(index, any.missing = FALSE))
   if (length(index) == 1L) {
     if (is.null(newval))
       obj[index] = list(NULL)

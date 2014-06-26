@@ -1,13 +1,13 @@
 #' Require some packages.
-#' 
+#'
 #' If some packages could not be loaded and \code{stop} is \code{TRUE}
 #' the following exception is thrown:
 #' \dQuote{For <why> please install the following packages: <missing packages>}.
 #' If \code{why} is \code{NULL} the message is:
 #' \dQuote{Please install the following packages: <missing packages>}.
-#' 
+#'
 #' @param packs [\code{character}]\cr
-#'   Names of packages. 
+#'   Names of packages.
 #' @param why [\code{character(1)}]\cr
 #'   Short string explaining why packages are required.
 #'   Default is \code{NULL}.
@@ -21,13 +21,13 @@
 #'   Passed on to \code{\link{require}}.
 #' @return [\code{logical}]. Named logical vector describing which packages could be loaded.
 #'   Same length as \code{packs}.
-#' @export 
+#' @export
 #' @examples
-#' requirePackages(c("BBmisc", "base"), why="BBmisc example")
-requirePackages = function(packs, why=NULL, stop=TRUE, suppress.warnings=FALSE, ...) {
+#' requirePackages(c("BBmisc", "base"), why = "BBmisc example")
+requirePackages = function(packs, why = NULL, stop = TRUE, suppress.warnings = FALSE, ...) {
   # strange do call construction beacause make check complained about ... context
   args = list(...)
-  args$character.only=TRUE
+  args$character.only = TRUE
   packs.ok = sapply(packs, function(x) {
     args$package = x
     if (suppress.warnings)

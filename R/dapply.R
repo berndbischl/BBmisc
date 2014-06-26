@@ -27,7 +27,7 @@ dapply = function(x, fun, ..., col.names) {
     if (length(missing))
       names(x) = replace(ns, missing, paste0("Var.", missing))
   } else {
-    assertCharacter(col.names, len=length(x), any.missing=FALSE)
+    assertCharacter(col.names, len = length(x), any.missing = FALSE)
     names(x) = col.names
   }
 
@@ -36,7 +36,7 @@ dapply = function(x, fun, ..., col.names) {
     max.n = max(n)
     if (any(max.n %% n))
       stop("Arguments imply differing number of rows: ", collapse(n, ", "))
-    x = lapply(x, rep_len, length.out=max.n)
+    x = lapply(x, rep_len, length.out = max.n)
     n = max.n
   }
   attr(x, "row.names") = seq_len(n)

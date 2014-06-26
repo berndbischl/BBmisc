@@ -10,8 +10,8 @@
 #' @export
 #' @examples
 #' printStrToChar(iris)
-printStrToChar = function(x, collapse="\n") {
-  d = printToChar(str(x), collapse=NULL)
+printStrToChar = function(x, collapse = "\n") {
+  d = printToChar(str(x), collapse = NULL)
   # remove NULL from str
   collapse(d[-length(d)], collapse)
 }

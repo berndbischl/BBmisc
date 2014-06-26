@@ -14,7 +14,7 @@
 #' x = sample(1:10, 7)
 #' toRangeStr(x)
 #' @export
-toRangeStr = function(x, range.sep=" - ", block.sep=", ") {
+toRangeStr = function(x, range.sep = " - ", block.sep = ", ") {
   if (testIntegerish(x))
     x = as.integer(x)
   else
@@ -30,5 +30,5 @@ toRangeStr = function(x, range.sep=" - ", block.sep=", ") {
       as.character(x)
     else
       sprintf("%i%s%i", x[1L], range.sep, x[length(x)])
-  collapse(vapply(x, combine, character(1L), USE.NAMES=FALSE), block.sep)
+  collapse(vapply(x, combine, character(1L), USE.NAMES = FALSE), block.sep)
 }

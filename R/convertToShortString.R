@@ -58,4 +58,3 @@ convertToShortString = function(x, num.format = "%.4g", clip.len = 15L) {
     convObj(x)
   }
 }
-

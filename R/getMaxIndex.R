@@ -16,8 +16,8 @@
 #' @return [\code{integer(1)}].
 #' @export
 #' @useDynLib BBmisc c_getMaxIndex
-getMaxIndex = function(x, ties.method="random", na.rm=FALSE) {
-  ties.method = switch(ties.method, random=1L, first=2L, last=3L,
+getMaxIndex = function(x, ties.method = "random", na.rm = FALSE) {
+  ties.method = switch(ties.method, random = 1L, first = 2L, last = 3L,
                        stop("Unknown ties method"))
   assertFlag(na.rm)
   .Call(c_getMaxIndex, as.numeric(x), ties.method, na.rm)
@@ -26,6 +26,6 @@ getMaxIndex = function(x, ties.method="random", na.rm=FALSE) {
 
 #' @export
 #' @rdname getMaxIndex
-getMinIndex = function(x, ties.method="random", na.rm=FALSE) {
+getMinIndex = function(x, ties.method = "random", na.rm = FALSE) {
   getMaxIndex(-as.numeric(x), ties.method, na.rm)
 }

@@ -9,7 +9,7 @@
 #'   If the entries are not unique and \code{unique} is enabled, the first duplicate will
 #'   be \code{FALSE}.
 #' @export
-isValidName = function(x, unique=TRUE) {
+isValidName = function(x, unique = TRUE) {
   if (!is.character(x))
     x = as.character(x)
   # check that make.names does not change the string (otherwise it would be invalid),

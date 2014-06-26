@@ -20,14 +20,14 @@
 #'   Default is \dQuote{V1}, \dQuote{V2}, and so on.
 #' @export
 #' @examples
-#' print(makeDataFrame(3, 2, init=7))
+#' print(makeDataFrame(3, 2, init = 7))
 #' print(makeDataFrame(3, 2, "logical"))
 #' print(makeDataFrame(3, 2, c("logical", "numeric")))
-makeDataFrame = function(nrow, ncol, col.types, init, row.names=NULL, col.names=sprintf("V%i", seq_len(ncol))) {
+makeDataFrame = function(nrow, ncol, col.types, init, row.names = NULL, col.names = sprintf("V%i", seq_len(ncol))) {
   nrow = asCount(nrow)
   ncol = asCount(ncol)
   if (!missing(col.types))
-    assertCharacter(col.types, min.len=1L, any.missing=FALSE)
+    assertCharacter(col.types, min.len = 1L, any.missing = FALSE)
   if (!missing(init)) {
     if(!isScalarValue(init))
       stop("'init' must be a scalar value!")
@@ -48,12 +48,12 @@ makeDataFrame = function(nrow, ncol, col.types, init, row.names=NULL, col.names=
   if (nrow == 0L && ncol == 0L)
     df = data.frame()
   else if (ncol == 0L)
-    df = data.frame(matrix(nrow=nrow, ncol=0))
+    df = data.frame(matrix(nrow = nrow, ncol = 0))
   else if (missing(init))
-    df = lapply(col.types, vector, length=nrow)
+    df = lapply(col.types, vector, length = nrow)
   else
-    df = replicate(ncol, rep.int(init, nrow), simplify=FALSE)
-  df = as.data.frame(df, stringsAsFactors=FALSE)
+    df = replicate(ncol, rep.int(init, nrow), simplify = FALSE)
+  df = as.data.frame(df, stringsAsFactors = FALSE)
   rownames(df) = row.names
   colnames(df) = col.names
   return(df)

@@ -16,7 +16,7 @@ dropNamed = function(x, drop = character(0L)) {
     return(x)
 
   if (is.matrix(x) || is.data.frame(x))
-    x[, setdiff(colnames(x), drop), drop=FALSE]
+    x[, setdiff(colnames(x), drop), drop = FALSE]
   else
     x[setdiff(names(x), drop)]
 }

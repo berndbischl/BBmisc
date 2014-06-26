@@ -14,14 +14,14 @@
 #' }
 lib = function(...) {
   getLib = function(pkg) {
-    ok = suppressWarnings(require(pkg, character.only=TRUE))
+    ok = suppressWarnings(require(pkg, character.only = TRUE))
     if (!ok && !is.error(try(install.packages(pkg)))) {
-      ok = require(pkg, character.only=TRUE)
+      ok = require(pkg, character.only = TRUE)
     }
     ok
   }
 
   pkgs = unique(c(...))
-  assertCharacter(pkgs, any.missing=FALSE)
+  assertCharacter(pkgs, any.missing = FALSE)
   vlapply(pkgs, getLib)
 }

@@ -36,7 +36,7 @@ makeSimpleFileLogger = function(logfile, touch = FALSE, keep = 10L) {
         buffer$push(msg)
       if (!touch && n.lines == 0L && !file.create(logfile))
         stopf("Could not create file '%s'", logfile)
-      catf("<%s> %s", as.character(Sys.time()), msg, file=logfile, append=TRUE, newline=TRUE)
+      catf("<%s> %s", as.character(Sys.time()), msg, file = logfile, append = TRUE, newline = TRUE)
       n.lines <<- n.lines + 1L
     },
     getMessages = function(n) {

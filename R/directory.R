@@ -29,7 +29,7 @@ isDirectory = function(...) {
 #' print(isEmptyDirectory(tempdir()))
 #' print(isEmptyDirectory(tempfile()))
 isEmptyDirectory = function(...) {
-  vapply(list(...), FUN.VALUE=TRUE, FUN=function(x) {
-    isDirectory(x) && length(list.files(x, all.files=TRUE, include.dirs=TRUE)) == 2L
+  vapply(list(...), FUN.VALUE = TRUE, FUN = function(x) {
+    isDirectory(x) && length(list.files(x, all.files = TRUE, include.dirs = TRUE)) == 2L
   })
 }

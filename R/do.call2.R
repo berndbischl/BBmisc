@@ -8,7 +8,7 @@
 # @param fun [\code{character(1)}]\cr
 #   Name of the function to call.
 # @param ... [any]\cr
-#   Arguments to \code{fun}. Best practice is to specify them in a \code{key=value} syntax.
+#   Arguments to \code{fun}. Best practice is to specify them in a \code{key = value} syntax.
 # @param .args [\code{list}]\cr
 #   Arguments to \code{fun} as a (named) list. Will be passed after arguments in \code{...}.
 #   Default is \code{list()}.
@@ -17,13 +17,13 @@
 # @examples \dontrun{
 #   library(microbenchmark)
 #   x = 1:1e7
-#   microbenchmark(do.call(head, list(x, n=1)), do.call2("head", x, n=1))
+#   microbenchmark(do.call(head, list(x, n = 1)), do.call2("head", x, n = 1))
 # }
-do.call2 = function(fun, ..., .args=list()) {
+do.call2 = function(fun, ..., .args = list()) {
   #FIXME: allow (anonymous) functions
   assertString(fun)
   assertList(.args)
-  ddd = match.call(expand.dots=FALSE)$...
+  ddd = match.call(expand.dots = FALSE)$...
   expr = as.call(c(list(as.name(fun)), ddd, .args))
-  eval.parent(expr, n=1L)
+  eval.parent(expr, n = 1L)
 }

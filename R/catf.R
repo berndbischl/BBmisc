@@ -1,5 +1,5 @@
 #' Wrapper for cat and sprintf.
-#' 
+#'
 #' A simple wrapper for \code{cat(sprintf(...))}.
 #'
 #' @param ... [any]\cr
@@ -18,6 +18,6 @@
 #' @examples
 #' msg = "a message."
 #' catf("This is %s", msg)
-catf = function(..., file="", append=FALSE, newline=TRUE) {
-  cat(sprintf(...), ifelse(newline, "\n", ""), sep="", file=file, append=append)
+catf = function(..., file = "", append = FALSE, newline = TRUE) {
+  cat(sprintf(...), ifelse(newline, "\n", ""), sep = "", file = file, append = append)
 }

@@ -15,11 +15,11 @@
 #' @examples
 #' err = "an error."
 #' try(stopf("This is %s", err))
-stopf = function(..., warning.length=8170L) {
+stopf = function(..., warning.length = 8170L) {
   msg = sprintf(...)
-  obj = simpleError(msg, call=sys.call(sys.parent()))
+  obj = simpleError(msg, call = sys.call(sys.parent()))
   old.opt = getOption("warning.length")
-  on.exit(options(warning.length=old.opt))
-  options(warning.length=warning.length)
+  on.exit(options(warning.length = old.opt))
+  options(warning.length = warning.length)
   stop(obj)
 }

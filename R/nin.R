@@ -8,5 +8,5 @@
 #' @rdname nin
 #' @export
 `%nin%` = function(x, y) {
-  !match(x, y, nomatch=0L)
+  !match(x, y, nomatch = 0L)
 }

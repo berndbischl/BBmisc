@@ -1,5 +1,5 @@
 #' Prints object to a string / character vector.
-#' 
+#'
 #' @param x [any]\cr
 #'   Object to print
 #' @param collapse [\code{character(1)}]\cr
@@ -9,9 +9,9 @@
 #' @return [\code{character}].
 #' @export
 #' @examples
-#' x = data.frame(a=1:2, b=3:4)
+#' x = data.frame(a = 1:2, b = 3:4)
 #' str(printToChar(x))
-printToChar = function(x, collapse="\n") {
+printToChar = function(x, collapse = "\n") {
   rval = NULL
   con = textConnection("rval", "w", local = TRUE)
   sink(con)
@@ -21,7 +21,7 @@ printToChar = function(x, collapse="\n") {
   })
   print(x)
   if (!is.null(collapse))
-    paste(rval, collapse=collapse)
+    paste(rval, collapse = collapse)
   else
     rval
 }

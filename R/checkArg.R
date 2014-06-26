@@ -42,24 +42,24 @@
 #'   If this is passed, \code{x} must be a function.
 #'   It is then checked that \code{formals} are the names of the
 #'   (first) formal arguments in the signature of \code{x}.
-#'   Meaning \code{checkArg(function(a, b), formals="a")} is ok.
+#'   Meaning \code{checkArg(function(a, b), formals = "a")} is ok.
 #'   Default is missing.
 #' @return Nothing.
 #' @export
 #' @examples
 #' x = 1L
-#' checkArg(x, "integer", len=1, na.ok=FALSE, upper=3L)
+#' checkArg(x, "integer", len = 1, na.ok = FALSE, upper = 3L)
 #' x = as.integer(NA)
-#' checkArg(x, "integer", len=1, na.ok=TRUE)
+#' checkArg(x, "integer", len = 1, na.ok = TRUE)
 #' x = c("foo", "bar")
 #' checkArg(x, "character")
 #' x = "foo"
-#' checkArg(x, choices=c("foo", "bar"))
+#' checkArg(x, choices = c("foo", "bar"))
 #' x = c("foo", "bar")
-#' checkArg(x, subset=c("foo", "bar"))
+#' checkArg(x, subset = c("foo", "bar"))
 #' fun = function(foo, bar)
-#' checkArg(fun, formals=c("foo", "bar"))
-checkArg = function(x, cl, s4=FALSE, len, min.len, max.len, choices, subset, lower=NA, upper=NA, na.ok=TRUE, formals) {
+#' checkArg(fun, formals = c("foo", "bar"))
+checkArg = function(x, cl, s4 = FALSE, len, min.len, max.len, choices, subset, lower = NA, upper = NA, na.ok = TRUE, formals) {
   s = deparse(substitute(x))
   if (missing(x))
     stop("Argument ", s, " must not be missing!")
@@ -71,14 +71,14 @@ checkArg = function(x, cl, s4=FALSE, len, min.len, max.len, choices, subset, low
     if (!matchEl(x, choices))
       stop("Argument ", s, " must be any of: ", collapse(choices), "!")
   } else if (!missing(subset)) {
-    if (!all(sapply(x, matchEl, xs=subset)))
+    if (!all(sapply(x, matchEl, xs = subset)))
       stop("Argument ", s, " must be subset of: ", collapse(subset), "!")
   } else if (!missing(formals)) {
     if (!is.function(x))
       stop("Argument ", s, " must be of class ", "function", " not: ", cl2, "!")
     fs = names(formals(x))
     if (length(fs) < length(formals) || !all(formals == fs[seq_along(formals)]))
-      stop("Argument function must have first formal args: ", paste(formals, collapse=","), "!")
+      stop("Argument function must have first formal args: ", paste(formals, collapse = ","), "!")
   } else {
     mycheck = function(x, cc)
       if(identical(cc, "numeric"))
@@ -91,7 +91,7 @@ checkArg = function(x, cl, s4=FALSE, len, min.len, max.len, choices, subset, low
         inherits(x, cc)
       else if (s4)
         is(x, cc)
-    if (!any(sapply(cl, mycheck, x=x)))
+    if (!any(sapply(cl, mycheck, x = x)))
       stop("Argument ", s, " must be of class ", collapse(cl, " OR "), ", not: ", cl2, "!")
     if (!missing(len) && len2 != len)
       stop("Argument ", s, " must be of length ", len, " not: ", len2, "!")

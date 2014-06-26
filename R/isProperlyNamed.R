@@ -8,8 +8,8 @@
 #' @export
 #' @examples
 #' isProperlyNamed(list(1))
-#' isProperlyNamed(list(a=1))
-#' isProperlyNamed(list(a=1, 2))
+#' isProperlyNamed(list(a = 1))
+#' isProperlyNamed(list(a = 1, 2))
 isProperlyNamed = function(x) {
   ns = names2(x)
   length(x) == 0L || !(any(is.na(ns)) || anyDuplicated(ns))

@@ -13,10 +13,10 @@
 #' @examples
 #' print(clipString("abcdef", 10))
 #' print(clipString("abcdef", 5))
-clipString = function(x, len, tail="...") {
-  assertCharacter(x, any.missing=TRUE)
-  len = asInteger(len, len=1L, lower = nchar(tail))
+clipString = function(x, len, tail = "...") {
+  assertCharacter(x, any.missing = TRUE)
+  len = asInteger(len, len = 1L, lower = nchar(tail))
   assertString(tail)
   ind = (!is.na(x) & nchar(x) > len)
-  replace(x, ind, paste(substr(x[ind], 1L, len - nchar(tail)), tail, sep=""))
+  replace(x, ind, paste(substr(x[ind], 1L, len - nchar(tail)), tail, sep = ""))
 }

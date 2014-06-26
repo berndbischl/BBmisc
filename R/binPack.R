@@ -26,20 +26,20 @@ binPack = function(x, capacity) {
   assertNumeric(x, min.len = 1L, lower = 0, any.missing = FALSE)
   assertNumber(capacity)
 
-  too.big = which.first(x > capacity, use.names=FALSE)
+  too.big = which.first(x > capacity, use.names = FALSE)
   if (length(too.big))
     stopf("Capacity not sufficient. Item %i (x=%f) does not fit", too.big, x[too.big])
   if (any(is.infinite(x)))
     stop("Infinite elements found in 'x'")
 
-  ord = order(x, decreasing=TRUE)
+  ord = order(x, decreasing = TRUE)
   grp = integer(length(x))
   sums = vector(typeof(x), 1L)
   bin.count = 1L
 
   for(j in ord) {
     new.sums = sums + x[j]
-    pos = which.first(new.sums <= capacity, use.names=FALSE)
+    pos = which.first(new.sums <= capacity, use.names = FALSE)
     if (length(pos)) {
       grp[j] = pos
       sums[pos] = new.sums[pos]

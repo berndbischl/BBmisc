@@ -16,16 +16,16 @@
 #' @examples
 #' msg = "a warning"
 #' warningf("this is %s", msg)
-warningf = function(..., immediate=TRUE, warning.length=8170L) {
+warningf = function(..., immediate = TRUE, warning.length = 8170L) {
   msg = sprintf(...)
   if (immediate) {
     old = getOption("warn")
     # dont change warn setting if it is 2 (= error)
     if (old <= 0L) {
-      on.exit(options(warn=old))
-      options(warn=1L)
+      on.exit(options(warn = old))
+      options(warn = 1L)
     }
   }
-  obj = simpleWarning(msg, call=sys.call(sys.parent()))
+  obj = simpleWarning(msg, call = sys.call(sys.parent()))
   warning(obj)
 }

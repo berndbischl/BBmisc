@@ -21,13 +21,13 @@
 #' @export
 #' @useDynLib BBmisc c_getMaxIndexOfRows c_getMaxIndexOfCols
 #' @examples
-#' x = matrix(runif(5 * 3), ncol=3)
+#' x = matrix(runif(5 * 3), ncol = 3)
 #' print(x)
 #' print(getMaxIndexOfRows(x))
 #' print(getMinIndexOfRows(x))
-getMaxIndexOfRows = function(x, ties.method="random", na.rm=FALSE) {
+getMaxIndexOfRows = function(x, ties.method = "random", na.rm = FALSE) {
   mode(x) = "numeric"
-  ties.method = switch(ties.method, random=1L, first=2L, last=3L,
+  ties.method = switch(ties.method, random = 1L, first = 2L, last = 3L,
                        stop("Unknown ties method"))
   assertFlag(na.rm)
   .Call(c_getMaxIndexOfRows, x, ties.method, na.rm)
@@ -35,21 +35,21 @@ getMaxIndexOfRows = function(x, ties.method="random", na.rm=FALSE) {
 
 #' @export
 #' @rdname getMaxIndexOfRows
-getMinIndexOfRows = function(x, ties.method="random", na.rm=FALSE) {
+getMinIndexOfRows = function(x, ties.method = "random", na.rm = FALSE) {
   getMaxIndexOfRows(-x, ties.method, na.rm)
 }
 
 #' @export
 #' @rdname getMaxIndexOfRows
-getMaxIndexOfCols = function(x, ties.method="random", na.rm=FALSE) {
+getMaxIndexOfCols = function(x, ties.method = "random", na.rm = FALSE) {
   mode(x) = "numeric"
-  ties.method = switch(ties.method, random=1L, first=2L, last=3L,
+  ties.method = switch(ties.method, random = 1L, first = 2L, last = 3L,
                        stop("Unknown ties method"))
   .Call(c_getMaxIndexOfCols, x, ties.method, na.rm)
 }
 
 #' @export
 #' @rdname getMaxIndexOfRows
-getMinIndexOfCols = function(x, ties.method="random", na.rm=FALSE) {
+getMinIndexOfCols = function(x, ties.method = "random", na.rm = FALSE) {
   getMaxIndexOfCols(-x, ties.method, na.rm)
 }

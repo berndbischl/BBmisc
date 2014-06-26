@@ -18,7 +18,7 @@
 #' names(x[1:2]) = letters[1:2]
 #' names(x)
 #' names2(x)
-names2 = function(x, missing.val=NA_character_) {
+names2 = function(x, missing.val = NA_character_) {
   n = names(x)
   if (is.null(n))
     return(rep.int(missing.val, length(x)))

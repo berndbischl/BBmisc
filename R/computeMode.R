@@ -17,12 +17,12 @@
 #' @export
 #' @examples
 #' computeMode(c(1,2,3,3))
-computeMode = function(x, ties.method="random", na.rm=TRUE) {
+computeMode = function(x, ties.method = "random", na.rm = TRUE) {
   assertAtomicVector(x)
   assertChoice(ties.method, c("first", "random", "last"))
   assertFlag(na.rm)
   #FIXME: no arg checks for speed currently
-  tab = table(x, useNA=ifelse(na.rm, "no", "ifany"))
+  tab = table(x, useNA = ifelse(na.rm, "no", "ifany"))
   y = max(tab)
   mod = names(tab)[tab == y]
   if (!is.factor(x))

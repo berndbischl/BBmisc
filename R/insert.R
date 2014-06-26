@@ -1,10 +1,10 @@
 #' Insert elements from one list/vector into another list/vector.
-#' 
+#'
 #' Inserts elements from \code{xs2} into \code{xs1} by name,
 #' overwriting elements of equal names.
-#' 
+#'
 #' @param xs1 [\code{list}]\cr
-#'   First list/vector. 
+#'   First list/vector.
 #' @param xs2 [\code{list}]\cr
 #'   Second vector/list. Must be fully and uniquely named.
 #' @param elements [\code{character}]\cr
@@ -13,10 +13,10 @@
 #' @return \code{x1} with replaced elements from \code{x2}.
 #' @export
 #' @examples
-#' xs1 = list(a=1, b=2)
-#' xs2 = list(b=1, c=4)
+#' xs1 = list(a = 1, b = 2)
+#' xs2 = list(b = 1, c = 4)
 #' insert(xs1, xs2)
-#' insert(xs1, xs2, elements="c")
+#' insert(xs1, xs2, elements = "c")
 insert = function(xs1, xs2, elements) {
   if (length(xs2) > 0L) {
     if (missing(elements)) {

@@ -19,15 +19,15 @@
 #' @export
 #' @examples
 #' fn = tempfile()
-#' save2(file=fn, a=1, b=2, c=3)
-#' load2(fn, parts="a")
-#' load2(fn, parts=c("a", "c"))
-load2 = function(file, parts, simplify=TRUE, envir, impute) {
+#' save2(file = fn, a = 1, b = 2, c = 3)
+#' load2(fn, parts = "a")
+#' load2(fn, parts = c("a", "c"))
+load2 = function(file, parts, simplify = TRUE, envir, impute) {
   assertFlag(simplify)
   ee = new.env()
   if (!missing(impute) && !file.exists(file))
     return(impute)
-  load(file, envir=ee)
+  load(file, envir = ee)
   ns = ls(ee)
   if (!missing(parts)) {
     assertCharacter(parts, any.missing = FALSE)
@@ -38,7 +38,7 @@ load2 = function(file, parts, simplify=TRUE, envir, impute) {
     parts = ns
   }
   if (!missing(envir)) {
-    lapply(ns, function(x) assign(x, ee[[x]], envir=envir))
+    lapply(ns, function(x) assign(x, ee[[x]], envir = envir))
   }
   if (simplify) {
     if (length(ns) == 1L)
@@ -46,5 +46,5 @@ load2 = function(file, parts, simplify=TRUE, envir, impute) {
     if (length(parts) == 1L)
       return(ee[[parts]])
   }
-  mget(parts, envir=ee)
+  mget(parts, envir = ee)
 }

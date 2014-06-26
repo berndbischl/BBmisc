@@ -19,7 +19,7 @@
 #' @return [\code{data.frame}].
 #' @export
 #' @examples
-#' convertListOfRowsToDataFrame(list(list(x=1, y="a"), list(x=2, y="b")))
+#' convertListOfRowsToDataFrame(list(list(x = 1, y = "a"), list(x = 2, y = "b")))
 convertListOfRowsToDataFrame = function(rows, strings.as.factors = default.stringsAsFactors(),
   row.names, col.names) {
   assertList(rows)
@@ -32,7 +32,7 @@ convertListOfRowsToDataFrame = function(rows, strings.as.factors = default.strin
     row.names = names(rows)
 
   # make names
-  rows = lapply(rows, function(x) setNames(x, make.names(names2(x, ""), unique=TRUE)))
+  rows = lapply(rows, function(x) setNames(x, make.names(names2(x, ""), unique = TRUE)))
 
   cols = unique(unlist(lapply(rows, names2)))
   if (any(is.na(cols)))
@@ -47,7 +47,7 @@ convertListOfRowsToDataFrame = function(rows, strings.as.factors = default.strin
     simplify2array(replace(tmp, vlapply(tmp, is.null), NA))
   }
 
-  d = data.frame(setNames(lapply(cols, extract), cols), row.names=row.names, stringsAsFactors=strings.as.factors)
+  d = data.frame(setNames(lapply(cols, extract), cols), row.names = row.names, stringsAsFactors = strings.as.factors)
   if (!missing(col.names))
     colnames(d) = col.names
   return(d)
