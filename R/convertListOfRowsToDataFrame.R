@@ -35,7 +35,7 @@ convertListOfRowsToDataFrame = function(rows, strings.as.factors = default.strin
   rows = lapply(rows, function(x) setNames(x, make.names(names2(x, ""), unique = TRUE)))
 
   cols = unique(unlist(lapply(rows, names2)))
-  if (any(is.na(cols)))
+  if (anyMissing(cols))
     stop("All row elements must be named")
   if (!length(cols))
     return(makeDataFrame(length(rows), 0L))

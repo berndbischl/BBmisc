@@ -25,29 +25,28 @@ convertDataFrameCols = function(df, chars.as.factor = FALSE, factors.as.char = F
   df = x = as.list(df)
 
   if (chars.as.factor) {
-    i = vapply(df, is.character, TRUE)
+    i = vlapply(df, is.character)
     if (any(i))
       x[i] = lapply(x[i], factor)
   }
 
   if (factors.as.char) {
-    i = vapply(df, is.factor, TRUE)
+    i = vlapply(df, is.factor)
     if (any(i))
       x[i] = lapply(x[i], as.character)
   }
 
   if (ints.as.num) {
-    i = vapply(df, is.integer, TRUE)
+    i = vlapply(df, is.integer)
     if (any(i))
       x[i] = lapply(x[i], as.double)
   }
 
   if (logicals.as.factor) {
-    i = vapply(df, is.logical, TRUE)
+    i = vlapply(df, is.logical)
     if (any(i))
       x[i] = lapply(x[i], factor, levels = c("TRUE", "FALSE"))
   }
 
   as.data.frame(x, stringsAsFactors = FALSE)
 }
-

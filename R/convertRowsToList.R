@@ -63,6 +63,3 @@ convertColsToList = function(x, name.list = FALSE, name.vector= FALSE,
   convertRowsToList(t(x), name.list = name.list, name.vector = name.vector,
     factors.as.char = factors.as.char, as.vector = as.vector)
 }
-
-
-
