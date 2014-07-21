@@ -35,6 +35,6 @@ except \code{list} and \code{envir}, are available and passed to
 }
 \examples{
 x = 1
-save2(y=x, file=tempfile())
+save2(y = x, file = tempfile())
 }
 

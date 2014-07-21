@@ -21,6 +21,6 @@ Create named list, possibly initialized with a certain element.
 }
 \examples{
 namedList(c("a", "b"))
-namedList(c("a", "b"), init=1)
+namedList(c("a", "b"), init = 1)
 }
 

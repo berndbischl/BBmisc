@@ -17,7 +17,7 @@ The vector or list.}
 }
 \examples{
 isProperlyNamed(list(1))
-isProperlyNamed(list(a=1))
-isProperlyNamed(list(a=1, 2))
+isProperlyNamed(list(a = 1))
+isProperlyNamed(list(a = 1, 2))
 }
 

@@ -24,9 +24,9 @@ Inserts elements from \code{xs2} into \code{xs1} by name,
 overwriting elements of equal names.
 }
 \examples{
-xs1 = list(a=1, b=2)
-xs2 = list(b=1, c=4)
+xs1 = list(a = 1, b = 2)
+xs2 = list(b = 1, c = 4)
 insert(xs1, xs2)
-insert(xs1, xs2, elements="c")
+insert(xs1, xs2, elements = "c")
 }
 

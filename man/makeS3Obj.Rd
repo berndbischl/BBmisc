@@ -19,6 +19,6 @@ Object.
 Simple wrapper for \code{as.list} and \code{\link{setClasses}}.
 }
 \examples{
-makeS3Obj("car", speed=100, color="red")
+makeS3Obj("car", speed = 100, color = "red")
 }
 

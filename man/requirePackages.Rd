@@ -37,6 +37,6 @@ If \code{why} is \code{NULL} the message is:
 \dQuote{Please install the following packages: <missing packages>}.
 }
 \examples{
-requirePackages(c("BBmisc", "base"), why="BBmisc example")
+requirePackages(c("BBmisc", "base"), why = "BBmisc example")
 }
 

@@ -57,7 +57,7 @@ Default is \code{TRUE}.}
 If this is passed, \code{x} must be a function.
 It is then checked that \code{formals} are the names of the
 (first) formal arguments in the signature of \code{x}.
-Meaning \code{checkArg(function(a, b), formals="a")} is ok.
+Meaning \code{checkArg(function(a, b), formals = "a")} is ok.
 Default is missing.}
 }
 \value{
@@ -69,16 +69,16 @@ Note that argument is evaluated when checked.
 }
 \examples{
 x = 1L
-checkArg(x, "integer", len=1, na.ok=FALSE, upper=3L)
+checkArg(x, "integer", len = 1, na.ok = FALSE, upper = 3L)
 x = as.integer(NA)
-checkArg(x, "integer", len=1, na.ok=TRUE)
+checkArg(x, "integer", len = 1, na.ok = TRUE)
 x = c("foo", "bar")
 checkArg(x, "character")
 x = "foo"
-checkArg(x, choices=c("foo", "bar"))
+checkArg(x, choices = c("foo", "bar"))
 x = c("foo", "bar")
-checkArg(x, subset=c("foo", "bar"))
+checkArg(x, subset = c("foo", "bar"))
 fun = function(foo, bar)
-checkArg(fun, formals=c("foo", "bar"))
+checkArg(fun, formals = c("foo", "bar"))
 }
 
