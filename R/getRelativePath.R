@@ -1,32 +1,20 @@
-# Construct a path relative to another
-#
-# Constructs a relative path from path \code{from} to path \code{to}.
-# If this is not possible (i.e. different drive letters on windows systems),
-# this function returns \code{NA}.
-#
-# @param to [\code{character(1)}]\cr
-#  Where the relative path should point to.
-# @param from [\code{character(1)}]\cr
-#  From which part to start.
-#  Default is \code{\link[base]{getwd}}.
-# @return [character(1)]: A relative path.
-# @export
-getRelativePath = function(to, from = getwd()) {
-  splitPath = function(path) {
-    path = normalizePath(path, mustWork = FALSE)
-    if (isWindows()) {
-      pattern = "^([[:alpha:]]:)|(\\\\[[:alnum:]]+)"
-      m = regexpr(pattern, path)
-      if (length(m) == 1L && m == -1L)
-        stop("Error extracting the drive letter")
-      drive = regmatches(path, m)
-      regmatches(path, m) = ""
-    } else {
-      drive = ""
-    }
-    list(drive = drive, path = Filter(nzchar, strsplit(path, "[/\\]+")[[1L]]))
-  }
-
+#' Construct a path relative to another
+#'
+#' Constructs a relative path from path \code{from} to path \code{to}.
+#' If this is not possible (i.e. different drive letters on windows systems),
+#' \code{NA} is returned.
+#'
+#' @param to [\code{character(1)}]\cr
+#'  Where the relative path should point to.
+#' @param from [\code{character(1)}]\cr
+#'  From which part to start.
+#'  Default is \code{\link[base]{getwd}}.
+#' @param ignore.case [\code{logical(1)}]\cr
+#'  Should path comparisons be made case insensitve?
+#'  Default is \code{TRUE} on Windows systems and \code{FALSE} on other systems.
+#' @return [character(1)]: A relative path.
+#' @export
+getRelativePath = function(to, from = getwd(), ignore.case = isWindows()) {
   numberCommonParts = function(p1, p2) {
     for (i in seq_len(min(length(p1), length(p2)))) {
       if (p1[i] != p2[i])
@@ -37,15 +25,18 @@ getRelativePath = function(to, from = getwd()) {
 
   from = splitPath(from)
   to = splitPath(to)
-  if (from$drive != to$drive)
+  assertFlag(ignore.case)
+  if (length(from$drive) != length(to$drive))
+    return(NA_character_)
+  if (length(from$drive) > 0L && length(to$drive) > 0L && from$drive != to$drive)
     return(NA_character_)
 
-  if (isWindows())
+  if (ignore.case)
     i = numberCommonParts(tolower(from$path), tolower(to$path))
   else
     i = numberCommonParts(from$path, to$path)
 
-  res = c(rep.int("..", length(from$path) - i), tail(to$path, -i))
+  res = c(rep.int("..", length(from$path) - i), tail(to$path, ifelse(i == 0L, Inf, -i)))
   if (length(res) == 0L)
     res = "."
   collapse(res, .Platform$file.sep)
