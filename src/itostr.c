@@ -9,8 +9,8 @@ SEXP itostr (SEXP x, SEXP base) {
     const R_len_t b = INTEGER(base)[0];
     SEXP res = PROTECT(allocVector(STRSXP, n));
 
-    const R_len_t buflen = log(exp2(64) / log(b)) + 1;
-    char buffer[buflen];
+    const R_len_t buflen = ceil(log(exp2(64) / log(b)));
+    char buffer[buflen + 1];
     buffer[buflen] = '\0';
 
     for (R_len_t i = 0; i < n; i++) {
