@@ -1,3 +1,7 @@
+BBmisc_1.8
+- new functions
+-- itostr
+
 BBmisc_1.7:
 - extractSubList allows for repeated indexing
 
