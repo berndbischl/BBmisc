@@ -34,6 +34,12 @@
 #' @param char [\code{character(1)}]\cr
 #'   A single character used to display progress in the bar.
 #'   Default is \sQuote{+}.
+#' @param style [\code{character(1)}]\cr
+#'   Style of the progress bar. Default is set via options (see details).
+#' @param width [\code{integer(1)}]\cr
+#'   Width of the progress bar. Default is set via options (see details).
+#' @param stream [\code{character(1)}]\cr
+#'   Stream to use. Default is set via options (see details).
 #' @return [\code{\link{ProgressBar}}]. A list with following functions:
 #'   \item{set [\code{function(value, msg = label)}]}{Set the bar to a value and possibly display a message instead of the label.}
 #'   \item{inc [\code{function(value, msg = label)}]}{Increase the bar and possibly display a message instead of the label.}
@@ -63,14 +69,17 @@
 #'   }, error = bar$error)
 #' }
 #' }
-makeProgressBar = function(min = 0, max = 100, label = "", char = "+") {
+makeProgressBar = function(min = 0, max = 100, label = "", char = "+",
+  style = getOption("BBmisc.ProgressBar.style", "text"),
+  width = getOption("BBmisc.ProgressBar.width", getOption("width")),
+  stream = getOption("BBmisc.ProgressBar.stream", "stderr")) {
   assertNumber(min)
   assertNumber(max)
   assertString(label)
+  assertChoice(style, c("text", "off"))
+  assertInt(width, lower = 30L)
+  assertChoice(stream, c("stderr", "stdout"))
 
-  style = getOption("BBmisc.ProgressBar.style", "text")
-  if (!is.character(style) || length(style) > 1L || !(style %in% c("text", "off")))
-    stop("BBmisc.ProgressBar.style option must be one of: 'text', 'off'!")
   if (style == "off")
     return(structure(list(
       set = function(value, msg = label) invisible(NULL),
@@ -79,20 +88,11 @@ makeProgressBar = function(min = 0, max = 100, label = "", char = "+") {
       error = function(e) stop(e)
     ), class = "ProgressBar"))
 
-  stream = getOption("BBmisc.ProgressBar.stream", "stderr")
-  if (!is.character(stream) || length(stream) > 1L || !(stream %in% c("stderr", "stdout")))
-    stop("BBmisc.ProgressBar.stream option must be one of: 'stderr', 'stdout'!")
   mycat = if (stream == "stdout")
     function(...) cat(...)
   else
     function(...) cat(..., file = stderr())
 
-  width = getOption("BBmisc.ProgressBar.width", getOption("width"))
-  width = convertInteger(width)
-  if (!is.integer(width) || length(width) != 1 || is.na(width) || width <= 0L || width < 30L)
-    stop("BBmisc.ProgressBar.width option must be a positive integer >= 30!")
-  if (style == "off")
-    return(function(...) invisible(NULL))
   ## label |................................| xxx% (hh:mm:ss)
   label.width = nchar(label)
   bar.width = width - label.width - 21L

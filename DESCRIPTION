@@ -21,4 +21,4 @@ Suggests:
     microbenchmark
 LazyData: yes
 ByteCompile: yes
-Version: 1.7
+Version: 1.8

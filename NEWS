@@ -1,4 +1,6 @@
 BBmisc_1.8
+- Options for the ProgressBar can now be directly passed to the constructor.
+
 - new functions
 -- itostr
 

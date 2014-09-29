@@ -4,7 +4,10 @@
 \alias{makeProgressBar}
 \title{Create a progress bar with estimated time.}
 \usage{
-makeProgressBar(min = 0, max = 100, label = "", char = "+")
+makeProgressBar(min = 0, max = 100, label = "", char = "+",
+  style = getOption("BBmisc.ProgressBar.style", "text"),
+  width = getOption("BBmisc.ProgressBar.width", getOption("width")),
+  stream = getOption("BBmisc.ProgressBar.stream", "stderr"))
 }
 \arguments{
 \item{min}{[\code{numeric(1)}]\cr
@@ -23,6 +26,15 @@ Default is \dQuote{}.}
 \item{char}{[\code{character(1)}]\cr
 A single character used to display progress in the bar.
 Default is \sQuote{+}.}
+
+\item{style}{[\code{character(1)}]\cr
+Style of the progress bar. Default is set via options (see details).}
+
+\item{width}{[\code{integer(1)}]\cr
+Width of the progress bar. Default is set via options (see details).}
+
+\item{stream}{[\code{character(1)}]\cr
+Stream to use. Default is set via options (see details).}
 }
 \value{
 [\code{\link{ProgressBar}}]. A list with following functions:
