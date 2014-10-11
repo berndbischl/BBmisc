@@ -11,7 +11,7 @@ Miscellaneous helper functions for and from B. Bischl and some other guys at TU 
 
 * Run this in R to install the current GitHub version:
   ```r
-  devtools::install_github("BBmisc", username="berndbischl")
+  devtools::install_github("berndbischl/BBmisc")
   ```
 
 * [Further installation instructions](https://github.com/tudo-r/PackagesInfo/wiki/Installation-Information)
