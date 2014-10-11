@@ -30,7 +30,11 @@ normalize = function(x, method = "standardize", range = c(0, 1), margin = 1L) {
 
 #' @export
 normalize.numeric = function(x, method = "standardize", range = c(0,1), margin = 1L) {
-  normalize2(x, method, range)
+  y = normalize2(x, method, range)
+  # scale call below returns matrices
+  if (is.matrix(y))
+    y = y[,1L]
+  return(y)
 }
 
 #' @export
