@@ -6,6 +6,7 @@ BBmisc_1.8
 -- itostr
 -- getRelativePath
 -- splitPath
+-- do.call2
 
 BBmisc_1.7:
 - extractSubList allows for repeated indexing
