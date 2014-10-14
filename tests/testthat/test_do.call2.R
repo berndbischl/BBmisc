@@ -1,7 +1,5 @@
 context("do.call2")
 
-if (interactive()) {
-
 test_that("do.call2", {
   f = function(...) list(...)
   expect_equal(do.call2("f", a=1, b=2), list(a=1, b=2))
@@ -15,5 +13,3 @@ test_that("do.call2", {
   do.call2("f", "Species", data=iris)
   do.call2("f", data=iris, .args=list(x = "Species"))
 })
-
-}
