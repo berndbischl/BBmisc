@@ -33,6 +33,29 @@ test_that("normalize", {
   for (i in 1:4)
     expect_equal(range(y[, i]), c(3, 4))
   y[, 5L] = iris$Specis
+  
+  # constant vectors
+  x = rep(1, 10)
+  y = normalize(x, method = "center", on.constant = "quiet")
+  expect_is(y, "numeric")
+  expect_equal(y, x - x)
+  y = normalize(x, method = "scale", on.constant = "quiet")
+  expect_is(y, "numeric")
+  expect_equal(y, x)
+  y = normalize(x, method = "standardize", on.constant = "quiet")
+  expect_is(y, "numeric")
+  expect_equal(y, x - x)
+  y = normalize(x, method = "range", on.constant = "quiet", range = c(-3, 2))
+  expect_is(y, "numeric")
+  expect_equal(y, rep(-0.5, 10))
+  expect_error(normalize(x, method = "center", on.constant = "stop"))
+  expect_error(normalize(x, method = "scale", on.constant = "stop"))
+  expect_error(normalize(x, method = "standardize", on.constant = "stop"))
+  expect_error(normalize(x, method = "range", on.constant = "stop"))
+  expect_warning(normalize(x, method = "center", on.constant = "warn"))
+  expect_warning(normalize(x, method = "scale", on.constant = "warn"))
+  expect_warning(normalize(x, method = "standardize", on.constant = "warn"))
+  expect_warning(normalize(x, method = "range", on.constant = "warn"))
 })
 
 
