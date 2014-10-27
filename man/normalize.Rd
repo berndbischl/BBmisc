@@ -3,7 +3,8 @@
 \alias{normalize}
 \title{Normalizes numeric data to a given scale.}
 \usage{
-normalize(x, method = "standardize", range = c(0, 1), margin = 1L)
+normalize(x, method = "standardize", range = c(0, 1), margin = 1L,
+  on.constant = "quiet")
 }
 \arguments{
 \item{x}{[\code{numeric} | \code{matrix} | \code{data.frame}]\cr
@@ -24,6 +25,17 @@ Default is \code{c(0,1)}.}
 1 = rows, 2 = cols.
 Same is in \code{\link{apply}}
 Default is 1.}
+
+\item{on.constant}{[\code{character(1)}]\cr
+How should constant vectors be treated? Only used, of \dQuote{method != center},
+since this methods does not fail for constant vectors. Possible actions are:\cr
+\dQuote{quiet}: Depending on the method, treat them quietly:\cr
+  \dQuote{scale}: No division by standard deviation is done, input values.
+     will be returned untouched.\cr
+  \dQuote{standardize}: Only the mean is subtracted, no division is done.\cr
+  \dQuote{range}: All values are mapped to the mean of the given range.\cr
+\dQuote{warn}: Same behaviour as \dQuote{quiet}, but print a warning message.\cr
+\dQuote{stop}: Stop with an error.\cr}
 }
 \value{
 [\code{numeric} | \code{matrix} | \code{data.frame}].
@@ -32,6 +44,8 @@ Default is 1.}
 Currently implemented for numeric vectors, numeric matrices and data.frame.
 For matrixes one can operate on rows or columns
 For data.frames, only the numeric columns are touched, all others are left unchanged.
+For constant vectors / rows / columns most methods fail, special behaviour for this
+case is implemented.
 }
 \seealso{
 \code{\link{scale}}

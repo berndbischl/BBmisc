@@ -22,14 +22,14 @@
 #'   Same is in \code{\link{apply}}
 #'   Default is 1.
 #' @param on.constant [\code{character(1)}]\cr
-#'   How should constant vectors be treated? Only used, of \quote{method != center},
+#'   How should constant vectors be treated? Only used, of \dQuote{method != center},
 #'   since this methods does not fail for constant vectors. Possible actions are:\cr
 #'   \dQuote{quiet}: Depending on the method, treat them quietly:\cr
 #'     \dQuote{scale}: No division by standard deviation is done, input values.
 #'        will be returned untouched.\cr
 #'     \dQuote{standardize}: Only the mean is subtracted, no division is done.\cr
 #'     \dQuote{range}: All values are mapped to the mean of the given range.\cr
-#'   \dQuote{warn}: Same behaviour as \quote{quiet}, but print a warning message.\cr
+#'   \dQuote{warn}: Same behaviour as \dQuote{quiet}, but print a warning message.\cr
 #'   \dQuote{stop}: Stop with an error.\cr
 #' @return [\code{numeric} | \code{matrix} | \code{data.frame}].
 #' @seealso \code{\link{scale}}
