@@ -16,5 +16,6 @@ test_that("getRelativePath", {
   expect_equal(getRelativePath(base, from = c), file.path("..", ".."))
   expect_equal(getRelativePath(c, from = base), file.path("bar", "foobar"))
   expect_equal(getRelativePath(c, from = a), file.path("..", "bar", "foobar"))
-  expect_equal(getRelativePath("/", from = a), do.call(file.path, as.list(rep("..", length(splitPath(a)$path)))))
+  if (!isWindows())
+    expect_equal(getRelativePath("/", from = a), do.call(file.path, as.list(rep("..", length(splitPath(a)$path)))))
 })
