@@ -2,7 +2,7 @@ Package: BBmisc
 Title: Miscellaneous helper functions for B. Bischl.
 Description: Miscellaneous helper functions for and from B. Bischl and
     some other guys at TU Dortmund, mainly for package development.
-Authors@R: c(person("Bernd", "Bischl", email = "lang@statistik.tu-dortmund.de",
+Authors@R: c(person("Bernd", "Bischl", email = "bernd_bischl@gmx.net",
     role = c("aut", "cre")), person("Michel", "Lang", email =
     "michellang@gmail.com", role = "aut"), person("Jakob", "Bossek", email =
     "jakob.bossek@tu-dortmund.de", role = "aut"), person("Daniel", "Horn",
