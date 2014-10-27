@@ -11,7 +11,7 @@ test_that("splitPath", {
 
   p = c("tmp", "foo", "", "bar")
   res = splitPath(collapse(p, "/"))
-  expect_equal(res$path, p[-3])
+  expect_equal(tail(res$path, 3), p[-3])
   res = splitPath(collapse(p, "\\"))
-  expect_equal(res$path, p[-3])
+  expect_equal(tail(res$path, 3), p[-3])
 })
