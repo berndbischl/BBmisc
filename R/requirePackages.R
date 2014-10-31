@@ -17,6 +17,9 @@
 #' @param suppress.warnings [\code{logical(1)}]\cr
 #'   Should warnings be suppressed in the calls to \code{\link{require}}?
 #'   Default is \code{FALSE}.
+#' @param suppress.startup [\code{logical(1)}]\cr
+#'   Should package startup messages be suppressed?
+#'   Default is \code{TRUE}.
 #' @param ... [any]\cr
 #'   Passed on to \code{\link{require}}.
 #' @return [\code{logical}]. Named logical vector describing which packages could be loaded.
@@ -24,16 +27,24 @@
 #' @export
 #' @examples
 #' requirePackages(c("BBmisc", "base"), why = "BBmisc example")
-requirePackages = function(packs, why = NULL, stop = TRUE, suppress.warnings = FALSE, ...) {
+requirePackages = function(packs, why = NULL, stop = TRUE, suppress.warnings = FALSE, suppress.startup = TRUE, ...) {
+  getSuppressor = function(suppress.warnings, suppress.startup) {
+    if (suppress.warnings) {
+      if (suppress.startup)
+        return(function(expr) suppressPackageStartupMessages(suppressWarnings(expr)))
+      return(suppressWarnings)
+    }
+    if (suppress.startup)
+      return(suppressPackageStartupMessages)
+    return(identity)
+  }
   # strange do call construction beacause make check complained about ... context
   args = list(...)
   args$character.only = TRUE
+  suppressor = getSuppressor(suppress.warnings, suppress.startup)
   packs.ok = sapply(packs, function(x) {
     args$package = x
-    if (suppress.warnings)
-      suppressWarnings(do.call(require, args))
-    else
-      do.call(require, args)
+    suppressor(do.call(require, args))
   })
   if(stop && !all(packs.ok)) {
     ps = collapse(packs[!packs.ok])

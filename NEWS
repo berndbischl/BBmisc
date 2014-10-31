@@ -1,3 +1,6 @@
+BBmisc_1.9
+- New argument suppress.startup for requirePackages
+
 BBmisc_1.8
 - Options for the ProgressBar can now be directly passed to the constructor.
 - Fixed smaller bugs in normalize

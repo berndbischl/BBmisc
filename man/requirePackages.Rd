@@ -4,7 +4,7 @@
 \title{Require some packages.}
 \usage{
 requirePackages(packs, why = NULL, stop = TRUE, suppress.warnings = FALSE,
-  ...)
+  suppress.startup = TRUE, ...)
 }
 \arguments{
 \item{packs}{[\code{character}]\cr
@@ -21,6 +21,10 @@ Default is \code{TRUE}.}
 \item{suppress.warnings}{[\code{logical(1)}]\cr
 Should warnings be suppressed in the calls to \code{\link{require}}?
 Default is \code{FALSE}.}
+
+\item{suppress.startup}{[\code{logical(1)}]\cr
+Should package startup messages be suppressed?
+Default is \code{TRUE}.}
 
 \item{...}{[any]\cr
 Passed on to \code{\link{require}}.}
