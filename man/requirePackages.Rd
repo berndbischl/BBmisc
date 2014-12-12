@@ -4,7 +4,7 @@
 \title{Require some packages.}
 \usage{
 requirePackages(packs, why = NULL, stop = TRUE, suppress.warnings = FALSE,
-  suppress.startup = TRUE, ...)
+  suppress.startup = TRUE, namespace.only = TRUE, ...)
 }
 \arguments{
 \item{packs}{[\code{character}]\cr
@@ -19,21 +19,31 @@ Should an exception be thrown for missing packages?
 Default is \code{TRUE}.}
 
 \item{suppress.warnings}{[\code{logical(1)}]\cr
-Should warnings be suppressed in the calls to \code{\link{require}}?
+Should warnings be suppressed while requiring?
 Default is \code{FALSE}.}
 
 \item{suppress.startup}{[\code{logical(1)}]\cr
 Should package startup messages be suppressed?
 Default is \code{TRUE}.}
 
+\item{namespace.only}{[\code{logical(1)}]\cr
+Use \code{\link{requireNamespace}} instead of \code{\link{require}} to require the package?
+The former does not attach the package to the global namespace.
+This is probably what you want, if you call this function in a package to internally
+load a suggested package, and you normally do not want to pollute the global namespace
+in such a case.
+Default is \code{TRUE}.}
+
 \item{...}{[any]\cr
-Passed on to \code{\link{require}}.}
+Passed on to \code{\link{requireNamespace}} or \code{\link{require}}.}
 }
 \value{
 [\code{logical}]. Named logical vector describing which packages could be loaded.
   Same length as \code{packs}.
 }
 \description{
+Packages are loaded either via \code{\link{requireNamespace}} or \code{\link{require}}.
+
 If some packages could not be loaded and \code{stop} is \code{TRUE}
 the following exception is thrown:
 \dQuote{For <why> please install the following packages: <missing packages>}.
