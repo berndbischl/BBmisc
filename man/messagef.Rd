@@ -3,11 +3,14 @@
 \alias{messagef}
 \title{Wrapper for message and sprintf.}
 \usage{
-messagef(...)
+messagef(..., .newline = TRUE)
 }
 \arguments{
 \item{...}{[any]\cr
 See \code{\link{sprintf}}.}
+
+\item{.newline}{[logical(1)]\cr
+Add a newline to the message. Default is \code{TRUE}.}
 }
 \value{
 Nothing.
