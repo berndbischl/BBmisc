@@ -52,9 +52,14 @@ requirePackages = function(packs, why = NULL, stop = TRUE, suppress.warnings = F
   }
   # strange do call construction beacause make check complained about ... context
   args = list(...)
-  args$character.only = TRUE
   suppressor = getSuppressor(suppress.warnings, suppress.startup)
-  reqfun = if (namespace.only) requireNamespace else require
+  # dispatch to selected R fun, requirePackages always takes strings
+  if (namespace.only) {
+    reqfun = requireNamespace
+  } else {
+    reqfun = require
+    args$character.only = TRUE
+  }
   packs.ok = sapply(packs, function(x) {
     args$package = x
     suppressor(do.call(reqfun, args))
