@@ -2,6 +2,7 @@ BBmisc_1.9
 - New argument .newline for messagef
 - New argument suppress.startup for requirePackages
 - requirePackages can now dispatch to requireNamespace (and does that by default)
+- New function mapValues
 
 BBmisc_1.8
 - Options for the ProgressBar can now be directly passed to the constructor.
