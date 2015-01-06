@@ -11,25 +11,17 @@
 #'
 #' @param packs [\code{character}]\cr
 #'   Names of packages.
+#'   If a package name is prefixed with \dQuote{!}, it will attached using \code{\link[base]{require}}.
+#'   Otherwise only the namespace will be loaded using \code{\link[base]{requireNamespace}}.
 #' @param why [\code{character(1)}]\cr
 #'   Short string explaining why packages are required.
-#'   Default is \code{NULL}.
+#'   Default is an empty string.
 #' @param stop [\code{logical(1)}]\cr
 #'   Should an exception be thrown for missing packages?
 #'   Default is \code{TRUE}.
 #' @param suppress.warnings [\code{logical(1)}]\cr
-#'   Should warnings be suppressed while requiring?
+#'   Should warnings be supressed while requiring?
 #'   Default is \code{FALSE}.
-#' @param suppress.startup [\code{logical(1)}]\cr
-#'   Should package startup messages be suppressed?
-#'   Default is \code{TRUE}.
-#' @param namespace.only [\code{logical(1)}]\cr
-#'   Use \code{\link{requireNamespace}} instead of \code{\link{require}} to require the package?
-#'   The former does not attach the package to the global namespace.
-#'   This is probably what you want, if you call this function in a package to internally
-#'   load a suggested package, and you normally do not want to pollute the global namespace
-#'   in such a case.
-#'   Default is \code{TRUE}.
 #' @param ... [any]\cr
 #'   Passed on to \code{\link{requireNamespace}} or \code{\link{require}}.
 #' @return [\code{logical}]. Named logical vector describing which packages could be loaded.
@@ -37,39 +29,31 @@
 #' @export
 #' @examples
 #' requirePackages(c("BBmisc", "base"), why = "BBmisc example")
-requirePackages = function(packs, why = NULL, stop = TRUE, suppress.warnings = FALSE,
-  suppress.startup = TRUE, namespace.only = TRUE, ...) {
+requirePackages = function(packs, why = "", stop = TRUE, suppress.warnings = FALSE, ...) {
+  assertCharacter(packs, any.missing = FALSE)
+  assertString(why)
+  assertFlag(stop)
+  assertFlag(suppress.warnings)
 
-  getSuppressor = function(suppress.warnings, suppress.startup) {
-    if (suppress.warnings) {
-      if (suppress.startup)
-        return(function(expr) suppressPackageStartupMessages(suppressWarnings(expr)))
-      return(suppressWarnings)
+  ns.only = (substr(packs, 1L, 1L) == "!")
+  packs = substr(packs, 1L + ns.only, nchar(packs))
+  suppressor = if (suppress.warnings) suppressWarnings else identity
+
+  packs.ok = unlist(Map(function(pack, ns.only) {
+    if (ns.only) {
+      suppressor(require(pack, character.only = TRUE, ...))
+    } else {
+      suppressor(requireNamespace(pack, quietly = TRUE, ...))
     }
-    if (suppress.startup)
-      return(suppressPackageStartupMessages)
-    return(identity)
-  }
-  # strange do call construction beacause make check complained about ... context
-  args = list(...)
-  suppressor = getSuppressor(suppress.warnings, suppress.startup)
-  # dispatch to selected R fun, requirePackages always takes strings
-  if (namespace.only) {
-    reqfun = requireNamespace
-  } else {
-    reqfun = require
-    args$character.only = TRUE
-  }
-  packs.ok = sapply(packs, function(x) {
-    args$package = x
-    suppressor(do.call(reqfun, args))
-  })
+  }, pack = packs, ns.only = ns.only))
+
   if(stop && !all(packs.ok)) {
     ps = collapse(packs[!packs.ok])
-    if (is.null(why))
-      stopf("Please install the following packages: %s", ps)
-    else
+    if (nzchar(why))
       stopf("For %s please install the following packages: %s", why, ps)
+    else
+      stopf("Please install the following packages: %s", ps)
   }
+
   return(packs.ok)
 }
