@@ -11,8 +11,9 @@
 #'
 #' @param packs [\code{character}]\cr
 #'   Names of packages.
-#'   If a package name is prefixed with \dQuote{!}, it will attached using \code{\link[base]{require}}.
-#'   Otherwise only the namespace will be loaded using \code{\link[base]{requireNamespace}}.
+#'   If a package name is prefixed with \dQuote{!}, it will be attached using \code{\link[base]{require}}.
+#'   If a package name is prefixed with \dQuote{_}, its namespace will be loaded using \code{\link[base]{requireNamespace}}.
+#'   If there is no prefix, argument \code{default.method} determines how to deal with package loading.
 #' @param why [\code{character(1)}]\cr
 #'   Short string explaining why packages are required.
 #'   Default is an empty string.
@@ -22,6 +23,10 @@
 #' @param suppress.warnings [\code{logical(1)}]\cr
 #'   Should warnings be supressed while requiring?
 #'   Default is \code{FALSE}.
+#' @param default.method [\code{character(1)}]\cr
+#'   If the packages are not explicitly prefixed with \dQuote{!} or \dQuote{_},
+#'   this arguments determines the default. Possible values are \dQuote{attach} and
+#'   \dQuote{load} (default).
 #' @param ... [any]\cr
 #'   Passed on to \code{\link{requireNamespace}} or \code{\link{require}}.
 #' @return [\code{logical}]. Named logical vector describing which packages could be loaded.
@@ -29,21 +34,24 @@
 #' @export
 #' @examples
 #' requirePackages(c("BBmisc", "base"), why = "BBmisc example")
-requirePackages = function(packs, why = "", stop = TRUE, suppress.warnings = FALSE, ...) {
+requirePackages = function(packs, why = "", stop = TRUE, suppress.warnings = FALSE, default.method = "load", ...) {
   assertCharacter(packs, any.missing = FALSE)
   assertString(why)
   assertFlag(stop)
   assertFlag(suppress.warnings)
+  assertChoice(default.method, choices = c("load", "attach"))
 
-  ns.only = (substr(packs, 1L, 1L) == "!")
-  packs = substr(packs, 1L + ns.only, nchar(packs))
+  force.attach = (substr(packs, 1L, 1L) == "!")
+  force.load   = (substr(packs, 1L, 1L) == "_")
+  ns.only = if (default.method == "load") !force.attach else force.load
+  packs = substr(packs, 1L + (force.attach | force.load), nchar(packs))
   suppressor = if (suppress.warnings) suppressWarnings else identity
 
   packs.ok = unlist(Map(function(pack, ns.only) {
     if (ns.only) {
-      suppressor(require(pack, character.only = TRUE, ...))
-    } else {
       suppressor(requireNamespace(pack, quietly = TRUE, ...))
+    } else {
+      suppressor(require(pack, character.only = TRUE, ...))
     }
   }, pack = packs, ns.only = ns.only))
 

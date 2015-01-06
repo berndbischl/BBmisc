@@ -4,36 +4,26 @@
 \alias{requirePackages}
 \title{Require some packages.}
 \usage{
-requirePackages(packs, why = NULL, stop = TRUE, suppress.warnings = FALSE,
-  suppress.startup = TRUE, namespace.only = TRUE, ...)
+requirePackages(packs, why = "", stop = TRUE, suppress.warnings = FALSE,
+  ...)
 }
 \arguments{
 \item{packs}{[\code{character}]\cr
-Names of packages.}
+Names of packages.
+If a package name is prefixed with \dQuote{!}, it will attached using \code{\link[base]{require}}.
+Otherwise only the namespace will be loaded using \code{\link[base]{requireNamespace}}.}
 
 \item{why}{[\code{character(1)}]\cr
 Short string explaining why packages are required.
-Default is \code{NULL}.}
+Default is an empty string.}
 
 \item{stop}{[\code{logical(1)}]\cr
 Should an exception be thrown for missing packages?
 Default is \code{TRUE}.}
 
 \item{suppress.warnings}{[\code{logical(1)}]\cr
-Should warnings be suppressed while requiring?
+Should warnings be supressed while requiring?
 Default is \code{FALSE}.}
-
-\item{suppress.startup}{[\code{logical(1)}]\cr
-Should package startup messages be suppressed?
-Default is \code{TRUE}.}
-
-\item{namespace.only}{[\code{logical(1)}]\cr
-Use \code{\link{requireNamespace}} instead of \code{\link{require}} to require the package?
-The former does not attach the package to the global namespace.
-This is probably what you want, if you call this function in a package to internally
-load a suggested package, and you normally do not want to pollute the global namespace
-in such a case.
-Default is \code{TRUE}.}
 
 \item{...}{[any]\cr
 Passed on to \code{\link{requireNamespace}} or \code{\link{require}}.}
