@@ -18,7 +18,8 @@ Imports:
     checkmate
 Suggests:
     testthat,
-    microbenchmark
+    microbenchmark,
+    codetools
 LazyData: yes
 ByteCompile: yes
 Version: 1.9
