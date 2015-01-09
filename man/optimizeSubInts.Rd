@@ -24,7 +24,8 @@ optimizeSubInts(f, interval, ..., lower = min(interval),
 \item{tol}{See \code{\link{optimize}}.}
 
 \item{nsub}{[\code{integer(1)}]\cr
-Number of subintervals.}
+Number of subintervals. A value of 1 implies normal \code{\link{optimize}} behavior.
+Default is 50L.}
 }
 \value{
 See \code{\link{optimize}}.

@@ -5,13 +5,14 @@
 \title{Require some packages.}
 \usage{
 requirePackages(packs, why = "", stop = TRUE, suppress.warnings = FALSE,
-  ...)
+  default.method = "load", ...)
 }
 \arguments{
 \item{packs}{[\code{character}]\cr
 Names of packages.
-If a package name is prefixed with \dQuote{!}, it will attached using \code{\link[base]{require}}.
-Otherwise only the namespace will be loaded using \code{\link[base]{requireNamespace}}.}
+If a package name is prefixed with \dQuote{!}, it will be attached using \code{\link[base]{require}}.
+If a package name is prefixed with \dQuote{_}, its namespace will be loaded using \code{\link[base]{requireNamespace}}.
+If there is no prefix, argument \code{default.method} determines how to deal with package loading.}
 
 \item{why}{[\code{character(1)}]\cr
 Short string explaining why packages are required.
@@ -24,6 +25,11 @@ Default is \code{TRUE}.}
 \item{suppress.warnings}{[\code{logical(1)}]\cr
 Should warnings be supressed while requiring?
 Default is \code{FALSE}.}
+
+\item{default.method}{[\code{character(1)}]\cr
+If the packages are not explicitly prefixed with \dQuote{!} or \dQuote{_},
+this arguments determines the default. Possible values are \dQuote{attach} and
+\dQuote{load} (default).}
 
 \item{...}{[any]\cr
 Passed on to \code{\link{requireNamespace}} or \code{\link{require}}.}
