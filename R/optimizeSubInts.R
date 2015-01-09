@@ -15,22 +15,27 @@
 #' @param maximum See \code{\link{optimize}}.
 #' @param tol See \code{\link{optimize}}.
 #' @param nsub [\code{integer(1)}]\cr
-#'   Number of subintervals.
+#'   Number of subintervals. A value of 1 implies normal \code{\link{optimize}} behavior.
+#'   Default is 50L.
 #' @return See \code{\link{optimize}}.
 #' @export
 optimizeSubInts = function(f, interval, ..., lower = min(interval), upper = max(interval),
   maximum = FALSE, tol = .Machine$double.eps^0.25, nsub = 50L) {
-  # FIXME: does not work for nsub == 1!
   nsub = asCount(nsub, positive = TRUE)
 
-  mult = ifelse(maximum, -1, 1)
-  grid = seq(lower, upper, length.out = nsub - 1L)
   interval = c(lower, upper)
+  # run on normal interval
   best = optimize(f = f, interval = interval, maximum = maximum, tol = tol)
-  for (j in seq_len(length(grid)-1L)) {
-    res = optimize(f = f, interval = c(grid[j], grid[j+1L]), maximum = maximum, tol = tol)
-    if (mult * res$objective < mult * best$objective)
-      best = res
+
+  # run on smaller partitions
+  if (nsub > 1L) {
+    mult = ifelse(maximum, -1, 1)
+    grid = seq(lower, upper, length.out = nsub - 1L)
+    for (j in seq_len(length(grid)-1L)) {
+      res = optimize(f = f, interval = c(grid[j], grid[j+1L]), maximum = maximum, tol = tol)
+      if (mult * res$objective < mult * best$objective)
+        best = res
+    }
   }
   return(best)
 }
