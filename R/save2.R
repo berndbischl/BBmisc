@@ -29,6 +29,6 @@
 save2 = function(file, ..., ascii = FALSE, version = NULL, compress = !ascii,
   compression_level, eval.promises = TRUE, precheck = TRUE) {
   args = tryCatch(as.environment(argsAsNamedList(...)), error = function(e) stopf("Unable to convert to environment (%s)", as.character(e)))
-  save(list = ls(args), envir = args, file = file, ascii = ascii, version = version, compress = compress,
+  save(list = ls(args, all.names = TRUE), envir = args, file = file, ascii = ascii, version = version, compress = compress,
        compression_level = compression_level, eval.promises = eval.promises, precheck = precheck)
 }

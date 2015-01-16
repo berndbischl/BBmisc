@@ -28,7 +28,7 @@ load2 = function(file, parts, simplify = TRUE, envir, impute) {
   if (!missing(impute) && !file.exists(file))
     return(impute)
   load(file, envir = ee)
-  ns = ls(ee)
+  ns = ls(ee, all.names = TRUE)
   if (!missing(parts)) {
     assertCharacter(parts, any.missing = FALSE)
     d = setdiff(parts, ns)
