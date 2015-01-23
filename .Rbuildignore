@@ -8,6 +8,7 @@ src/*.so
 .travis.yml
 ^Makefile
 README.md
+appveyor
 test_all.R
 test_src.R
 todo.txt
