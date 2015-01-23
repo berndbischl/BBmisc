@@ -1,6 +1,10 @@
 BBmisc
 ======
 
+[![Build Status](https://travis-ci.org/berndbischl/BBmisc.svg)](https://travis-ci.org/berndbischl/BBmisc)
+[![Build status](https://ci.appveyor.com/api/projects/status/y4ayps61hjd3375o/branch/master?svg=true)](https://ci.appveyor.com/project/berndbischl/BBmisc/branch/master)
+[![Coverage Status](https://img.shields.io/coveralls/berndbischl/BBmisc.svg)](https://coveralls.io/r/berndbischl/BBmisc?branch=master)
+
 Miscellaneous helper functions for and from B. Bischl and some other guys at TU Dortmund, mainly for package development.
 
 * Offical CRAN release site: 
@@ -15,5 +19,3 @@ Miscellaneous helper functions for and from B. Bischl and some other guys at TU 
   ```
 
 * [Further installation instructions](https://github.com/tudo-r/PackagesInfo/wiki/Installation-Information)
-
-* Travis CI: [![Build Status](https://travis-ci.org/berndbischl/BBmisc.png)](https://travis-ci.org/berndbischl/BBmisc)
