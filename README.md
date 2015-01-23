@@ -2,12 +2,12 @@ BBmisc
 ======
 
 [![Build Status](https://travis-ci.org/berndbischl/BBmisc.svg)](https://travis-ci.org/berndbischl/BBmisc)
-[![Build status](https://ci.appveyor.com/api/projects/status/y4ayps61hjd3375o/branch/master?svg=true)](https://ci.appveyor.com/project/berndbischl/BBmisc/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/lsax7ygg87em1wu3/branch/master?svg=true)](https://ci.appveyor.com/project/berndbischl/bbmisc/branch/master)
 [![Coverage Status](https://img.shields.io/coveralls/berndbischl/BBmisc.svg)](https://coveralls.io/r/berndbischl/BBmisc?branch=master)
 
 Miscellaneous helper functions for and from B. Bischl and some other guys at TU Dortmund, mainly for package development.
 
-* Offical CRAN release site: 
+* Offical CRAN release site:
   http://cran.r-project.org/web/packages/BBmisc/index.html
 
 * R Documentation in HTML:
