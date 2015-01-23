@@ -5,7 +5,7 @@
 \title{Require some packages.}
 \usage{
 requirePackages(packs, why = "", stop = TRUE, suppress.warnings = FALSE,
-  default.method = "load", ...)
+  default.method = "attach")
 }
 \arguments{
 \item{packs}{[\code{character}]\cr
@@ -29,10 +29,9 @@ Default is \code{FALSE}.}
 \item{default.method}{[\code{character(1)}]\cr
 If the packages are not explicitly prefixed with \dQuote{!} or \dQuote{_},
 this arguments determines the default. Possible values are \dQuote{attach} and
-\dQuote{load} (default).}
-
-\item{...}{[any]\cr
-Passed on to \code{\link{requireNamespace}} or \code{\link{require}}.}
+\dQuote{load}.
+Note that there is no default is \code{attach}, but this will change in a future version.
+Please make sure to always explicitly set this.}
 }
 \value{
 [\code{logical}]. Named logical vector describing which packages could be loaded.

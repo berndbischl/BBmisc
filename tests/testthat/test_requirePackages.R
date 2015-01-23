@@ -10,9 +10,9 @@ test_that("requirePackages", {
   expect_error(requirePackages(c("base", "xxx"), why="test", suppress.warnings=TRUE), "For test please install the following packages: xxx")
 
   # test loading vs. attaching using the codetools package
-  expect_equal(requirePackages("codetools"), c(codetools=TRUE))
+  expect_equal(requirePackages("codetools", default.method = "load"), c(codetools=TRUE))
   expect_true("codetools" %in% loadedNamespaces())
   expect_false("package:codetools" %in% search())
-  expect_equal(requirePackages("!codetools"), c(codetools=TRUE))
+  expect_equal(requirePackages("!codetools", default.method = "load"), c(codetools=TRUE))
   expect_true("package:codetools" %in% search())
 })

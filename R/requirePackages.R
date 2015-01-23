@@ -26,32 +26,38 @@
 #' @param default.method [\code{character(1)}]\cr
 #'   If the packages are not explicitly prefixed with \dQuote{!} or \dQuote{_},
 #'   this arguments determines the default. Possible values are \dQuote{attach} and
-#'   \dQuote{load} (default).
-#' @param ... [any]\cr
-#'   Passed on to \code{\link{requireNamespace}} or \code{\link{require}}.
+#'   \dQuote{load}.
+#'   Note that there is no default is \code{attach}, but this will change in a future version.
+#'   Please make sure to always explicitly set this.
 #' @return [\code{logical}]. Named logical vector describing which packages could be loaded.
 #'   Same length as \code{packs}.
 #' @export
 #' @examples
 #' requirePackages(c("BBmisc", "base"), why = "BBmisc example")
-requirePackages = function(packs, why = "", stop = TRUE, suppress.warnings = FALSE, default.method = "load", ...) {
+requirePackages = function(packs, why = "", stop = TRUE, suppress.warnings = FALSE, default.method = "attach") {
   assertCharacter(packs, any.missing = FALSE)
   assertString(why)
   assertFlag(stop)
   assertFlag(suppress.warnings)
   assertChoice(default.method, choices = c("load", "attach"))
 
-  force.attach = (substr(packs, 1L, 1L) == "!")
-  force.load   = (substr(packs, 1L, 1L) == "_")
-  ns.only = if (default.method == "load") !force.attach else force.load
-  packs = substr(packs, 1L + (force.attach | force.load), nchar(packs))
+  char = substr(packs, 1L, 1L)
+  if (default.method == "load") {
+    forced = (char == "!")
+    ns.only = !forced
+  } else {
+    forced = (char == "_")
+    ns.only = forced
+  }
+  if (any(forced))
+    packs = substr(packs, 1L + forced, nchar(packs))
   suppressor = if (suppress.warnings) suppressWarnings else identity
 
   packs.ok = unlist(Map(function(pack, ns.only) {
     if (ns.only) {
-      suppressor(requireNamespace(pack, quietly = TRUE, ...))
+      suppressor(requireNamespace(pack, quietly = TRUE))
     } else {
-      suppressor(require(pack, character.only = TRUE, ...))
+      suppressor(require(pack, character.only = TRUE))
     }
   }, pack = packs, ns.only = ns.only))
 
