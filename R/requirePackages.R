@@ -42,15 +42,10 @@ requirePackages = function(packs, why = "", stop = TRUE, suppress.warnings = FAL
   assertChoice(default.method, choices = c("load", "attach"))
 
   char = substr(packs, 1L, 1L)
-  if (default.method == "load") {
-    forced = (char == "!")
-    ns.only = !forced
-  } else {
-    forced = (char == "_")
-    ns.only = forced
-  }
-  if (any(forced))
-    packs = substr(packs, 1L + forced, nchar(packs))
+  force.attach = (char == "!")
+  force.load = (char == "_")
+  ns.only = if (default.method == "load") !force.attach else force.load
+  packs = substr(packs, 1L + (force.load | force.attach), nchar(packs))
   suppressor = if (suppress.warnings) suppressWarnings else identity
 
   packs.ok = unlist(Map(function(pack, ns.only) {
