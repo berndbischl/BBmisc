@@ -1,6 +1,7 @@
 BBmisc_1.9: 2015-01-27
 - New argument .newline for messagef
 - requirePackages can now dispatch to requireNamespace and has argument default.method.
+- normalize now also handles NAs
 
 - new functions
 -- mapValues

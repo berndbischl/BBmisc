@@ -1,10 +1,13 @@
-#' Normalizes numeric data to a given scale.
+#' @title Normalizes numeric data to a given scale.
 #'
+#' @description
 #' Currently implemented for numeric vectors, numeric matrices and data.frame.
 #' For matrixes one can operate on rows or columns
 #' For data.frames, only the numeric columns are touched, all others are left unchanged.
 #' For constant vectors / rows / columns most methods fail, special behaviour for this
 #' case is implemented.
+#'
+#' The method also handles NAs in in \code{x} and leaves them untouched.
 #'
 #' @param x [\code{numeric} | \code{matrix} | \code{data.frame}]\cr
 #'   Input vector.
