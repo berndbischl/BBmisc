@@ -6,6 +6,7 @@ BBmisc_1.9: 2015-01-27
 - new functions
 -- mapValues
 
+
 BBmisc_1.8: 2014-10-30
 - Options for the ProgressBar can now be directly passed to the constructor.
 - Fixed smaller bugs in normalize
