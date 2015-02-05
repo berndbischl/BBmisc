@@ -4,18 +4,18 @@
 \alias{capitalizeStrings}
 \title{Capitalize strings in a vector}
 \usage{
-capitalizeStrings(string, allWords = FALSE, lowerBack = FALSE)
+capitalizeStrings(x, all.words = FALSE, lower.back = FALSE)
 }
 \arguments{
-\item{string}{[\code{character(n)}]\cr
+\item{x}{[\code{character(n)}]\cr
 Vector of character elements to capitalize.}
 
-\item{allWords}{[\code{logical(1)}]\cr
+\item{all.words}{[\code{logical(1)}]\cr
 If \code{TRUE} all words of each vector element are capitalized.
 \code{FALSE} capitalizes the first word of each vector element.}
 
-\item{lowerBack}{[\code{logical(1)}]\cr
-\code{TRUE} lowers the back of each word or vector element (depends on \code{allWords}).}
+\item{lower.back}{[\code{logical(1)}]\cr
+\code{TRUE} lowers the back of each word or vector element (depends on \code{all.words}).}
 }
 \value{
 Capitalized vector: [\code{character(n)}].
@@ -26,9 +26,7 @@ Lower back of vector element or word, respectively.
 }
 \examples{
 capitalizeStrings(c("the taIl", "wags The dOg", "That looks fuNny!"))
-capitalizeStrings(c("the taIl", "wags The dOg", "That looks fuNny!"), allWords=TRUE, lowerBack=TRUE)
-}
-\author{
-Dirk Surmann
+capitalizeStrings(c("the taIl", "wags The dOg", "That looks fuNny!")
+, all.words = TRUE, lower.back = TRUE)
 }
 
