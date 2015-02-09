@@ -20,6 +20,8 @@ Normalizing method. Available are:\cr
 
 \item{range}{[\code{numeric(2)}]\cr
 Range for method \dQuote{range}.
+The first value represents the replacement for the min value, the second is the substitute for the max value.
+So it is possible to reverse the order by giving \code{range = c(1,0)}.
 Default is \code{c(0,1)}.}
 
 \item{margin}{[\code{integer(1)}]\cr
