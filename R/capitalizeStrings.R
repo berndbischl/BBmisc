@@ -18,9 +18,9 @@
 #' capitalizeStrings(c("the taIl", "wags The dOg", "That looks fuNny!")
 #' , all.words = TRUE, lower.back = TRUE)
 capitalizeStrings = function(x, all.words = FALSE, lower.back = FALSE) {
-  checkArg(x, "character")
-  checkArg(all.words, "logical", len = 1L, na.ok = FALSE)
-  checkArg(lower.back, "logical", len = 1L, na.ok = FALSE)
+  assertCharacter(x)
+  assertLogical(all.words, any.missing = FALSE, len = 1L)
+  assertLogical(lower.back, any.missing = FALSE, len = 1L)
   
   if (all.words) {
     pattern = "([[:alnum:]])([[:alnum:]]*)"
