@@ -1,10 +1,13 @@
-#' Normalizes numeric data to a given scale.
+#' @title Normalizes numeric data to a given scale.
 #'
+#' @description
 #' Currently implemented for numeric vectors, numeric matrices and data.frame.
 #' For matrixes one can operate on rows or columns
 #' For data.frames, only the numeric columns are touched, all others are left unchanged.
 #' For constant vectors / rows / columns most methods fail, special behaviour for this
 #' case is implemented.
+#'
+#' The method also handles NAs in in \code{x} and leaves them untouched.
 #'
 #' @param x [\code{numeric} | \code{matrix} | \code{data.frame}]\cr
 #'   Input vector.
@@ -71,19 +74,19 @@ normalize.data.frame = function(x, method = "standardize", range = c(0, 1), marg
 
 normalize2 = function(x, method, range, on.constant) {
   # is x a constant vector?
-  if (all(all(x == x[1L]))) {
+  if (length(unique(x[!is.na(x)])) == 1L) {
     switch(on.constant,
       warn = warning("Constant vector in normalization."),
       stop = stop("Constant vector in normalization."))
     switch(method,
       center = scale(x, center = TRUE, scale = FALSE),
-      range = rep(mean(range), length(x)),
+      range = ifelse(is.na(x), NA, mean(range)),
       standardize = scale(x, center = TRUE, scale = FALSE),
       scale = x
     )
   } else {
     switch(method,
-      range = (x - min(x)) / diff(range(x)) * diff(range) + range[1L],
+      range = (x - min(x, na.rm = TRUE)) / diff(range(x, na.rm = TRUE)) * diff(range) + range[1L],
       standardize = scale(x, center = TRUE, scale = TRUE),
       center = scale(x, center = TRUE, scale = FALSE),
       scale = scale(x, center = FALSE, scale = sd(x, na.rm = TRUE))

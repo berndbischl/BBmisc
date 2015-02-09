@@ -14,3 +14,5 @@ test_src.R
 todo.txt
 todo-files
 ^.editorconfig$
+^.*\.Rproj$
+^\.Rproj\.user$

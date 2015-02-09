@@ -49,6 +49,8 @@ For matrixes one can operate on rows or columns
 For data.frames, only the numeric columns are touched, all others are left unchanged.
 For constant vectors / rows / columns most methods fail, special behaviour for this
 case is implemented.
+
+The method also handles NAs in in \code{x} and leaves them untouched.
 }
 \seealso{
 \code{\link{scale}}

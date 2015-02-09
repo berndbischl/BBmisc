@@ -1,12 +1,13 @@
-BBmisc_1.9
+BBmisc_1.9: 2015-02-03
 - New argument .newline for messagef
-- New argument suppress.startup for requirePackages
-- requirePackages can now dispatch to requireNamespace (and does that by default)
-  The argument suppress.startup has been removed and the default for argument
-  "why" has changed.
-- New function mapValues
+- requirePackages can now dispatch to requireNamespace and has argument default.method.
+- normalize now also handles NAs
 
-BBmisc_1.8
+- new functions
+-- mapValues
+
+
+BBmisc_1.8: 2014-10-30
 - Options for the ProgressBar can now be directly passed to the constructor.
 - Fixed smaller bugs in normalize
 
@@ -16,7 +17,7 @@ BBmisc_1.8
 -- splitPath
 -- do.call2
 
-BBmisc_1.7:
+BBmisc_1.7: 21-Jun-2014
 - extractSubList allows for repeated indexing
 
 - new functions:
@@ -34,7 +35,7 @@ BBmisc_1.7:
 -- setValue
 -- optimizeSubInts
 
-BBmisc_1.6:
+BBmisc_1.6: 23-Apr-2014
 - the ProgressBar now outputs to stderr by default. But the stream can be configured.
 - improve handling of result names (row.names and col.names) in some functions a bit
 - convertRowsToList now converts matrices into list of vector by default (see new arg "as.vector")
@@ -55,7 +56,7 @@ BBmisc_1.6:
 -- isScalar<Type> family of helper functions
 -- sortByCol
 
-BBmisc_1.5:
+BBmisc_1.5: 25-Jan-2014
 - removed stringsAsFactors, use convertDataFrameCols
 - removed convertDfCols, use convertDataFrameCols
 - removed listToShortString, use convertToShortString
@@ -65,7 +66,7 @@ BBmisc_1.5:
 -- binPack
 -- isValidName
 
-BBmisc_1.4:
+BBmisc_1.4: 06-Nov-2013
 - renamed convertDfCols to convertDataFrameCols
 - deprecated listToShortString, use convertToShortString
 - deprecated stringsAsFactors, use convertDataFrameCols
@@ -83,7 +84,7 @@ BBmisc_1.4:
 -- convertToShortString
 -- convertRowsToList
 
-BBmisc_1.3-64:
+BBmisc_1.3-64: 20-Aug-2013
 - removed parallelMap et al., this is now hosted in an extra package at:
   https://github.com/berndbischl/parallelMap
 - bugfix for checkArg, lower/upper only checked first element
@@ -102,7 +103,7 @@ BBmisc_1.3-64:
 -- pause
 -- printStrToChar
 
-BBmisc_1.2-200:
+BBmisc_1.2-200: 02-May-2013
 - checkArg can now test whether arg is one of multiple classes (OR disjunctive)
 - bug fix: cpus setting was not properly respected in multicore mode
 - bug fix: warnings where not turned into errors with warningf and option(warn=2)
@@ -114,7 +115,7 @@ BBmisc_1.2-200:
 -- names2
 -- convertDfCols
 
-BBmisc_1.1-166:
+BBmisc_1.1-166: 16-Nov-2012
 - some small fixes and added arguments
 - new functions:
 -- setRowNames, setColNames
@@ -123,10 +124,10 @@ BBmisc_1.1-166:
 -- lsort
 -- computeMode
 
-BBmisc_1.1-132:
+BBmisc_1.1-132: 04-Jul-2012
 - removed regmatches dependency
 
-BBmisc_1.1-125:
+BBmisc_1.1-125: 10-May-2012
 - removed stringr dependency
 - new interface for ProgressBar and more therefore more functionality
 - some global options for progressbar behaviour
@@ -138,10 +139,8 @@ BBmisc_1.1-125:
 - system3
 - load2
 
-BBmisc_1.0-77:
+BBmisc_1.0-77: 17-Mar-2012
 - removed calls to .Internal
-
-BBmisc_1.0-74:
 - more examples
 - fixed a bug in checkArg
 - makeProgressbar: new option 'inc' to increment
@@ -149,6 +148,6 @@ BBmisc_1.0-74:
 - more options for requirePackages
 - new functions: chunk, isExpensiveExampleOk
 
-BBmisc_1.0-58:
+BBmisc_1.0-58: 05-Jan-2012
 - First submit to CRAN.
 

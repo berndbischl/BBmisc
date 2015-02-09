@@ -33,7 +33,7 @@ test_that("normalize", {
   for (i in 1:4)
     expect_equal(range(y[, i]), c(3, 4))
   y[, 5L] = iris$Specis
-  
+
   # constant vectors
   x = rep(1, 10)
   y = normalize(x, method = "center", on.constant = "quiet")
@@ -58,4 +58,16 @@ test_that("normalize", {
   expect_warning(normalize(x, method = "range", on.constant = "warn"))
 })
 
+test_that("normalize works with NAs", {
+  # vector
+  x = c(1, 2, NA)
+  y = normalize(x, method = "range")
+  expect_equal(y, c(0, 1, NA))
+  y = normalize(x, method = "center")
+  expect_equal(y, c(-0.5, 0.5, NA))
 
+  # matrix
+  x = matrix(c(1, 2, 1, NA), nrow = 2L)
+  y = normalize(x, margin = 2L, method = "range")
+  expect_equal(y, matrix(c(0, 1, 0.5, NA), nrow = 2L))
+})

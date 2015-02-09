@@ -30,8 +30,8 @@ Default is \code{FALSE}.}
 If the packages are not explicitly prefixed with \dQuote{!} or \dQuote{_},
 this arguments determines the default. Possible values are \dQuote{attach} and
 \dQuote{load}.
-Note that there is no default is \code{attach}, but this will change in a future version.
-Please make sure to always explicitly set this.}
+Note that the default is \dQuote{attach}, but this might/will change in a future version, so
+please make sure to always explicitly set this.}
 }
 \value{
 [\code{logical}]. Named logical vector describing which packages could be loaded.
