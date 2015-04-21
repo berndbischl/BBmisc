@@ -14,6 +14,12 @@
 #'   If a package name is prefixed with \dQuote{!}, it will be attached using \code{\link[base]{require}}.
 #'   If a package name is prefixed with \dQuote{_}, its namespace will be loaded using \code{\link[base]{requireNamespace}}.
 #'   If there is no prefix, argument \code{default.method} determines how to deal with package loading.
+#' @param min.versions [\code{character}]\cr
+#'   A char vector specifying required minimal version numbers for a subset of packages in \code{packs}.
+#'   Must be named and all names must be in \code{packs}.
+#'   The only exception is when \code{packs} is only a single string, then you are allowed to pass
+#'   an unnamed version string here.
+#'   Default is \code{NULL}, meaning no special version requirements
 #' @param why [\code{character(1)}]\cr
 #'   Short string explaining why packages are required.
 #'   Default is an empty string.
@@ -29,14 +35,19 @@
 #'   \dQuote{load}.
 #'   Note that the default is \dQuote{attach}, but this might/will change in a future version, so
 #'   please make sure to always explicitly set this.
-#' @return [\code{logical}]. Named logical vector describing which packages could be loaded.
+#' @return [\code{logical}]. Named logical vector describing which packages could be loaded (with required version).
 #'   Same length as \code{packs}.
 #' @export
 #' @examples
 #' requirePackages(c("BBmisc", "base"), why = "BBmisc example")
-requirePackages = function(packs, why = "", stop = TRUE, suppress.warnings = FALSE, default.method = "attach") {
+requirePackages = function(packs, min.versions = NULL, why = "", stop = TRUE, suppress.warnings = FALSE, default.method = "attach") {
   assertCharacter(packs, any.missing = FALSE)
-  assertString(why)
+  if (!is.null(min.versions)) {
+    assertCharacter(min.versions)
+    if (length(packs) == 1L && length(min.versions) == 1L && is.null(names(min.versions)))
+      names(min.versions) = packs
+    assertSubset(names(min.versions), packs)
+  }
   assertFlag(stop)
   assertFlag(suppress.warnings)
   assertChoice(default.method, choices = c("load", "attach"))
@@ -56,12 +67,31 @@ requirePackages = function(packs, why = "", stop = TRUE, suppress.warnings = FAL
     }
   }, pack = packs, ns.only = ns.only))
 
-  if(stop && !all(packs.ok)) {
+  if (stop && !all(packs.ok)) {
     ps = collapse(packs[!packs.ok])
     if (nzchar(why))
       stopf("For %s please install the following packages: %s", why, ps)
     else
       stopf("Please install the following packages: %s", ps)
+  }
+
+  if (!is.null(min.versions)) {
+    packs.wrong.version = character(0L)
+    for (j in seq_along(min.versions)) {
+      pn = names(min.versions)[j]
+      mv = min.versions[j]
+      if (packageVersion(pn) < mv) {
+        packs.ok[pn] = FALSE
+        packs.wrong.version = c(packs.wrong.version, sprintf("%s >= %s", pn, mv))
+      }
+    }
+    if (stop && length(packs.wrong.version) > 0L) {
+      ps = collapse(packs.wrong.version)
+      if (nzchar(why))
+        stopf("For %s the package version requirements are not fulfilled: %s", why, ps)
+      else
+        stopf("The package version requirements are not fulfilled: %s", ps)
+    }
   }
 
   return(packs.ok)

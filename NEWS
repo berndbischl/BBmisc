@@ -1,3 +1,6 @@
+BBmisc_1.10: 
+- New argument min.versions for requirePackages
+
 BBmisc_1.9: 2015-02-03
 - New argument .newline for messagef
 - requirePackages can now dispatch to requireNamespace and has argument default.method.

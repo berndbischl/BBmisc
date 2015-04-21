@@ -4,8 +4,8 @@
 \alias{requirePackages}
 \title{Require some packages.}
 \usage{
-requirePackages(packs, why = "", stop = TRUE, suppress.warnings = FALSE,
-  default.method = "attach")
+requirePackages(packs, min.versions = NULL, why = "", stop = TRUE,
+  suppress.warnings = FALSE, default.method = "attach")
 }
 \arguments{
 \item{packs}{[\code{character}]\cr
@@ -13,6 +13,13 @@ Names of packages.
 If a package name is prefixed with \dQuote{!}, it will be attached using \code{\link[base]{require}}.
 If a package name is prefixed with \dQuote{_}, its namespace will be loaded using \code{\link[base]{requireNamespace}}.
 If there is no prefix, argument \code{default.method} determines how to deal with package loading.}
+
+\item{min.versions}{[\code{character}]\cr
+A char vector specifying required minimal version numbers for a subset of packages in \code{packs}.
+Must be named and all names must be in \code{packs}.
+The only exception is when \code{packs} is only a single string, then you are allowed to pass
+an unnamed version string here.
+Default is \code{NULL}, meaning no special version requirements}
 
 \item{why}{[\code{character(1)}]\cr
 Short string explaining why packages are required.
@@ -34,7 +41,7 @@ Note that the default is \dQuote{attach}, but this might/will change in a future
 please make sure to always explicitly set this.}
 }
 \value{
-[\code{logical}]. Named logical vector describing which packages could be loaded.
+[\code{logical}]. Named logical vector describing which packages could be loaded (with required version).
   Same length as \code{packs}.
 }
 \description{

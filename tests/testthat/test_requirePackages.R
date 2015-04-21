@@ -16,3 +16,13 @@ test_that("requirePackages", {
   expect_equal(requirePackages("!codetools", default.method = "load"), c(codetools=TRUE))
   expect_true("package:codetools" %in% search())
 })
+
+test_that("requirePackages with min.versions", {
+  expect_equal(requirePackages("base", min.versions = "0.1"), c(base=TRUE))
+  expect_equal(requirePackages("base", min.versions = c(base="0.1")), c(base=TRUE))
+
+  expect_equal(requirePackages(c("base", "stats")), c(base=TRUE, stats = TRUE))
+  expect_equal(requirePackages(c("base", "stats"), min.versions = c(base = "100"), stop = FALSE), c(base=FALSE, stats = TRUE))
+  expect_error(requirePackages(c("base", "stats"), min.versions = c(stats = "100")), "stats >= 100")
+})
+
