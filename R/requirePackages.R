@@ -46,7 +46,8 @@ requirePackages = function(packs, min.versions = NULL, why = "", stop = TRUE, su
     assertCharacter(min.versions)
     if (length(packs) == 1L && length(min.versions) == 1L && is.null(names(min.versions)))
       names(min.versions) = packs
-    assertSubset(names(min.versions), packs)
+    else
+      assertSubset(names(min.versions), packs)
   }
   assertFlag(stop)
   assertFlag(suppress.warnings)
