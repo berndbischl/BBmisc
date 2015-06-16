@@ -32,7 +32,7 @@ test_that("normalize", {
   expect_is(y, "data.frame")
   for (i in 1:4)
     expect_equal(range(y[, i]), c(3, 4))
-  y[, 5L] = iris$Specis
+  expect_equal(y[, 5L], iris$Species)
 
   # constant vectors
   x = rep(1, 10)
