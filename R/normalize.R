@@ -67,7 +67,7 @@ normalize.matrix = function(x, method = "standardize", range = c(0, 1), margin =
 normalize.data.frame = function(x, method = "standardize", range = c(0, 1), margin = 1L, on.constant = "quiet") {
   isnum = sapply(x, is.numeric)
   if (any(isnum))
-    x = as.data.frame(lapply(x[, isnum, drop = FALSE], normalize2, method = method,
+    x[, isnum] = as.data.frame(lapply(x[, isnum, drop = FALSE], normalize2, method = method,
       range = range, on.constant = on.constant))
   return(x)
 }
