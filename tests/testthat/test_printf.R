@@ -28,7 +28,7 @@ test_that("warningf", {
 test_that("stopf", {
   expect_error(stopf("xxx%ixxx", 123), "xxx123xxx")
   f = function() stopf("123")
-  # because try is called in throws_error 
+  # because try is called in throws_error
   # (and prints a bit differently of course!!!!)
   # we get an extra space before the :
   expect_error(f(), "123")
