@@ -17,7 +17,7 @@ Roxygen: list(wrap = FALSE)
 Imports:
     methods,
     stats,
-    checkmate
+    checkmate (>= 1.8.0)
 Suggests:
     testthat,
     microbenchmark,
@@ -25,3 +25,4 @@ Suggests:
 LazyData: yes
 ByteCompile: yes
 Version: 1.10
+RoxygenNote: 5.0.1

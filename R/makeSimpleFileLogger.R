@@ -23,7 +23,7 @@ makeSimpleFileLogger = function(logfile, touch = FALSE, keep = 10L) {
   assertString(logfile)
   assertFlag(touch)
   keep = asCount(keep)
-  assertDirectory(dirname(logfile), "w")
+  assertDirectoryExists(dirname(logfile), "w")
   if (touch && !file.create(logfile))
     stopf("Could not create file '%s'", logfile)
   if (keep)
