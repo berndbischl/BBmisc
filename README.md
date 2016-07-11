@@ -1,8 +1,7 @@
 BBmisc
 ======
 
-[![Build Status](https://travis-ci.org/berndbischl/BBmisc.svg)](https://travis-ci.org/berndbischl/BBmisc)
-[![Build status](https://ci.appveyor.com/api/projects/status/lsax7ygg87em1wu3/branch/master?svg=true)](https://ci.appveyor.com/project/berndbischl/bbmisc/branch/master)
+[![Build Status](https://travis-ci.org/berndbischl/BBmisc.svg?branch=master)](https://travis-ci.org/berndbischl/BBmisc)
 [![Coverage Status](https://img.shields.io/coveralls/berndbischl/BBmisc.svg)](https://coveralls.io/r/berndbischl/BBmisc?branch=master)
 
 Miscellaneous helper functions for and from B. Bischl and some other guys at TU Dortmund, mainly for package development.
