@@ -9,6 +9,10 @@
     double *D = REAL(S); \
     const R_len_t N = length(S);
 
+#define UNPACK_INT_VECTOR(S, D, N) \
+    int *D = INTEGER(S); \
+    const R_len_t N = length(S);
+
 #define UNPACK_REAL_MATRIX(S, D, N, K) \
     double *D = REAL(S); \
     const R_len_t N = nrows(S); \
