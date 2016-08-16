@@ -12,9 +12,9 @@ Input element.}
 
 \item{n}{[\code{integer(1)}]\cr
 Desired length.
-Default is \code{1} (the most common case).}
+Default is 1 (the most common case).}
 
-\item{cl}{[\code{character}*]\cr
+\item{cl}{[\code{character}]\cr
 Only do the operation if \code{x} inherits from this one of these classes,
 otherwise simply let \code{x} pass.
 Default is \code{NULL} which means to always do the operation.}
