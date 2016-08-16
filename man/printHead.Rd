@@ -14,6 +14,9 @@ Data frame or matrix.}
 Single positive integer: number of rows for a matrix/data.frame or number of
 elements for vectors/lists respectively.}
 }
+\value{
+Nothing.
+}
 \description{
 The behaviour is similar to \code{print(head(x, n))}. The difference is, that if
 the number of rows in a data.frame/matrix or the number of elements in a list

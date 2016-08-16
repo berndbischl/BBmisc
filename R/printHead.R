@@ -10,6 +10,8 @@
 #' @param n \code{integer(1)}\cr
 #'   Single positive integer: number of rows for a matrix/data.frame or number of
 #'   elements for vectors/lists respectively.
+#' @return Nothing.
+#' @export
 printHead = function(x, n = 6L) {
   assertCount(n, positive = TRUE)
   print(head(x, n = n))
