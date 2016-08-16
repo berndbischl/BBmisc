@@ -1,5 +1,11 @@
-BBmisc_1.10: 
+BBmisc_1.10:
 - New argument min.versions for requirePackages
+- ensureVector now can be passed multiple classes via cl parameter
+- New argument ensure.list for ensureVector
+
+- new functions
+-- printHead
+-- getBestIndex
 
 BBmisc_1.9: 2015-02-03
 - New argument .newline for messagef
@@ -8,7 +14,6 @@ BBmisc_1.9: 2015-02-03
 
 - new functions
 -- mapValues
-
 
 BBmisc_1.8: 2014-10-30
 - Options for the ProgressBar can now be directly passed to the constructor.
@@ -153,4 +158,3 @@ BBmisc_1.0-77: 17-Mar-2012
 
 BBmisc_1.0-58: 05-Jan-2012
 - First submit to CRAN.
-
