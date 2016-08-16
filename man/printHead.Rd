@@ -7,10 +7,10 @@
 printHead(x, n = 6L)
 }
 \arguments{
-\item{x}{[\code{data.frame} | \code{matrix}]\cr
-Data frame or matrix.}
+\item{x}{[\code{data.frame} | \code{matrix} | \code{list} | \code{vector}]\cr
+Object.}
 
-\item{n}{\code{integer(1)}\cr
+\item{n}{[\code{integer(1)}]\cr
 Single positive integer: number of rows for a matrix/data.frame or number of
 elements for vectors/lists respectively.}
 }

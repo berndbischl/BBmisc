@@ -5,8 +5,8 @@
 #' or vector is larger than \code{n}, additional information is printed about
 #' the total number of rows or elements respectively.
 #'
-#' @param x [\code{data.frame} | \code{matrix}]\cr
-#'   Data frame or matrix.
+#' @param x [\code{data.frame} | \code{matrix} | \code{list} | \code{vector}]\cr
+#'   Object.
 #' @param n [\code{integer(1)}]\cr
 #'   Single positive integer: number of rows for a matrix/data.frame or number of
 #'   elements for vectors/lists respectively.
