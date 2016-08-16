@@ -7,7 +7,7 @@
 #'
 #' @param x [\code{data.frame} | \code{matrix}]\cr
 #'   Data frame or matrix.
-#' @param n \code{integer(1)}\cr
+#' @param n [\code{integer(1)}]\cr
 #'   Single positive integer: number of rows for a matrix/data.frame or number of
 #'   elements for vectors/lists respectively.
 #' @return Nothing.
