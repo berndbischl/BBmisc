@@ -5,7 +5,7 @@ Description: Miscellaneous helper functions for and from B. Bischl and
 Authors@R: c(person("Bernd", "Bischl", email = "bernd_bischl@gmx.net",
     role = c("aut", "cre")), person("Michel", "Lang", email =
     "michellang@gmail.com", role = "aut"), person("Jakob", "Bossek", email =
-    "jakob.bossek@tu-dortmund.de", role = "aut"), person("Daniel", "Horn",
+    "j.bossek@gmail.com", role = "aut"), person("Daniel", "Horn",
     email = "daniel.horn@tu-dortmund.de", role = "aut"), person("Jakob",
     "Richter", email = "code@jakob-r.de", role = "aut"), person("Dirk", "Surmann",
     email = "surmann@statistik.tu-dortmund.de", role = "aut"))
