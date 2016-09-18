@@ -8,7 +8,10 @@
 #' @return Changed object \code{x}.
 #' @export
 #' @examples
-#' addClasses(list(), c("foo1", "foo2"))
+#' x = list()
+#' print(class(x))
+#' x = addClasses(x, c("foo1", "foo2"))
+#' print(class(x))
 addClasses = function(x, classes) {
   class(x) = c(classes, class(x))
   x

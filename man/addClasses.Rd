@@ -20,6 +20,9 @@ Changed object \code{x}.
 A wrapper to add to the class attribute.
 }
 \examples{
-addClasses(list(), c("foo1", "foo2"))
+x = list()
+print(class(x))
+x = addClasses(x, c("foo1", "foo2"))
+print(class(x))
 }
 
