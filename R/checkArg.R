@@ -60,6 +60,7 @@
 #' fun = function(foo, bar)
 #' checkArg(fun, formals = c("foo", "bar"))
 checkArg = function(x, cl, s4 = FALSE, len, min.len, max.len, choices, subset, lower = NA, upper = NA, na.ok = TRUE, formals) {
+  .Deprecated("checkmate::assert*")
   s = deparse(substitute(x))
   if (missing(x))
     stop("Argument ", s, " must not be missing!")
