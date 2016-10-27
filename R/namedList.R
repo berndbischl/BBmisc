@@ -12,7 +12,7 @@
 #' namedList(c("a", "b"), init = 1)
 namedList = function(names, init) {
   if (missing(names))
-    return(list())
+    return(setNames(list(), character(0L)))
   n = length(names)
   if (missing(init))
     xs = vector("list", n)
