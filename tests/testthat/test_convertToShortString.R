@@ -7,6 +7,9 @@ test_that("convertToShortString", {
   expect_equal(convertToShortString(numeric(0)), "numeric(0)")
   expect_equal(convertToShortString(factor(c())), "factor(0)")
   expect_equal(convertToShortString(iris), "<data.frame>")
+  expect_equal(convertToShortString(NULL), "<NULL>")
+  expect_equal(convertToShortString(c(a=1, b=2)), "1,2")
+  expect_equal(convertToShortString(expression(a + b + 3)), "a + b + 3")
   expect_equal(convertToShortString(list(a=1, 45)), "a=1, <unnamed>=45")
   expect_equal(convertToShortString(list(a=1, b=list(x=3))), "a=1, b=<list>")
   expect_equal(convertToShortString(list(a=1, b=iris)), "a=1, b=<data.frame>")
@@ -17,7 +20,7 @@ test_that("convertToShortString", {
   expect_equal(convertToShortString(list(a=1:20)), "a=1,2,3,4,5,6,...")
   expect_equal(convertToShortString(list(a=1, 2, b=3)), "a=1, <unnamed>=2, b=3")
   expect_equal(convertToShortString(list(a=1, 2, b=data.frame())), "a=1, <unnamed>=2, b=<data.frame>")
-  expect_equal(convertToShortString(list(a=identity, b=new.env())), "a=<function>, b=<environment>")
+  expect_equal(convertToShortString(list(a=identity, b=new.env(), c = NULL, d = expression(a + b + 3))), "a=<function>, b=<environment>, c=<NULL>, d=a + b + 3")
 
   expect_equal(convertToShortString(list(a=1, b=3.2)), "a=1, b=3.2")
   expect_equal(convertToShortString(list(a=1, b=3.223), num.format="%.2f"), "a=1.00, b=3.22")

@@ -5,13 +5,14 @@
 #' Numerics are formated with \code{num.format}.
 #' If of length greater than 1, they are collapsed witd \dQuote{,} and clipped.
 #' so they do not become excessively long.
+#' Expressions will be converted to plain text.
 #'
 #' All others: Currently, only their class is simply printed
 #' like \dQuote{<data.frame>}.
 #'
 #' Lists: The mechanism above is applied (non-recursively) to their elements.
 #' The result looks like this:
-#' \dQuote{a = 1, <unamed> = 2, b = <data.frame>, c = <list>}.
+#' \dQuote{a=1, <unamed>=2, b=<data.frame>, c=<list>}.
 #'
 #' @param x [any]\cr
 #'   The object.
@@ -29,22 +30,23 @@ convertToShortString = function(x, num.format = "%.4g", clip.len = 15L) {
 
   # convert non-list object to string
   convObj = function(x) {
-    if (is.null(x))
-      return("NULL")
-    if (is.atomic(x)) {
-      if (length(x) == 0L) {
+    cl = getClass1(x)
+    string = 
+      if (is.atomic(x) && !is.null(x) && length(x) == 0L)
         sprintf("%s(0)", getClass1(x))
-      } else if (length(x) == 1L) {
-        if (is.double(x))
-          sprintf(num.format, x)
-        else
-          collapse(x)
-      } else {
-        clipString(collapse(sapply(x, convertToShortString), ","), clip.len)
-      }
-    } else {
-      paste("<", getClass1(x), ">", sep = "")
-    }
+      else if (cl == "numeric")
+        paste(sprintf(num.format, x), collapse=",")
+      else if (cl == "integer")
+        paste(as.character(x), collapse=",")
+      else if (cl == "logical")
+        paste(as.character(x), collapse=",")
+      else if (cl == "character")
+        collapse(x)
+      else if (cl == "expression")
+        as.character(x)
+      else
+        sprintf("<%s>", cl)
+    string = clipString(string, clip.len)
   }
 
   # handle only lists and not any derived data types
