@@ -1,8 +1,10 @@
+BBmisc_1.11:
+- convertToShortString now also prints the content of expressions, and prints NULL like <NULL>.
+
 BBmisc_1.10:
 - New argument min.versions for requirePackages
 - ensureVector now can be passed multiple classes via cl parameter
 - New argument ensure.list for ensureVector
-- convertToShortString now also prints the content of expressions, and prints NULL like <NULL>.
 
 - new functions
 -- printHead
