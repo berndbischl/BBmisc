@@ -17,7 +17,7 @@ test_that("convertToShortString", {
   expect_equal(convertToShortString(list(a=1:20)), "a=1,2,3,4,5,6,...")
   expect_equal(convertToShortString(list(a=1, 2, b=3)), "a=1, <unnamed>=2, b=3")
   expect_equal(convertToShortString(list(a=1, 2, b=data.frame())), "a=1, <unnamed>=2, b=<data.frame>")
-  expect_equal(convertToShortString(list(a=identity, b=new.env())), "a=<function>, b=<environment>")
+  expect_equal(convertToShortString(list(a=identity, b=new.env(), c = NULL)), "a=<function>, b=<environment>, c=<NULL>")
 
   expect_equal(convertToShortString(list(a=1, b=3.2)), "a=1, b=3.2")
   expect_equal(convertToShortString(list(a=1, b=3.223), num.format="%.2f"), "a=1.00, b=3.22")
