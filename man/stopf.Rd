@@ -27,4 +27,3 @@ by default.
 err = "an error."
 try(stopf("This is \%s", err))
 }
-

@@ -56,4 +56,3 @@ If \code{why} is \code{NULL} the message is:
 \examples{
 requirePackages(c("BBmisc", "base"), why = "BBmisc example")
 }
-

@@ -26,4 +26,3 @@ Default is \code{TRUE}.}
 \description{
 Sort the rows of a data.frame according to one or more columns.
 }
-

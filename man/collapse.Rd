@@ -24,4 +24,3 @@ A simple wrapper for \code{paste(x, collapse)}.
 collapse(c("foo", "bar"))
 collapse(c("foo", "bar"), sep = ";")
 }
-

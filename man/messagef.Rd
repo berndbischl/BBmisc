@@ -23,4 +23,3 @@ A simple wrapper for \code{message(sprintf(...))}.
 msg = "a message"
 warningf("this is \%s", msg)
 }
-

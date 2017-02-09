@@ -25,4 +25,3 @@ Note that argument is evaluated when checked.
 xs = as.list(1:3)
 checkListElementClass(xs, "numeric")
 }
-

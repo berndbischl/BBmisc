@@ -23,4 +23,3 @@ Subset of object of same type as \code{x}. The object is not simplified,
 \description{
 Drop named elements of an object.
 }
-

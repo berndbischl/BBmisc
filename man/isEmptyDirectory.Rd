@@ -20,4 +20,3 @@ If file does not exist or is not a directory, \code{FALSE} is returned.
 print(isEmptyDirectory(tempdir()))
 print(isEmptyDirectory(tempfile()))
 }
-

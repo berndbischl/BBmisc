@@ -22,4 +22,3 @@ Default is \code{TRUE}.}
 \description{
 Can some strings be used for column or list element names without problems?
 }
-

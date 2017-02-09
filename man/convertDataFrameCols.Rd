@@ -33,4 +33,3 @@ Default is \code{FALSE}.}
 \description{
 Converts columns in a data frame to characters, factors or numerics.
 }
-

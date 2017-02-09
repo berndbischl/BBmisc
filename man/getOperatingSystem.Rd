@@ -2,10 +2,10 @@
 % Please edit documentation in R/getOperatingSystem.R
 \name{getOperatingSystem}
 \alias{getOperatingSystem}
-\alias{isDarwin}
-\alias{isLinux}
-\alias{isUnix}
 \alias{isWindows}
+\alias{isUnix}
+\alias{isLinux}
+\alias{isDarwin}
 \title{Functions to determine the operating system.}
 \usage{
 getOperatingSystem()
@@ -30,4 +30,3 @@ See above.
 \item{isWindows}{Predicate for OS string, returns \code{logical(1)}.}
 }
 }
-

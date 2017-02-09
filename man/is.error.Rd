@@ -25,4 +25,3 @@ print(is.error(x))
 x = 1
 print(is.error(x))
 }
-

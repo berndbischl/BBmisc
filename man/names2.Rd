@@ -30,4 +30,3 @@ names(x[1:2]) = letters[1:2]
 names(x)
 names2(x)
 }
-

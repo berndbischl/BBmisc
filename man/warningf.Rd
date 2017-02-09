@@ -29,4 +29,3 @@ A wrapper for \code{\link{warning}} with \code{\link{sprintf}} applied to the ar
 msg = "a warning"
 warningf("this is \%s", msg)
 }
-

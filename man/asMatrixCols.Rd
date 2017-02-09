@@ -27,4 +27,3 @@ Default is to take the names of the elements of \code{xs}.}
 \description{
 Extracts a named element from a list of lists.
 }
-

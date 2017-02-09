@@ -22,4 +22,3 @@ A simple wrapper for \code{collapse(sprintf, ...)}.
 \details{
 Useful for vectorized call to \code{\link{sprintf}}.
 }
-

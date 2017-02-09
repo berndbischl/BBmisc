@@ -17,4 +17,3 @@ The factor.}
 Determines the factor levels of a factor type vector
 that are actually occuring in it.
 }
-

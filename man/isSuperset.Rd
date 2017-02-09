@@ -24,4 +24,3 @@ Checks for strict/proper superset relation.}
 \description{
 Check superset relation on two vectors.
 }
-

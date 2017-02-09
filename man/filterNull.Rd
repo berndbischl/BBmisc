@@ -16,4 +16,3 @@ List.}
 \description{
 Filter a list for NULL values
 }
-

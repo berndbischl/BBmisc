@@ -33,4 +33,3 @@ to avoid a copy.
   microbenchmark(do.call(head, list(x, n = 1)), do.call2("head", x, n = 1))
 }
 }
-

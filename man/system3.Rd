@@ -33,4 +33,3 @@ Default is \code{wait}.}
 \description{
 Wrapper for \code{\link{system2}} with better return type and errorhandling.
 }
-

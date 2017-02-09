@@ -25,4 +25,3 @@ print(class(x))
 x = addClasses(x, c("foo1", "foo2"))
 print(class(x))
 }
-

@@ -24,4 +24,3 @@ Checks for strict/proper subset relation.}
 \description{
 Check subset relation on two vectors.
 }
-

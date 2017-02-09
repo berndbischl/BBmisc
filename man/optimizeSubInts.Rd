@@ -37,4 +37,3 @@ The univariate \code{\link{optimize}} can stop at arbitrarily bad points when
 \code{\link{optimize}} is run on all of them (and on the original big interval) and
 the best obtained point is returned.
 }
-

@@ -25,4 +25,3 @@ Split up a string into substrings according to a seperator.
 explode("foo bar")
 explode("comma,seperated,values", sep = ",")
 }
-

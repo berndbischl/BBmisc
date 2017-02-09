@@ -19,4 +19,3 @@ Wrapper for \code{class(x)[1]}.
 \note{
 \code{getClass} is a function in \code{methods}. Do not confuse.
 }
-

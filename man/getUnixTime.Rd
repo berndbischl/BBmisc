@@ -12,4 +12,3 @@ getUnixTime()
 \description{
 Simple wrapper for \code{as.integer(Sys.time())}.
 }
-

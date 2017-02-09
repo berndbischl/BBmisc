@@ -30,4 +30,3 @@ xs2 = list(b = 1, c = 4)
 insert(xs1, xs2)
 insert(xs1, xs2, elements = "c")
 }
-

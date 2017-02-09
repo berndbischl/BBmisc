@@ -29,4 +29,3 @@ Find the index of first/last \code{TRUE} value in a logical vector.
  which.first(c(FALSE, TRUE))
  which.last(c(FALSE, FALSE))
 }
-

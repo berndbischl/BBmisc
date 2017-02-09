@@ -25,4 +25,3 @@ A wrapper for \code{attr(x, which) = y}.
 \examples{
 setAttribute(list(), "foo", 1)
 }
-

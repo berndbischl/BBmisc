@@ -24,4 +24,3 @@ Print \code{str(x)} of an object to a string / character vector.
 \examples{
 printStrToChar(iris)
 }
-

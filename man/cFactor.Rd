@@ -23,4 +23,3 @@ f2 = factor(c("b", "c"))
 print(c(f1, f2))
 print(cFactor(f1, f2))
 }
-

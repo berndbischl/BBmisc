@@ -19,4 +19,3 @@ Set 2.}
 \description{
 Calculates symmetric set difference between two sets.
 }
-

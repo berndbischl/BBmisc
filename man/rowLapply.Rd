@@ -47,4 +47,3 @@ but on the rows.
 \examples{
  rowLapply(iris, function(x) x$Sepal.Length + x$Sepal.Width)
 }
-

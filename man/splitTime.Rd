@@ -27,4 +27,3 @@ Note that a year is simply defined as exactly 365 days.
 \examples{
 splitTime(1000)
 }
-

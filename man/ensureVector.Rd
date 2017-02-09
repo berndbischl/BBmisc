@@ -35,4 +35,3 @@ Ether a vector or list of length \code{n} with replicated \code{x} or \code{x} u
 Useful for standard argument conversion where a user can input a single
 element, but this has to be replicated now n times for a resulting vector or list.
 }
-

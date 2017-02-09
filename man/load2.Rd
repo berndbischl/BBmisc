@@ -39,4 +39,3 @@ save2(file = fn, a = 1, b = 2, c = 3)
 load2(fn, parts = "a")
 load2(fn, parts = c("a", "c"))
 }
-

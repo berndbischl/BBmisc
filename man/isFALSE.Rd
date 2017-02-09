@@ -20,4 +20,3 @@ A wrapper for \code{identical(x, FALSE)}.
 isFALSE(0)
 isFALSE(FALSE)
 }
-

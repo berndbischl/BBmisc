@@ -24,4 +24,3 @@ suppressAll({
   warning("foo")
 })
 }
-

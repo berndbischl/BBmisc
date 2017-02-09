@@ -19,4 +19,3 @@ Source object.}
 Helper function for determining the vector of attribute names
 of a given object.
 }
-

@@ -20,4 +20,3 @@ Missing names will be set to \code{NA}.
 z = 3
 argsAsNamedList(x = 1, y = 2, z)
 }
-

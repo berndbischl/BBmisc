@@ -9,4 +9,3 @@ pause()
 \description{
 Pause in interactive mode and continue on <Enter>.
 }
-

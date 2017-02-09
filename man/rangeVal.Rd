@@ -21,4 +21,3 @@ Default is \code{FALSE}}
 \description{
 A simple wrapper for \code{diff(range(x))}, so \code{max(x) - min(x)}.
 }
-

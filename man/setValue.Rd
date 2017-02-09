@@ -22,4 +22,3 @@ Has to be a list if \code{index} is a vector.}
 \description{
 This wrapper supports setting elements to \code{NULL}.
 }
-

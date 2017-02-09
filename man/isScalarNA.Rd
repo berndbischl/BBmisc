@@ -16,4 +16,3 @@ Object to check.}
 \description{
 Checks whether object is from \code{(NA, NA_integer, NA_real_, NA_character_, NA_complex_)}.
 }
-

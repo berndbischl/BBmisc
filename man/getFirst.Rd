@@ -19,4 +19,3 @@ Selected element. The element name is dropped.
 \description{
 Get the first/last element of a list/vector.
 }
-

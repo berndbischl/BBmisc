@@ -49,4 +49,3 @@ mapValues(x, c(2, 3), c(99, 100))
 x = factor(c("aab", "aba", "baa"))
 mapValues(x, "a.a", "zzz", regex = TRUE)
 }
-

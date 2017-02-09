@@ -22,4 +22,3 @@ A wrapper for \code{class(x) = classes}.
 \examples{
 setClasses(list(), c("foo1", "foo2"))
 }
-

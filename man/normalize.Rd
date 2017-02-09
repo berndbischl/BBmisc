@@ -55,4 +55,3 @@ The method also handles NAs in in \code{x} and leaves them untouched.
 \seealso{
 \code{\link{scale}}
 }
-

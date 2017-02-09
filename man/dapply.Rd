@@ -29,4 +29,3 @@ and combines the results as \code{data.frame} columns.
 The results will get replicated to have equal length
 if necessary and possible.
 }
-

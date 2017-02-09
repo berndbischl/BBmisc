@@ -24,4 +24,3 @@ Works the same as if you would have entered the expression and called
 \examples{
 asQuoted("x == 3")
 }
-

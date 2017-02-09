@@ -28,4 +28,3 @@ Shortens strings to a given length.
 print(clipString("abcdef", 10))
 print(clipString("abcdef", 5))
 }
-

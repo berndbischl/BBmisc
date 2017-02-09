@@ -46,4 +46,3 @@ chunk(xs, n.chunks = 2)
 chunk(xs, n.chunks = 2, shuffle = TRUE)
 chunk(xs, props = c(7, 3))
 }
-

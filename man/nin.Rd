@@ -16,4 +16,3 @@ Values to match against.}
 \description{
 Simply a negated \code{in} operator.
 }
-

@@ -25,4 +25,3 @@ str(convertIntegers(1.3))
 str(convertIntegers(c(1.0, 2.0)))
 str(convertIntegers("foo"))
 }
-

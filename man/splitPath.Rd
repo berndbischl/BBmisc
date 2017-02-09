@@ -19,4 +19,3 @@ The first normalized path is split on forward and backward slashes and its compo
 character vector. The drive or network home are extracted separately on windows systems and
 empty on all other systems.
 }
-

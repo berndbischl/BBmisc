@@ -34,4 +34,3 @@ xs = split(x, bp)
 print(xs)
 print(sapply(xs, sum))
 }
-

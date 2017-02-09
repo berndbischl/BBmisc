@@ -23,4 +23,3 @@ the number of rows in a data.frame/matrix or the number of elements in a list
 or vector is larger than \code{n}, additional information is printed about
 the total number of rows or elements respectively.
 }
-

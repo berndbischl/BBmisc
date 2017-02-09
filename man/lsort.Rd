@@ -15,4 +15,3 @@ See \code{\link{sort}}.
 \description{
 A wrapper for \code{\link{sort}} to sort using the \dQuote{C} collating rules.
 }
-

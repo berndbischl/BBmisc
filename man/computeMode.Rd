@@ -30,4 +30,3 @@ The implementation is currently not extremely efficient.
 \examples{
 computeMode(c(1,2,3,3))
 }
-

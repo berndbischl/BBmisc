@@ -28,4 +28,3 @@ itostr(1:10, 2)
 # base36 encoding of a large number
 itostr(1e7, 36)
 }
-

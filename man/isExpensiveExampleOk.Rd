@@ -24,4 +24,3 @@ if (isExpensiveExampleOk()) {
   runif(1)
 }
 }
-

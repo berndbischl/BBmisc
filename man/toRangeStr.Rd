@@ -29,4 +29,3 @@ Convert a numerical vector into a range string.
 x = sample(1:10, 7)
 toRangeStr(x)
 }
-

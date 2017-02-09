@@ -21,4 +21,3 @@ Vector of strings, i.e., attribute names.}
 \description{
 Check if given object has certain attributes.
 }
-

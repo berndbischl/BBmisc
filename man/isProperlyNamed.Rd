@@ -21,4 +21,3 @@ isProperlyNamed(list(1))
 isProperlyNamed(list(a = 1))
 isProperlyNamed(list(a = 1, 2))
 }
-

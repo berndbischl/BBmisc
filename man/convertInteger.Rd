@@ -24,4 +24,3 @@ str(convertInteger(1.3))
 str(convertInteger(c(1.0, 2.0)))
 str(convertInteger("foo"))
 }
-

@@ -22,4 +22,3 @@ Works by setting \code{\link{mode}}.
 \note{
 \code{as.mytype} drops dimension when used on a matrix.
 }
-

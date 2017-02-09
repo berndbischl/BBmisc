@@ -35,4 +35,3 @@ element of \code{rows}. Missing values are filled using NAs.
 \examples{
 convertListOfRowsToDataFrame(list(list(x = 1, y = "a"), list(x = 2, y = "b")))
 }
-

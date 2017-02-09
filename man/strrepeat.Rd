@@ -25,4 +25,3 @@ Repeat and join a string
 \examples{
 strrepeat("x", 3)
 }
-
