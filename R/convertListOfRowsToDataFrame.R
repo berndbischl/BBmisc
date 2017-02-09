@@ -1,12 +1,14 @@
-#' Convert a list of row-vectors of equal structure to a data.frame.
+#' @title Convert a list of row-vector of equal structure to a data.frame.
 #'
+#' @description
 #' Elements are arranged in columns according to their name in each
-#' element of \code{rows}. Missing values are filled using NAs.
+#' element of \code{rows}.
+#' Variables that are not present in some row-lists, or encoded as \code{NULL}, are filled using NAs.
 #'
 #' @param rows [\code{list}]\cr
-#'   List of rows. Each row is a list or vector of the same structure.
-#'   That means all rows must have the same length and all corresponding elements must have the
-#'   same class.
+#'   List of rows. Each row is a list or vector of the same structure,
+#'   where all corresponding elements must have the same class.
+#'   It is allowed that in some rows some elements are not present, see above.
 #' @param strings.as.factors [\code{logical(1)}]\cr
 #'   Convert character columns to factors?
 #'   Default is \code{default.stringsAsFactors()}.

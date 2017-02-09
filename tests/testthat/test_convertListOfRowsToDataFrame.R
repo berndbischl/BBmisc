@@ -30,7 +30,7 @@ test_that("convertListOfRowstoDataFrame", {
     strings.as.factors = FALSE, row.names = 1:2)
   df2 = setRowNames(data.frame(x = 1:2, y = c("a", "b"), stringsAsFactors = FALSE), 1:2)
   expect_equal(df1, df2)
-  
+
   df1 = convertListOfRowsToDataFrame(list(list(x = 1, y = "a"), list(x = 2, y = "b")),
     strings.as.factors = FALSE, col.names = c("c1", "c2"))
   df2 = data.frame(c1 = 1:2, c2 = c("a", "b"), stringsAsFactors = FALSE)
@@ -41,3 +41,25 @@ test_that("convertListOfRowstoDataFrame", {
   df2 = setColNames(data.frame(1:2, c("a", "b"), stringsAsFactors = FALSE), 1:2)
   expect_equal(df1, df2)
 })
+
+
+test_that("convertListOfRowsToDataFrame works with missing stuff in the rows", {
+
+  df1 = setColNames(data.frame(1:2, c("a", NA), stringsAsFactors = FALSE), 1:2)
+  df2 = convertListOfRowsToDataFrame(list(list(x = 1, y = "a"), list(x = 2)),
+    strings.as.factors = FALSE, col.names = 1:2)
+  df3 = convertListOfRowsToDataFrame(list(list(x = 1, y = "a"), list(x = 2, y = NULL)),
+    strings.as.factors = FALSE, col.names = 1:2)
+  expect_equal(df1, df2)
+  expect_equal(df1, df3)
+
+  df1 = setColNames(data.frame(c(1, NA), c(NA, NA), stringsAsFactors = FALSE), 1:2)
+  df2 = convertListOfRowsToDataFrame(list(list(x = 1), list(y = NULL)),
+    strings.as.factors = FALSE, col.names = 1:2)
+  df3 = convertListOfRowsToDataFrame(list(list(x = 1, y = NULL), list(y = NULL)),
+    strings.as.factors = FALSE, col.names = 1:2)
+  expect_equal(df1, df2)
+  expect_equal(df1, df3)
+})
+
+
