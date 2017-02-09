@@ -1,6 +1,6 @@
 BBmisc_1.11:
 - convertToShortString now also prints the content of expressions, and prints NULL like <NULL>
-- removed function: checkArg. Please use package checkmate for arg checking.
+- Deprecated checkArg. Please use package checkmate for arg checking.
 
 BBmisc_1.10:
 - New argument min.versions for requirePackages
