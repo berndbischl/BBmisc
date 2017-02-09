@@ -1,4 +1,7 @@
-#' Create named list, possibly initialized with a certain element.
+#' @title Create named list, possibly initialized with a certain element.
+#'
+#' @description
+#' Even an empty list will always be named.
 #'
 #' @param names [\code{character}]\cr
 #'   Names of elements.

@@ -18,7 +18,7 @@ If given all list elements are initialized to this, otherwise
 [\code{list}].
 }
 \description{
-Create named list, possibly initialized with a certain element.
+Even an empty list will always be named.
 }
 \examples{
 namedList(c("a", "b"))
