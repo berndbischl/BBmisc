@@ -68,17 +68,3 @@ Nothing.
 Throws exception if checks are not passed.
 Note that argument is evaluated when checked.
 }
-\examples{
-x = 1L
-checkArg(x, "integer", len = 1, na.ok = FALSE, upper = 3L)
-x = as.integer(NA)
-checkArg(x, "integer", len = 1, na.ok = TRUE)
-x = c("foo", "bar")
-checkArg(x, "character")
-x = "foo"
-checkArg(x, choices = c("foo", "bar"))
-x = c("foo", "bar")
-checkArg(x, subset = c("foo", "bar"))
-fun = function(foo, bar)
-checkArg(fun, formals = c("foo", "bar"))
-}
