@@ -1,15 +1,15 @@
 BBmisc_1.11:
 - convertToShortString now also prints the content of expressions, and prints NULL like <NULL>
 - Deprecated checkArg. Please use package checkmate for arg checking.
-
-BBmisc_1.10:
-- New argument min.versions for requirePackages
 - ensureVector now can be passed multiple classes via cl parameter
 - New argument ensure.list for ensureVector
 
 - new functions
 -- printHead
 -- getBestIndex
+
+BBmisc_1.10: 2016-07-12
+- New argument min.versions for requirePackages
 
 BBmisc_1.9: 2015-02-03
 - New argument .newline for messagef
