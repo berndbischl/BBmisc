@@ -1,7 +1,10 @@
-#' Check for a function argument.
+#' @title Check for a function argument.
 #'
-#' Throws exception if checks are not passed.
-#' Note that argument is evaluated when checked.
+#' @description
+#' Throws exception if checks are not passed. Note that argument is evaluated when checked.
+#'
+#' This function will be deprecated in a future version. Use \pkg{checkmate} instead.
+#'
 #'
 #' @param x [any]\cr
 #'   Argument.
@@ -47,7 +50,6 @@
 #' @return Nothing.
 #' @export
 checkArg = function(x, cl, s4 = FALSE, len, min.len, max.len, choices, subset, lower = NA, upper = NA, na.ok = TRUE, formals) {
-  .Deprecated("Package 'checkmate'")
   s = deparse(substitute(x))
   if (missing(x))
     stop("Argument ", s, " must not be missing!")

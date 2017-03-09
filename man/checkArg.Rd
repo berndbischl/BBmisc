@@ -65,6 +65,7 @@ Default is missing.}
 Nothing.
 }
 \description{
-Throws exception if checks are not passed.
-Note that argument is evaluated when checked.
+Throws exception if checks are not passed. Note that argument is evaluated when checked.
+
+This function will be deprecated in a future version. Use \pkg{checkmate} instead.
 }
