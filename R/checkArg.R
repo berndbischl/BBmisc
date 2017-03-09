@@ -3,8 +3,8 @@
 #' @description
 #' Throws exception if checks are not passed. Note that argument is evaluated when checked.
 #'
-#' This function will be deprecated in a future version. Use \pkg{checkmate} instead.
-#'
+#' This function is superseded by the package \pkg{checkmate} and might get deprecated
+#' in the future. Please
 #'
 #' @param x [any]\cr
 #'   Argument.
