@@ -46,13 +46,13 @@ convertToShortString = function(x, num.format = "%.4g", clip.len = 15L) {
         as.character(x)
       else
         sprintf("<%s>", cl)
-    string = clipString(string, clip.len)
+    clipString(string, clip.len)
   }
 
   # handle only lists and not any derived data types
   if (getClass1(x) == "list") {
     if (length(x) == 0L)
-      return("")
+      return("list()")
     ns = names2(x, missing.val = "<unnamed>")
     ss = lapply(x, convObj)
     collapse(paste(ns, "=", ss, sep = ""), ", ")

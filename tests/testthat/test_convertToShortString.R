@@ -14,7 +14,7 @@ test_that("convertToShortString", {
   expect_equal(convertToShortString(list(a=1, b=list(x=3))), "a=1, b=<list>")
   expect_equal(convertToShortString(list(a=1, b=iris)), "a=1, b=<data.frame>")
             
-  expect_equal(convertToShortString(list()), "")
+  expect_equal(convertToShortString(list()), "list()")
   expect_equal(convertToShortString(list(a=1)), "a=1")
   expect_equal(convertToShortString(list(a=1:2)), "a=1,2")
   expect_equal(convertToShortString(list(a=1:20)), "a=1,2,3,4,5,6,...")
