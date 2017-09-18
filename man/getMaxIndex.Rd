@@ -6,15 +6,20 @@
 \alias{getBestIndex}
 \title{Return index of maximal/minimal/best element in numerical vector.}
 \usage{
-getMaxIndex(x, ties.method = "random", na.rm = FALSE)
+getMaxIndex(x, weights = NULL, ties.method = "random", na.rm = FALSE)
 
-getMinIndex(x, ties.method = "random", na.rm = FALSE)
+getMinIndex(x, weights = NULL, ties.method = "random", na.rm = FALSE)
 
-getBestIndex(x, minimize = TRUE, ...)
+getBestIndex(x, weights = NULL, minimize = TRUE, ...)
 }
 \arguments{
 \item{x}{[\code{numeric}]\cr
 Input vector.}
+
+\item{weights}{[\code{numeric}]\cr
+Weights (same length as \code{x}).
+If these are specified, the index is selected from \code{x * w}.
+Default is \code{NULL} which means no weights.}
 
 \item{ties.method}{[\code{character(1)}]\cr
 How should ties be handled?

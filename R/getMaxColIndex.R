@@ -36,7 +36,7 @@ getMaxIndexOfRows = function(x, weights = NULL, ties.method = "random", na.rm = 
                        stop("Unknown ties method"))
   assertFlag(na.rm)
   assertNumeric(weights, null.ok = TRUE, len = ncol(x))
-  .Call(c_getMaxIndexOfRows, x, as.numeric(weights), ties.method, na.rm)
+  .Call(c_getMaxIndexOfRows, x, as.numeric(weights), ties.method, na.rm, PACKAGE = "BBmisc")
 }
 
 #' @export
@@ -53,7 +53,7 @@ getMaxIndexOfCols = function(x, weights = NULL, ties.method = "random", na.rm = 
                        stop("Unknown ties method"))
   assertFlag(na.rm)
   assertNumeric(weights, null.ok = TRUE, len = nrow(x))
-  .Call(c_getMaxIndexOfCols, x, as.numeric(weights), ties.method, na.rm)
+  .Call(c_getMaxIndexOfCols, x, as.numeric(weights), ties.method, na.rm, PACKAGE = "BBmisc")
 }
 
 #' @export

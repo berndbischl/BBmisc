@@ -7,17 +7,27 @@
 \alias{getMinIndexOfCols}
 \title{Find row- or columnwise the index of the maximal / minimal element in a matrix.}
 \usage{
-getMaxIndexOfRows(x, ties.method = "random", na.rm = FALSE)
+getMaxIndexOfRows(x, weights = NULL, ties.method = "random",
+  na.rm = FALSE)
 
-getMinIndexOfRows(x, ties.method = "random", na.rm = FALSE)
+getMinIndexOfRows(x, weights = NULL, ties.method = "random",
+  na.rm = FALSE)
 
-getMaxIndexOfCols(x, ties.method = "random", na.rm = FALSE)
+getMaxIndexOfCols(x, weights = NULL, ties.method = "random",
+  na.rm = FALSE)
 
-getMinIndexOfCols(x, ties.method = "random", na.rm = FALSE)
+getMinIndexOfCols(x, weights = NULL, ties.method = "random",
+  na.rm = FALSE)
 }
 \arguments{
 \item{x}{[\code{matrix(n,m)}] \cr
 Numerical input matrix.}
+
+\item{weights}{[\code{numeric}]\cr
+Weights (same length as number of rows/cols).
+If these are specified, the index is selected from the weighted elements
+(see \code{\link{getMaxIndex}}).
+Default is \code{NULL} which means no weights.}
 
 \item{ties.method}{[\code{character(1)}]\cr
 How should ties be handled?
