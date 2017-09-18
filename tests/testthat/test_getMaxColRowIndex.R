@@ -36,10 +36,10 @@ test_that("NA values", {
   mm = m
   mm[, 2] = NA
   expect_equal(getMaxIndexOfRows(mm), rep(NA_integer_, n/3))
-  
+
   a = matrix(c(1, NA, 2, 3, NA, NA), nrow=3, byrow=TRUE)
-  expect_equal(getMaxIndexOfRows(a, na.rm=FALSE), c(NA, 2L, NA))  
-  expect_equal(getMaxIndexOfRows(a, na.rm=TRUE), c(1L, 2L, -1))  
+  expect_equal(getMaxIndexOfRows(a, na.rm=FALSE), c(NA, 2L, NA))
+  expect_equal(getMaxIndexOfRows(a, na.rm=TRUE), c(1L, 2L, -1))
 })
 
 test_that("infinite values", {
@@ -67,6 +67,23 @@ test_that("ties", {
   a = matrix(c(2, 1, 2, 2, 2, 1), nrow=2, byrow=TRUE)
   expect_equal(getMaxIndexOfCols(a, ties.method="first"), c(1L, 2L, 1L))
   expect_equal(getMaxIndexOfCols(a, ties.method="last"), c(2L, 2L, 1L))
+})
+
+
+test_that("getMaxIndexOfRows with weights", {
+  a = matrix(1:6, nrow=2)
+  expect_equal(getMaxIndexOfRows(a, c(1, 1, 1)), c(3L, 3L))
+  expect_equal(getMaxIndexOfRows(a, c(1, 1.51, 1)), c(3L, 2L))
+  expect_equal(getMaxIndexOfRows(a, c(-1, -1, -1)), c(1L, 1L))
+
+  expect_equal(getMinIndexOfRows(a, c(1, 1, 1)), c(1L, 1L))
+  expect_equal(getMinIndexOfRows(a, c(-1, -1, -1)), c(3L, 3L))
+
+  expect_equal(getMaxIndexOfCols(a, c(1, 1)), c(2L, 2L, 2L))
+  expect_equal(getMaxIndexOfCols(a, c(1, -1)), c(1L, 1L, 1L))
+
+  expect_equal(getMinIndexOfCols(a, c(1, 1)), c(1L, 1L, 1L))
+  expect_equal(getMinIndexOfCols(a, c(1, -1)), c(2L, 2L, 2L))
 })
 
 

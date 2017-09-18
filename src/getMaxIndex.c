@@ -42,14 +42,37 @@ int get_max_index(double *x, R_len_t n, R_len_t step, int ties_method, Rboolean 
   return max_index + 1;
 }
 
-SEXP c_getMaxIndex(SEXP s_x, SEXP s_ties_method, SEXP s_na_rm) {
+// get_max_index with weights.
+// copy x vector (only elements indexed by steps) multiplied with w
+// then call get_max_index with step=1
+int get_max_index_w(double *x, double *w, R_len_t n, R_len_t step, int ties_method, Rboolean na_rm) {
+  double *xx = (double *) malloc(n * sizeof(double));
+  R_len_t i;
+  for (i=0; i<n; i++) {
+    xx[i] = x[i*step] * w[i];
+  }
+  int j = get_max_index(xx, n, 1, ties_method, na_rm);
+  free(xx);
+  return j;
+}
+
+
+SEXP c_getMaxIndex(SEXP s_x, SEXP s_w, SEXP s_ties_method, SEXP s_na_rm) {
   if (length(s_x) == 0)
     return NEW_INTEGER(0);
   int ties_method = asInteger(s_ties_method);
   Rboolean na_rm = asInteger(s_na_rm);
   UNPACK_REAL_VECTOR(s_x, x, len_x);
   GetRNGstate();
-  int index = get_max_index(x, len_x, 1, ties_method, na_rm);
+  int index;
+  UNPACK_REAL_VECTOR(s_w, w, len_w);
+  // call unweighed version if s_w is numeric(0)
+  if (len_w == 0) {
+    index = get_max_index(x, len_x, 1, ties_method, na_rm);
+  } else {
+    UNPACK_REAL_VECTOR(s_w, w, len_w);
+    index = get_max_index_w(x, w, len_x, 1, ties_method, na_rm);
+  }
   PutRNGstate();
   if (index == -1)
     return NEW_INTEGER(0);

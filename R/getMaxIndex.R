@@ -9,6 +9,10 @@
 #'
 #' @param x [\code{numeric}]\cr
 #'   Input vector.
+#' @param weights [\code{numeric}]\cr
+#'   Weights (same length as \code{x}).
+#'   If these are specified, the index is selected from \code{x * w}.
+#'   Default is \code{NULL} which means no weights.
 #' @param ties.method [\code{character(1)}]\cr
 #'   How should ties be handled?
 #'   Possible are: \dQuote{random}, \dQuote{first}, \dQuote{last}.
@@ -25,25 +29,26 @@
 #' @return [\code{integer(1)}].
 #' @export
 #' @useDynLib BBmisc c_getMaxIndex
-getMaxIndex = function(x, ties.method = "random", na.rm = FALSE) {
+getMaxIndex = function(x, weights = NULL, ties.method = "random", na.rm = FALSE) {
   ties.method = switch(ties.method, random = 1L, first = 2L, last = 3L,
                        stop("Unknown ties method"))
   assertFlag(na.rm)
-  .Call(c_getMaxIndex, as.numeric(x), ties.method, na.rm)
+  assertNumeric(weights, null.ok = TRUE, len = length(x))
+  .Call(c_getMaxIndex, as.numeric(x), as.numeric(weights), ties.method, na.rm, PACKAGE = "BBmisc")
 }
 
 
 #' @export
 #' @rdname getMaxIndex
-getMinIndex = function(x, ties.method = "random", na.rm = FALSE) {
-  getMaxIndex(-as.numeric(x), ties.method, na.rm)
+getMinIndex = function(x, weights = NULL, ties.method = "random", na.rm = FALSE) {
+  getMaxIndex(-as.numeric(x), weights, ties.method, na.rm)
 }
 
 
 #' @export
 #' @rdname getMaxIndex
-getBestIndex = function(x, minimize = TRUE, ...) {
+getBestIndex = function(x, weights = NULL, minimize = TRUE, ...) {
   assertFlag(minimize)
   getIndex = if (minimize) getMinIndex else getMaxIndex
-  getIndex(x, ...)
+  getIndex(x, weights, ...)
 }

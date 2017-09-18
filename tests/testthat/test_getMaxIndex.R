@@ -46,3 +46,19 @@ test_that("getBestIndex", {
   expect_equal(getBestIndex(c(NA), na.rm = TRUE), getMinIndex(c(NA), na.rm = TRUE))
   expect_equal(getBestIndex(c(1, 1, 9, 5), ties.method = "last"), getMinIndex(c(1, 1, 9, 5), ties.method = "last"))
 })
+
+test_that("getMaxIndex with weights", {
+  expect_equal(getMaxIndex(c(1, 9), c(1, 1)), 2L)
+  expect_equal(getMaxIndex(c(1, 9), c(1, -1)), 1L)
+  expect_equal(getMaxIndex(c(1, 9), c(100, 1)), 1L)
+
+  expect_equal(getMinIndex(c(1, 9), c(1, 1)), 1L)
+  expect_equal(getMinIndex(c(1, 9), c(1, -1)), 2L)
+  expect_equal(getMinIndex(c(1, 9), c(100, 1)), 2L)
+
+  is.na(getMaxIndex(c(1, NA, 2), c(1, 1, 1), na.rm = FALSE))
+  expect_equal(getMaxIndex(c(1, NA, 2), c(1, 1, 1), na.rm = TRUE), 3L)
+  expect_equal(getMaxIndex(c(1, NA, 2), c(5, 1, 1), na.rm = TRUE), 1L)
+  expect_equal(getMaxIndex(c(1, NA, 2), c(NA, 1, 1), na.rm = TRUE), 3L)
+})
+

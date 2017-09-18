@@ -9,6 +9,11 @@
 #'
 #' @param x [\code{matrix(n,m)}] \cr
 #'   Numerical input matrix.
+#' @param weights [\code{numeric}]\cr
+#'   Weights (same length as number of rows/cols).
+#'   If these are specified, the index is selected from the weighted elements
+#'   (see \code{\link{getMaxIndex}}).
+#'   Default is \code{NULL} which means no weights.
 #' @param ties.method [\code{character(1)}]\cr
 #'   How should ties be handled?
 #'   Possible are: \dQuote{random}, \dQuote{first}, \dQuote{last}.
@@ -25,31 +30,34 @@
 #' print(x)
 #' print(getMaxIndexOfRows(x))
 #' print(getMinIndexOfRows(x))
-getMaxIndexOfRows = function(x, ties.method = "random", na.rm = FALSE) {
+getMaxIndexOfRows = function(x, weights = NULL, ties.method = "random", na.rm = FALSE) {
   mode(x) = "numeric"
   ties.method = switch(ties.method, random = 1L, first = 2L, last = 3L,
                        stop("Unknown ties method"))
   assertFlag(na.rm)
-  .Call(c_getMaxIndexOfRows, x, ties.method, na.rm)
+  assertNumeric(weights, null.ok = TRUE, len = ncol(x))
+  .Call(c_getMaxIndexOfRows, x, as.numeric(weights), ties.method, na.rm)
 }
 
 #' @export
 #' @rdname getMaxIndexOfRows
-getMinIndexOfRows = function(x, ties.method = "random", na.rm = FALSE) {
-  getMaxIndexOfRows(-x, ties.method, na.rm)
+getMinIndexOfRows = function(x, weights = NULL, ties.method = "random", na.rm = FALSE) {
+  getMaxIndexOfRows(-x, weights, ties.method, na.rm)
 }
 
 #' @export
 #' @rdname getMaxIndexOfRows
-getMaxIndexOfCols = function(x, ties.method = "random", na.rm = FALSE) {
+getMaxIndexOfCols = function(x, weights = NULL, ties.method = "random", na.rm = FALSE) {
   mode(x) = "numeric"
   ties.method = switch(ties.method, random = 1L, first = 2L, last = 3L,
                        stop("Unknown ties method"))
-  .Call(c_getMaxIndexOfCols, x, ties.method, na.rm)
+  assertFlag(na.rm)
+  assertNumeric(weights, null.ok = TRUE, len = nrow(x))
+  .Call(c_getMaxIndexOfCols, x, as.numeric(weights), ties.method, na.rm)
 }
 
 #' @export
 #' @rdname getMaxIndexOfRows
-getMinIndexOfCols = function(x, ties.method = "random", na.rm = FALSE) {
-  getMaxIndexOfCols(-x, ties.method, na.rm)
+getMinIndexOfCols = function(x, weights = NULL, ties.method = "random", na.rm = FALSE) {
+  getMaxIndexOfCols(-x, weights, ties.method, na.rm)
 }
