@@ -5,7 +5,6 @@
 
 SEXP c_compute_mode(SEXP s_x, SEXP s_ties_method) {
     UNPACK_INT_VECTOR(s_x, x, len_x);
-    int max_index = 0;
     int i;
     int max_x = 0;
     int max_freq = 0;
@@ -40,9 +39,26 @@ SEXP c_compute_mode(SEXP s_x, SEXP s_ties_method) {
                 max_freq = hashmap[i];
             }
         }
+    } else if (ties_method == 3) {
+        //  Fisher-Yates shuffle from https://stackoverflow.com/questions/15961119/how-to-create-a-random-permutation-of-an-array?answertab=votes#tab-top
+        for (int i = len_x-1; i >= 0; --i){
+              //generate a random number [0, n-1]
+              int rand = unif_rand() * (RAND_MAX-0) + 0;
+              int j = rand % (i+1);
+              //swap the last element with element at random index
+              int temp = x[i];
+              x[i] = x[j];
+              x[j] = temp;
+        }
+        /* find the entry in the hashmap with max frequency of the randomly shuffled values */
+        for (i = 0; i < len_x; i++) {
+          if (hashmap[x[i]] > max_freq) {
+            max_freq_index = x[i];
+            max_freq = hashmap[x[i]];
+          }
+        }
     }
 
   free (hashmap);
   return ScalarInteger(max_freq_index);
 }
-

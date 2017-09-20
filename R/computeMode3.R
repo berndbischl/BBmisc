@@ -12,7 +12,7 @@ computeMode3 = function(x, ties.method = "random", na.rm = TRUE) {
       mode = mode - shift
     return(mode)
   } else if (is.numeric(x) || is.character(x)) {
-    f = as.factor(x)
+    f = as.factor(x) # this slows everything down
     mode = .Call("c_compute_mode", as.integer(f), tm, PACKAGE = "BBmisc")
     mode = levels(f)[mode]
     if (is.numeric(x))
@@ -23,6 +23,4 @@ computeMode3 = function(x, ties.method = "random", na.rm = TRUE) {
     mode = .Call("c_compute_mode", x, tm, PACKAGE = "BBmisc")
     return(as.logical(mode - 1L))
   }
-
 }
-
