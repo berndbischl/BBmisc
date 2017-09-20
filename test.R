@@ -5,10 +5,10 @@ load_all()
 x = computeMode3(c("1","2","3"), ties.method = "last")
 print(str(x))
 
-# computeMode2 = function (x, ties.method = "random", na.rm = TRUE) {
-#   tab = data.table::as.data.table(x)[, ".N", by = list(x)]
-#   if(na.rm) tab = na.omit(tab)
-#   mod = tab$x[which.max(tab$N)]
+# computeMode2 = function(x, ties.method = "random", na.rm = TRUE) {
+#   tab = data.table::as.data.table(x)[ , `:=`(COUNT = .N) , by = x]
+#   if (na.rm) tab = na.omit(tab)
+#   mod = tab$x[which.max(tab$COUNT)]
 #   if (!is.factor(x))
 #     mode(mod) = mode(x)
 #   if (length(mod) > 1L)
