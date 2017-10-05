@@ -30,7 +30,7 @@ optimizeSubInts = function(f, interval, ..., lower = min(interval), upper = max(
   # run on smaller partitions
   if (nsub > 1L) {
     mult = ifelse(maximum, -1, 1)
-    grid = seq(lower, upper, length.out = nsub - 1L)
+    grid = seq(lower, upper, length.out = nsub + 1L)
     for (j in seq_len(length(grid)-1L)) {
       res = optimize(f = f, interval = c(grid[j], grid[j+1L]), maximum = maximum, tol = tol)
       if (mult * res$objective < mult * best$objective)
