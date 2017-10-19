@@ -2,6 +2,7 @@ BBmisc_1.12:
 - getMaxIndex, getMinIndex, getBestIndex,
   getMaxIndexOfRows, getMinIndexOfRows, getMaxIndexOfCols, getMinIndexOfCols:
   added new arg 'weights'
+- optimizeSubInts: fixed a bug where not enough subints where visited
 
 BBmisc_1.11: 2017-03-09
 - convertToShortString now also prints the content of expressions, and prints NULL like <NULL>
