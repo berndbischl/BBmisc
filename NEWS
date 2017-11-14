@@ -3,6 +3,7 @@ BBmisc_1.12:
   getMaxIndexOfRows, getMinIndexOfRows, getMaxIndexOfCols, getMinIndexOfCols:
   added new arg 'weights'
 - optimizeSubInts: fixed a bug where not enough subints where visited
+- Remove isFALSE since it is now a base R function
 
 BBmisc_1.11: 2017-03-09
 - convertToShortString now also prints the content of expressions, and prints NULL like <NULL>
