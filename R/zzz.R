@@ -1,6 +1,7 @@
 #' @import stats
 #' @import checkmate
 #' @import utils
+#' @import data.table
 #' @importFrom methods is
 
 .onLoad = function(libname, pkgname) {
