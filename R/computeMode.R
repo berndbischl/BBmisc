@@ -21,18 +21,15 @@ computeMode = function(x, ties.method = "random", na.rm = TRUE) {
   assertAtomicVector(x)
   assertChoice(ties.method, c("first", "random", "last"))
   assertFlag(na.rm)
-  #FIXME: no arg checks for speed currently
-  tab = table(x, useNA = ifelse(na.rm, "no", "ifany"))
-  y = max(tab)
-  mod = names(tab)[tab == y]
-  if (!is.factor(x))
-    mode(mod) = mode(x)
+  tab = as.data.table(x)[,  .N, by = x]
+  if (na.rm) tab = na.omit(tab)
+  ind = (tab$N == max(tab$N))
+  mod = tab$x[ind]
+  if (is.factor(mod))
+    mod = as.character(mod)
   if (length(mod) > 1L)
-    switch(ties.method,
-      first = mod[1L],
-      random = sample(mod, 1L),
-      last = mod[length(mod)]
-    )
-  else
-    mod
+    ind = switch(ties.method, first = mod[1L], random = sample(mod, 1L), last = mod[length(mod)])
+  else mod
 }
+
+
