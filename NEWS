@@ -3,7 +3,6 @@ BBmisc_1.12:
   getMaxIndexOfRows, getMinIndexOfRows, getMaxIndexOfCols, getMinIndexOfCols:
   added new arg 'weights'
 - optimizeSubInts: fixed a bug where not enough subints where visited
-- Remove isFALSE since it is now a base R function
 - computeMode: internally uses data.table now and is therefore much faster
 
 BBmisc_1.11: 2017-03-09
