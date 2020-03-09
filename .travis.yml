@@ -1,6 +1,10 @@
 # travis config
 
 language: r
+r:
+  - oldrel
+  - release
+  - devel
 
 r_github_packages:
   - jimhester/covr
