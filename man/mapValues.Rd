@@ -4,8 +4,15 @@
 \alias{mapValues}
 \title{Replace values in atomic vectors}
 \usage{
-mapValues(x, from, to, regex = FALSE, ignore.case = FALSE, perl = FALSE,
-  fixed = FALSE)
+mapValues(
+  x,
+  from,
+  to,
+  regex = FALSE,
+  ignore.case = FALSE,
+  perl = FALSE,
+  fixed = FALSE
+)
 }
 \arguments{
 \item{x}{[\code{atomic}]\cr

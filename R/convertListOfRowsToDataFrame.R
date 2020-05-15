@@ -11,7 +11,7 @@
 #'   It is allowed that in some rows some elements are not present, see above.
 #' @param strings.as.factors [\code{logical(1)}]\cr
 #'   Convert character columns to factors?
-#'   Default is \code{default.stringsAsFactors()}.
+#'   Default is \code{default.stringsAsFactors()} for R < "4.1.0" and \code{FALSE} otherwise.
 #' @param row.names [\code{character} | \code{integer} | \code{NULL}]\cr
 #'   Row names for result.
 #'   By default the names of the list \code{rows} are taken.
@@ -22,12 +22,18 @@
 #' @export
 #' @examples
 #' convertListOfRowsToDataFrame(list(list(x = 1, y = "a"), list(x = 2, y = "b")))
-convertListOfRowsToDataFrame = function(rows, strings.as.factors = default.stringsAsFactors(),
+convertListOfRowsToDataFrame = function(rows, strings.as.factors = NULL,
   row.names, col.names) {
   assertList(rows)
   assertList(rows, types = "vector")
   if (!length(rows))
     return(makeDataFrame(0L, 0L))
+  if (is.null(strings.as.factors)) {
+    if(getRversion() < "4.1.0")
+      strings.as.factors = default.stringsAsFactors()
+    else
+      strings.as.factors = FALSE
+  }
   assertFlag(strings.as.factors)
 
   if (missing(row.names))

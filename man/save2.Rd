@@ -4,8 +4,16 @@
 \alias{save2}
 \title{Save multiple objects to a file.}
 \usage{
-save2(file, ..., ascii = FALSE, version = NULL, compress = !ascii,
-  compression_level, eval.promises = TRUE, precheck = TRUE)
+save2(
+  file,
+  ...,
+  ascii = FALSE,
+  version = NULL,
+  compress = !ascii,
+  compression_level,
+  eval.promises = TRUE,
+  precheck = TRUE
+)
 }
 \arguments{
 \item{file}{File to save.}

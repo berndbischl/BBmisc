@@ -4,8 +4,7 @@
 \alias{extractSubList}
 \title{Extracts a named element from a list of lists.}
 \usage{
-extractSubList(xs, element, element.value, simplify = TRUE,
-  use.names = TRUE)
+extractSubList(xs, element, element.value, simplify = TRUE, use.names = TRUE)
 }
 \arguments{
 \item{xs}{[\code{list}]\cr
