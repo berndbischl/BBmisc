@@ -3,6 +3,7 @@ context("makeProgressBar")
 test_that("makeProgressBar", {
   cat("\n")
   bar = makeProgressBar()
+  expect_class(bar, "ProgressBar")
   for(i in 0:100) {
     bar$set(i)
     Sys.sleep(0.01)
@@ -37,6 +38,7 @@ test_that("makeProgressBar global options", {
   options(BBmisc.ProgressBar.style = "off")
   cat("\n")
   bar = makeProgressBar(max=5)
+  expect_class(bar, "ProgressBar")
   for(i in 0:5) {
      expect_silent(bar$set(i))
   }
