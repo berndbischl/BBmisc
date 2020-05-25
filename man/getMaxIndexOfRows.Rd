@@ -7,17 +7,13 @@
 \alias{getMinIndexOfCols}
 \title{Find row- or columnwise the index of the maximal / minimal element in a matrix.}
 \usage{
-getMaxIndexOfRows(x, weights = NULL, ties.method = "random",
-  na.rm = FALSE)
+getMaxIndexOfRows(x, weights = NULL, ties.method = "random", na.rm = FALSE)
 
-getMinIndexOfRows(x, weights = NULL, ties.method = "random",
-  na.rm = FALSE)
+getMinIndexOfRows(x, weights = NULL, ties.method = "random", na.rm = FALSE)
 
-getMaxIndexOfCols(x, weights = NULL, ties.method = "random",
-  na.rm = FALSE)
+getMaxIndexOfCols(x, weights = NULL, ties.method = "random", na.rm = FALSE)
 
-getMinIndexOfCols(x, weights = NULL, ties.method = "random",
-  na.rm = FALSE)
+getMinIndexOfCols(x, weights = NULL, ties.method = "random", na.rm = FALSE)
 }
 \arguments{
 \item{x}{[\code{matrix(n,m)}] \cr

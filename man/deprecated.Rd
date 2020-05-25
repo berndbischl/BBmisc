@@ -6,8 +6,13 @@
 \alias{listToShortString}
 \title{Deprecated function. Do not use!}
 \usage{
-convertDfCols(df, chars.as.factor = FALSE, factors.as.char = FALSE,
-  ints.as.num = FALSE, logicals.as.factor = FALSE)
+convertDfCols(
+  df,
+  chars.as.factor = FALSE,
+  factors.as.char = FALSE,
+  ints.as.num = FALSE,
+  logicals.as.factor = FALSE
+)
 
 listToShortString(x, num.format = "\%.4g", clip.len = 15L)
 }

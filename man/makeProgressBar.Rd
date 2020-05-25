@@ -5,10 +5,15 @@
 \alias{ProgressBar}
 \title{Create a progress bar with estimated time.}
 \usage{
-makeProgressBar(min = 0, max = 100, label = "", char = "+",
+makeProgressBar(
+  min = 0,
+  max = 100,
+  label = "",
+  char = "+",
   style = getOption("BBmisc.ProgressBar.style", "text"),
   width = getOption("BBmisc.ProgressBar.width", getOption("width")),
-  stream = getOption("BBmisc.ProgressBar.stream", "stderr"))
+  stream = getOption("BBmisc.ProgressBar.stream", "stderr")
+)
 }
 \arguments{
 \item{min}{[\code{numeric(1)}]\cr

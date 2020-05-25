@@ -4,8 +4,14 @@
 \alias{requirePackages}
 \title{Require some packages.}
 \usage{
-requirePackages(packs, min.versions = NULL, why = "", stop = TRUE,
-  suppress.warnings = FALSE, default.method = "attach")
+requirePackages(
+  packs,
+  min.versions = NULL,
+  why = "",
+  stop = TRUE,
+  suppress.warnings = FALSE,
+  default.method = "attach"
+)
 }
 \arguments{
 \item{packs}{[\code{character}]\cr

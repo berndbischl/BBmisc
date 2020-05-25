@@ -4,8 +4,13 @@
 \alias{normalize}
 \title{Normalizes numeric data to a given scale.}
 \usage{
-normalize(x, method = "standardize", range = c(0, 1), margin = 1L,
-  on.constant = "quiet")
+normalize(
+  x,
+  method = "standardize",
+  range = c(0, 1),
+  margin = 1L,
+  on.constant = "quiet"
+)
 }
 \arguments{
 \item{x}{[\code{numeric} | \code{matrix} | \code{data.frame}]\cr

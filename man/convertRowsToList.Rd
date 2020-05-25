@@ -5,11 +5,21 @@
 \alias{convertColsToList}
 \title{Convert rows (columns) of data.frame or matrix to lists.}
 \usage{
-convertRowsToList(x, name.list = TRUE, name.vector = FALSE,
-  factors.as.char = TRUE, as.vector = TRUE)
+convertRowsToList(
+  x,
+  name.list = TRUE,
+  name.vector = FALSE,
+  factors.as.char = TRUE,
+  as.vector = TRUE
+)
 
-convertColsToList(x, name.list = FALSE, name.vector = FALSE,
-  factors.as.char = TRUE, as.vector = TRUE)
+convertColsToList(
+  x,
+  name.list = FALSE,
+  name.vector = FALSE,
+  factors.as.char = TRUE,
+  as.vector = TRUE
+)
 }
 \arguments{
 \item{x}{[\code{matrix} | \code{data.frame}]\cr

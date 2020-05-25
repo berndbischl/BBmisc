@@ -13,7 +13,6 @@ URL: https://github.com/berndbischl/BBmisc
 BugReports: https://github.com/berndbischl/BBmisc/issues
 License: BSD_2_clause + file LICENSE
 Encoding: UTF-8
-Roxygen: list(wrap = FALSE)
 Imports:
     checkmate (>= 1.8.0),
     data.table,
@@ -27,4 +26,4 @@ Suggests:
 LazyData: yes
 ByteCompile: yes
 Version: 1.11
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.0

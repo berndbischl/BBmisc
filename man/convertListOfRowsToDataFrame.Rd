@@ -4,8 +4,12 @@
 \alias{convertListOfRowsToDataFrame}
 \title{Convert a list of row-vector of equal structure to a data.frame.}
 \usage{
-convertListOfRowsToDataFrame(rows,
-  strings.as.factors = default.stringsAsFactors(), row.names, col.names)
+convertListOfRowsToDataFrame(
+  rows,
+  strings.as.factors = NULL,
+  row.names,
+  col.names
+)
 }
 \arguments{
 \item{rows}{[\code{list}]\cr
@@ -15,7 +19,7 @@ It is allowed that in some rows some elements are not present, see above.}
 
 \item{strings.as.factors}{[\code{logical(1)}]\cr
 Convert character columns to factors?
-Default is \code{default.stringsAsFactors()}.}
+Default is \code{default.stringsAsFactors()} for R < "4.1.0" and \code{FALSE} otherwise.}
 
 \item{row.names}{[\code{character} | \code{integer} | \code{NULL}]\cr
 Row names for result.

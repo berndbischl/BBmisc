@@ -4,8 +4,20 @@
 \alias{checkArg}
 \title{Check for a function argument.}
 \usage{
-checkArg(x, cl, s4 = FALSE, len, min.len, max.len, choices, subset,
-  lower = NA, upper = NA, na.ok = TRUE, formals)
+checkArg(
+  x,
+  cl,
+  s4 = FALSE,
+  len,
+  min.len,
+  max.len,
+  choices,
+  subset,
+  lower = NA,
+  upper = NA,
+  na.ok = TRUE,
+  formals
+)
 }
 \arguments{
 \item{x}{[any]\cr
