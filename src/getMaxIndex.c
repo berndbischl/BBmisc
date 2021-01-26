@@ -14,14 +14,14 @@
   return  : Index of maximal element (1-based) or
             -1 if we did not find a maximal elemnt (empty vector or only removed NAs)
 */
-int get_max_index(double *x, R_len_t n, R_len_t step, int ties_method, Rboolean na_rm) {
+int get_max_index(double *x, R_len_t n, const R_len_t step, int ties_method, Rboolean na_rm) {
   R_len_t i;
   int max_index = -2;
   int number_of_ties = 0;
   double max_value = -DBL_MAX, current_value;
 
   for (i = 0; i < n; ++i) {
-    current_value = x[i*step];
+    current_value = x[i * step];
     if (!na_rm && ISNAN(current_value))
       return NA_INTEGER;
     if (current_value > max_value) {
@@ -45,14 +45,12 @@ int get_max_index(double *x, R_len_t n, R_len_t step, int ties_method, Rboolean 
 // get_max_index with weights.
 // copy x vector (only elements indexed by steps) multiplied with w
 // then call get_max_index with step=1
-int get_max_index_w(double *x, double *w, R_len_t n, R_len_t step, int ties_method, Rboolean na_rm) {
-  double *xx = (double *) malloc(n * sizeof(double));
+int get_max_index_w(double *x, double *w, double *buf, R_len_t n, R_len_t step, int ties_method, Rboolean na_rm) {
   R_len_t i;
   for (i=0; i<n; i++) {
-    xx[i] = x[i*step] * w[i];
+    buf[i] = x[i*step] * w[i];
   }
-  int j = get_max_index(xx, n, 1, ties_method, na_rm);
-  free(xx);
+  int j = get_max_index(buf, n, 1, ties_method, na_rm);
   return j;
 }
 
@@ -71,7 +69,9 @@ SEXP c_getMaxIndex(SEXP s_x, SEXP s_w, SEXP s_ties_method, SEXP s_na_rm) {
     index = get_max_index(x, len_x, 1, ties_method, na_rm);
   } else {
     UNPACK_REAL_VECTOR(s_w, w, len_w);
-    index = get_max_index_w(x, w, len_x, 1, ties_method, na_rm);
+    double *buf = (double *) malloc(len_x * sizeof(double));
+    index = get_max_index_w(x, w, buf, len_x, 1, ties_method, na_rm);
+    free(buf);
   }
   PutRNGstate();
   if (index == -1)

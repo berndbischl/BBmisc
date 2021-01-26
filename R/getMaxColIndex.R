@@ -31,7 +31,7 @@
 #' print(getMaxIndexOfRows(x))
 #' print(getMinIndexOfRows(x))
 getMaxIndexOfRows = function(x, weights = NULL, ties.method = "random", na.rm = FALSE) {
-  mode(x) = "numeric"
+  if (!is.double(x)) mode(x) = "numeric"
   ties.method = switch(ties.method, random = 1L, first = 2L, last = 3L,
                        stop("Unknown ties method"))
   assertFlag(na.rm)
@@ -48,7 +48,7 @@ getMinIndexOfRows = function(x, weights = NULL, ties.method = "random", na.rm = 
 #' @export
 #' @rdname getMaxIndexOfRows
 getMaxIndexOfCols = function(x, weights = NULL, ties.method = "random", na.rm = FALSE) {
-  mode(x) = "numeric"
+  if (!is.double(x)) mode(x) = "numeric"
   ties.method = switch(ties.method, random = 1L, first = 2L, last = 3L,
                        stop("Unknown ties method"))
   assertFlag(na.rm)
