@@ -89,11 +89,11 @@ checkArg = function(x, cl, s4 = FALSE, len, min.len, max.len, choices, subset, l
       stop("Argument ", s, " must be at least of length ", min.len, " not: ", len2, "!")
     if (!missing(max.len) && len2 > max.len)
       stop("Argument ", s, " must be at most of length ", max.len, " not: ", len2, "!")
-    if (!na.ok && any(is.na(x)))
+    if (!na.ok && anyNA(x))
       stop("Argument ", s, " must not contain any NAs!")
-    if (is.numeric(x) && !is.na(lower) && ((any(is.na(x)) && !na.ok) || (!any(is.na(x)) && any(x < lower))))
+    if (is.numeric(x) && !is.na(lower) && ((anyNA(x) && !na.ok) || (!any(is.na(x)) && any(x < lower))))
       stop("Argument ", s, " must be greater than or equal ", lower, "!")
-    if (is.numeric(x) && !is.na(upper) && ((any(is.na(x)) && !na.ok) || (!any(is.na(x)) && any(x > upper))))
+    if (is.numeric(x) && !is.na(upper) && ((anyNA(x) && !na.ok) || (!any(is.na(x)) && any(x > upper))))
       stop("Argument ", s, " must be less than or equal ", upper, "!")
   }
 }
