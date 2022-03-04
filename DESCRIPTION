@@ -25,5 +25,5 @@ Suggests:
     codetools
 LazyData: yes
 ByteCompile: yes
-Version: 1.11
+Version: 1.12
 RoxygenNote: 7.1.0
