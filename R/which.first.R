@@ -13,11 +13,11 @@
 #'  which.first(c(FALSE, TRUE))
 #'  which.last(c(FALSE, FALSE))
 which.first = function(x, use.names = TRUE) {
-  .Call("c_which_first", x, use.names, PACKAGE = "BBmisc")
+  wf(x, use.names)
 }
 
 #' @rdname which.first
 #' @export
 which.last = function(x, use.names = TRUE) {
-  .Call("c_which_last", x, use.names, PACKAGE = "BBmisc")
+  wl(x, use.names)
 }
