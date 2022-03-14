@@ -4,6 +4,8 @@ BBmisc_1.12:
   added new arg 'weights'
 - optimizeSubInts: fixed a bug where not enough subints where visited
 - computeMode: internally uses data.table now and is therefore much faster
+- Changed default from `default.stringsAsFactors()` to `NULL` in
+  `convertListOfRowsToDataFrame()`.
 
 BBmisc_1.11: 2017-03-09
 - convertToShortString now also prints the content of expressions, and prints NULL like <NULL>
