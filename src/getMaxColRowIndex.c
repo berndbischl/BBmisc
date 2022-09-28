@@ -15,8 +15,10 @@ SEXP c_getMaxIndexOfRows(SEXP s_x, SEXP s_w, SEXP s_ties_method, SEXP s_na_rm) {
     for (R_len_t i = 0; i < nrow_x; i++)
         ret[i] = get_max_index(x + i, ncol_x, nrow_x, ties_method, na_rm);
   } else {
+    double *buf = (double *) malloc(ncol_x * sizeof(double));
     for (R_len_t i = 0; i < nrow_x; i++)
-      ret[i] = get_max_index_w(x + i, w, ncol_x, nrow_x, ties_method, na_rm);
+      ret[i] = get_max_index_w(x + i, w, buf, ncol_x, nrow_x, ties_method, na_rm);
+    free(buf);
   }
   PutRNGstate();
   UNPROTECT(1); /* s_ret */
@@ -36,8 +38,10 @@ SEXP c_getMaxIndexOfCols(SEXP s_x, SEXP s_w, SEXP s_ties_method, SEXP s_na_rm) {
     for (R_len_t i = 0; i < ncol_x; ++i)
       ret[i] = get_max_index(x + i*nrow_x, nrow_x, 1, ties_method, na_rm);
   } else {
+    double *buf = (double *) malloc(nrow_x * sizeof(double));
     for (R_len_t i = 0; i < ncol_x; ++i)
-      ret[i] = get_max_index_w(x + i*nrow_x, w, nrow_x, 1, ties_method, na_rm);
+      ret[i] = get_max_index_w(x + i*nrow_x, w, buf, nrow_x, 1, ties_method, na_rm);
+    free(buf);
   }
   PutRNGstate();
   UNPROTECT(1); /* s_ret */
