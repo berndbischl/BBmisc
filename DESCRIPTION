@@ -1,28 +1,29 @@
 Package: BBmisc
 Title: Miscellaneous Helper Functions for B. Bischl
+Version: 1.13
+Authors@R: c(
+    person("Bernd", "Bischl", , "bernd_bischl@gmx.net", role = c("aut", "cre")),
+    person("Michel", "Lang", , "michellang@gmail.com", role = "aut"),
+    person("Jakob", "Bossek", , "j.bossek@gmail.com", role = "aut"),
+    person("Daniel", "Horn", , "daniel.horn@tu-dortmund.de", role = "aut"),
+    person("Jakob", "Richter", , "code@jakob-r.de", role = "aut"),
+    person("Dirk", "Surmann", , "surmann@statistik.tu-dortmund.de", role = "aut")
+  )
 Description: Miscellaneous helper functions for and from B. Bischl and
     some other guys, mainly for package development.
-Authors@R: c(person("Bernd", "Bischl", email = "bernd_bischl@gmx.net",
-    role = c("aut", "cre")), person("Michel", "Lang", email =
-    "michellang@gmail.com", role = "aut"), person("Jakob", "Bossek", email =
-    "j.bossek@gmail.com", role = "aut"), person("Daniel", "Horn",
-    email = "daniel.horn@tu-dortmund.de", role = "aut"), person("Jakob",
-    "Richter", email = "code@jakob-r.de", role = "aut"), person("Dirk", "Surmann",
-    email = "surmann@statistik.tu-dortmund.de", role = "aut"))
+License: BSD_2_clause + file LICENSE
 URL: https://github.com/berndbischl/BBmisc
 BugReports: https://github.com/berndbischl/BBmisc/issues
-License: BSD_2_clause + file LICENSE
-Encoding: UTF-8
 Imports:
     checkmate (>= 1.8.0),
     data.table,
     methods,
-    utils,
-    stats
+    stats,
+    utils
 Suggests:
-    testthat,
+    codetools,
     microbenchmark,
-    codetools
+    testthat
 ByteCompile: yes
-Version: 1.12
-RoxygenNote: 7.1.0
+Encoding: UTF-8
+RoxygenNote: 7.2.1
