@@ -21,11 +21,11 @@ Default is \code{10}.}
 }
 \value{
 [\code{\link{SimpleFileLogger}}]. A list with following functions:
-  \item{log [\code{function(msg)}]}{Send log message.}
-  \item{getMessages [\code{function(n)}]}{Get last \code{n} log messages.}
-  \item{clear [\code{function()}]}{Resets logger and deletes log file.}
-  \item{getSize [\code{function()}]}{Returns the number of logs written.}
-  \item{getLogfile [\code{function()}]}{Returns the full file name logs are written to.}
+  \item{log [function(msg)]}{Send log message.}
+  \item{getMessages [function(n)]}{Get last \code{n} log messages.}
+  \item{clear [function()]}{Resets logger and deletes log file.}
+  \item{getSize [function()]}{Returns the number of logs written.}
+  \item{getLogfile [function()]}{Returns the full file name logs are written to.}
 }
 \description{
 Creates a simple file logger closure to log to a file, including time stamps.

@@ -44,10 +44,10 @@ Stream to use. Default is set via options (see details).}
 }
 \value{
 [\code{\link{ProgressBar}}]. A list with following functions:
-  \item{set [\code{function(value, msg = label)}]}{Set the bar to a value and possibly display a message instead of the label.}
-  \item{inc [\code{function(value, msg = label)}]}{Increase the bar and possibly display a message instead of the label.}
-  \item{kill [\code{function(clear = FALSE)}]}{Kill the bar so it cannot be used anymore. Cursor is moved to new line. You can also erase its display.}
-  \item{error [\code{function(e)}]}{Useful in \code{tryCatch} to properly display error messages below the bar. See the example.}
+  \item{set [function(value, msg = label)]}{Set the bar to a value and possibly display a message instead of the label.}
+  \item{inc [function(value, msg = label)]}{Increase the bar and possibly display a message instead of the label.}
+  \item{kill [function(clear = FALSE)]}{Kill the bar so it cannot be used anymore. Cursor is moved to new line. You can also erase its display.}
+  \item{error [function(e)]}{Useful in \code{tryCatch} to properly display error messages below the bar. See the example.}
 }
 \description{
 Create a progress bar function that displays the estimated time till
