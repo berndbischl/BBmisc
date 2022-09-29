@@ -70,7 +70,6 @@ SEXP c_getMaxIndex(SEXP s_x, SEXP s_w, SEXP s_ties_method, SEXP s_na_rm) {
   if (len_w == 0) {
     index = get_max_index(x, len_x, 1, ties_method, na_rm);
   } else {
-    UNPACK_REAL_VECTOR(s_w, w, len_w);
     index = get_max_index_w(x, w, len_x, 1, ties_method, na_rm);
   }
   PutRNGstate();
