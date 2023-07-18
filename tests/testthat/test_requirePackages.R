@@ -9,6 +9,7 @@ test_that("requirePackages", {
   expect_error(requirePackages(c("base", "xxx"), suppress.warnings=TRUE), "Please install the following packages: xxx")
   expect_error(requirePackages(c("base", "xxx"), why="test", suppress.warnings=TRUE), "For test please install the following packages: xxx")
 
+  skip_if_not_installed("codetools")
   # test loading vs. attaching using the codetools package
   expect_equal(requirePackages("codetools", default.method = "load"), c(codetools=TRUE))
   expect_true("codetools" %in% loadedNamespaces())
