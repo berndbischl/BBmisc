@@ -2,7 +2,7 @@
 % Please edit documentation in R/binPack.R
 \name{binPack}
 \alias{binPack}
-\title{Simple bin packing.}
+\title{Simple bin packing}
 \usage{
 binPack(x, capacity)
 }

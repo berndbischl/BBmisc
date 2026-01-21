@@ -1,4 +1,7 @@
-#' Initialize data.frame in a convenient way.
+#' @title Initialize data.frame in a convenient way
+#'
+#' @description
+#' Creates a data frame with specified dimensions, column types and optional initial values.
 #'
 #' @param nrow [\code{integer(1)}]\cr
 #'   Nubmer of rows.

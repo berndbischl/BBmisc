@@ -1,5 +1,6 @@
-#' Wrapper for message and sprintf.
+#' @title Wrapper for message and sprintf
 #'
+#' @description
 #' A simple wrapper for \code{message(sprintf(...))}.
 #'
 #' @param ... [any]\cr

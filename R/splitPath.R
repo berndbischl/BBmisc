@@ -1,5 +1,6 @@
-#' Split a path into components
+#' @title Split a path into components
 #'
+#' @description
 #' The first normalized path is split on forward and backward slashes and its components returned as
 #' character vector. The drive or network home are extracted separately on windows systems and
 #' empty on all other systems.

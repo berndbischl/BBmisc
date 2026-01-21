@@ -1,4 +1,7 @@
-#' Converts columns in a data frame to characters, factors or numerics.
+#' @title Converts columns in a data frame to characters, factors or numerics
+#'
+#' @description
+#' Converts columns of a data frame based on specified conversion flags.
 #'
 #' @param df [\code{data.frame}]\cr
 #'   Data frame.

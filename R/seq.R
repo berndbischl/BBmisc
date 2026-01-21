@@ -1,5 +1,6 @@
-#' Generate sequences along rows or cols.
+#' @title Generate sequences along rows or cols
 #'
+#' @description
 #' A simple convenience wrapper around \code{\link[base]{seq_len}}.
 #'
 #' @param x [\code{data.frame} | \code{matrix}]\cr

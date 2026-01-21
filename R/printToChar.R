@@ -1,4 +1,7 @@
-#' Prints object to a string / character vector.
+#' @title Prints object to a string / character vector
+#'
+#' @description
+#' Captures the output of print() as a character string.
 #'
 #' @param x [any]\cr
 #'   Object to print

@@ -1,4 +1,7 @@
-#' Get the first/last element of a list/vector.
+#' @title Get the first/last element of a list/vector
+#'
+#' @description
+#' Returns the first or last element of a list or vector.
 #'
 #' @param x [\code{list} | \code{vector}]\cr
 #'   The list or vector.

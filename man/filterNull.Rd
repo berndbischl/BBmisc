@@ -14,5 +14,5 @@ List.}
 [\code{list}].
 }
 \description{
-Filter a list for NULL values
+Removes all NULL elements from a list.
 }

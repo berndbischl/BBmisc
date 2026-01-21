@@ -20,7 +20,7 @@ Separator to use to collapse the vector of characters.}
 \code{character(1)}.
 }
 \description{
-Repeat and join a string
+Repeats a string n times and joins the results.
 }
 \examples{
 strrepeat("x", 3)

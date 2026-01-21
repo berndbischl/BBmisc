@@ -1,4 +1,7 @@
-#' Find the index of first/last \code{TRUE} value in a logical vector.
+#' @title Find the index of first/last \code{TRUE} value in a logical vector
+#'
+#' @description
+#' Returns the index of the first or last TRUE value in a logical vector.
 #'
 #' @param x [\code{logical}]\cr
 #'   Logical vector.

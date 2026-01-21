@@ -1,5 +1,6 @@
-#' Converts a string into a quoted expression.
+#' @title Converts a string into a quoted expression
 #'
+#' @description
 #' Works the same as if you would have entered the expression and called
 #' \code{\link{quote}} on it.
 #'

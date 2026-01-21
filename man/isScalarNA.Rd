@@ -2,7 +2,7 @@
 % Please edit documentation in R/isScalarNA.R
 \name{isScalarNA}
 \alias{isScalarNA}
-\title{Checks whether an object is a scalar NA value.}
+\title{Checks whether an object is a scalar NA value}
 \usage{
 isScalarNA(x)
 }

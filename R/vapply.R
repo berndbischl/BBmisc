@@ -1,4 +1,4 @@
-#' Apply a function with a predefined return value
+#' @title Apply a function with a predefined return value
 #'
 #' @description
 #' These are just wrappers around \code{\link[base]{vapply}} with

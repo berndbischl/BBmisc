@@ -2,7 +2,7 @@
 % Please edit documentation in R/namedList.R
 \name{namedList}
 \alias{namedList}
-\title{Create named list, possibly initialized with a certain element.}
+\title{Create named list, possibly initialized with a certain element}
 \usage{
 namedList(names, init)
 }

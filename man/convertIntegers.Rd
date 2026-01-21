@@ -2,7 +2,7 @@
 % Please edit documentation in R/convertInteger.R
 \name{convertIntegers}
 \alias{convertIntegers}
-\title{Conversion for integer vector.}
+\title{Conversion for integer vector}
 \usage{
 convertIntegers(x)
 }

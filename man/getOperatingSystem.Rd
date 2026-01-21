@@ -6,7 +6,7 @@
 \alias{isUnix}
 \alias{isLinux}
 \alias{isDarwin}
-\title{Functions to determine the operating system.}
+\title{Functions to determine the operating system}
 \usage{
 getOperatingSystem()
 

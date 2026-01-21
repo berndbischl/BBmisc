@@ -1,5 +1,6 @@
-#' Collapse vector to string.
+#' @title Collapse vector to string
 #'
+#' @description
 #' A simple wrapper for \code{paste(x, collapse)}.
 #'
 #' @param x [\code{vector}]\cr

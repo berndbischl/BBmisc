@@ -2,7 +2,7 @@
 % Please edit documentation in R/normalize.R
 \name{normalize}
 \alias{normalize}
-\title{Normalizes numeric data to a given scale.}
+\title{Normalizes numeric data to a given scale}
 \usage{
 normalize(
   x,

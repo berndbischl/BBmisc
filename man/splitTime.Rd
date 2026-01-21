@@ -2,7 +2,7 @@
 % Please edit documentation in R/splitTime.R
 \name{splitTime}
 \alias{splitTime}
-\title{Split seconds into handy chunks of time.}
+\title{Split seconds into handy chunks of time}
 \usage{
 splitTime(seconds, unit = "years")
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/symdiff.R
 \name{symdiff}
 \alias{symdiff}
-\title{Calculates symmetric set difference between two sets.}
+\title{Calculates symmetric set difference between two sets}
 \usage{
 symdiff(x, y)
 }
@@ -17,5 +17,5 @@ Set 2.}
 [\code{vector}].
 }
 \description{
-Calculates symmetric set difference between two sets.
+Returns elements that are in either set but not in both.
 }

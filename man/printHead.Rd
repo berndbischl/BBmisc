@@ -2,7 +2,7 @@
 % Please edit documentation in R/printHead.R
 \name{printHead}
 \alias{printHead}
-\title{More meaningful \code{head(df)} output.}
+\title{More meaningful \code{head(df)} output}
 \usage{
 printHead(x, n = 6L)
 }

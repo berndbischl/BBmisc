@@ -2,7 +2,7 @@
 % Please edit documentation in R/convertListOfRowsToDataFrame.R
 \name{convertListOfRowsToDataFrame}
 \alias{convertListOfRowsToDataFrame}
-\title{Convert a list of row-vector of equal structure to a data.frame.}
+\title{Convert a list of row-vector of equal structure to a data.frame}
 \usage{
 convertListOfRowsToDataFrame(
   rows,

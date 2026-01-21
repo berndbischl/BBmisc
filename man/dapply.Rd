@@ -2,7 +2,7 @@
 % Please edit documentation in R/dapply.R
 \name{dapply}
 \alias{dapply}
-\title{Call \code{lapply} on an object and return a data.frame.}
+\title{Call \code{lapply} on an object and return a data.frame}
 \usage{
 dapply(x, fun, ..., col.names)
 }

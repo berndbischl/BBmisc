@@ -3,7 +3,7 @@
 \name{setRowNames}
 \alias{setRowNames}
 \alias{setColNames}
-\title{Wrapper for \code{rownames(x) = y}, \code{colnames(x) = y}.}
+\title{Wrapper for \code{rownames(x) = y}, \code{colnames(x) = y}}
 \usage{
 setRowNames(x, names)
 
@@ -20,7 +20,7 @@ New names for rows / columns.}
 Changed object \code{x}.
 }
 \description{
-Wrapper for \code{rownames(x) = y}, \code{colnames(x) = y}.
+Sets row or column names on a matrix or data frame and returns the modified object.
 }
 \examples{
 setColNames(matrix(1:4, 2, 2), c("a", "b"))

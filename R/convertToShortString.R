@@ -1,4 +1,4 @@
-#' @title Converts any R object to a descriptive string so it can be used in messages.
+#' @title Converts any R object to a descriptive string so it can be used in messages
 #'
 #' @description
 #' Atomics: If of length 0 or 1, they are basically printed as they are.

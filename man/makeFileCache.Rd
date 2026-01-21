@@ -2,7 +2,7 @@
 % Please edit documentation in R/FileCache.R
 \name{makeFileCache}
 \alias{makeFileCache}
-\title{A caching wrapper around load2.}
+\title{A caching wrapper around load2}
 \usage{
 makeFileCache(use.cache = TRUE)
 }

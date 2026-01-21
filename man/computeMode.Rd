@@ -2,7 +2,7 @@
 % Please edit documentation in R/computeMode.R
 \name{computeMode}
 \alias{computeMode}
-\title{Compute statistical mode of a vector (value that occurs most frequently).}
+\title{Compute statistical mode of a vector (value that occurs most frequently)}
 \usage{
 computeMode(x, ties.method = "random", na.rm = TRUE)
 }

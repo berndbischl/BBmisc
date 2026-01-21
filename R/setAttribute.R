@@ -1,4 +1,7 @@
-#' A wrapper for \code{attr(x, which) = y}.
+#' @title A wrapper for \code{attr(x, which) = y}
+#'
+#' @description
+#' Sets an attribute on an object and returns the modified object.
 #'
 #' @param x [any]\cr
 #'  Your object.

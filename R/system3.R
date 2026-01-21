@@ -1,5 +1,6 @@
-#' Wrapper for system2 with better return type and errorhandling.
+#' @title Wrapper for system2 with better return type and errorhandling
 #'
+#' @description
 #' Wrapper for \code{\link{system2}} with better return type and errorhandling.
 #'
 #' @param command See \code{\link{system2}}.

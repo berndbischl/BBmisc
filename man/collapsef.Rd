@@ -2,7 +2,7 @@
 % Please edit documentation in R/collapsef.R
 \name{collapsef}
 \alias{collapsef}
-\title{Collapse vector to string.}
+\title{Collapse vector to string}
 \usage{
 collapsef(..., sep = ",")
 }
@@ -18,7 +18,6 @@ See \code{\link{collapse}}.}
 }
 \description{
 A simple wrapper for \code{collapse(sprintf, ...)}.
-}
-\details{
+
 Useful for vectorized call to \code{\link{sprintf}}.
 }

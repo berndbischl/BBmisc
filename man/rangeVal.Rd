@@ -2,7 +2,7 @@
 % Please edit documentation in R/rangeVal.R
 \name{rangeVal}
 \alias{rangeVal}
-\title{Calculate range statistic.}
+\title{Calculate range statistic}
 \usage{
 rangeVal(x, na.rm = FALSE)
 }

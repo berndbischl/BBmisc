@@ -2,7 +2,7 @@
 % Please edit documentation in R/makeS3Obj.R
 \name{makeS3Obj}
 \alias{makeS3Obj}
-\title{Simple constructor for S3 objects based on lists.}
+\title{Simple constructor for S3 objects based on lists}
 \usage{
 makeS3Obj(classes, ...)
 }

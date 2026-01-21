@@ -1,5 +1,6 @@
-#' Conversion for single integer.
+#' @title Conversion for single integer
 #'
+#' @description
 #' Convert single numeric to integer only if the numeric represents a single integer,
 #' e.g. 1 to 1L.
 #' Otherwise the argument is returned unchanged.
@@ -26,8 +27,9 @@ convertInteger = function(x) {
   return(x)
 }
 
-#' Conversion for integer vector.
+#' @title Conversion for integer vector
 #'
+#' @description
 #' Convert numeric vector to integer vector if the numeric vector fully represents
 #' an integer vector,
 #' e.g. \code{c(1, 5)} to \code{c(1L, 5L)}.

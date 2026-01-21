@@ -1,5 +1,6 @@
-#' Wrapper for cat and sprintf.
+#' @title Wrapper for cat and sprintf
 #'
+#' @description
 #' A simple wrapper for \code{cat(sprintf(...))}.
 #'
 #' @param ... [any]\cr

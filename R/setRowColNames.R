@@ -1,4 +1,7 @@
-#' Wrapper for \code{rownames(x) = y}, \code{colnames(x) = y}.
+#' @title Wrapper for \code{rownames(x) = y}, \code{colnames(x) = y}
+#'
+#' @description
+#' Sets row or column names on a matrix or data frame and returns the modified object.
 #'
 #' @param x [\code{matrix} | \code{data.frame}]\cr
 #'   Matrix or data.frame.

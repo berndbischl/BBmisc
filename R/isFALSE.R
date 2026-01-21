@@ -1,4 +1,7 @@
-#' A wrapper for \code{identical(x, FALSE)}.
+#' @title A wrapper for \code{identical(x, FALSE)}
+#'
+#' @description
+#' Tests if an object is identical to FALSE.
 #'
 #' @param x [any]\cr
 #'   Your object.

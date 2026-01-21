@@ -1,5 +1,6 @@
-#' A wrapper for \code{library}.
+#' @title A wrapper for \code{library}
 #'
+#' @description
 #' Tries to load packages. If the packages are not found, they will be installed from
 #' the default repository. This function is intended for use in interactive sessions
 #' and should not be used by other packages.

@@ -1,4 +1,4 @@
-#' @title Require some packages.
+#' @title Require some packages
 #'
 #' @description
 #' Packages are loaded either via \code{\link{requireNamespace}} or \code{\link{require}}.

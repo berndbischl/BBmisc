@@ -1,5 +1,6 @@
-#' Find row- or columnwise the index of the maximal / minimal element in a matrix.
+#' @title Find row- or columnwise the index of the maximal / minimal element in a matrix
 #'
+#' @description
 #' \code{getMaxIndexOfRows} returns the index of the maximal element of each row.
 #' \code{getMinIndexOfRows} returns the index of the minimal element of each row.
 #' \code{getMaxIndexOfCols} returns the index of the maximal element of each col.

@@ -1,4 +1,7 @@
-#' Check subset relation on two vectors.
+#' @title Check subset relation on two vectors
+#'
+#' @description
+#' Checks if all elements of x are contained in y.
 #'
 #' @param x [\code{vector}]\cr
 #'   Source vector.

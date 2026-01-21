@@ -1,5 +1,6 @@
-#' Convert rows (columns) of data.frame or matrix to lists.
+#' @title Convert rows (columns) of data.frame or matrix to lists
 #'
+#' @description
 #' For each row, one list/vector is constructed, each entry of
 #' the row becomes a list/vector element.
 #'

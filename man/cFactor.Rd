@@ -2,7 +2,7 @@
 % Please edit documentation in R/factor.R
 \name{cFactor}
 \alias{cFactor}
-\title{Combine multiple factors and return a factor.}
+\title{Combine multiple factors and return a factor}
 \usage{
 cFactor(...)
 }

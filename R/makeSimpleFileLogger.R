@@ -1,5 +1,6 @@
-#' Simple logger which outputs to a file.
+#' @title Simple logger which outputs to a file
 #'
+#' @description
 #' Creates a simple file logger closure to log to a file, including time stamps.
 #' An optional buffer holds the last few log messages.
 #'

@@ -1,5 +1,6 @@
-#' Are all elements of a list / vector uniquely named?
+#' @title Are all elements of a list / vector uniquely named?
 #'
+#' @description
 #' \code{NA} or \dQuote{} are not allowed as names.
 #'
 #' @param x [\code{vector}]\cr

@@ -1,5 +1,8 @@
 
-#' A wrapper to add to the class attribute.
+#' @title A wrapper to add to the class attribute
+#'
+#' @description
+#' Adds classes to the class attribute of an object.
 #'
 #' @param x [any]\cr
 #'   Your object.

@@ -5,7 +5,7 @@
 \alias{getMinIndexOfRows}
 \alias{getMaxIndexOfCols}
 \alias{getMinIndexOfCols}
-\title{Find row- or columnwise the index of the maximal / minimal element in a matrix.}
+\title{Find row- or columnwise the index of the maximal / minimal element in a matrix}
 \usage{
 getMaxIndexOfRows(x, weights = NULL, ties.method = "random", na.rm = FALSE)
 

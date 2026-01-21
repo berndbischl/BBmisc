@@ -1,5 +1,6 @@
-#' Set a list element to a new value.
+#' @title Set a list element to a new value
 #'
+#' @description
 #' This wrapper supports setting elements to \code{NULL}.
 #'
 #' @param obj [\code{list}]\cr

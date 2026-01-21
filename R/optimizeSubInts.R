@@ -1,4 +1,4 @@
-#' @title Naive multi-start version of \code{\link{optimize}} for global optimization.
+#' @title Naive multi-start version of \code{\link{optimize}} for global optimization
 #'
 #' @description
 #' The univariate \code{\link{optimize}} can stop at arbitrarily bad points when

@@ -1,4 +1,7 @@
-#' Convert a numerical vector into a range string.
+#' @title Convert a numerical vector into a range string
+#'
+#' @description
+#' Converts a vector of integers into a compact range string representation.
 #'
 #' @param x [\code{integer}]\cr
 #'   Vector to convert into a range string.

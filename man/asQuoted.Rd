@@ -2,7 +2,7 @@
 % Please edit documentation in R/asQuoted.R
 \name{asQuoted}
 \alias{asQuoted}
-\title{Converts a string into a quoted expression.}
+\title{Converts a string into a quoted expression}
 \usage{
 asQuoted(s, env = parent.frame())
 }

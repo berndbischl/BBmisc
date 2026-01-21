@@ -3,7 +3,7 @@
 \name{seq_row}
 \alias{seq_row}
 \alias{seq_col}
-\title{Generate sequences along rows or cols.}
+\title{Generate sequences along rows or cols}
 \usage{
 seq_row(x)
 

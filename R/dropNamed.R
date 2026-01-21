@@ -1,4 +1,7 @@
-#' Drop named elements of an object.
+#' @title Drop named elements of an object
+#'
+#' @description
+#' Removes named elements from a vector, list, matrix or data frame.
 #'
 #' @param x [any]\cr
 #'   Object to drop named elements from.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/isFALSE.R
 \name{isFALSE}
 \alias{isFALSE}
-\title{A wrapper for \code{identical(x, FALSE)}.}
+\title{A wrapper for \code{identical(x, FALSE)}}
 \usage{
 isFALSE(x)
 }
@@ -14,7 +14,7 @@ Your object.}
 [\code{logical(1)}].
 }
 \description{
-A wrapper for \code{identical(x, FALSE)}.
+Tests if an object is identical to FALSE.
 }
 \examples{
 isFALSE(0)

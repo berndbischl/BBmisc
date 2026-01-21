@@ -1,5 +1,6 @@
-#' Construct a path relative to another
+#' @title Construct a path relative to another
 #'
+#' @description
 #' Constructs a relative path from path \code{from} to path \code{to}.
 #' If this is not possible (i.e. different drive letters on windows systems),
 #' \code{NA} is returned.

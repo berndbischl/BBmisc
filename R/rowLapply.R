@@ -1,5 +1,6 @@
-#' Apply function to rows of a data frame.
+#' @title Apply function to rows of a data frame
 #'
+#' @description
 #' Just like an \code{\link[base]{lapply}} on data frames,
 #' but on the rows.
 #'

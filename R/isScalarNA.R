@@ -1,5 +1,6 @@
-#' Checks whether an object is a scalar NA value.
+#' @title Checks whether an object is a scalar NA value
 #'
+#' @description
 #' Checks whether object is from \code{(NA, NA_integer, NA_real_, NA_character_, NA_complex_)}.
 #' @param x [any]\cr
 #'   Object to check.

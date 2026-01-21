@@ -2,7 +2,7 @@
 % Please edit documentation in R/requirePackages.R
 \name{requirePackages}
 \alias{requirePackages}
-\title{Require some packages.}
+\title{Require some packages}
 \usage{
 requirePackages(
   packs,

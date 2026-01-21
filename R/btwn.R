@@ -1,4 +1,7 @@
-#' Check if some values are covered by the range of the values in a second vector.
+#' @title Check if some values are covered by the range of the values in a second vector
+#'
+#' @description
+#' Tests whether values in x are between the minimum and maximum of y.
 #'
 #' @param x [\code{numeric(n)}]\cr
 #'   Value(s) that should be within the range of \code{y}.

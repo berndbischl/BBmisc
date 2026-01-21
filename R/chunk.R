@@ -1,5 +1,6 @@
-#' Chunk elements of vectors into blocks of nearly equal size.
+#' @title Chunk elements of vectors into blocks of nearly equal size
 #'
+#' @description
 #' In case of shuffling and vectors that cannot be chunked evenly,
 #' it is chosen randomly which levels / chunks will receive 1 element less.
 #' If you do not shuffle, always the last chunks will receive 1 element less.

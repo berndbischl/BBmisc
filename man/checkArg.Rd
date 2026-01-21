@@ -2,7 +2,7 @@
 % Please edit documentation in R/checkArg.R
 \name{checkArg}
 \alias{checkArg}
-\title{Check for a function argument.}
+\title{Check for a function argument}
 \usage{
 checkArg(
   x,

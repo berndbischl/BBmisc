@@ -1,5 +1,6 @@
-#' Is one / are several files a directory?
+#' @title Is one / are several files a directory?
 #'
+#' @description
 #' If a file does not exist, \code{FALSE} is returned.
 #'
 #' @param ... [\code{character(1)}]\cr
@@ -17,8 +18,9 @@ isDirectory = function(...) {
   !is.na(x) & x
 }
 
-#' Is one / are several directories empty?
+#' @title Is one / are several directories empty?
 #'
+#' @description
 #' If file does not exist or is not a directory, \code{FALSE} is returned.
 #'
 #' @param ... [\code{character(1)}]\cr

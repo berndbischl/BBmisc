@@ -1,5 +1,6 @@
-#' Convert Integers to Strings
+#' @title Convert Integers to Strings
 #'
+#' @description
 #' This is the counterpart of \code{\link[base]{strtoi}}.
 #' For a base greater than \sQuote{10}, letters \sQuote{a} to \sQuote{z}
 #' are used to represent \sQuote{10} to \sQuote{35}.

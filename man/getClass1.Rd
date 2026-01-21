@@ -2,7 +2,7 @@
 % Please edit documentation in R/getClass1.R
 \name{getClass1}
 \alias{getClass1}
-\title{Wrapper for \code{class(x)[1]}.}
+\title{Wrapper for \code{class(x)[1]}}
 \usage{
 getClass1(x)
 }
@@ -14,7 +14,7 @@ Input object.}
 [\code{character(1)}].
 }
 \description{
-Wrapper for \code{class(x)[1]}.
+Returns the first class of an object.
 }
 \note{
 \code{getClass} is a function in \code{methods}. Do not confuse.

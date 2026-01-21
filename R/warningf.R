@@ -1,5 +1,6 @@
-#' Wrapper for warning and sprintf.
+#' @title Wrapper for warning and sprintf
 #'
+#' @description
 #' A wrapper for \code{\link{warning}} with \code{\link{sprintf}} applied to the arguments.
 #'
 #' @param ... [any]\cr

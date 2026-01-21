@@ -20,5 +20,5 @@ Default is \code{TRUE}.}
   be \code{FALSE}.
 }
 \description{
-Can some strings be used for column or list element names without problems?
+Checks if strings are valid R names that won't cause problems as column names.
 }

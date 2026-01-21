@@ -1,6 +1,9 @@
 #FIXME: remove
 
-#' Deprecated function. Do not use!
+#' @title Deprecated function. Do not use!
+#'
+#' @description
+#' These functions are deprecated and will be removed in future versions.
 #'
 #' @param df No text
 #' @param chars.as.factor No text

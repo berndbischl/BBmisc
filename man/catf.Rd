@@ -2,7 +2,7 @@
 % Please edit documentation in R/catf.R
 \name{catf}
 \alias{catf}
-\title{Wrapper for cat and sprintf.}
+\title{Wrapper for cat and sprintf}
 \usage{
 catf(..., file = "", append = FALSE, newline = TRUE)
 }

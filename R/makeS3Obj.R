@@ -1,5 +1,6 @@
-#' Simple constructor for S3 objects based on lists.
+#' @title Simple constructor for S3 objects based on lists
 #'
+#' @description
 #' Simple wrapper for \code{as.list} and \code{\link{setClasses}}.
 #'
 #' @param classes [\code{character}]\cr

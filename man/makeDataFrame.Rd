@@ -2,7 +2,7 @@
 % Please edit documentation in R/makeDataFrame.R
 \name{makeDataFrame}
 \alias{makeDataFrame}
-\title{Initialize data.frame in a convenient way.}
+\title{Initialize data.frame in a convenient way}
 \usage{
 makeDataFrame(
   nrow,
@@ -39,7 +39,7 @@ Column names.
 Default is \dQuote{V1}, \dQuote{V2}, and so on.}
 }
 \description{
-Initialize data.frame in a convenient way.
+Creates a data frame with specified dimensions, column types and optional initial values.
 }
 \examples{
 print(makeDataFrame(3, 2, init = 7))

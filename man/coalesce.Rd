@@ -2,7 +2,7 @@
 % Please edit documentation in R/coalesce.R
 \name{coalesce}
 \alias{coalesce}
-\title{Returns first non-missing, non-null argument.}
+\title{Returns first non-missing, non-null argument}
 \usage{
 coalesce(...)
 }

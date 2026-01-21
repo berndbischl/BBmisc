@@ -2,7 +2,7 @@
 % Please edit documentation in R/setValue.R
 \name{setValue}
 \alias{setValue}
-\title{Set a list element to a new value.}
+\title{Set a list element to a new value}
 \usage{
 setValue(obj, index, newval)
 }

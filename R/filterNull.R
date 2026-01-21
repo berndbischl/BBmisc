@@ -1,4 +1,7 @@
-#' Filter a list for NULL values
+#' @title Filter a list for NULL values
+#'
+#' @description
+#' Removes all NULL elements from a list.
 #'
 #' @param li [\code{list}]\cr
 #'  List.

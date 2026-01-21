@@ -1,5 +1,6 @@
-#' Functions to determine the operating system.
+#' @title Functions to determine the operating system
 #'
+#' @description
 #' \describe{
 #' \item{getOperatingSystem}{Simple wrapper for \code{.Platform$OS.type}, returns \code{character(1)}.}
 #' \item{isUnix}{Predicate for OS string, returns \code{logical(1)}. Currently this would include Unix, Linux and Mac flavours.}

@@ -1,5 +1,6 @@
-#' Check that a list contains only elements of a required type.
+#' @title Check that a list contains only elements of a required type
 #'
+#' @description
 #' Check that argument is a list and contains only elements of a required type.
 #' Throws exception if check is not passed.
 #' Note that argument is evaluated when checked.

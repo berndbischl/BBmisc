@@ -2,7 +2,7 @@
 % Please edit documentation in R/printToChar.R
 \name{printToChar}
 \alias{printToChar}
-\title{Prints object to a string / character vector.}
+\title{Prints object to a string / character vector}
 \usage{
 printToChar(x, collapse = "\\n")
 }
@@ -19,7 +19,7 @@ Default is \dQuote{\\n}.}
 [\code{character}].
 }
 \description{
-Prints object to a string / character vector.
+Captures the output of print() as a character string.
 }
 \examples{
 x = data.frame(a = 1:2, b = 3:4)

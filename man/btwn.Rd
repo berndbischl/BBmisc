@@ -2,7 +2,7 @@
 % Please edit documentation in R/btwn.R
 \name{\%btwn\%}
 \alias{\%btwn\%}
-\title{Check if some values are covered by the range of the values in a second vector.}
+\title{Check if some values are covered by the range of the values in a second vector}
 \usage{
 x \%btwn\% y
 }
@@ -17,7 +17,7 @@ Numeric vector which defines the range.}
 [\code{logical(n)}]. For each value in \code{x}: Is it in the range of \code{y}?
 }
 \description{
-Check if some values are covered by the range of the values in a second vector.
+Tests whether values in x are between the minimum and maximum of y.
 }
 \examples{
 x = 3

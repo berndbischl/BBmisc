@@ -1,4 +1,7 @@
-#' Sort the rows of a data.frame according to one or more columns.
+#' @title Sort the rows of a data.frame according to one or more columns
+#'
+#' @description
+#' Sorts a data frame by one or more columns in ascending or descending order.
 #'
 #' @param x [\code{data.frame}]\cr
 #'   Data.frame to sort.

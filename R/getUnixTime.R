@@ -1,5 +1,6 @@
-#' Current time in seconds.
+#' @title Current time in seconds
 #'
+#' @description
 #' Simple wrapper for \code{as.integer(Sys.time())}.
 #'
 #' @return [\code{integer(1)}].

@@ -2,7 +2,7 @@
 % Please edit documentation in R/convertInteger.R
 \name{convertInteger}
 \alias{convertInteger}
-\title{Conversion for single integer.}
+\title{Conversion for single integer}
 \usage{
 convertInteger(x)
 }
