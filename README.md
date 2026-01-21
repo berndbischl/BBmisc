@@ -1,9 +1,6 @@
 BBmisc
 ======
 
-[![Build Status](https://travis-ci.org/berndbischl/BBmisc.svg?branch=master)](https://travis-ci.org/berndbischl/BBmisc)
-[![Coverage Status](https://img.shields.io/coveralls/berndbischl/BBmisc.svg)](https://coveralls.io/r/berndbischl/BBmisc?branch=master)
-
 Miscellaneous helper functions for and from B. Bischl and some other guys at TU Dortmund, mainly for package development.
 
 * Offical CRAN release site:
@@ -17,4 +14,4 @@ Miscellaneous helper functions for and from B. Bischl and some other guys at TU 
   devtools::install_github("berndbischl/BBmisc")
   ```
 
-* [Further installation instructions](https://github.com/tudo-r/PackagesInfo/wiki/Installation-Information)
+* [Further installation instructions](https://github.com/rdatsci/PackagesInfo/wiki/Installation-Information)
