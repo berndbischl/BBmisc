@@ -2,7 +2,7 @@
 % Please edit documentation in R/save2.R
 \name{save2}
 \alias{save2}
-\title{Save multiple objects to a file.}
+\title{Save multiple objects to a file}
 \usage{
 save2(
   file,

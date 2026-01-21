@@ -2,7 +2,7 @@
 % Please edit documentation in R/convertToShortString.R
 \name{convertToShortString}
 \alias{convertToShortString}
-\title{Converts any R object to a descriptive string so it can be used in messages.}
+\title{Converts any R object to a descriptive string so it can be used in messages}
 \usage{
 convertToShortString(x, num.format = "\%.4g", clip.len = 15L)
 }

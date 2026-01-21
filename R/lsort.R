@@ -1,4 +1,7 @@
-#' A wrapper for \code{\link{sort}} to sort using the \dQuote{C} collating rules.
+#' @title A wrapper for \code{\link{sort}} to sort using the \dQuote{C} collating rules
+#'
+#' @description
+#' Sorts using the C locale for consistent sorting across platforms.
 #'
 #' @param ...
 #'   Options passed to sort.

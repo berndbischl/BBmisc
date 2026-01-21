@@ -1,4 +1,7 @@
-#' Repeat and join a string
+#' @title Repeat and join a string
+#'
+#' @description
+#' Repeats a string n times and joins the results.
 #'
 #' @param x [character]\cr
 #'   Vector of characters.

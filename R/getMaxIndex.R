@@ -1,5 +1,6 @@
-#' Return index of maximal/minimal/best element in numerical vector.
+#' @title Return index of maximal/minimal/best element in numerical vector
 #'
+#' @description
 #' If \code{x} is empty or only contains NAs which are to be removed,
 #' -1 is returned.
 #'

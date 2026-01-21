@@ -1,5 +1,6 @@
-#' Is given argument an atomic vector or factor of length 1?
+#' @title Is given argument an atomic vector or factor of length 1?
 #'
+#' @description
 #' More specific functions for scalars of a given type exist, too.
 #'
 #' @param x [any]\cr

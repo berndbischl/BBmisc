@@ -1,5 +1,6 @@
-#' Insert elements from one list/vector into another list/vector.
+#' @title Insert elements from one list/vector into another list/vector
 #'
+#' @description
 #' Inserts elements from \code{xs2} into \code{xs1} by name,
 #' overwriting elements of equal names.
 #'

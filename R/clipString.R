@@ -1,4 +1,7 @@
-#' Shortens strings to a given length.
+#' @title Shortens strings to a given length
+#'
+#' @description
+#' Clips strings to a maximum length, appending a tail if shortened.
 #'
 #' @param x [\code{character}]\cr
 #'   Vector of strings.

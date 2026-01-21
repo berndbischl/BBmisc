@@ -2,7 +2,7 @@
 % Please edit documentation in R/getUnixTime.R
 \name{getUnixTime}
 \alias{getUnixTime}
-\title{Current time in seconds.}
+\title{Current time in seconds}
 \usage{
 getUnixTime()
 }

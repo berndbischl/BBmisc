@@ -2,7 +2,7 @@
 % Please edit documentation in R/setAttribute.R
 \name{setAttribute}
 \alias{setAttribute}
-\title{A wrapper for \code{attr(x, which) = y}.}
+\title{A wrapper for \code{attr(x, which) = y}}
 \usage{
 setAttribute(x, which, value)
 }
@@ -20,7 +20,7 @@ Value for the attribute.}
 Changed object \code{x}.
 }
 \description{
-A wrapper for \code{attr(x, which) = y}.
+Sets an attribute on an object and returns the modified object.
 }
 \examples{
 setAttribute(list(), "foo", 1)

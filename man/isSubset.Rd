@@ -2,7 +2,7 @@
 % Please edit documentation in R/isSubset.R
 \name{isSubset}
 \alias{isSubset}
-\title{Check subset relation on two vectors.}
+\title{Check subset relation on two vectors}
 \usage{
 isSubset(x, y, strict = FALSE)
 }
@@ -22,5 +22,5 @@ Checks for strict/proper subset relation.}
   if \code{x} is a subset of \code{y} and \code{FALSE} otherwise.
 }
 \description{
-Check subset relation on two vectors.
+Checks if all elements of x are contained in y.
 }

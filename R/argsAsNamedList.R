@@ -1,5 +1,6 @@
-#' Parses \code{...} arguments to a named list.
+#' @title Parses \code{...} arguments to a named list
 #'
+#' @description
 #' The deparsed name will be used for arguments with missing names.
 #' Missing names will be set to \code{NA}.
 #'

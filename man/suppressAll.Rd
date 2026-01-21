@@ -2,7 +2,7 @@
 % Please edit documentation in R/suppressAll.R
 \name{suppressAll}
 \alias{suppressAll}
-\title{Suppresses all output except for errors.}
+\title{Suppresses all output except for errors}
 \usage{
 suppressAll(expr)
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/lib.R
 \name{lib}
 \alias{lib}
-\title{A wrapper for \code{library}.}
+\title{A wrapper for \code{library}}
 \usage{
 lib(...)
 }

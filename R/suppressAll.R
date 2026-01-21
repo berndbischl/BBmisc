@@ -1,5 +1,6 @@
-#' Suppresses all output except for errors.
-#' 
+#' @title Suppresses all output except for errors
+#'
+#' @description
 #' Evaluates an expression and suppresses all output except for errors, 
 #' meaning: prints, messages, warnings and package startup messages.
 #' 

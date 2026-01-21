@@ -2,7 +2,7 @@
 % Please edit documentation in R/isSuperset.R
 \name{isSuperset}
 \alias{isSuperset}
-\title{Check superset relation on two vectors.}
+\title{Check superset relation on two vectors}
 \usage{
 isSuperset(x, y, strict = FALSE)
 }
@@ -22,5 +22,5 @@ Checks for strict/proper superset relation.}
   if \code{y} is a subset of \code{x} and \code{FALSE} otherwise.
 }
 \description{
-Check superset relation on two vectors.
+Checks if all elements of y are contained in x.
 }

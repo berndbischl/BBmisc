@@ -2,7 +2,7 @@
 % Please edit documentation in R/ensureVector.R
 \name{ensureVector}
 \alias{ensureVector}
-\title{Blow up single scalars / objects to vectors /  list by replication.}
+\title{Blow up single scalars / objects to vectors /  list by replication}
 \usage{
 ensureVector(x, n = 1L, cl = NULL, names = NULL, ensure.list = FALSE)
 }

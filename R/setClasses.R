@@ -1,4 +1,7 @@
-#' A wrapper for \code{class(x) = classes}.
+#' @title A wrapper for \code{class(x) = classes}
+#'
+#' @description
+#' Sets the class attribute of an object and returns the modified object.
 #'
 #' @param x [any]\cr
 #'   Your object.

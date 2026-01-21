@@ -1,5 +1,6 @@
-#' Calculate range statistic.
+#' @title Calculate range statistic
 #'
+#' @description
 #' A simple wrapper for \code{diff(range(x))}, so \code{max(x) - min(x)}.
 #'
 #' @param x [\code{numeric}]\cr

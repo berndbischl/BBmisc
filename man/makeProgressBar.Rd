@@ -3,7 +3,7 @@
 \name{makeProgressBar}
 \alias{makeProgressBar}
 \alias{ProgressBar}
-\title{Create a progress bar with estimated time.}
+\title{Create a progress bar with estimated time}
 \usage{
 makeProgressBar(
   min = 0,

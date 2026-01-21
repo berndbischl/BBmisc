@@ -1,5 +1,6 @@
-#' Determines used factor levels.
+#' @title Determines used factor levels
 #'
+#' @description
 #' Determines the factor levels of a factor type vector
 #' that are actually occuring in it.
 #'

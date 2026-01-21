@@ -2,7 +2,7 @@
 % Please edit documentation in R/convertDataFrameCols.R
 \name{convertDataFrameCols}
 \alias{convertDataFrameCols}
-\title{Converts columns in a data frame to characters, factors or numerics.}
+\title{Converts columns in a data frame to characters, factors or numerics}
 \usage{
 convertDataFrameCols(
   df,
@@ -36,5 +36,5 @@ Default is \code{FALSE}.}
 [\code{data.frame}].
 }
 \description{
-Converts columns in a data frame to characters, factors or numerics.
+Converts columns of a data frame based on specified conversion flags.
 }

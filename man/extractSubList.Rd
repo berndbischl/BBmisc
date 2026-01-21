@@ -2,7 +2,7 @@
 % Please edit documentation in R/extractSubList.R
 \name{extractSubList}
 \alias{extractSubList}
-\title{Extracts a named element from a list of lists.}
+\title{Extracts a named element from a list of lists}
 \usage{
 extractSubList(xs, element, element.value, simplify = TRUE, use.names = TRUE)
 }
@@ -35,7 +35,7 @@ Default is \code{TRUE}.}
 [\code{list} | simplified \code{vector} | \code{matrix}]. See above.
 }
 \description{
-Extracts a named element from a list of lists.
+Extracts elements from a list of named lists by element name.
 }
 \examples{
 xs = list(list(a = 1, b = 2), list(a = 5, b = 7))

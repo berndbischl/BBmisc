@@ -1,4 +1,4 @@
-#' @title Check for a function argument.
+#' @title Check for a function argument
 #'
 #' @description
 #' Throws exception if checks are not passed. Note that argument is evaluated when checked.

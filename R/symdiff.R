@@ -1,4 +1,7 @@
-#' Calculates symmetric set difference between two sets.
+#' @title Calculates symmetric set difference between two sets
+#'
+#' @description
+#' Returns elements that are in either set but not in both.
 #'
 #' @param x [\code{vector}]\cr
 #'   Set 1.

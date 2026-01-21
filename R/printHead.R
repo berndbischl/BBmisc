@@ -1,5 +1,6 @@
-#' More meaningful \code{head(df)} output.
+#' @title More meaningful \code{head(df)} output
 #'
+#' @description
 #' The behaviour is similar to \code{print(head(x, n))}. The difference is, that if
 #' the number of rows in a data.frame/matrix or the number of elements in a list
 #' or vector is larger than \code{n}, additional information is printed about

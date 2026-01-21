@@ -1,4 +1,7 @@
-#' Load RData file and return objects in it.
+#' @title Load RData file and return objects in it
+#'
+#' @description
+#' Loads an RData file and returns the objects directly instead of loading them into an environment.
 #'
 #' @param file [\code{character(1)}]\cr
 #'   File to load.

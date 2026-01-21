@@ -3,7 +3,7 @@
 \name{asMatrixCols}
 \alias{asMatrixCols}
 \alias{asMatrixRows}
-\title{Extracts a named element from a list of lists.}
+\title{Extracts a named element from a list of lists}
 \usage{
 asMatrixCols(xs, row.names, col.names)
 
@@ -25,5 +25,5 @@ Default is to take the names of the elements of \code{xs}.}
 [\code{matrix}].
 }
 \description{
-Extracts a named element from a list of lists.
+Converts a list of vectors into a matrix with vectors as columns or rows.
 }

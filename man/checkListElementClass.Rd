@@ -2,7 +2,7 @@
 % Please edit documentation in R/checkListElementClass.R
 \name{checkListElementClass}
 \alias{checkListElementClass}
-\title{Check that a list contains only elements of a required type.}
+\title{Check that a list contains only elements of a required type}
 \usage{
 checkListElementClass(xs, cl)
 }

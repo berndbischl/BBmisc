@@ -1,4 +1,7 @@
-#' Check if given object has certain attributes.
+#' @title Check if given object has certain attributes
+#'
+#' @description
+#' Checks whether an object has all specified attributes.
 #'
 #' @param obj [mixed]\cr
 #'   Arbitrary R object.

@@ -1,4 +1,4 @@
-#' @title Returns first non-missing, non-null argument.
+#' @title Returns first non-missing, non-null argument
 #'
 #' @description
 #' Returns first non-missing, non-null argument, otherwise \code{NULL}.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/isExpensiveExampleOk.R
 \name{isExpensiveExampleOk}
 \alias{isExpensiveExampleOk}
-\title{Conditional checking for expensive examples.}
+\title{Conditional checking for expensive examples}
 \usage{
 isExpensiveExampleOk()
 }

@@ -2,7 +2,7 @@
 % Please edit documentation in R/warningf.R
 \name{warningf}
 \alias{warningf}
-\title{Wrapper for warning and sprintf.}
+\title{Wrapper for warning and sprintf}
 \usage{
 warningf(..., immediate = TRUE, warning.length = 8170L)
 }

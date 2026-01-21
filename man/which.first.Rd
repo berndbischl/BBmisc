@@ -3,7 +3,7 @@
 \name{which.first}
 \alias{which.first}
 \alias{which.last}
-\title{Find the index of first/last \code{TRUE} value in a logical vector.}
+\title{Find the index of first/last \code{TRUE} value in a logical vector}
 \usage{
 which.first(x, use.names = TRUE)
 
@@ -23,7 +23,7 @@ named.}
   an empty integer vector if none is found.
 }
 \description{
-Find the index of first/last \code{TRUE} value in a logical vector.
+Returns the index of the first or last TRUE value in a logical vector.
 }
 \examples{
  which.first(c(FALSE, TRUE))

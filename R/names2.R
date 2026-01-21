@@ -1,5 +1,6 @@
-#' Replacement for names which always returns a vector.
+#' @title Replacement for names which always returns a vector
 #'
+#' @description
 #' A simple wrapper for \code{\link[base]{names}}.
 #' Returns a vector even if no names attribute is set.
 #' Values \code{NA} and \code{""} are treated as missing and

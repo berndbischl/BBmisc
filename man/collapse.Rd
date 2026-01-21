@@ -2,7 +2,7 @@
 % Please edit documentation in R/collapse.R
 \name{collapse}
 \alias{collapse}
-\title{Collapse vector to string.}
+\title{Collapse vector to string}
 \usage{
 collapse(x, sep = ",")
 }

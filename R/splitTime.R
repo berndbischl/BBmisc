@@ -1,5 +1,6 @@
-#' Split seconds into handy chunks of time.
+#' @title Split seconds into handy chunks of time
 #'
+#' @description
 #' Note that a year is simply defined as exactly 365 days.
 #'
 #' @param seconds [\code{numeric(1)}]\cr

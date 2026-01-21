@@ -1,4 +1,7 @@
-#' Can some strings be used for column or list element names without problems?
+#' @title Can some strings be used for column or list element names without problems?
+#'
+#' @description
+#' Checks if strings are valid R names that won't cause problems as column names.
 #'
 #' @param x [\code{character}]\cr
 #'   Character vector to check.

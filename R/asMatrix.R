@@ -1,4 +1,7 @@
-#' Extracts a named element from a list of lists.
+#' @title Extracts a named element from a list of lists
+#'
+#' @description
+#' Converts a list of vectors into a matrix with vectors as columns or rows.
 #'
 #' @param xs [\code{list}]\cr
 #'   A list of vectors of the same length.

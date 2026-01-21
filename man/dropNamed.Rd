@@ -2,7 +2,7 @@
 % Please edit documentation in R/dropNamed.R
 \name{dropNamed}
 \alias{dropNamed}
-\title{Drop named elements of an object.}
+\title{Drop named elements of an object}
 \usage{
 dropNamed(x, drop = character(0L))
 }
@@ -21,5 +21,5 @@ Subset of object of same type as \code{x}. The object is not simplified,
   i.e, no dimensions are dropped as \code{[,,drop = FALSE]} is used.
 }
 \description{
-Drop named elements of an object.
+Removes named elements from a vector, list, matrix or data frame.
 }

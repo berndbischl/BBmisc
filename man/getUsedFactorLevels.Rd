@@ -2,7 +2,7 @@
 % Please edit documentation in R/getUsedFactorLevels.R
 \name{getUsedFactorLevels}
 \alias{getUsedFactorLevels}
-\title{Determines used factor levels.}
+\title{Determines used factor levels}
 \usage{
 getUsedFactorLevels(x)
 }

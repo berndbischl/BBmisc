@@ -2,7 +2,7 @@
 % Please edit documentation in R/printStrToChar.R
 \name{printStrToChar}
 \alias{printStrToChar}
-\title{Print \code{str(x)} of an object to a string / character vector.}
+\title{Print \code{str(x)} of an object to a string / character vector}
 \usage{
 printStrToChar(x, collapse = "\\n")
 }
@@ -19,7 +19,7 @@ Default is \dQuote{\\n}.}
 [\code{character}].
 }
 \description{
-Print \code{str(x)} of an object to a string / character vector.
+Captures the output of str() as a character string.
 }
 \examples{
 printStrToChar(iris)

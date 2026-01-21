@@ -1,4 +1,7 @@
-#' Check superset relation on two vectors.
+#' @title Check superset relation on two vectors
+#'
+#' @description
+#' Checks if all elements of y are contained in x.
 #'
 #' @param x [\code{vector}]\cr
 #'   Source vector.

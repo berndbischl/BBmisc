@@ -2,7 +2,7 @@
 % Please edit documentation in R/load2.R
 \name{load2}
 \alias{load2}
-\title{Load RData file and return objects in it.}
+\title{Load RData file and return objects in it}
 \usage{
 load2(file, parts, simplify = TRUE, envir, impute)
 }
@@ -31,7 +31,7 @@ Default is missing which will result in an exception if \code{file} is not found
 Either a single object or a list.
 }
 \description{
-Load RData file and return objects in it.
+Loads an RData file and returns the objects directly instead of loading them into an environment.
 }
 \examples{
 fn = tempfile()

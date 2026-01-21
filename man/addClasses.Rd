@@ -2,7 +2,7 @@
 % Please edit documentation in R/addClasses.R
 \name{addClasses}
 \alias{addClasses}
-\title{A wrapper to add to the class attribute.}
+\title{A wrapper to add to the class attribute}
 \usage{
 addClasses(x, classes)
 }
@@ -17,7 +17,7 @@ Classes to add. Will be added in front (specialization).}
 Changed object \code{x}.
 }
 \description{
-A wrapper to add to the class attribute.
+Adds classes to the class attribute of an object.
 }
 \examples{
 x = list()

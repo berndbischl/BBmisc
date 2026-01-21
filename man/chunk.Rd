@@ -2,7 +2,7 @@
 % Please edit documentation in R/chunk.R
 \name{chunk}
 \alias{chunk}
-\title{Chunk elements of vectors into blocks of nearly equal size.}
+\title{Chunk elements of vectors into blocks of nearly equal size}
 \usage{
 chunk(x, chunk.size, n.chunks, props, shuffle = FALSE)
 }

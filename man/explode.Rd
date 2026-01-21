@@ -2,7 +2,7 @@
 % Please edit documentation in R/explode.R
 \name{explode}
 \alias{explode}
-\title{Split up a string into substrings.}
+\title{Split up a string into substrings}
 \usage{
 explode(x, sep = " ")
 }

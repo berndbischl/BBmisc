@@ -1,5 +1,6 @@
-#' Split up a string into substrings.
+#' @title Split up a string into substrings
 #'
+#' @description
 #' Split up a string into substrings according to a seperator.
 #'
 #' @param x [\code{character}]\cr

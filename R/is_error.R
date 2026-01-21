@@ -1,5 +1,6 @@
-#' Is return value of try an exception?
+#' @title Is return value of try an exception?
 #'
+#' @description
 #' Checks if an object is of class \dQuote{try-error} or
 #' \dQuote{error}.
 #'

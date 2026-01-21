@@ -34,5 +34,5 @@ listToShortString(x, num.format = "\%.4g", clip.len = 15L)
 \item{clip.len}{No text}
 }
 \description{
-Deprecated function. Do not use!
+These functions are deprecated and will be removed in future versions.
 }

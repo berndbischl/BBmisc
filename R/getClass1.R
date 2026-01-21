@@ -1,4 +1,7 @@
-#' Wrapper for \code{class(x)[1]}.
+#' @title Wrapper for \code{class(x)[1]}
+#'
+#' @description
+#' Returns the first class of an object.
 #'
 #' @param x [any]\cr
 #'   Input object.

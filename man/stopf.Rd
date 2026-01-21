@@ -2,7 +2,7 @@
 % Please edit documentation in R/stopf.R
 \name{stopf}
 \alias{stopf}
-\title{Wrapper for stop and sprintf.}
+\title{Wrapper for stop and sprintf}
 \usage{
 stopf(..., warning.length = 8170L)
 }

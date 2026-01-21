@@ -3,7 +3,7 @@
 \name{getFirst}
 \alias{getFirst}
 \alias{getLast}
-\title{Get the first/last element of a list/vector.}
+\title{Get the first/last element of a list/vector}
 \usage{
 getFirst(x)
 
@@ -17,5 +17,5 @@ The list or vector.}
 Selected element. The element name is dropped.
 }
 \description{
-Get the first/last element of a list/vector.
+Returns the first or last element of a list or vector.
 }

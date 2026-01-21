@@ -1,5 +1,6 @@
-#' Simple bin packing.
+#' @title Simple bin packing
 #'
+#' @description
 #' Maps numeric items in \code{x} into groups with sum
 #' less or equal than \code{capacity}.
 #' A very simple greedy algorithm is used, which is not really optimized

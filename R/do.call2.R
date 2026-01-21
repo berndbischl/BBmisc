@@ -1,5 +1,6 @@
-#' Execute a function call similar to \code{do.call}.
+#' @title Execute a function call similar to \code{do.call}
 #'
+#' @description
 #' This function is supposed to be a replacement for \code{\link[base]{do.call}} in situations
 #' where you need to pass big R objects.
 #' Unlike \code{\link[base]{do.call}}, this function allows to pass objects via \code{...}

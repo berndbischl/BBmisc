@@ -1,4 +1,7 @@
-#' Print \code{str(x)} of an object to a string / character vector.
+#' @title Print \code{str(x)} of an object to a string / character vector
+#'
+#' @description
+#' Captures the output of str() as a character string.
 #'
 #' @param x [any]\cr
 #'   Object to print

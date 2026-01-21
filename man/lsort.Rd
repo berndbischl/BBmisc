@@ -2,7 +2,7 @@
 % Please edit documentation in R/lsort.R
 \name{lsort}
 \alias{lsort}
-\title{A wrapper for \code{\link{sort}} to sort using the \dQuote{C} collating rules.}
+\title{A wrapper for \code{\link{sort}} to sort using the \dQuote{C} collating rules}
 \usage{
 lsort(...)
 }
@@ -13,5 +13,5 @@ lsort(...)
 See \code{\link{sort}}.
 }
 \description{
-A wrapper for \code{\link{sort}} to sort using the \dQuote{C} collating rules.
+Sorts using the C locale for consistent sorting across platforms.
 }

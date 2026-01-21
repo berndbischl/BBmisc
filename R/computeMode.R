@@ -1,5 +1,6 @@
-#' Compute statistical mode of a vector (value that occurs most frequently).
+#' @title Compute statistical mode of a vector (value that occurs most frequently)
 #'
+#' @description
 #' Works for integer, numeric, factor and character vectors.
 #' The implementation is currently not extremely efficient.
 #'

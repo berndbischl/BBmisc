@@ -2,7 +2,7 @@
 % Please edit documentation in R/insert.R
 \name{insert}
 \alias{insert}
-\title{Insert elements from one list/vector into another list/vector.}
+\title{Insert elements from one list/vector into another list/vector}
 \usage{
 insert(xs1, xs2, elements)
 }

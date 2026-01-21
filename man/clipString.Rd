@@ -2,7 +2,7 @@
 % Please edit documentation in R/clipString.R
 \name{clipString}
 \alias{clipString}
-\title{Shortens strings to a given length.}
+\title{Shortens strings to a given length}
 \usage{
 clipString(x, len, tail = "...")
 }
@@ -22,7 +22,7 @@ Default is \dQuote{...}.}
 [\code{character(1)}].
 }
 \description{
-Shortens strings to a given length.
+Clips strings to a maximum length, appending a tail if shortened.
 }
 \examples{
 print(clipString("abcdef", 10))

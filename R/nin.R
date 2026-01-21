@@ -1,4 +1,7 @@
-#' Simply a negated \code{in} operator.
+#' @title Simply a negated \code{in} operator
+#'
+#' @description
+#' Tests if elements of x are not in y.
 #'
 #' @param x [\code{vector}]\cr
 #'   Values that should not be in \code{y}.

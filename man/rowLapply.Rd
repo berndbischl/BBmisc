@@ -3,7 +3,7 @@
 \name{rowLapply}
 \alias{rowLapply}
 \alias{rowSapply}
-\title{Apply function to rows of a data frame.}
+\title{Apply function to rows of a data frame}
 \usage{
 rowLapply(df, fun, ..., unlist = FALSE)
 

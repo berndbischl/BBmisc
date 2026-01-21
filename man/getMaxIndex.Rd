@@ -4,7 +4,7 @@
 \alias{getMaxIndex}
 \alias{getMinIndex}
 \alias{getBestIndex}
-\title{Return index of maximal/minimal/best element in numerical vector.}
+\title{Return index of maximal/minimal/best element in numerical vector}
 \usage{
 getMaxIndex(x, weights = NULL, ties.method = "random", na.rm = FALSE)
 

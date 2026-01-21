@@ -3,7 +3,7 @@
 \name{convertRowsToList}
 \alias{convertRowsToList}
 \alias{convertColsToList}
-\title{Convert rows (columns) of data.frame or matrix to lists.}
+\title{Convert rows (columns) of data.frame or matrix to lists}
 \usage{
 convertRowsToList(
   x,

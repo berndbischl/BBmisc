@@ -2,7 +2,7 @@
 % Please edit documentation in R/optimizeSubInts.R
 \name{optimizeSubInts}
 \alias{optimizeSubInts}
-\title{Naive multi-start version of \code{\link{optimize}} for global optimization.}
+\title{Naive multi-start version of \code{\link{optimize}} for global optimization}
 \usage{
 optimizeSubInts(
   f,

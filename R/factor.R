@@ -1,5 +1,6 @@
-#' Combine multiple factors and return a factor.
+#' @title Combine multiple factors and return a factor
 #'
+#' @description
 #' Note that function does not inherit from \code{\link{c}} to not change R semantics behind your back when this
 #' package is loaded.
 #'

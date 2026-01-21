@@ -2,7 +2,7 @@
 % Please edit documentation in R/argsAsNamedList.R
 \name{argsAsNamedList}
 \alias{argsAsNamedList}
-\title{Parses \code{...} arguments to a named list.}
+\title{Parses \code{...} arguments to a named list}
 \usage{
 argsAsNamedList(...)
 }

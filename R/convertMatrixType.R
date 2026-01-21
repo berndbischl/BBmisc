@@ -1,5 +1,6 @@
-#' Converts storage type of a matrix.
+#' @title Converts storage type of a matrix
 #'
+#' @description
 #' Works by setting \code{\link{mode}}.
 #'
 #' @param x [\code{matrix}]\cr.

@@ -2,7 +2,7 @@
 % Please edit documentation in R/system3.R
 \name{system3}
 \alias{system3}
-\title{Wrapper for system2 with better return type and errorhandling.}
+\title{Wrapper for system2 with better return type and errorhandling}
 \usage{
 system3(
   command,

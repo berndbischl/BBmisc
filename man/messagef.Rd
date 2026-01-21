@@ -2,7 +2,7 @@
 % Please edit documentation in R/messagef.R
 \name{messagef}
 \alias{messagef}
-\title{Wrapper for message and sprintf.}
+\title{Wrapper for message and sprintf}
 \usage{
 messagef(..., .newline = TRUE)
 }

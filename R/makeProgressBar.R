@@ -1,4 +1,4 @@
-#' @title Create a progress bar with estimated time.
+#' @title Create a progress bar with estimated time
 #'
 #' @description
 #' Create a progress bar function that displays the estimated time till

@@ -2,8 +2,7 @@
 % Please edit documentation in R/getAttributeNames.R
 \name{getAttributeNames}
 \alias{getAttributeNames}
-\title{Helper function for determining the vector of attribute names
-of a given object.}
+\title{Helper function for determining the vector of attribute names of a given object}
 \usage{
 getAttributeNames(obj)
 }
@@ -16,6 +15,5 @@ Source object.}
   Vector of attribute names for the source object.
 }
 \description{
-Helper function for determining the vector of attribute names
-of a given object.
+Returns the names of all attributes of an object.
 }

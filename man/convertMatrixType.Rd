@@ -2,7 +2,7 @@
 % Please edit documentation in R/convertMatrixType.R
 \name{convertMatrixType}
 \alias{convertMatrixType}
-\title{Converts storage type of a matrix.}
+\title{Converts storage type of a matrix}
 \usage{
 convertMatrixType(x, type)
 }

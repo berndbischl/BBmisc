@@ -2,7 +2,7 @@
 % Please edit documentation in R/hasAttributes.R
 \name{hasAttributes}
 \alias{hasAttributes}
-\title{Check if given object has certain attributes.}
+\title{Check if given object has certain attributes}
 \usage{
 hasAttributes(obj, attribute.names)
 }
@@ -19,5 +19,5 @@ Vector of strings, i.e., attribute names.}
   and \code{FALSE} otherwise.
 }
 \description{
-Check if given object has certain attributes.
+Checks whether an object has all specified attributes.
 }

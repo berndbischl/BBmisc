@@ -2,7 +2,7 @@
 % Please edit documentation in R/toRangeStr.R
 \name{toRangeStr}
 \alias{toRangeStr}
-\title{Convert a numerical vector into a range string.}
+\title{Convert a numerical vector into a range string}
 \usage{
 toRangeStr(x, range.sep = " - ", block.sep = ", ")
 }
@@ -23,7 +23,7 @@ Default is \dQuote{, }.}
 [\code{character(1)}]
 }
 \description{
-Convert a numerical vector into a range string.
+Converts a vector of integers into a compact range string representation.
 }
 \examples{
 x = sample(1:10, 7)

@@ -1,4 +1,4 @@
-#' Replace values in atomic vectors
+#' @title Replace values in atomic vectors
 #'
 #' @details
 #' Replaces values specified in \code{from} with values in \code{to}.

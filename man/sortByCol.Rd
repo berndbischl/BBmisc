@@ -2,7 +2,7 @@
 % Please edit documentation in R/sortByCol.R
 \name{sortByCol}
 \alias{sortByCol}
-\title{Sort the rows of a data.frame according to one or more columns.}
+\title{Sort the rows of a data.frame according to one or more columns}
 \usage{
 sortByCol(x, col, asc = TRUE)
 }
@@ -24,5 +24,5 @@ Default is \code{TRUE}.}
 [\code{data.frame}].
 }
 \description{
-Sort the rows of a data.frame according to one or more columns.
+Sorts a data frame by one or more columns in ascending or descending order.
 }

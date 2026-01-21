@@ -1,4 +1,4 @@
-#' @title Normalizes numeric data to a given scale.
+#' @title Normalizes numeric data to a given scale
 #'
 #' @description
 #' Currently implemented for numeric vectors, numeric matrices and data.frame.

@@ -1,5 +1,6 @@
-#' Blow up single scalars / objects to vectors /  list by replication.
+#' @title Blow up single scalars / objects to vectors /  list by replication
 #'
+#' @description
 #' Useful for standard argument conversion where a user can input a single
 #' element, but this has to be replicated now n times for a resulting vector or list.
 #'

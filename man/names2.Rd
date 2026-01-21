@@ -2,7 +2,7 @@
 % Please edit documentation in R/names2.R
 \name{names2}
 \alias{names2}
-\title{Replacement for names which always returns a vector.}
+\title{Replacement for names which always returns a vector}
 \usage{
 names2(x, missing.val = NA_character_)
 }

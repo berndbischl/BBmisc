@@ -1,4 +1,4 @@
-#' @title Convert a list of row-vector of equal structure to a data.frame.
+#' @title Convert a list of row-vector of equal structure to a data.frame
 #'
 #' @description
 #' Elements are arranged in columns according to their name in each
