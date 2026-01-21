@@ -1,0 +1,182 @@
+# BBmisc 1.13.1
+
+# BBmisc 1.13
+
+* feat: added a `NEWS.md` file to track changes to the package.
+* docs: added title and description tags
+* docs: fix descriptions of functions
+
+# BBmisc_1.12:
+- getMaxIndex, getMinIndex, getBestIndex,
+  getMaxIndexOfRows, getMinIndexOfRows, getMaxIndexOfCols, getMinIndexOfCols:
+  added new arg 'weights'
+- optimizeSubInts: fixed a bug where not enough subints where visited
+- computeMode: internally uses data.table now and is therefore much faster
+- Changed default from `default.stringsAsFactors()` to `NULL` in
+  `convertListOfRowsToDataFrame()`.
+
+# BBmisc_1.11: 2017-03-09
+- convertToShortString now also prints the content of expressions, and prints NULL like <NULL>
+- The function checkArg is superseded by the package checkmate. Please use
+  checkmate instead.
+- ensureVector now can be passed multiple classes via cl parameter
+- New argument ensure.list for ensureVector
+
+- new functions
+-- printHead
+-- getBestIndex
+
+# BBmisc_1.10: 2016-07-12
+- New argument min.versions for requirePackages
+
+# BBmisc_1.9: 2015-02-03
+- New argument .newline for messagef
+- requirePackages can now dispatch to requireNamespace and has argument default.method.
+- normalize now also handles NAs
+
+- new functions
+-- mapValues
+
+# BBmisc_1.8: 2014-10-30
+- Options for the ProgressBar can now be directly passed to the constructor.
+- Fixed smaller bugs in normalize
+
+- new functions
+-- itostr
+-- getRelativePath
+-- splitPath
+-- do.call2
+
+# BBmisc_1.7: 21-Jun-2014
+- extractSubList allows for repeated indexing
+
+- new functions:
+-- asQuoted
+-- collapsef
+-- ensureVector
+-- explode
+-- getAttributeNames
+-- getClass1
+-- getUsedFactorLevels
+-- hasAttributes
+-- isSubset, isSuperset
+-- makeFileCache
+-- normalize
+-- setValue
+-- optimizeSubInts
+
+# BBmisc_1.6: 23-Apr-2014
+- the ProgressBar now outputs to stderr by default. But the stream can be configured.
+- improve handling of result names (row.names and col.names) in some functions a bit
+- convertRowsToList now converts matrices into list of vector by default (see new arg "as.vector")
+- rename first, last to which.first, which.last
+- improved extractSubList and rowSapply a bit,
+  simplification to matrix can be stated in a more readable way.
+- new functions:
+-- operator %btwn%.
+-- convertListOfRowsToDataFrame
+-- convertMatrixType
+-- convertColsToList
+-- v*apply type of functions
+-- dapply
+-- rangeVal
+-- getFirst, getLast
+-- symdiff
+-- asMatrixCols, asMatrixRows
+-- isScalar<Type> family of helper functions
+-- sortByCol
+
+# BBmisc_1.5: 25-Jan-2014
+- removed stringsAsFactors, use convertDataFrameCols
+- removed convertDfCols, use convertDataFrameCols
+- removed listToShortString, use convertToShortString
+- new functions:
+-- dropNamed
+-- first, last
+-- binPack
+-- isValidName
+
+# BBmisc_1.4: 06-Nov-2013
+- renamed convertDfCols to convertDataFrameCols
+- deprecated listToShortString, use convertToShortString
+- deprecated stringsAsFactors, use convertDataFrameCols
+- chunk distributes size of chunks in a better way
+- new functions:
+-- makeS3Obj
+-- getMaxIndex, getMinIndex
+-- getMaxIndexOfRows, getMinIndexOfRows, getMaxIndexOfCols, getMinIndexOfCols
+-- toRangeStr
+-- getOperatingSystem, isWindows, isUnix, isLinux, isDarwin
+-- clipString
+-- getUnixTime
+-- isScalarValue
+-- makeDataFrame
+-- convertToShortString
+-- convertRowsToList
+
+# BBmisc_1.3-64: 20-Aug-2013
+- removed parallelMap et al., this is now hosted in an extra package at:
+  https://github.com/berndbischl/parallelMap
+- bugfix for checkArg, lower/upper only checked first element
+- exta argument "missing.val" for names2
+- extra argument "logicals.as.factor" for convertDFCols
+- some speed improvements for convertDFCols and notin
+- is.error also works now for objects of class "error" and not only "try-error"
+- new functions:
+-- isDirectory
+-- rowLapply, rowSapply
+-- setAttribute
+-- seq_row, seq_col
+-- strrepeat
+-- makeSimpleFileLogger
+-- isScalarNA
+-- pause
+-- printStrToChar
+
+# BBmisc_1.2-200: 02-May-2013
+- checkArg can now test whether arg is one of multiple classes (OR disjunctive)
+- bug fix: cpus setting was not properly respected in multicore mode
+- bug fix: warnings where not turned into errors with warningf and option(warn=2)
+- some minor bug fixes
+- parallelMap: switched multicore mode to package parallel
+- new functions
+-- lib
+-- argsAsNamedList
+-- names2
+-- convertDfCols
+
+# BBmisc_1.1-166: 16-Nov-2012
+- some small fixes and added arguments
+- new functions:
+-- setRowNames, setColNames
+-- setClasses, addClasses
+-- isFALSE
+-- lsort
+-- computeMode
+
+# BBmisc_1.1-132: 04-Jul-2012
+- removed regmatches dependency
+
+# BBmisc_1.1-125: 10-May-2012
+- removed stringr dependency
+- new interface for ProgressBar and more therefore more functionality
+- some global options for progressbar behaviour
+- options immediate and warning.length for warningf
+- checkListElementClass now first checks that argument is a list
+- nin (notin) operator
+- parallelMap function, can delegate to multicore or snowfall
+- stringsAsFactors
+- system3
+- load2
+
+# BBmisc_1.0-77: 17-Mar-2012
+- removed calls to .Internal
+- more examples
+- fixed a bug in checkArg
+- makeProgressbar: new option 'inc' to increment
+- stopf: new option warning.length
+- more options for requirePackages
+- new functions: chunk, isExpensiveExampleOk
+
+# BBmisc_1.0-58: 05-Jan-2012
+- First submit to CRAN.
