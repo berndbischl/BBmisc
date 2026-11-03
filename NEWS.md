@@ -1,3 +1,7 @@
+# BBmisc (development version)
+
+* test: fixed `printStrToChar()` test for changed `str()` output in R-devel.
+
 # BBmisc 1.13.1
 
 * feat: added a `NEWS.md` file to track changes to the package.
