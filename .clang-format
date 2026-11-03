@@ -1,0 +1,25 @@
+# Base style and core options
+BasedOnStyle: LLVM          # start from LLVM defaults
+
+# Indentation settings
+UseTab: Never               # never use tabs; always spaces
+IndentWidth: 2              # 2-space indentation
+ContinuationIndentWidth: 2  # wrapped lines indent by 2 spaces
+
+# Line length
+ColumnLimit: 120            # max line length
+
+# Brace placement
+BreakBeforeBraces: Attach   # opening brace stays on same line
+
+# Wrapping/alignment around brackets (function args, arrays)
+AlignAfterOpenBracket: DontAlign  # don't align under the opening bracket
+
+# Braced initializer lists: break and indent by 2
+Cpp11BracedListStyle: true
+
+# One-line statements
+AllowShortIfStatementsOnASingleLine: WithoutElse  # allow 'if (x) return;' on one line
+
+# Final newline
+InsertNewlineAtEOF: true                   # ensure files end with a newline

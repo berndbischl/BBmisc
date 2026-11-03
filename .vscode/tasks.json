@@ -1,0 +1,66 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "cppcheck (project)",
+      "type": "shell",
+      "command": "cppcheck --project=${workspaceFolder}/compile_commands.json --enable=warning,performance,portability --language=c++ --template=gcc",
+      "problemMatcher": [
+        {
+          "owner": "cppcheck",
+          "fileLocation": "absolute",
+          "severity": "warning",
+          "pattern": [
+            {
+              "regexp": "^(.*?):(\\d+)(?::(\\d+))?:\\s*(?:\\[.*?\\]\\s*)?(?:information|style|performance|portability|warning|error)?:?\\s*(.*)$",
+              "file": 1,
+              "line": 2,
+              "column": 3,
+              "message": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "flawfinder (project)",
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "command": "flawfinder --singleline --quiet .",
+      "problemMatcher": [
+        {
+          "owner": "flawfinder",
+          "fileLocation": ["relative", "${workspaceFolder}"],
+          "pattern": [
+            {
+              "regexp": "^(.*?):(\\d+):\\s*\\[[0-9]+\\]\\s*(.*)$",
+              "file": 1,
+              "line": 2,
+              "message": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "clang-tidy (project)",
+      "type": "shell",
+      "command": "run-clang-tidy -quiet -p=${workspaceFolder}",
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "analyzers (cppcheck+flawfinder+clang-tidy)",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "cppcheck (project)",
+        "clang-tidy (project)",
+        "flawfinder (project)"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
