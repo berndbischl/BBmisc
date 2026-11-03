@@ -1,6 +1,6 @@
 Package: BBmisc
 Title: Miscellaneous Helper Functions for B. Bischl
-Version: 1.13
+Version: 1.13.1
 Authors@R: c(
     person("Bernd", "Bischl", , "bernd_bischl@gmx.net", role = c("aut", "cre")),
     person("Michel", "Lang", , "michellang@gmail.com", role = "aut"),
