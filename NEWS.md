@@ -1,10 +1,16 @@
 # BBmisc 1.13.1
 
+* feat: added a `NEWS.md` file to track changes to the package.
+* docs: added title and description tags.
+* docs: fixed descriptions of functions.
+* refactor: use `anyNA()` instead of `any(is.na(.))`.
+* test: fixed `requirePackages()` tests.
+
 # BBmisc 1.13
 
-* feat: added a `NEWS.md` file to track changes to the package.
-* docs: added title and description tags
-* docs: fix descriptions of functions
+* Updated DESCRIPTION.
+* Fixed documentation of `makeProgressBar()` and `makeSimpleFileLogger()`.
+* Fixed usage of a C code macro in `getMaxIndex()`.
 
 # BBmisc 1.12:
 * getMaxIndex, getMinIndex, getBestIndex,
