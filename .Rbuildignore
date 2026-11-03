@@ -16,3 +16,4 @@ todo-files
 ^.editorconfig$
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^CRAN-SUBMISSION$
