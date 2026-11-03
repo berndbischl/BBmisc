@@ -1,4 +1,4 @@
-# BBmisc (development version)
+# BBmisc 1.13.2
 
 * test: fixed `printStrToChar()` test for changed `str()` output in R-devel.
 
