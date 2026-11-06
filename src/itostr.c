@@ -9,12 +9,12 @@ SEXP itostr (SEXP x, SEXP base) {
     const R_len_t b = INTEGER(base)[0];
     SEXP res = PROTECT(allocVector(STRSXP, n));
 
-    const R_len_t buflen = ceil(log(exp2(64) / log(b)));
-    char buffer[buflen + 1];
-    buffer[buflen] = '\0';
+    // 45 = ceiling(log( 2**64 / log(2)))
+    char buffer[46];
+    buffer[45] = '\0';
 
     for (R_len_t i = 0; i < n; i++) {
-        R_len_t offset = buflen;
+        R_len_t offset = 45;
         int xi = INTEGER(x)[i];
         do {
             buffer[--offset] = base36[xi % b];
